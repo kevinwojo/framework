@@ -82,7 +82,7 @@ class Developer extends Base implements CommandInterface
 		}
 		else
 		{
-			$this->output->error('Warning: You must specify --force. Use with caution.');
+			$this->output->error('You must specify --force. Use with caution.');
 		}
 	}
 
