@@ -65,21 +65,84 @@ class Ftp extends AbstractFtpAdapter
 		'transferMode',
 	);
 
+	/**
+	 * FTP or SSL-FTP connection to the host
+	 *
+	 * @var  resource|Net_SFTP
+	 */
 	protected $connection;
+
+	/**
+	 * The FTP server address
+	 *
+	 * @var  string
+	 */
 	protected $host;
+
+	/**
+	 * This parameter specifies an alternate port to connect to.
+	 * If it is omitted or set to zero, then the default FTP port,
+	 * 21, will be used.
+	 *
+	 * @var int
+	 */
 	protected $port = 21;
+
+
+	/**
+	 * The ftp username
+	 *
+	 * @var string
+	 */
 	protected $username;
+
+
+	/**
+	 * The ftp password
+	 *
+	 * @var string
+	 */
 	protected $password;
+
+	/**
+	 * If the ssl is enable
+	 * 
+	 * @var bool
+	 */
 	protected $ssl = false;
+
+	/**
+	 * The amount of seconds before the connection will timeout
+	 *
+	 * @var int
+	 */
 	protected $timeout = 90;
+
+	/**
+	 * If passive mode should be used
+	 *
+	 * @var bool
+	 */
 	protected $passive = true;
+
+	/**
+	 * '/' in any address
+	 *
+	 * @var string
+	 */
 	protected $separator = '/';
+
+	/**
+	 * The path of root folder to work from.
+	 *
+	 * @var string
+	 */
 	protected $root;
 
 	/**
 	 * Constructor.
 	 *
-	 * @param   array  $config
+	 * @param   array  $config	List of configurable items
 	 * @return  void
 	 */
 	public function __construct(array $config)
@@ -90,7 +153,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the config.
 	 *
-	 * @param   array   $config
+	 * @param   array	$config	List of configurable items
 	 * @return  object  $this
 	 */
 	public function setConfig(array $config)
@@ -126,7 +189,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the host.
 	 *
-	 * @param   string  $host
+	 * @param   string  $host	FTP server address
 	 * @return  object  $this
 	 */
 	public function setHost($host)
@@ -149,7 +212,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the ftp port.
 	 *
-	 * @param   mixed   $port
+	 * @param   mixed   $port	FTP port
 	 * @return  object  $this
 	 */
 	public function setPort($port)
@@ -172,7 +235,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the root folder to work from.
 	 *
-	 * @param   string  $root
+	 * @param   string  $root	Path of the root folder
 	 * @return  object  $this
 	 */
 	public function setRoot($root)
@@ -195,7 +258,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set ftp username.
 	 *
-	 * @param   string  $username
+	 * @param   string  $username FTP username
 	 * @return  object  $this
 	 */
 	public function setUsername($username)
@@ -218,7 +281,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the ftp password.
 	 *
-	 * @param   string  $password
+	 * @param   string  $password	FTP password
 	 * @return  object  $this
 	 */
 	public function setPassword($password)
@@ -241,7 +304,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the amount of seconds before the connection should timeout.
 	 *
-	 * @param    int     $timeout
+	 * @param    int     $timeout	Timeout seconds
 	 * @return   object  $this
 	 */
 	public function setTimeout($timeout)
@@ -264,7 +327,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set the transfer mode.
 	 *
-	 * @param   int     $mode
+	 * @param   int     $mode	Transfer Mode
 	 * @return  object  $this
 	 */
 	public function setTransferMode($mode)
@@ -287,7 +350,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Set if Ssl is enabled.
 	 *
-	 * @param   bool    $ssl
+	 * @param   bool    $ssl	Whether ssl is enabled
 	 * @return  object  $this
 	 */
 	public function setSsl($ssl)
@@ -298,9 +361,11 @@ class Ftp extends AbstractFtpAdapter
 	}
 
 	/**
-	 * Set if passive mode should be used.
+	 * Set if passive mode should be used. 
+	 * In passive mode, data connections are initiated by the client.
+	 * It may be needed if the client is behind firewall.
 	 *
-	 * @param   bool    $passive
+	 * @param   bool    $passive	Passive mode
 	 * @return  object  $this
 	 */
 	public function setPassive($passive = true)
@@ -563,8 +628,8 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Create a directory.
 	 *
-	 * @param   string    $directory
-	 * @param   resource  $connection
+	 * @param   string    $directory	Name/Path of the new directory
+	 * @param   resource  $connection	Link identifier of the FTP connection
 	 * @return  bool
 	 */
 	protected function createActualDirectory($directory, $connection)
@@ -740,7 +805,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Ensure a directory exists.
 	 *
-	 * @param  string  $dirname
+	 * @param  string  $dirname	Path of the directory to be checked
 	 */
 	public function ensureDirectory($dirname)
 	{
@@ -763,8 +828,8 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Normalize a directory listing.
 	 *
-	 * @param   array   $listing
-	 * @param   string  $prefix
+	 * @param   array   $listing	List of directories
+	 * @param   string  $prefix		Base of the normalization
 	 * @return  array   Directory listing
 	 */
 	protected function normalizeListing(array $listing, $prefix = '', $filter = '.', $exclude = array('.svn', '.git', 'CVS', '.DS_Store', '__MACOSX'))
@@ -798,7 +863,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Sort a directory listing.
 	 *
-	 * @param   array  $result
+	 * @param   array  $result	List of directories to sort
 	 * @return  array  Sorted listing
 	 */
 	protected function sortListing(array $result)
@@ -853,7 +918,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Normalize a permissions string.
 	 *
-	 * @param   string  $permissions
+	 * @param   string  $permissions	Permission string to be normalized
 	 * @return  int
 	 */
 	protected function normalizePermissions($permissions)
@@ -886,7 +951,7 @@ class Ftp extends AbstractFtpAdapter
 	/**
 	 * Filter out dot-directories.
 	 *
-	 * @param   array  $list
+	 * @param   array  $list	List of directories
 	 * @return  array
 	 */
 	public function removeDotDirectories(array $list)
