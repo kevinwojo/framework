@@ -1,0 +1,4 @@
+# Comment composer output files out
+composer.phar
+/vendor
+composer.lock
