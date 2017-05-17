@@ -459,7 +459,9 @@ class User extends \Hubzero\Database\Relational
 	}
 
 	/**
-	 * Is the current user a guest (logged out) or not?
+	 * Check if the current user a guest (logged out) or not?
+	 * If true, they are logged OUT
+	 * If false, they are logged IN
 	 *
 	 * @return  boolean
 	 */

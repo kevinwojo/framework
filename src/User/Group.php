@@ -64,7 +64,7 @@ class Group extends Object
 	private $description = null;
 
 	/**
-	 * Published state
+	 * Published state (0 or 1)
 	 *
 	 * @var  integer
 	 */
@@ -379,7 +379,7 @@ class Group extends Object
 	/**
 	 * Read a record
 	 *
-	 * @param   mixed    $name
+	 * @param   int|string	$name	If int, gidNumber. Otherwise, cn.
 	 * @return  boolean
 	 */
 	public function read($name = null)
@@ -982,8 +982,8 @@ class Group extends Object
 	/**
 	 * Add users to a table
 	 *
-	 * @param   string  $key
-	 * @param   array   $value
+	 * @param   string  $key	Property
+	 * @param   array   $value	List of user IDs from a string, or list of usernames
 	 * @return  void
 	 */
 	public function add($key = null, $value = array())

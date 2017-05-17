@@ -40,7 +40,7 @@ class Helper
 	/**
 	 * Generate a random password
 	 *
-	 * @param   integer  $length
+	 * @param   integer  $length	Length of the random password
 	 * @return  string
 	 */
 	public static function random_password($length = 8)
@@ -66,7 +66,7 @@ class Helper
 	/**
 	 * Encrypt a password
 	 *
-	 * @param   string  $password
+	 * @param   string  $password	Password to be encrypted
 	 * @return  string
 	 */
 	public static function encrypt_password($password)
@@ -77,7 +77,7 @@ class Helper
 	/**
 	 * Get domain ID
 	 *
-	 * @param   string  $domain
+	 * @param   string  $domain	Domain name
 	 * @return  mixed
 	 */
 	public static function getXDomainId($domain)
@@ -105,8 +105,8 @@ class Helper
 	/**
 	 * Get domain user ID
 	 *
-	 * @param   string  $domain_username
-	 * @param   string  $domain
+	 * @param   string  $domain_username	Username of the domain
+	 * @param   string  $domain				Domain name
 	 * @return  mixed
 	 */
 	public static function getXDomainUserId($domain_username, $domain)
@@ -137,7 +137,7 @@ class Helper
 	/**
 	 * Delete a record by user ID
 	 *
-	 * @param   integer  $id
+	 * @param   integer  $id	User ID
 	 * @return  boolean
 	 */
 	public static function deleteXDomainUserId($id)
@@ -168,7 +168,7 @@ class Helper
 	/**
 	 * Check if a user has a domain record
 	 *
-	 * @param   integer  $uid
+	 * @param   integer  $uid	User ID
 	 * @return  boolean
 	 */
 	public static function isXDomainUser($uid)
@@ -190,10 +190,10 @@ class Helper
 	}
 
 	/**
-	 * Creeate a domain record
+	 * Create a domain record if the domain does not exist in the db
 	 *
-	 * @param   string   $domain
-	 * @return  boolean
+	 * @param   string   $domain	Domain name
+	 * @return  integer
 	 */
 	public static function createXDomain($domain)
 	{
@@ -232,9 +232,9 @@ class Helper
 	/**
 	 * Set a domain for a user
 	 *
-	 * @param   string   $domain_username
-	 * @param   string   $domain
-	 * @param   integer  $uidNumber
+	 * @param   string   $domain_username	Username to be assigned the domain
+	 * @param   string   $domain			Domain name
+	 * @param   integer  $uidNumber			User id
 	 * @return  bool
 	 */
 	public static function setXDomainUserId($domain_username, $domain, $uidNumber)
@@ -245,9 +245,9 @@ class Helper
 	/**
 	 * Map a domain to a user
 	 *
-	 * @param   string   $domain_username
-	 * @param   string   $domain
-	 * @param   integer  $uidNumber
+	 * @param   string   $domain_username	Username to be assigned the domain
+	 * @param   string   $domain			Domain name
+	 * @param   integer  $uidNumber			User id
 	 * @return  boolean
 	 */
 	public static function mapXDomainUser($domain_username, $domain, $uidNumber)
@@ -298,9 +298,9 @@ class Helper
 	/**
 	 * Get a list of groups for a user
 	 *
-	 * @param   string  $uid
-	 * @param   string  $type
-	 * @param   string  $cat
+	 * @param   string  $uid	User ID
+	 * @param   string  $type	all|applicants|members|managers|invitees
+	 * @param   string  $cat	g.type
 	 * @return  boolean
 	 */
 	public static function getGroups($uid, $type='all', $cat = null)
@@ -357,7 +357,7 @@ class Helper
 	/**
 	 * Remove User From Groups
 	 *
-	 * @param   integer  $uid
+	 * @param   integer  $uid	User ID
 	 * @return  boolean
 	 */
 	public static function removeUserFromGroups($uid)
@@ -376,12 +376,12 @@ class Helper
 	}
 
 	/**
-	 * Get courses for a user
+	 * Get all courses the user is a member of
 	 *
-	 * @param   string  $uid
-	 * @param   string  $type
-	 * @param   string  $cat
-	 * @return  boolean
+	 * @param   string  $uid	User ID
+	 * @param   string  $type	all|applicants|members|managers|invitees
+	 * @param   string  $cat	g.type
+	 * @return  boolean	If there is any course, return true. Otherwise, false.
 	 */
 	public static function getCourses($uid, $type='all', $cat = null)
 	{
@@ -432,9 +432,9 @@ class Helper
 	/**
 	 * Get common groups between two users
 	 *
-	 * @param   integer  $uid
-	 * @param   integer  $pid
-	 * @return  boolean
+	 * @param   integer  $uid	One user ID
+	 * @param   integer  $pid	The other user ID
+	 * @return  array	Array containing all the interseted groups between two users
 	 */
 	public static function getCommonGroups($uid, $pid)
 	{
