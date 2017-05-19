@@ -51,6 +51,8 @@ use Hubzero\Error\Exception\RuntimeException;
  *
  * @uses  \Hubzero\Error\Exception\BadMethodCallException  to handle calls to undefined methods
  * @uses  \Hubzero\Error\Exception\RuntimeException        to handle scenarios with undefined rows
+ *
+ * @example https://hubzero.org/documentation/2.1.0/webdevs/database.orm
  */
 class Relational implements \IteratorAggregate, \ArrayAccess, \Serializable
 {
