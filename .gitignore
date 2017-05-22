@@ -1,5 +1,5 @@
 # Comment composer output files out
 composer.phar
-/vendor
-/docs
+vendor/*
+docs/*
 composer.lock
