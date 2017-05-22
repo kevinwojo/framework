@@ -1,475 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Html\Builder\Access
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Html\Builder\Access</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_actions" title="actions :: Returns a UL list of actions with check boxes">
-            <span class="description">Returns a UL list of actions with check boxes</span><pre>actions</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_assetgrouplist" title="assetgrouplist :: Displays a Select list of the available asset groups">
-            <span class="description">Displays a Select list of the available asset groups</span><pre>assetgrouplist</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_assetgroups" title="assetgroups :: Gets a list of the asset groups as an array of JHtml compatible options.">
-            <span class="description">Gets a list of the asset groups as an array of JHtml compatible options.</span><pre>assetgroups</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_level" title="level :: Displays a list of the available access view levels">
-            <span class="description">Displays a list of the available access view levels</span><pre>level</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_usergroup" title="usergroup :: Displays a list of the available user groups.">
-            <span class="description">Displays a list of the available user groups.</span><pre>usergroup</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_usergroups" title="usergroups :: Returns a UL list of user groups with check boxes">
-            <span class="description">Returns a UL list of user groups with check boxes</span><pre>usergroups</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Access</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Extended Utility class for all HTML drawing classes.</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_actions"></a>
-                        <div class="element clickable method public  method_actions" data-toggle="collapse" data-target=".method_actions .collapse">
-                            <h2>Returns a UL list of actions with check boxes</h2>
-                            <pre>actions(string $name, array $selected, string $component, string $section = &#039;global&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The name of the checkbox controls array</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$selected</h4>
-                                                <code>array</code><p><p>An array of the checked boxes</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$component</h4>
-                                                <code>string</code><p><p>The component the permissions apply to</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$section</h4>
-                                                <code>string</code><p><p>The section (within a component) the permissions apply to</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_assetgrouplist"></a>
-                        <div class="element clickable method public  method_assetgrouplist" data-toggle="collapse" data-target=".method_assetgrouplist .collapse">
-                            <h2>Displays a Select list of the available asset groups</h2>
-                            <pre>assetgrouplist(string $name, mixed $selected, string $attribs = null, array $config = array()) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The name of the select element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$selected</h4>
-                                                <code>mixed</code><p><p>The selected asset group id</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$attribs</h4>
-                                                <code>string</code><p><p>Optional attributes for the select field</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code>array</code><p><p>An array of options for the control</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>An HTML string or null if an error occurs</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_assetgroups"></a>
-                        <div class="element clickable method public  method_assetgroups" data-toggle="collapse" data-target=".method_assetgroups .collapse">
-                            <h2>Gets a list of the asset groups as an array of JHtml compatible options.</h2>
-                            <pre>assetgroups(array $config = array()) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code>array</code><p><p>An array of options for the options</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>An array or false if an error occurs</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_level"></a>
-                        <div class="element clickable method public  method_level" data-toggle="collapse" data-target=".method_level .collapse">
-                            <h2>Displays a list of the available access view levels</h2>
-                            <pre>level(string $name, string $selected, string $attribs = &#039;&#039;, mixed $params = true, string $id = false) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The form field name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$selected</h4>
-                                                <code>string</code><p><p>The name of the selected section.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$attribs</h4>
-                                                <code>string</code><p><p>Additional attributes to add to the select field.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>mixed</code><p><p>True to add &quot;All Sections&quot; option or and array of options</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$id</h4>
-                                                <code>string</code><p><p>The form field id</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The required HTML for the SELECT tag.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_usergroup"></a>
-                        <div class="element clickable method public  method_usergroup" data-toggle="collapse" data-target=".method_usergroup .collapse">
-                            <h2>Displays a list of the available user groups.</h2>
-                            <pre>usergroup(string $name, string $selected, string $attribs = &#039;&#039;, boolean $allowAll = true) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The form field name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$selected</h4>
-                                                <code>string</code><p><p>The name of the selected section.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$attribs</h4>
-                                                <code>string</code><p><p>Additional attributes to add to the select field.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$allowAll</h4>
-                                                <code>boolean</code><p><p>True to add &quot;All Groups&quot; option.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The required HTML for the SELECT tag.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_usergroups"></a>
-                        <div class="element clickable method public  method_usergroups" data-toggle="collapse" data-target=".method_usergroups .collapse">
-                            <h2>Returns a UL list of user groups with check boxes</h2>
-                            <pre>usergroups(string $name, array $selected, boolean $checkSuperAdmin = false) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The name of the checkbox controls array</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$selected</h4>
-                                                <code>array</code><p><p>An array of the checked boxes</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$checkSuperAdmin</h4>
-                                                <code>boolean</code><p><p>If false only super admins can add to super admin groups</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_asset_groups"> </a>
-                            <div class="element clickable property  protected property_asset_groups" data-toggle="collapse" data-target=".property_asset_groups .collapse">
-                                <h2>A cached array of the asset groups</h2>
-                                <pre>asset_groups : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Html\Builder\Access"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Html.Builder.html">Builder</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Html.Builder.Access.html">Access</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:57 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_actions" title="actions() :: Returns a UL list of actions with check boxes"><span class="description">Returns a UL list of actions with check boxes</span><pre>actions()</pre></a></li>
+<li class="method public "><a href="#method_assetgrouplist" title="assetgrouplist() :: Displays a Select list of the available asset groups"><span class="description">Displays a Select list of the available asset groups</span><pre>assetgrouplist()</pre></a></li>
+<li class="method public "><a href="#method_assetgroups" title="assetgroups() :: Gets a list of the asset groups as an array of JHtml compatible options."><span class="description">Gets a list of the asset groups as an array of JHtml compatible options.</span><pre>assetgroups()</pre></a></li>
+<li class="method public "><a href="#method_level" title="level() :: Displays a list of the available access view levels"><span class="description">Displays a list of the available access view levels</span><pre>level()</pre></a></li>
+<li class="method public "><a href="#method_usergroup" title="usergroup() :: Displays a list of the available user groups."><span class="description">Displays a list of the available user groups.</span><pre>usergroup()</pre></a></li>
+<li class="method public "><a href="#method_usergroups" title="usergroups() :: Returns a UL list of user groups with check boxes"><span class="description">Returns a UL list of user groups with check boxes</span><pre>usergroups()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_asset_groups" title="$asset_groups() :: A cached array of the asset groups"><span class="description"></span><pre>$asset_groups</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Html\Builder\Access"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Html.html">Html</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Html.Builder.html">Builder</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Html.Builder.Access.html">Access</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Extended Utility class for all HTML drawing classes.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_actions"></a><div class="element clickable method public method_actions " data-toggle="collapse" data-target=".method_actions .collapse" title="public">
+<h2>Returns a UL list of actions with check boxes</h2>
+<pre>actions(string $name, array $selected, string $component, string $section<code> = 'global'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the checkbox controls array</p></div>
+<div class="subelement argument">
+<h4>$selected</h4>
+<code>array</code><p>An array of the checked boxes</p></div>
+<div class="subelement argument">
+<h4>$component</h4>
+<code>string</code><p>The component the permissions apply to</p></div>
+<div class="subelement argument">
+<h4>$section</h4>
+<code>string</code><p>The section (within a component) the permissions apply to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_assetgrouplist"></a><div class="element clickable method public method_assetgrouplist " data-toggle="collapse" data-target=".method_assetgrouplist .collapse" title="public">
+<h2>Displays a Select list of the available asset groups</h2>
+<pre>assetgrouplist(string $name, mixed $selected, string $attribs<code> = null</code>, array $config<code> = array()</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the select element</p></div>
+<div class="subelement argument">
+<h4>$selected</h4>
+<code>mixed</code><p>The selected asset group id</p></div>
+<div class="subelement argument">
+<h4>$attribs</h4>
+<code>string</code><p>Optional attributes for the select field</p></div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>array</code><p>An array of options for the control</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An HTML string or null if an error occurs</div>
+</div></div>
+</div>
+<a id="method_assetgroups"></a><div class="element clickable method public method_assetgroups " data-toggle="collapse" data-target=".method_assetgroups .collapse" title="public">
+<h2>Gets a list of the asset groups as an array of JHtml compatible options.</h2>
+<pre>assetgroups(array $config<code> = array()</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>array</code><p>An array of options for the options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An array or false if an error occurs</div>
+</div></div>
+</div>
+<a id="method_level"></a><div class="element clickable method public method_level " data-toggle="collapse" data-target=".method_level .collapse" title="public">
+<h2>Displays a list of the available access view levels</h2>
+<pre>level(string $name, string $selected, string $attribs<code> = ''</code>, mixed $params<code> = true</code>, string $id<code> = false</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The form field name.</p></div>
+<div class="subelement argument">
+<h4>$selected</h4>
+<code>string</code><p>The name of the selected section.</p></div>
+<div class="subelement argument">
+<h4>$attribs</h4>
+<code>string</code><p>Additional attributes to add to the select field.</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>mixed</code><p>True to add "All Sections" option or and array of options</p></div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The form field id</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The required HTML for the SELECT tag.</div>
+</div></div>
+</div>
+<a id="method_usergroup"></a><div class="element clickable method public method_usergroup " data-toggle="collapse" data-target=".method_usergroup .collapse" title="public">
+<h2>Displays a list of the available user groups.</h2>
+<pre>usergroup(string $name, string $selected, string $attribs<code> = ''</code>, boolean $allowAll<code> = true</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The form field name.</p></div>
+<div class="subelement argument">
+<h4>$selected</h4>
+<code>string</code><p>The name of the selected section.</p></div>
+<div class="subelement argument">
+<h4>$attribs</h4>
+<code>string</code><p>Additional attributes to add to the select field.</p></div>
+<div class="subelement argument">
+<h4>$allowAll</h4>
+<code>boolean</code><p>True to add "All Groups" option.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The required HTML for the SELECT tag.</div>
+</div></div>
+</div>
+<a id="method_usergroups"></a><div class="element clickable method public method_usergroups " data-toggle="collapse" data-target=".method_usergroups .collapse" title="public">
+<h2>Returns a UL list of user groups with check boxes</h2>
+<pre>usergroups(string $name, array $selected, boolean $checkSuperAdmin<code> = false</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the checkbox controls array</p></div>
+<div class="subelement argument">
+<h4>$selected</h4>
+<code>array</code><p>An array of the checked boxes</p></div>
+<div class="subelement argument">
+<h4>$checkSuperAdmin</h4>
+<code>boolean</code><p>If false only super admins can add to super admin groups</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_asset_groups"> </a><div class="element clickable property protected property_asset_groups" data-toggle="collapse" data-target=".property_asset_groups .collapse" title="protected">
+<h2>A cached array of the asset groups</h2>
+<pre>$asset_groups : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:44-04:00.<br></footer></div>
+</div>
+</body>
 </html>

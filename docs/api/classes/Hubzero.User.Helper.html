@@ -1,659 +1,338 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\User\Helper
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\User\Helper</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_createXDomain" title="createXDomain :: Creeate a domain record">
-            <span class="description">Creeate a domain record</span><pre>createXDomain</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_deleteXDomainUserId" title="deleteXDomainUserId :: Delete a record by user ID">
-            <span class="description">Delete a record by user ID</span><pre>deleteXDomainUserId</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_encrypt_password" title="encrypt_password :: Encrypt a password">
-            <span class="description">Encrypt a password</span><pre>encrypt_password</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getCommonGroups" title="getCommonGroups :: Get common groups between two users">
-            <span class="description">Get common groups between two users</span><pre>getCommonGroups</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getCourses" title="getCourses :: Get courses for a user">
-            <span class="description">Get courses for a user</span><pre>getCourses</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getGroups" title="getGroups :: Get a list of groups for a user">
-            <span class="description">Get a list of groups for a user</span><pre>getGroups</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getXDomainId" title="getXDomainId :: Get domain ID">
-            <span class="description">Get domain ID</span><pre>getXDomainId</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getXDomainUserId" title="getXDomainUserId :: Get domain user ID">
-            <span class="description">Get domain user ID</span><pre>getXDomainUserId</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isXDomainUser" title="isXDomainUser :: Check if a user has a domain record">
-            <span class="description">Check if a user has a domain record</span><pre>isXDomainUser</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_mapXDomainUser" title="mapXDomainUser :: Map a domain to a user">
-            <span class="description">Map a domain to a user</span><pre>mapXDomainUser</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_random_password" title="random_password :: Generate a random password">
-            <span class="description">Generate a random password</span><pre>random_password</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_removeUserFromGroups" title="removeUserFromGroups :: Remove User From Groups">
-            <span class="description">Remove User From Groups</span><pre>removeUserFromGroups</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setXDomainUserId" title="setXDomainUserId :: Set a domain for a user">
-            <span class="description">Set a domain for a user</span><pre>setXDomainUserId</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Helper</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Helper class for users</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_createXDomain"></a>
-                        <div class="element clickable method public  method_createXDomain" data-toggle="collapse" data-target=".method_createXDomain .collapse">
-                            <h2>Creeate a domain record</h2>
-                            <pre>createXDomain(string $domain) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_deleteXDomainUserId"></a>
-                        <div class="element clickable method public  method_deleteXDomainUserId" data-toggle="collapse" data-target=".method_deleteXDomainUserId .collapse">
-                            <h2>Delete a record by user ID</h2>
-                            <pre>deleteXDomainUserId(integer $id) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$id</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_encrypt_password"></a>
-                        <div class="element clickable method public  method_encrypt_password" data-toggle="collapse" data-target=".method_encrypt_password .collapse">
-                            <h2>Encrypt a password</h2>
-                            <pre>encrypt_password(string $password) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$password</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getCommonGroups"></a>
-                        <div class="element clickable method public  method_getCommonGroups" data-toggle="collapse" data-target=".method_getCommonGroups .collapse">
-                            <h2>Get common groups between two users</h2>
-                            <pre>getCommonGroups(integer $uid, integer $pid) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$pid</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getCourses"></a>
-                        <div class="element clickable method public  method_getCourses" data-toggle="collapse" data-target=".method_getCourses .collapse">
-                            <h2>Get courses for a user</h2>
-                            <pre>getCourses(string $uid, string $type = &#039;all&#039;, string $cat = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$cat</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getGroups"></a>
-                        <div class="element clickable method public  method_getGroups" data-toggle="collapse" data-target=".method_getGroups .collapse">
-                            <h2>Get a list of groups for a user</h2>
-                            <pre>getGroups(string $uid, string $type = &#039;all&#039;, string $cat = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$cat</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getXDomainId"></a>
-                        <div class="element clickable method public  method_getXDomainId" data-toggle="collapse" data-target=".method_getXDomainId .collapse">
-                            <h2>Get domain ID</h2>
-                            <pre>getXDomainId(string $domain) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getXDomainUserId"></a>
-                        <div class="element clickable method public  method_getXDomainUserId" data-toggle="collapse" data-target=".method_getXDomainUserId .collapse">
-                            <h2>Get domain user ID</h2>
-                            <pre>getXDomainUserId(string $domain_username, string $domain) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain_username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isXDomainUser"></a>
-                        <div class="element clickable method public  method_isXDomainUser" data-toggle="collapse" data-target=".method_isXDomainUser .collapse">
-                            <h2>Check if a user has a domain record</h2>
-                            <pre>isXDomainUser(integer $uid) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_mapXDomainUser"></a>
-                        <div class="element clickable method public  method_mapXDomainUser" data-toggle="collapse" data-target=".method_mapXDomainUser .collapse">
-                            <h2>Map a domain to a user</h2>
-                            <pre>mapXDomainUser(string $domain_username, string $domain, integer $uidNumber) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain_username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uidNumber</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_random_password"></a>
-                        <div class="element clickable method public  method_random_password" data-toggle="collapse" data-target=".method_random_password .collapse">
-                            <h2>Generate a random password</h2>
-                            <pre>random_password(integer $length = 8) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$length</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_removeUserFromGroups"></a>
-                        <div class="element clickable method public  method_removeUserFromGroups" data-toggle="collapse" data-target=".method_removeUserFromGroups .collapse">
-                            <h2>Remove User From Groups</h2>
-                            <pre>removeUserFromGroups(integer $uid) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setXDomainUserId"></a>
-                        <div class="element clickable method public  method_setXDomainUserId" data-toggle="collapse" data-target=".method_setXDomainUserId .collapse">
-                            <h2>Set a domain for a user</h2>
-                            <pre>setXDomainUserId(string $domain_username, string $domain, integer $uidNumber) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain_username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uidNumber</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                        </div>
-            </div>
-            <a id="\Hubzero\User\Helper"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.User.html">User</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.User.Helper.html">Helper</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:56 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list"><li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_createXDomain" title="createXDomain() :: Create a domain record if the domain does not exist in the db"><span class="description">Create a domain record if the domain does not exist in the db</span><pre>createXDomain()</pre></a></li>
+<li class="method public "><a href="#method_deleteXDomainUserId" title="deleteXDomainUserId() :: Delete a record by user ID"><span class="description">Delete a record by user ID</span><pre>deleteXDomainUserId()</pre></a></li>
+<li class="method public "><a href="#method_encrypt_password" title="encrypt_password() :: Encrypt a password"><span class="description">Encrypt a password</span><pre>encrypt_password()</pre></a></li>
+<li class="method public "><a href="#method_getCommonGroups" title="getCommonGroups() :: Get common groups between two users"><span class="description">Get common groups between two users</span><pre>getCommonGroups()</pre></a></li>
+<li class="method public "><a href="#method_getCourses" title="getCourses() :: Get all courses the user is a member of"><span class="description">Get all courses the user is a member of</span><pre>getCourses()</pre></a></li>
+<li class="method public "><a href="#method_getGroups" title="getGroups() :: Get a list of groups for a user"><span class="description">Get a list of groups for a user</span><pre>getGroups()</pre></a></li>
+<li class="method public "><a href="#method_getXDomainId" title="getXDomainId() :: Get domain ID"><span class="description">Get domain ID</span><pre>getXDomainId()</pre></a></li>
+<li class="method public "><a href="#method_getXDomainUserId" title="getXDomainUserId() :: Get domain user ID"><span class="description">Get domain user ID</span><pre>getXDomainUserId()</pre></a></li>
+<li class="method public "><a href="#method_isXDomainUser" title="isXDomainUser() :: Check if a user has a domain record"><span class="description">Check if a user has a domain record</span><pre>isXDomainUser()</pre></a></li>
+<li class="method public "><a href="#method_mapXDomainUser" title="mapXDomainUser() :: Map a domain to a user"><span class="description">Map a domain to a user</span><pre>mapXDomainUser()</pre></a></li>
+<li class="method public "><a href="#method_random_password" title="random_password() :: Generate a random password"><span class="description">Generate a random password</span><pre>random_password()</pre></a></li>
+<li class="method public "><a href="#method_removeUserFromGroups" title="removeUserFromGroups() :: Remove User From Groups"><span class="description">Remove User From Groups</span><pre>removeUserFromGroups()</pre></a></li>
+<li class="method public "><a href="#method_setXDomainUserId" title="setXDomainUserId() :: Set a domain for a user"><span class="description">Set a domain for a user</span><pre>setXDomainUserId()</pre></a></li>
+</ul>
+</li></ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\User\Helper"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.User.html">User</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.User.Helper.html">Helper</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Helper class for users</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_createXDomain"></a><div class="element clickable method public method_createXDomain " data-toggle="collapse" data-target=".method_createXDomain .collapse" title="public">
+<h2>Create a domain record if the domain does not exist in the db</h2>
+<pre>createXDomain(string $domain) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><p>Domain name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_deleteXDomainUserId"></a><div class="element clickable method public method_deleteXDomainUserId " data-toggle="collapse" data-target=".method_deleteXDomainUserId .collapse" title="public">
+<h2>Delete a record by user ID</h2>
+<pre>deleteXDomainUserId(integer $id) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>integer</code><p>User ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_encrypt_password"></a><div class="element clickable method public method_encrypt_password " data-toggle="collapse" data-target=".method_encrypt_password .collapse" title="public">
+<h2>Encrypt a password</h2>
+<pre>encrypt_password(string $password) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>Password to be encrypted</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getCommonGroups"></a><div class="element clickable method public method_getCommonGroups " data-toggle="collapse" data-target=".method_getCommonGroups .collapse" title="public">
+<h2>Get common groups between two users</h2>
+<pre>getCommonGroups(integer $uid, integer $pid) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><p>One user ID</p></div>
+<div class="subelement argument">
+<h4>$pid</h4>
+<code>integer</code><p>The other user ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array containing all the interseted groups between two users</div>
+</div></div>
+</div>
+<a id="method_getCourses"></a><div class="element clickable method public method_getCourses " data-toggle="collapse" data-target=".method_getCourses .collapse" title="public">
+<h2>Get all courses the user is a member of</h2>
+<pre>getCourses(string $uid, string $type<code> = 'all'</code>, string $cat<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>string</code><p>User ID</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>all|applicants|members|managers|invitees</p></div>
+<div class="subelement argument">
+<h4>$cat</h4>
+<code>string</code><p>g.type</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If there is any course, return true. Otherwise, false.</div>
+</div></div>
+</div>
+<a id="method_getGroups"></a><div class="element clickable method public method_getGroups " data-toggle="collapse" data-target=".method_getGroups .collapse" title="public">
+<h2>Get a list of groups for a user</h2>
+<pre>getGroups(string $uid, string $type<code> = 'all'</code>, string $cat<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>string</code><p>User ID</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>all|applicants|members|managers|invitees</p></div>
+<div class="subelement argument">
+<h4>$cat</h4>
+<code>string</code><p>g.type</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_getXDomainId"></a><div class="element clickable method public method_getXDomainId " data-toggle="collapse" data-target=".method_getXDomainId .collapse" title="public">
+<h2>Get domain ID</h2>
+<pre>getXDomainId(string $domain) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><p>Domain name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getXDomainUserId"></a><div class="element clickable method public method_getXDomainUserId " data-toggle="collapse" data-target=".method_getXDomainUserId .collapse" title="public">
+<h2>Get domain user ID</h2>
+<pre>getXDomainUserId(string $domain_username, string $domain) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$domain_username</h4>
+<code>string</code><p>Username of the domain</p></div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><p>Domain name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_isXDomainUser"></a><div class="element clickable method public method_isXDomainUser " data-toggle="collapse" data-target=".method_isXDomainUser .collapse" title="public">
+<h2>Check if a user has a domain record</h2>
+<pre>isXDomainUser(integer $uid) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><p>User ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_mapXDomainUser"></a><div class="element clickable method public method_mapXDomainUser " data-toggle="collapse" data-target=".method_mapXDomainUser .collapse" title="public">
+<h2>Map a domain to a user</h2>
+<pre>mapXDomainUser(string $domain_username, string $domain, integer $uidNumber) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$domain_username</h4>
+<code>string</code><p>Username to be assigned the domain</p></div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><p>Domain name</p></div>
+<div class="subelement argument">
+<h4>$uidNumber</h4>
+<code>integer</code><p>User id</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_random_password"></a><div class="element clickable method public method_random_password " data-toggle="collapse" data-target=".method_random_password .collapse" title="public">
+<h2>Generate a random password</h2>
+<pre>random_password(integer $length<code> = 8</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of the random password</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_removeUserFromGroups"></a><div class="element clickable method public method_removeUserFromGroups " data-toggle="collapse" data-target=".method_removeUserFromGroups .collapse" title="public">
+<h2>Remove User From Groups</h2>
+<pre>removeUserFromGroups(integer $uid) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><p>User ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_setXDomainUserId"></a><div class="element clickable method public method_setXDomainUserId " data-toggle="collapse" data-target=".method_setXDomainUserId .collapse" title="public">
+<h2>Set a domain for a user</h2>
+<pre>setXDomainUserId(string $domain_username, string $domain, integer $uidNumber) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$domain_username</h4>
+<code>string</code><p>Username to be assigned the domain</p></div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code><p>Domain name</p></div>
+<div class="subelement argument">
+<h4>$uidNumber</h4>
+<code>integer</code><p>User id</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:33-04:00.<br></footer></div>
+</div>
+</body>
 </html>

@@ -1,1324 +1,627 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Document\Asset\File
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Document\Asset\File</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public inherited">
-        <a href="#method___construct" title="__construct :: Class constructor, overridden in descendant classes.">
-            <span class="description">Class constructor, overridden in descendant classes.</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method___toString" title="__toString :: Magic method to convert the object to a string gracefully.">
-            <span class="description">Magic method to convert the object to a string gracefully.</span><pre>__toString</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_contents" title="contents :: Get target asset&#039;s content">
-            <span class="description">Get target asset&#039;s content</span><pre>contents</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_def" title="def :: Sets a default value if not alreay assigned">
-            <span class="description">Sets a default value if not alreay assigned</span><pre>def</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_exists" title="exists :: Does asset exist?">
-            <span class="description">Does asset exist?</span><pre>exists</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_extensionName" title="extensionName :: Get the CMS extension name
-[mod_*, com_*, plg_folder_type, tpl_*, system]">
-            <span class="description">Get the CMS extension name
-[mod_*, com_*, plg_folder_type, tpl_*, system]</span><pre>extensionName</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_extensionType" title="extensionType :: Get the CMS extension type
-[modules, plugins, components, templates, system]">
-            <span class="description">Get the CMS extension type
-[modules, plugins, components, templates, system]</span><pre>extensionType</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_file" title="file :: Get the file name">
-            <span class="description">Get the file name</span><pre>file</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_get" title="get :: Returns a property of the object or the default value if the property is not set.">
-            <span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getError" title="getError :: Get the most recent error message.">
-            <span class="description">Get the most recent error message.</span><pre>getError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getErrors" title="getErrors :: Return all errors, if any.">
-            <span class="description">Return all errors, if any.</span><pre>getErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getProperties" title="getProperties :: Returns an associative array of object properties.">
-            <span class="description">Returns an associative array of object properties.</span><pre>getProperties</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isDeclaration" title="isDeclaration :: Is the asset a declaration?">
-            <span class="description">Is the asset a declaration?</span><pre>isDeclaration</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isExternal" title="isExternal :: Is the asset external to the site?">
-            <span class="description">Is the asset external to the site?</span><pre>isExternal</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_lastModified" title="lastModified :: Get the last modified time for a file">
-            <span class="description">Get the last modified time for a file</span><pre>lastModified</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_link" title="link :: Get public asset path">
-            <span class="description">Get public asset path</span><pre>link</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_overridePath" title="overridePath :: Get the override path">
-            <span class="description">Get the override path</span><pre>overridePath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_set" title="set :: Modifies a property of the object, creating it if it does not already exist.">
-            <span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setError" title="setError :: Add an error message.">
-            <span class="description">Add an error message.</span><pre>setError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setErrors" title="setErrors :: Set the list of errors">
-            <span class="description">Set the list of errors</span><pre>setErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setPath" title="setPath :: Adds to the list of paths">
-            <span class="description">Adds to the list of paths</span><pre>setPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setProperties" title="setProperties :: Set the object properties based on a named array/hash.">
-            <span class="description">Set the object properties based on a named array/hash.</span><pre>setProperties</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_sourcePath" title="sourcePath :: Get the source path">
-            <span class="description">Get the source path</span><pre>sourcePath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_targetPath" title="targetPath :: Get the target path">
-            <span class="description">Get the target path</span><pre>targetPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_type" title="type :: Get the asset type">
-            <span class="description">Get the asset type</span><pre>type</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                            <li class="method protected">
-                            <a href="#method_dir" title="dir :: Determine the asset directory">
-                                <span class="description">Determine the asset directory</span><pre>dir</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>File</h1>
-                <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/Hubzero.Base.Object.html">\Hubzero\Base\Object</a>
-                                                        </small>
-                <p class="short_description">Base asset class</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>This class allows for simple but smart objects with get and set methods
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: Class constructor, overridden in descendant classes."><span class="description">Class constructor, overridden in descendant classes.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString() :: Convert to string"><span class="description">Convert to string</span><pre>__toString()</pre></a></li>
+<li class="method public inherited"><a href="#method___toString" title="__toString() :: Magic method to convert the object to a string gracefully."><span class="description">Magic method to convert the object to a string gracefully.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_contents" title="contents() :: Get target asset's content"><span class="description">Get target asset's content</span><pre>contents()</pre></a></li>
+<li class="method public inherited"><a href="#method_def" title="def() :: Sets a default value if not alreay assigned"><span class="description">Sets a default value if not alreay assigned</span><pre>def()</pre></a></li>
+<li class="method public "><a href="#method_exists" title="exists() :: Does asset exist?"><span class="description">Does asset exist?</span><pre>exists()</pre></a></li>
+<li class="method public "><a href="#method_extensionName" title="extensionName() :: Get the CMS extension name
+[mod_*, com_*, plg_folder_type, tpl_*, system]"><span class="description">Get the CMS extension name
+[mod_*, com_*, plg_folder_type, tpl_*, system]</span><pre>extensionName()</pre></a></li>
+<li class="method public "><a href="#method_extensionType" title="extensionType() :: Get the CMS extension type
+[modules, plugins, components, templates, system]"><span class="description">Get the CMS extension type
+[modules, plugins, components, templates, system]</span><pre>extensionType()</pre></a></li>
+<li class="method public "><a href="#method_file" title="file() :: Get the file name"><span class="description">Get the file name</span><pre>file()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get() :: Returns a property of the object or the default value if the property is not set."><span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_getError" title="getError() :: Get the most recent error message."><span class="description">Get the most recent error message.</span><pre>getError()</pre></a></li>
+<li class="method public inherited"><a href="#method_getErrors" title="getErrors() :: Return all errors, if any."><span class="description">Return all errors, if any.</span><pre>getErrors()</pre></a></li>
+<li class="method public inherited"><a href="#method_getProperties" title="getProperties() :: Returns an associative array of object properties."><span class="description">Returns an associative array of object properties.</span><pre>getProperties()</pre></a></li>
+<li class="method public "><a href="#method_isDeclaration" title="isDeclaration() :: Is the asset a declaration?"><span class="description">Is the asset a declaration?</span><pre>isDeclaration()</pre></a></li>
+<li class="method public "><a href="#method_isExternal" title="isExternal() :: Is the asset external to the site?"><span class="description">Is the asset external to the site?</span><pre>isExternal()</pre></a></li>
+<li class="method public "><a href="#method_lastModified" title="lastModified() :: Get the last modified time for a file"><span class="description">Get the last modified time for a file</span><pre>lastModified()</pre></a></li>
+<li class="method public "><a href="#method_link" title="link() :: Get public asset path"><span class="description">Get public asset path</span><pre>link()</pre></a></li>
+<li class="method public "><a href="#method_overridePath" title="overridePath() :: Get the override path"><span class="description">Get the override path</span><pre>overridePath()</pre></a></li>
+<li class="method public inherited"><a href="#method_set" title="set() :: Modifies a property of the object, creating it if it does not already exist."><span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set()</pre></a></li>
+<li class="method public inherited"><a href="#method_setError" title="setError() :: Add an error message."><span class="description">Add an error message.</span><pre>setError()</pre></a></li>
+<li class="method public inherited"><a href="#method_setErrors" title="setErrors() :: Set the list of errors"><span class="description">Set the list of errors</span><pre>setErrors()</pre></a></li>
+<li class="method public "><a href="#method_setPath" title="setPath() :: Adds to the list of paths"><span class="description">Adds to the list of paths</span><pre>setPath()</pre></a></li>
+<li class="method public inherited"><a href="#method_setProperties" title="setProperties() :: Set the object properties based on a named array/hash."><span class="description">Set the object properties based on a named array/hash.</span><pre>setProperties()</pre></a></li>
+<li class="method public "><a href="#method_sourcePath" title="sourcePath() :: Get the source path"><span class="description">Get the source path</span><pre>sourcePath()</pre></a></li>
+<li class="method public "><a href="#method_targetPath" title="targetPath() :: Get the target path"><span class="description">Get the target path</span><pre>targetPath()</pre></a></li>
+<li class="method public "><a href="#method_type" title="type() :: Get the asset type"><span class="description">Get the asset type</span><pre>type()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_dir" title="dir() :: Determine the asset directory"><span class="description">Determine the asset directory</span><pre>dir()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property__errors" title="$_errors() :: An array of error messages or Exception objects."><span class="description"></span><pre>$_errors</pre></a></li>
+<li class="property protected "><a href="#property_declaration" title="$declaration() :: Is a declaration?"><span class="description"></span><pre>$declaration</pre></a></li>
+<li class="property protected "><a href="#property_directory" title="$directory() :: Asset directory"><span class="description"></span><pre>$directory</pre></a></li>
+<li class="property protected "><a href="#property_extension" title="$extension() :: CMS Extension name (e.g., com_blog)"><span class="description"></span><pre>$extension</pre></a></li>
+<li class="property protected "><a href="#property_kind" title="$kind() :: CMS Extension type"><span class="description"></span><pre>$kind</pre></a></li>
+<li class="property protected "><a href="#property_name" title="$name() :: Asset name (without file extension)"><span class="description"></span><pre>$name</pre></a></li>
+<li class="property protected "><a href="#property_paths" title="$paths() :: Asset paths"><span class="description"></span><pre>$paths</pre></a></li>
+<li class="property protected "><a href="#property_type" title="$type() :: Asset type"><span class="description"></span><pre>$type</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Document\Asset\File"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Document.html">Document</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Document.Asset.html">Asset</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Document.Asset.File.html">File</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Base asset class</p>
+<div class="details">
+<div class="long_description"><p>This class allows for simple but smart objects with get and set methods
 and an internal error handler.</p>
-<p>Based off of Joomla's JObject</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                                                                                                                                                                            </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Class constructor, overridden in descendant classes.</h2>
-                            <pre>__construct(mixed $properties = null) : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$properties</h4>
-                                                <code>mixed</code><p><p>Either and associative array or another
-object to set the initial properties of the object.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___toString"></a>
-                        <div class="element clickable method public  method___toString inherited" data-toggle="collapse" data-target=".method___toString .collapse">
-                            <h2>Magic method to convert the object to a string gracefully.</h2>
-                            <pre>__toString() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The classname.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_contents"></a>
-                        <div class="element clickable method public  method_contents" data-toggle="collapse" data-target=".method_contents .collapse">
-                            <h2>Get target asset&#039;s content</h2>
-                            <pre>contents() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_def"></a>
-                        <div class="element clickable method public  method_def inherited" data-toggle="collapse" data-target=".method_def .collapse">
-                            <h2>Sets a default value if not alreay assigned</h2>
-                            <pre>def(string $property, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>The default value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_dir"></a>
-                        <div class="element clickable method protected  method_dir" data-toggle="collapse" data-target=".method_dir .collapse">
-                            <h2>Determine the asset directory</h2>
-                            <pre>dir(string &$name, string $default = &#039;&#039;) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Asset path</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>string</code><p><p>Default directory</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_exists"></a>
-                        <div class="element clickable method public  method_exists" data-toggle="collapse" data-target=".method_exists .collapse">
-                            <h2>Does asset exist?</h2>
-                            <pre>exists() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_extensionName"></a>
-                        <div class="element clickable method public  method_extensionName" data-toggle="collapse" data-target=".method_extensionName .collapse">
-                            <h2>Get the CMS extension name
+<p>Based off of Joomla's JObject</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor</h2>
+<pre>__construct(string $extension, string $name<code> = null</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extension</h4>
+<code>string</code><p>CMS Extension to load asset from</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Asset name (optional)</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Class constructor, overridden in descendant classes.</h2>
+<pre>__construct(mixed $properties<code> = null</code>) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$properties</h4>
+<code>mixed</code><p>Either and associative array or another
+                             object to set the initial properties of the object.</p></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString " data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Convert to string</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString inherited" data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Magic method to convert the object to a string gracefully.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The classname.</div>
+</div></div>
+</div>
+<a id="method_contents"></a><div class="element clickable method public method_contents " data-toggle="collapse" data-target=".method_contents .collapse" title="public">
+<h2>Get target asset's content</h2>
+<pre>contents() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_def"></a><div class="element clickable method public method_def inherited" data-toggle="collapse" data-target=".method_def .collapse" title="public">
+<h2>Sets a default value if not alreay assigned</h2>
+<pre>def(string $property, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_exists"></a><div class="element clickable method public method_exists " data-toggle="collapse" data-target=".method_exists .collapse" title="public">
+<h2>Does asset exist?</h2>
+<pre>exists() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_extensionName"></a><div class="element clickable method public method_extensionName " data-toggle="collapse" data-target=".method_extensionName .collapse" title="public">
+<h2>Get the CMS extension name
 [mod_*, com_*, plg_folder_type, tpl_*, system]</h2>
-                            <pre>extensionName() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_extensionType"></a>
-                        <div class="element clickable method public  method_extensionType" data-toggle="collapse" data-target=".method_extensionType .collapse">
-                            <h2>Get the CMS extension type
+<pre>extensionName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_extensionType"></a><div class="element clickable method public method_extensionType " data-toggle="collapse" data-target=".method_extensionType .collapse" title="public">
+<h2>Get the CMS extension type
 [modules, plugins, components, templates, system]</h2>
-                            <pre>extensionType() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_file"></a>
-                        <div class="element clickable method public  method_file" data-toggle="collapse" data-target=".method_file .collapse">
-                            <h2>Get the file name</h2>
-                            <pre>file() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_get"></a>
-                        <div class="element clickable method public  method_get inherited" data-toggle="collapse" data-target=".method_get .collapse">
-                            <h2>Returns a property of the object or the default value if the property is not set.</h2>
-                            <pre>get(string $property, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>The default value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The value of the property.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getError"></a>
-                        <div class="element clickable method public  method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse">
-                            <h2>Get the most recent error message.</h2>
-                            <pre>getError(integer $i = null, boolean $toString = true) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$i</h4>
-                                                <code>integer</code><p><p>Option error index.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$toString</h4>
-                                                <code>boolean</code><p><p>Indicates if error objects should return their error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Error message</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getErrors"></a>
-                        <div class="element clickable method public  method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse">
-                            <h2>Return all errors, if any.</h2>
-                            <pre>getErrors() : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Array of error messages</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getProperties"></a>
-                        <div class="element clickable method public  method_getProperties inherited" data-toggle="collapse" data-target=".method_getProperties .collapse">
-                            <h2>Returns an associative array of object properties.</h2>
-                            <pre>getProperties(boolean $public = true) : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$public</h4>
-                                                <code>boolean</code><p><p>If true, returns only the public properties.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isDeclaration"></a>
-                        <div class="element clickable method public  method_isDeclaration" data-toggle="collapse" data-target=".method_isDeclaration .collapse">
-                            <h2>Is the asset a declaration?</h2>
-                            <pre>isDeclaration() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isExternal"></a>
-                        <div class="element clickable method public  method_isExternal" data-toggle="collapse" data-target=".method_isExternal .collapse">
-                            <h2>Is the asset external to the site?</h2>
-                            <pre>isExternal() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_lastModified"></a>
-                        <div class="element clickable method public  method_lastModified" data-toggle="collapse" data-target=".method_lastModified .collapse">
-                            <h2>Get the last modified time for a file</h2>
-                            <pre>lastModified() : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_link"></a>
-                        <div class="element clickable method public  method_link" data-toggle="collapse" data-target=".method_link .collapse">
-                            <h2>Get public asset path</h2>
-                            <pre>link(boolean $timestamp = true) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$timestamp</h4>
-                                                <code>boolean</code><p><p>Append timestamp?</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_overridePath"></a>
-                        <div class="element clickable method public  method_overridePath" data-toggle="collapse" data-target=".method_overridePath .collapse">
-                            <h2>Get the override path</h2>
-                            <pre>overridePath() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_set"></a>
-                        <div class="element clickable method public  method_set inherited" data-toggle="collapse" data-target=".method_set .collapse">
-                            <h2>Modifies a property of the object, creating it if it does not already exist.</h2>
-                            <pre>set(string $property, mixed $value) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Returns $this so set() can be chained</p>
+<pre>extensionType() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_file"></a><div class="element clickable method public method_file " data-toggle="collapse" data-target=".method_file .collapse" title="public">
+<h2>Get the file name</h2>
+<pre>file() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get inherited" data-toggle="collapse" data-target=".method_get .collapse" title="public">
+<h2>Returns a property of the object or the default value if the property is not set.</h2>
+<pre>get(string $property, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the property.</div>
+</div></div>
+</div>
+<a id="method_getError"></a><div class="element clickable method public method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse" title="public">
+<h2>Get the most recent error message.</h2>
+<pre>getError(integer $i<code> = null</code>, boolean $toString<code> = true</code>) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$i</h4>
+<code>integer</code><p>Option error index.</p></div>
+<div class="subelement argument">
+<h4>$toString</h4>
+<code>boolean</code><p>Indicates if error objects should return their error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Error message</div>
+</div></div>
+</div>
+<a id="method_getErrors"></a><div class="element clickable method public method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse" title="public">
+<h2>Return all errors, if any.</h2>
+<pre>getErrors() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of error messages</div>
+</div></div>
+</div>
+<a id="method_getProperties"></a><div class="element clickable method public method_getProperties inherited" data-toggle="collapse" data-target=".method_getProperties .collapse" title="public">
+<h2>Returns an associative array of object properties.</h2>
+<pre>getProperties(boolean $public<code> = true</code>) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$public</h4>
+<code>boolean</code><p>If true, returns only the public properties.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_isDeclaration"></a><div class="element clickable method public method_isDeclaration " data-toggle="collapse" data-target=".method_isDeclaration .collapse" title="public">
+<h2>Is the asset a declaration?</h2>
+<pre>isDeclaration() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isExternal"></a><div class="element clickable method public method_isExternal " data-toggle="collapse" data-target=".method_isExternal .collapse" title="public">
+<h2>Is the asset external to the site?</h2>
+<pre>isExternal() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_lastModified"></a><div class="element clickable method public method_lastModified " data-toggle="collapse" data-target=".method_lastModified .collapse" title="public">
+<h2>Get the last modified time for a file</h2>
+<pre>lastModified() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_link"></a><div class="element clickable method public method_link " data-toggle="collapse" data-target=".method_link .collapse" title="public">
+<h2>Get public asset path</h2>
+<pre>link(boolean $timestamp<code> = true</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$timestamp</h4>
+<code>boolean</code><p>Append timestamp?</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_overridePath"></a><div class="element clickable method public method_overridePath " data-toggle="collapse" data-target=".method_overridePath .collapse" title="public">
+<h2>Get the override path</h2>
+<pre>overridePath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set inherited" data-toggle="collapse" data-target=".method_set .collapse" title="public">
+<h2>Modifies a property of the object, creating it if it does not already exist.</h2>
+<pre>set(string $property, mixed $value) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns $this so set() can be chained</p>
 <p>$object-&gt;set('foo', $bar)
 -&gt;set('bar', $foo)
 -&gt;doSomething();</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The value of the property to set.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setError"></a>
-                        <div class="element clickable method public  method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse">
-                            <h2>Add an error message.</h2>
-                            <pre>setError(string $error, string $key = null) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$error</h4>
-                                                <code>string</code><p><p>Error message.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Specific key to set the value to</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setErrors"></a>
-                        <div class="element clickable method public  method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse">
-                            <h2>Set the list of errors</h2>
-                            <pre>setErrors(array $errors) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$errors</h4>
-                                                <code>array</code><p><p>List of Error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setPath"></a>
-                        <div class="element clickable method public  method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
-                            <h2>Adds to the list of paths</h2>
-                            <pre>setPath(string $type, mixed $path) : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>The type of path to add.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code>mixed</code><p><p>The directory or stream, or an array of either, to search.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setProperties"></a>
-                        <div class="element clickable method public  method_setProperties inherited" data-toggle="collapse" data-target=".method_setProperties .collapse">
-                            <h2>Set the object properties based on a named array/hash.</h2>
-                            <pre>setProperties(mixed $properties) : boolean</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$properties</h4>
-                                                <code>mixed</code><p><p>Either an associative array or another object.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_sourcePath"></a>
-                        <div class="element clickable method public  method_sourcePath" data-toggle="collapse" data-target=".method_sourcePath .collapse">
-                            <h2>Get the source path</h2>
-                            <pre>sourcePath() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_targetPath"></a>
-                        <div class="element clickable method public  method_targetPath" data-toggle="collapse" data-target=".method_targetPath .collapse">
-                            <h2>Get the target path</h2>
-                            <pre>targetPath() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_type"></a>
-                        <div class="element clickable method public  method_type" data-toggle="collapse" data-target=".method_type .collapse">
-                            <h2>Get the asset type</h2>
-                            <pre>type() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_type"> </a>
-                            <div class="element clickable property  protected property_type" data-toggle="collapse" data-target=".property_type .collapse">
-                                <h2>Asset type</h2>
-                                <pre>type : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_name"> </a>
-                            <div class="element clickable property  protected property_name" data-toggle="collapse" data-target=".property_name .collapse">
-                                <h2>Asset name (without file extension)</h2>
-                                <pre>name : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_directory"> </a>
-                            <div class="element clickable property  protected property_directory" data-toggle="collapse" data-target=".property_directory .collapse">
-                                <h2>Asset directory</h2>
-                                <pre>directory : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_extension"> </a>
-                            <div class="element clickable property  protected property_extension" data-toggle="collapse" data-target=".property_extension .collapse">
-                                <h2>CMS Extension name (e.g., com_blog)</h2>
-                                <pre>extension : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_kind"> </a>
-                            <div class="element clickable property  protected property_kind" data-toggle="collapse" data-target=".property_kind .collapse">
-                                <h2>CMS Extension type</h2>
-                                <pre>kind : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_declaration"> </a>
-                            <div class="element clickable property  protected property_declaration" data-toggle="collapse" data-target=".property_declaration .collapse">
-                                <h2>Is a declaration?</h2>
-                                <pre>declaration : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>Declarations do not have files or paths.
-These will be raw scripts or styles.</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_paths"> </a>
-                            <div class="element clickable property  protected property_paths" data-toggle="collapse" data-target=".property_paths .collapse">
-                                <h2>Asset paths</h2>
-                                <pre>paths : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property__errors"> </a>
-                            <div class="element clickable property  protected property__errors inherited" data-toggle="collapse" data-target=".property__errors .collapse">
-                                <h2>An array of error messages or Exception objects.</h2>
-                                <pre>_errors : array</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Document\Asset\File"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Document.Asset.html">Asset</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Document.Asset.File.html">File</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:57 +0000.<br/>
-    </footer>
-    </body>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property to set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setError"></a><div class="element clickable method public method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse" title="public">
+<h2>Add an error message.</h2>
+<pre>setError(string $error, string $key<code> = null</code>) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code>string</code><p>Error message.</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Specific key to set the value to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setErrors"></a><div class="element clickable method public method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse" title="public">
+<h2>Set the list of errors</h2>
+<pre>setErrors(array $errors) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><p>List of Error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method public method_setPath " data-toggle="collapse" data-target=".method_setPath .collapse" title="public">
+<h2>Adds to the list of paths</h2>
+<pre>setPath(string $type, mixed $path) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of path to add.</p></div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>mixed</code><p>The directory or stream, or an array of either, to search.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setProperties"></a><div class="element clickable method public method_setProperties inherited" data-toggle="collapse" data-target=".method_setProperties .collapse" title="public">
+<h2>Set the object properties based on a named array/hash.</h2>
+<pre>setProperties(mixed $properties) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$properties</h4>
+<code>mixed</code><p>Either an associative array or another object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_sourcePath"></a><div class="element clickable method public method_sourcePath " data-toggle="collapse" data-target=".method_sourcePath .collapse" title="public">
+<h2>Get the source path</h2>
+<pre>sourcePath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_targetPath"></a><div class="element clickable method public method_targetPath " data-toggle="collapse" data-target=".method_targetPath .collapse" title="public">
+<h2>Get the target path</h2>
+<pre>targetPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_type"></a><div class="element clickable method public method_type " data-toggle="collapse" data-target=".method_type .collapse" title="public">
+<h2>Get the asset type</h2>
+<pre>type() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_dir"></a><div class="element clickable method protected method_dir " data-toggle="collapse" data-target=".method_dir .collapse" title="protected">
+<h2>Determine the asset directory</h2>
+<pre>dir(string $name, string $default<code> = ''</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Asset path</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>string</code><p>Default directory</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__errors"> </a><div class="element clickable property protected property__errors" data-toggle="collapse" data-target=".property__errors .collapse" title="protected">
+<h2>An array of error messages or Exception objects.</h2>
+<pre>$_errors : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_declaration"> </a><div class="element clickable property protected property_declaration" data-toggle="collapse" data-target=".property_declaration .collapse" title="protected">
+<h2>Is a declaration?</h2>
+<pre>$declaration : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Declarations do not have files or paths.
+These will be raw scripts or styles.</p></div></div></div>
+</div>
+<a id="property_directory"> </a><div class="element clickable property protected property_directory" data-toggle="collapse" data-target=".property_directory .collapse" title="protected">
+<h2>Asset directory</h2>
+<pre>$directory : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_extension"> </a><div class="element clickable property protected property_extension" data-toggle="collapse" data-target=".property_extension .collapse" title="protected">
+<h2>CMS Extension name (e.g., com_blog)</h2>
+<pre>$extension : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_kind"> </a><div class="element clickable property protected property_kind" data-toggle="collapse" data-target=".property_kind .collapse" title="protected">
+<h2>CMS Extension type</h2>
+<pre>$kind : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property protected property_name" data-toggle="collapse" data-target=".property_name .collapse" title="protected">
+<h2>Asset name (without file extension)</h2>
+<pre>$name : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_paths"> </a><div class="element clickable property protected property_paths" data-toggle="collapse" data-target=".property_paths .collapse" title="protected">
+<h2>Asset paths</h2>
+<pre>$paths : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array('source' => null, 'override' => null, 'target' => null)</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property protected property_type" data-toggle="collapse" data-target=".property_type .collapse" title="protected">
+<h2>Asset type</h2>
+<pre>$type : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:49-04:00.<br></footer></div>
+</div>
+</body>
 </html>

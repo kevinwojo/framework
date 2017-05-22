@@ -1,1598 +1,792 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Content\Migration\Base
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Content\Migration\Base</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method___construct" title="__construct :: Constructor">
-            <span class="description">Constructor</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addComponentEntry" title="addComponentEntry :: Add, as needed, the component to the appropriate table, depending on the Joomla version">
-            <span class="description">Add, as needed, the component to the appropriate table, depending on the Joomla version</span><pre>addComponentEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addModuleEntry" title="addModuleEntry :: Add, as needed, the module entry to the appropriate table, depending on the Joomla version">
-            <span class="description">Add, as needed, the module entry to the appropriate table, depending on the Joomla version</span><pre>addModuleEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addPluginEntry" title="addPluginEntry :: Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version">
-            <span class="description">Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version</span><pre>addPluginEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addTemplateEntry" title="addTemplateEntry :: Add, as needed, templates to the CMS">
-            <span class="description">Add, as needed, templates to the CMS</span><pre>addTemplateEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_callback" title="callback :: Helper function for calling a given callback">
-            <span class="description">Helper function for calling a given callback</span><pre>callback</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_deleteComponentEntry" title="deleteComponentEntry :: Remove component entries from the appropriate table, depending on the Joomla version">
-            <span class="description">Remove component entries from the appropriate table, depending on the Joomla version</span><pre>deleteComponentEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_deleteModuleEntry" title="deleteModuleEntry :: Remove module entries from the appropriate table, depending on the Joomla version">
-            <span class="description">Remove module entries from the appropriate table, depending on the Joomla version</span><pre>deleteModuleEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_deletePluginEntry" title="deletePluginEntry :: Remove plugin entries from the appropriate table, depending on the Joomla version">
-            <span class="description">Remove plugin entries from the appropriate table, depending on the Joomla version</span><pre>deletePluginEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_deleteTemplateEntry" title="deleteTemplateEntry :: Remove template entires from the appropriate tables">
-            <span class="description">Remove template entires from the appropriate tables</span><pre>deleteTemplateEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_disableComponent" title="disableComponent :: Disable component">
-            <span class="description">Disable component</span><pre>disableComponent</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_disableModule" title="disableModule :: Disable module">
-            <span class="description">Disable module</span><pre>disableModule</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_disablePlugin" title="disablePlugin :: Disable plugin">
-            <span class="description">Disable plugin</span><pre>disablePlugin</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_enableComponent" title="enableComponent :: Enable component">
-            <span class="description">Enable component</span><pre>enableComponent</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_enableModule" title="enableModule :: Enable module">
-            <span class="description">Enable module</span><pre>enableModule</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_enablePlugin" title="enablePlugin :: Enable plugin">
-            <span class="description">Enable plugin</span><pre>enablePlugin</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getErrors" title="getErrors :: Get errors">
-            <span class="description">Get errors</span><pre>getErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getMWDBO" title="getMWDBO :: Return a middleware database object">
-            <span class="description">Return a middleware database object</span><pre>getMWDBO</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getOption" title="getOption :: Get option - these are specified/overwritten by the individual migrations/hooks">
-            <span class="description">Get option - these are specified/overwritten by the individual migrations/hooks</span><pre>getOption</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getParams" title="getParams :: Get element params">
-            <span class="description">Get element params</span><pre>getParams</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_installModule" title="installModule :: Instead of just adding to the extensions table, install module in modules table">
-            <span class="description">Instead of just adding to the extensions table, install module in modules table</span><pre>installModule</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_installTemplate" title="installTemplate :: Install a template, adding it if needed">
-            <span class="description">Install a template, adding it if needed</span><pre>installTemplate</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_normalizePluginEntry" title="normalizePluginEntry :: Standardize a plugin entry name">
-            <span class="description">Standardize a plugin entry name</span><pre>normalizePluginEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_renamePluginEntry" title="renamePluginEntry :: Rename a plugin entry in the appropriate table, depending on the Joomla version">
-            <span class="description">Rename a plugin entry in the appropriate table, depending on the Joomla version</span><pre>renamePluginEntry</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_runAsRoot" title="runAsRoot :: Try to run commands as MySql root user">
-            <span class="description">Try to run commands as MySql root user</span><pre>runAsRoot</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_saveParams" title="saveParams :: Saves extension params (only applies to J2.5 and up!)">
-            <span class="description">Saves extension params (only applies to J2.5 and up!)</span><pre>saveParams</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_savePluginParams" title="savePluginParams :: Save plugin params">
-            <span class="description">Save plugin params</span><pre>savePluginParams</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setAssetRules" title="setAssetRules :: Sets the asset rules">
-            <span class="description">Sets the asset rules</span><pre>setAssetRules</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_setError" title="setError :: Set an error">
-            <span class="description">Set an error</span><pre>setError</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="method private">
-                            <a href="#method_getRootCredentials" title="getRootCredentials :: Try to get the root credentials from a variety of locations">
-                                <span class="description">Try to get the root credentials from a variety of locations</span><pre>getRootCredentials</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                <li class="method private">
-                            <a href="#method_setComponentStatus" title="setComponentStatus :: Enable/disable component">
-                                <span class="description">Enable/disable component</span><pre>setComponentStatus</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method private">
-                            <a href="#method_setModuleStatus" title="setModuleStatus :: Enable/disable module">
-                                <span class="description">Enable/disable module</span><pre>setModuleStatus</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method private">
-                            <a href="#method_setPluginStatus" title="setPluginStatus :: Enable/disable plugin">
-                                <span class="description">Enable/disable plugin</span><pre>setPluginStatus</pre>
-                            </a>
-                        </li>
-                                                </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Base</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Base migration class</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Constructor</h2>
-                            <pre>__construct(object $db, array $callbacks = array(), object $altDb = null) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$db</h4>
-                                                <code>object</code><p><p>Database object (primary)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$callbacks</h4>
-                                                <code>array</code><p><p>Callbacks</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$altDb</h4>
-                                                <code>object</code><p><p>Alternate db</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addComponentEntry"></a>
-                        <div class="element clickable method public  method_addComponentEntry" data-toggle="collapse" data-target=".method_addComponentEntry .collapse">
-                            <h2>Add, as needed, the component to the appropriate table, depending on the Joomla version</h2>
-                            <pre>addComponentEntry(string $name, string $option = null, integer $enabled = 1, string $params = &#039;&#039;, boolean $createMenuItem = true) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Component name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$option</h4>
-                                                <code>string</code><p><p>String) com_xyz</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the component should be enabled</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>string</code><p><p>Component params (if already known)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$createMenuItem</h4>
-                                                <code>boolean</code><p><p>Create an admin menu item for this component</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addModuleEntry"></a>
-                        <div class="element clickable method public  method_addModuleEntry" data-toggle="collapse" data-target=".method_addModuleEntry .collapse">
-                            <h2>Add, as needed, the module entry to the appropriate table, depending on the Joomla version</h2>
-                            <pre>addModuleEntry(string $element, integer $enabled = 1, array $params = &#039;&#039;, integer $client) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the plugin should be enabled</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>Plugin params (if already known)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Client (site=0, admin=1)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addPluginEntry"></a>
-                        <div class="element clickable method public  method_addPluginEntry" data-toggle="collapse" data-target=".method_addPluginEntry .collapse">
-                            <h2>Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version</h2>
-                            <pre>addPluginEntry(string $folder, string $element, integer $enabled = 1, array $params = &#039;&#039;) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the plugin should be enabled</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>Plugin params (if already known)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addTemplateEntry"></a>
-                        <div class="element clickable method public  method_addTemplateEntry" data-toggle="collapse" data-target=".method_addTemplateEntry .collapse">
-                            <h2>Add, as needed, templates to the CMS</h2>
-                            <pre>addTemplateEntry(string $element, string $name = null, integer $client = 1, integer $enabled = 1, integer $home, array $styles = null, integer $protected) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Template element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Template name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Admin or site client</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the template should be enabled</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$home</h4>
-                                                <code>integer</code><p><p>Whether or not this should become the enabled template</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$styles</h4>
-                                                <code>array</code><p><p>Template styles</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$protected</h4>
-                                                <code>integer</code><p><p>Whether or not the template is a core one or not</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_callback"></a>
-                        <div class="element clickable method public  method_callback" data-toggle="collapse" data-target=".method_callback .collapse">
-                            <h2>Helper function for calling a given callback</h2>
-                            <pre>callback(string $callback,  $func, array $args = array()) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$callback</h4>
-                                                <code>string</code><p><p>Name of callback to use</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$func</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$args</h4>
-                                                <code>array</code><p><p>Args to pass to callback function</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_deleteComponentEntry"></a>
-                        <div class="element clickable method public  method_deleteComponentEntry" data-toggle="collapse" data-target=".method_deleteComponentEntry .collapse">
-                            <h2>Remove component entries from the appropriate table, depending on the Joomla version</h2>
-                            <pre>deleteComponentEntry(string $name) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Component name</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_deleteModuleEntry"></a>
-                        <div class="element clickable method public  method_deleteModuleEntry" data-toggle="collapse" data-target=".method_deleteModuleEntry .collapse">
-                            <h2>Remove module entries from the appropriate table, depending on the Joomla version</h2>
-                            <pre>deleteModuleEntry( $element, integer $client = null) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Client (site=0, admin=1)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_deletePluginEntry"></a>
-                        <div class="element clickable method public  method_deletePluginEntry" data-toggle="collapse" data-target=".method_deletePluginEntry .collapse">
-                            <h2>Remove plugin entries from the appropriate table, depending on the Joomla version</h2>
-                            <pre>deletePluginEntry( $folder,  $element = null) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_deleteTemplateEntry"></a>
-                        <div class="element clickable method public  method_deleteTemplateEntry" data-toggle="collapse" data-target=".method_deleteTemplateEntry .collapse">
-                            <h2>Remove template entires from the appropriate tables</h2>
-                            <pre>deleteTemplateEntry( $element, integer $client = 1) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Client id</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_disableComponent"></a>
-                        <div class="element clickable method public  method_disableComponent" data-toggle="collapse" data-target=".method_disableComponent .collapse">
-                            <h2>Disable component</h2>
-                            <pre>disableComponent(string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_disableModule"></a>
-                        <div class="element clickable method public  method_disableModule" data-toggle="collapse" data-target=".method_disableModule .collapse">
-                            <h2>Disable module</h2>
-                            <pre>disableModule(string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_disablePlugin"></a>
-                        <div class="element clickable method public  method_disablePlugin" data-toggle="collapse" data-target=".method_disablePlugin .collapse">
-                            <h2>Disable plugin</h2>
-                            <pre>disablePlugin(string $folder, string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_enableComponent"></a>
-                        <div class="element clickable method public  method_enableComponent" data-toggle="collapse" data-target=".method_enableComponent .collapse">
-                            <h2>Enable component</h2>
-                            <pre>enableComponent(string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_enableModule"></a>
-                        <div class="element clickable method public  method_enableModule" data-toggle="collapse" data-target=".method_enableModule .collapse">
-                            <h2>Enable module</h2>
-                            <pre>enableModule(string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_enablePlugin"></a>
-                        <div class="element clickable method public  method_enablePlugin" data-toggle="collapse" data-target=".method_enablePlugin .collapse">
-                            <h2>Enable plugin</h2>
-                            <pre>enablePlugin(string $folder, string $element) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getErrors"></a>
-                        <div class="element clickable method public  method_getErrors" data-toggle="collapse" data-target=".method_getErrors .collapse">
-                            <h2>Get errors</h2>
-                            <pre>getErrors() : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Errors</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getMWDBO"></a>
-                        <div class="element clickable method public  method_getMWDBO" data-toggle="collapse" data-target=".method_getMWDBO .collapse">
-                            <h2>Return a middleware database object</h2>
-                            <pre>getMWDBO() : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getOption"></a>
-                        <div class="element clickable method public  method_getOption" data-toggle="collapse" data-target=".method_getOption .collapse">
-                            <h2>Get option - these are specified/overwritten by the individual migrations/hooks</h2>
-                            <pre>getOption(string $key) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getParams"></a>
-                        <div class="element clickable method public  method_getParams" data-toggle="collapse" data-target=".method_getParams .collapse">
-                            <h2>Get element params</h2>
-                            <pre>getParams( $element, boolean $returnRaw = false) : object|string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$returnRaw</h4>
-                                                <code>boolean</code><p><p>whether or not to return jregistry object or raw param string</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object|string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getRootCredentials"></a>
-                        <div class="element clickable method private  method_getRootCredentials" data-toggle="collapse" data-target=".method_getRootCredentials .collapse">
-                            <h2>Try to get the root credentials from a variety of locations</h2>
-                            <pre>getRootCredentials() : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Array of creds or false on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_installModule"></a>
-                        <div class="element clickable method public  method_installModule" data-toggle="collapse" data-target=".method_installModule .collapse">
-                            <h2>Instead of just adding to the extensions table, install module in modules table</h2>
-                            <pre>installModule(string $module, string $position, boolean $always = true, array $params = &#039;&#039;, integer $client, mixed $menus) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$module</h4>
-                                                <code>string</code><p><p>Module name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$position</h4>
-                                                <code>string</code><p><p>Module position</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$always</h4>
-                                                <code>boolean</code><p><p>If true - always install, false - only install if another module of that type isn't present</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>Params (if already known)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Client (site=0, admin=1)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$menus</h4>
-                                                <code>mixed</code><p><p>(int, array) menus to install to (0=all)</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_installTemplate"></a>
-                        <div class="element clickable method public  method_installTemplate" data-toggle="collapse" data-target=".method_installTemplate .collapse">
-                            <h2>Install a template, adding it if needed</h2>
-                            <pre>installTemplate(string $element, string $name = null, integer $client = 1, array $styles = null, integer $protected) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Template element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Template name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$client</h4>
-                                                <code>integer</code><p><p>Admin or site client</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$styles</h4>
-                                                <code>array</code><p><p>Template styles</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$protected</h4>
-                                                <code>integer</code><p><p>Whether or not the template is a core one or not</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_normalizePluginEntry"></a>
-                        <div class="element clickable method public  method_normalizePluginEntry" data-toggle="collapse" data-target=".method_normalizePluginEntry .collapse">
-                            <h2>Standardize a plugin entry name</h2>
-                            <pre>normalizePluginEntry(string $folder, string $element) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_renamePluginEntry"></a>
-                        <div class="element clickable method public  method_renamePluginEntry" data-toggle="collapse" data-target=".method_renamePluginEntry .collapse">
-                            <h2>Rename a plugin entry in the appropriate table, depending on the Joomla version</h2>
-                            <pre>renamePluginEntry(string $folder, string $element, string $name) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The new plugin name</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_runAsRoot"></a>
-                        <div class="element clickable method public  method_runAsRoot" data-toggle="collapse" data-target=".method_runAsRoot .collapse">
-                            <h2>Try to run commands as MySql root user</h2>
-                            <pre>runAsRoot() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>If successfully upgraded to root access</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_saveParams"></a>
-                        <div class="element clickable method public  method_saveParams" data-toggle="collapse" data-target=".method_saveParams .collapse">
-                            <h2>Saves extension params (only applies to J2.5 and up!)</h2>
-                            <pre>saveParams(string $element, array $params) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>The element to which the params apply</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>The params being saved</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_savePluginParams"></a>
-                        <div class="element clickable method public  method_savePluginParams" data-toggle="collapse" data-target=".method_savePluginParams .collapse">
-                            <h2>Save plugin params</h2>
-                            <pre>savePluginParams(string $folder, string $element, array $params) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>Plugin params (if already known)</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setAssetRules"></a>
-                        <div class="element clickable method public  method_setAssetRules" data-toggle="collapse" data-target=".method_setAssetRules .collapse">
-                            <h2>Sets the asset rules</h2>
-                            <pre>setAssetRules(string $element, array $rules) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>The element to which the rules apply</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$rules</h4>
-                                                <code>array</code><p><p>The incoming rules to set</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setComponentStatus"></a>
-                        <div class="element clickable method private  method_setComponentStatus" data-toggle="collapse" data-target=".method_setComponentStatus .collapse">
-                            <h2>Enable/disable component</h2>
-                            <pre>setComponentStatus(string $element, integer $enabled = 1) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the component should be enabled</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setError"></a>
-                        <div class="element clickable method public  method_setError" data-toggle="collapse" data-target=".method_setError .collapse">
-                            <h2>Set an error</h2>
-                            <pre>setError(string $message, string $type = &#039;fatal&#039;) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$message</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setModuleStatus"></a>
-                        <div class="element clickable method private  method_setModuleStatus" data-toggle="collapse" data-target=".method_setModuleStatus .collapse">
-                            <h2>Enable/disable module</h2>
-                            <pre>setModuleStatus(string $element, integer $enabled = 1) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the module should be enabled</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setPluginStatus"></a>
-                        <div class="element clickable method private  method_setPluginStatus" data-toggle="collapse" data-target=".method_setPluginStatus .collapse">
-                            <h2>Enable/disable plugin</h2>
-                            <pre>setPluginStatus(string $folder, string $element, integer $enabled = 1) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code>string</code><p><p>Plugin element</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$enabled</h4>
-                                                <code>integer</code><p><p>Whether or not the plugin should be enabled</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_baseDb"> </a>
-                            <div class="element clickable property  private property_baseDb" data-toggle="collapse" data-target=".property_baseDb .collapse">
-                                <h2>Base database object (should have joomla extensions and migrations log tables in it)</h2>
-                                <pre>baseDb : object</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_db"> </a>
-                            <div class="element clickable property  protected property_db" data-toggle="collapse" data-target=".property_db .collapse">
-                                <h2>Db object available to migrations</h2>
-                                <pre>db : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_callbacks"> </a>
-                            <div class="element clickable property  protected property_callbacks" data-toggle="collapse" data-target=".property_callbacks .collapse">
-                                <h2>Available callbacks</h2>
-                                <pre>callbacks : object</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_options"> </a>
-                            <div class="element clickable property  protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
-                                <h2>Options</h2>
-                                <pre>options : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_errors"> </a>
-                            <div class="element clickable property  protected property_errors" data-toggle="collapse" data-target=".property_errors .collapse">
-                                <h2>Errors</h2>
-                                <pre>errors : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_protectedMode"> </a>
-                            <div class="element clickable property  private property_protectedMode" data-toggle="collapse" data-target=".property_protectedMode .collapse">
-                                <h2>Whether or not we&#039;re running in protected mode</h2>
-                                <pre>protectedMode : boolean</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Content\Migration\Base"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Content.Migration.html">Migration</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Content.Migration.Base.html">Base</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:57 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_addComponentEntry" title="addComponentEntry() :: Add, as needed, the component to the appropriate table, depending on the Joomla version"><span class="description">Add, as needed, the component to the appropriate table, depending on the Joomla version</span><pre>addComponentEntry()</pre></a></li>
+<li class="method public "><a href="#method_addModuleEntry" title="addModuleEntry() :: Add, as needed, the module entry to the appropriate table, depending on the Joomla version"><span class="description">Add, as needed, the module entry to the appropriate table, depending on the Joomla version</span><pre>addModuleEntry()</pre></a></li>
+<li class="method public "><a href="#method_addPluginEntry" title="addPluginEntry() :: Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version"><span class="description">Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version</span><pre>addPluginEntry()</pre></a></li>
+<li class="method public "><a href="#method_addTemplateEntry" title="addTemplateEntry() :: Add, as needed, templates to the CMS"><span class="description">Add, as needed, templates to the CMS</span><pre>addTemplateEntry()</pre></a></li>
+<li class="method public "><a href="#method_callback" title="callback() :: Helper function for calling a given callback"><span class="description">Helper function for calling a given callback</span><pre>callback()</pre></a></li>
+<li class="method public "><a href="#method_deleteComponentEntry" title="deleteComponentEntry() :: Remove component entries from the appropriate table, depending on the Joomla version"><span class="description">Remove component entries from the appropriate table, depending on the Joomla version</span><pre>deleteComponentEntry()</pre></a></li>
+<li class="method public "><a href="#method_deleteModuleEntry" title="deleteModuleEntry() :: Remove module entries from the appropriate table, depending on the Joomla version"><span class="description">Remove module entries from the appropriate table, depending on the Joomla version</span><pre>deleteModuleEntry()</pre></a></li>
+<li class="method public "><a href="#method_deletePluginEntry" title="deletePluginEntry() :: Remove plugin entries from the appropriate table, depending on the Joomla version"><span class="description">Remove plugin entries from the appropriate table, depending on the Joomla version</span><pre>deletePluginEntry()</pre></a></li>
+<li class="method public "><a href="#method_deleteTemplateEntry" title="deleteTemplateEntry() :: Remove template entires from the appropriate tables"><span class="description">Remove template entires from the appropriate tables</span><pre>deleteTemplateEntry()</pre></a></li>
+<li class="method public "><a href="#method_disableComponent" title="disableComponent() :: Disable component"><span class="description">Disable component</span><pre>disableComponent()</pre></a></li>
+<li class="method public "><a href="#method_disableModule" title="disableModule() :: Disable module"><span class="description">Disable module</span><pre>disableModule()</pre></a></li>
+<li class="method public "><a href="#method_disablePlugin" title="disablePlugin() :: Disable plugin"><span class="description">Disable plugin</span><pre>disablePlugin()</pre></a></li>
+<li class="method public "><a href="#method_enableComponent" title="enableComponent() :: Enable component"><span class="description">Enable component</span><pre>enableComponent()</pre></a></li>
+<li class="method public "><a href="#method_enableModule" title="enableModule() :: Enable module"><span class="description">Enable module</span><pre>enableModule()</pre></a></li>
+<li class="method public "><a href="#method_enablePlugin" title="enablePlugin() :: Enable plugin"><span class="description">Enable plugin</span><pre>enablePlugin()</pre></a></li>
+<li class="method public "><a href="#method_getErrors" title="getErrors() :: Get errors"><span class="description">Get errors</span><pre>getErrors()</pre></a></li>
+<li class="method public "><a href="#method_getMWDBO" title="getMWDBO() :: Return a middleware database object"><span class="description">Return a middleware database object</span><pre>getMWDBO()</pre></a></li>
+<li class="method public "><a href="#method_getOption" title="getOption() :: Get option - these are specified/overwritten by the individual migrations/hooks"><span class="description">Get option - these are specified/overwritten by the individual migrations/hooks</span><pre>getOption()</pre></a></li>
+<li class="method public "><a href="#method_getParams" title="getParams() :: Get element params"><span class="description">Get element params</span><pre>getParams()</pre></a></li>
+<li class="method public "><a href="#method_installModule" title="installModule() :: Instead of just adding to the extensions table, install module in modules table"><span class="description">Instead of just adding to the extensions table, install module in modules table</span><pre>installModule()</pre></a></li>
+<li class="method public "><a href="#method_installTemplate" title="installTemplate() :: Install a template, adding it if needed"><span class="description">Install a template, adding it if needed</span><pre>installTemplate()</pre></a></li>
+<li class="method public "><a href="#method_normalizePluginEntry" title="normalizePluginEntry() :: Standardize a plugin entry name"><span class="description">Standardize a plugin entry name</span><pre>normalizePluginEntry()</pre></a></li>
+<li class="method public "><a href="#method_renamePluginEntry" title="renamePluginEntry() :: Rename a plugin entry in the appropriate table, depending on the Joomla version"><span class="description">Rename a plugin entry in the appropriate table, depending on the Joomla version</span><pre>renamePluginEntry()</pre></a></li>
+<li class="method public "><a href="#method_runAsRoot" title="runAsRoot() :: Try to run commands as MySql root user"><span class="description">Try to run commands as MySql root user</span><pre>runAsRoot()</pre></a></li>
+<li class="method public "><a href="#method_saveParams" title="saveParams() :: Saves extension params (only applies to J2.5 and up!)"><span class="description">Saves extension params (only applies to J2.5 and up!)</span><pre>saveParams()</pre></a></li>
+<li class="method public "><a href="#method_savePluginParams" title="savePluginParams() :: Save plugin params"><span class="description">Save plugin params</span><pre>savePluginParams()</pre></a></li>
+<li class="method public "><a href="#method_setAssetRules" title="setAssetRules() :: Sets the asset rules"><span class="description">Sets the asset rules</span><pre>setAssetRules()</pre></a></li>
+<li class="method public "><a href="#method_setError" title="setError() :: Set an error"><span class="description">Set an error</span><pre>setError()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_getRootCredentials" title="getRootCredentials() :: Try to get the root credentials from a variety of locations"><span class="description">Try to get the root credentials from a variety of locations</span><pre>getRootCredentials()</pre></a></li>
+<li class="method private "><a href="#method_setComponentStatus" title="setComponentStatus() :: Enable/disable component"><span class="description">Enable/disable component</span><pre>setComponentStatus()</pre></a></li>
+<li class="method private "><a href="#method_setModuleStatus" title="setModuleStatus() :: Enable/disable module"><span class="description">Enable/disable module</span><pre>setModuleStatus()</pre></a></li>
+<li class="method private "><a href="#method_setPluginStatus" title="setPluginStatus() :: Enable/disable plugin"><span class="description">Enable/disable plugin</span><pre>setPluginStatus()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_callbacks" title="$callbacks() :: Available callbacks"><span class="description"></span><pre>$callbacks</pre></a></li>
+<li class="property protected "><a href="#property_db" title="$db() :: Db object available to migrations"><span class="description"></span><pre>$db</pre></a></li>
+<li class="property protected "><a href="#property_errors" title="$errors() :: Errors"><span class="description"></span><pre>$errors</pre></a></li>
+<li class="property protected "><a href="#property_options" title="$options() :: Options"><span class="description"></span><pre>$options</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_baseDb" title="$baseDb() :: Base database object (should have joomla extensions and migrations log tables in it)"><span class="description"></span><pre>$baseDb</pre></a></li>
+<li class="property private "><a href="#property_protectedMode" title="$protectedMode() :: Whether or not we're running in protected mode"><span class="description"></span><pre>$protectedMode</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Content\Migration\Base"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Content.html">Content</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Content.Migration.html">Migration</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Content.Migration.Base.html">Base</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Base migration class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>example</th>
+<td></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor</h2>
+<pre>__construct(object $db, array $callbacks<code> = array()</code>, object $altDb<code> = null</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code>object</code><p>Database object (primary)</p></div>
+<div class="subelement argument">
+<h4>$callbacks</h4>
+<code>array</code><p>Callbacks</p></div>
+<div class="subelement argument">
+<h4>$altDb</h4>
+<code>object</code><p>Alternate db</p></div>
+</div></div>
+</div>
+<a id="method_addComponentEntry"></a><div class="element clickable method public method_addComponentEntry " data-toggle="collapse" data-target=".method_addComponentEntry .collapse" title="public">
+<h2>Add, as needed, the component to the appropriate table, depending on the Joomla version</h2>
+<pre>addComponentEntry(string $name, string $option<code> = null</code>, integer $enabled<code> = 1</code>, string $params<code> = ''</code>, boolean $createMenuItem<code> = true</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Component name</p></div>
+<div class="subelement argument">
+<h4>$option</h4>
+<code>string</code><p>String) com_xyz</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the component should be enabled</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>string</code><p>Component params (if already known)</p></div>
+<div class="subelement argument">
+<h4>$createMenuItem</h4>
+<code>boolean</code><p>Create an admin menu item for this component</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_addModuleEntry"></a><div class="element clickable method public method_addModuleEntry " data-toggle="collapse" data-target=".method_addModuleEntry .collapse" title="public">
+<h2>Add, as needed, the module entry to the appropriate table, depending on the Joomla version</h2>
+<pre>addModuleEntry(string $element, integer $enabled<code> = 1</code>, array $params<code> = ''</code>, integer $client<code> = 0</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the plugin should be enabled</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Plugin params (if already known)</p></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Client (site=0, admin=1)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_addPluginEntry"></a><div class="element clickable method public method_addPluginEntry " data-toggle="collapse" data-target=".method_addPluginEntry .collapse" title="public">
+<h2>Add, as needed, the plugin entry to the appropriate table, depending on the Joomla version</h2>
+<pre>addPluginEntry(string $folder, string $element, integer $enabled<code> = 1</code>, array $params<code> = ''</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the plugin should be enabled</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Plugin params (if already known)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_addTemplateEntry"></a><div class="element clickable method public method_addTemplateEntry " data-toggle="collapse" data-target=".method_addTemplateEntry .collapse" title="public">
+<h2>Add, as needed, templates to the CMS</h2>
+<pre>addTemplateEntry(string $element, string $name<code> = null</code>, integer $client<code> = 1</code>, integer $enabled<code> = 1</code>, integer $home<code> = 0</code>, array $styles<code> = null</code>, integer $protected<code> = 0</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Template element</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Template name</p></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Admin or site client</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the template should be enabled</p></div>
+<div class="subelement argument">
+<h4>$home</h4>
+<code>integer</code><p>Whether or not this should become the enabled template</p></div>
+<div class="subelement argument">
+<h4>$styles</h4>
+<code>array</code><p>Template styles</p></div>
+<div class="subelement argument">
+<h4>$protected</h4>
+<code>integer</code><p>Whether or not the template is a core one or not</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_callback"></a><div class="element clickable method public method_callback " data-toggle="collapse" data-target=".method_callback .collapse" title="public">
+<h2>Helper function for calling a given callback</h2>
+<pre>callback(string $callback, $func, array $args<code> = array()</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>string</code><p>Name of callback to use</p></div>
+<div class="subelement argument"><h4>$func</h4></div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code><p>Args to pass to callback function</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_deleteComponentEntry"></a><div class="element clickable method public method_deleteComponentEntry " data-toggle="collapse" data-target=".method_deleteComponentEntry .collapse" title="public">
+<h2>Remove component entries from the appropriate table, depending on the Joomla version</h2>
+<pre>deleteComponentEntry(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Component name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_deleteModuleEntry"></a><div class="element clickable method public method_deleteModuleEntry " data-toggle="collapse" data-target=".method_deleteModuleEntry .collapse" title="public">
+<h2>Remove module entries from the appropriate table, depending on the Joomla version</h2>
+<pre>deleteModuleEntry($element, integer $client<code> = null</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$element</h4></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Client (site=0, admin=1)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_deletePluginEntry"></a><div class="element clickable method public method_deletePluginEntry " data-toggle="collapse" data-target=".method_deletePluginEntry .collapse" title="public">
+<h2>Remove plugin entries from the appropriate table, depending on the Joomla version</h2>
+<pre>deletePluginEntry($folder, $element<code> = null</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$folder</h4></div>
+<div class="subelement argument"><h4>$element</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_deleteTemplateEntry"></a><div class="element clickable method public method_deleteTemplateEntry " data-toggle="collapse" data-target=".method_deleteTemplateEntry .collapse" title="public">
+<h2>Remove template entires from the appropriate tables</h2>
+<pre>deleteTemplateEntry($element, integer $client<code> = 1</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$element</h4></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Client id</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_disableComponent"></a><div class="element clickable method public method_disableComponent " data-toggle="collapse" data-target=".method_disableComponent .collapse" title="public">
+<h2>Disable component</h2>
+<pre>disableComponent(string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+</div></div>
+</div>
+<a id="method_disableModule"></a><div class="element clickable method public method_disableModule " data-toggle="collapse" data-target=".method_disableModule .collapse" title="public">
+<h2>Disable module</h2>
+<pre>disableModule(string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+</div></div>
+</div>
+<a id="method_disablePlugin"></a><div class="element clickable method public method_disablePlugin " data-toggle="collapse" data-target=".method_disablePlugin .collapse" title="public">
+<h2>Disable plugin</h2>
+<pre>disablePlugin(string $folder, string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+</div></div>
+</div>
+<a id="method_enableComponent"></a><div class="element clickable method public method_enableComponent " data-toggle="collapse" data-target=".method_enableComponent .collapse" title="public">
+<h2>Enable component</h2>
+<pre>enableComponent(string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+</div></div>
+</div>
+<a id="method_enableModule"></a><div class="element clickable method public method_enableModule " data-toggle="collapse" data-target=".method_enableModule .collapse" title="public">
+<h2>Enable module</h2>
+<pre>enableModule(string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+</div></div>
+</div>
+<a id="method_enablePlugin"></a><div class="element clickable method public method_enablePlugin " data-toggle="collapse" data-target=".method_enablePlugin .collapse" title="public">
+<h2>Enable plugin</h2>
+<pre>enablePlugin(string $folder, string $element) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+</div></div>
+</div>
+<a id="method_getErrors"></a><div class="element clickable method public method_getErrors " data-toggle="collapse" data-target=".method_getErrors .collapse" title="public">
+<h2>Get errors</h2>
+<pre>getErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Errors</div>
+</div></div>
+</div>
+<a id="method_getMWDBO"></a><div class="element clickable method public method_getMWDBO " data-toggle="collapse" data-target=".method_getMWDBO .collapse" title="public">
+<h2>Return a middleware database object</h2>
+<pre>getMWDBO() : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_getOption"></a><div class="element clickable method public method_getOption " data-toggle="collapse" data-target=".method_getOption .collapse" title="public">
+<h2>Get option - these are specified/overwritten by the individual migrations/hooks</h2>
+<pre>getOption(string $key) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getParams"></a><div class="element clickable method public method_getParams " data-toggle="collapse" data-target=".method_getParams .collapse" title="public">
+<h2>Get element params</h2>
+<pre>getParams($element, boolean $returnRaw<code> = false</code>) : object | string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$element</h4></div>
+<div class="subelement argument">
+<h4>$returnRaw</h4>
+<code>boolean</code><p>whether or not to return jregistry object or raw param string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code><code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_installModule"></a><div class="element clickable method public method_installModule " data-toggle="collapse" data-target=".method_installModule .collapse" title="public">
+<h2>Instead of just adding to the extensions table, install module in modules table</h2>
+<pre>installModule(string $module, string $position, boolean $always<code> = true</code>, array $params<code> = ''</code>, integer $client<code> = 0</code>, mixed $menus<code> = 0</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$module</h4>
+<code>string</code><p>Module name</p></div>
+<div class="subelement argument">
+<h4>$position</h4>
+<code>string</code><p>Module position</p></div>
+<div class="subelement argument">
+<h4>$always</h4>
+<code>boolean</code><p>If true - always install, false - only install if another module of that type isn't present</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Params (if already known)</p></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Client (site=0, admin=1)</p></div>
+<div class="subelement argument">
+<h4>$menus</h4>
+<code>mixed</code><p>(int, array) menus to install to (0=all)</p></div>
+</div></div>
+</div>
+<a id="method_installTemplate"></a><div class="element clickable method public method_installTemplate " data-toggle="collapse" data-target=".method_installTemplate .collapse" title="public">
+<h2>Install a template, adding it if needed</h2>
+<pre>installTemplate(string $element, string $name<code> = null</code>, integer $client<code> = 1</code>, array $styles<code> = null</code>, integer $protected<code> = 0</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Template element</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Template name</p></div>
+<div class="subelement argument">
+<h4>$client</h4>
+<code>integer</code><p>Admin or site client</p></div>
+<div class="subelement argument">
+<h4>$styles</h4>
+<code>array</code><p>Template styles</p></div>
+<div class="subelement argument">
+<h4>$protected</h4>
+<code>integer</code><p>Whether or not the template is a core one or not</p></div>
+</div></div>
+</div>
+<a id="method_normalizePluginEntry"></a><div class="element clickable method public method_normalizePluginEntry " data-toggle="collapse" data-target=".method_normalizePluginEntry .collapse" title="public">
+<h2>Standardize a plugin entry name</h2>
+<pre>normalizePluginEntry(string $folder, string $element) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_renamePluginEntry"></a><div class="element clickable method public method_renamePluginEntry " data-toggle="collapse" data-target=".method_renamePluginEntry .collapse" title="public">
+<h2>Rename a plugin entry in the appropriate table, depending on the Joomla version</h2>
+<pre>renamePluginEntry(string $folder, string $element, string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The new plugin name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_runAsRoot"></a><div class="element clickable method public method_runAsRoot " data-toggle="collapse" data-target=".method_runAsRoot .collapse" title="public">
+<h2>Try to run commands as MySql root user</h2>
+<pre>runAsRoot() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If successfully upgraded to root access</div>
+</div></div>
+</div>
+<a id="method_saveParams"></a><div class="element clickable method public method_saveParams " data-toggle="collapse" data-target=".method_saveParams .collapse" title="public">
+<h2>Saves extension params (only applies to J2.5 and up!)</h2>
+<pre>saveParams(string $element, array $params) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The element to which the params apply</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The params being saved</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_savePluginParams"></a><div class="element clickable method public method_savePluginParams " data-toggle="collapse" data-target=".method_savePluginParams .collapse" title="public">
+<h2>Save plugin params</h2>
+<pre>savePluginParams(string $folder, string $element, array $params) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Plugin params (if already known)</p></div>
+</div></div>
+</div>
+<a id="method_setAssetRules"></a><div class="element clickable method public method_setAssetRules " data-toggle="collapse" data-target=".method_setAssetRules .collapse" title="public">
+<h2>Sets the asset rules</h2>
+<pre>setAssetRules(string $element, array $rules) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The element to which the rules apply</p></div>
+<div class="subelement argument">
+<h4>$rules</h4>
+<code>array</code><p>The incoming rules to set</p></div>
+</div></div>
+</div>
+<a id="method_setError"></a><div class="element clickable method public method_setError " data-toggle="collapse" data-target=".method_setError .collapse" title="public">
+<h2>Set an error</h2>
+<pre>setError(string $message, string $type<code> = 'fatal'</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_getRootCredentials"></a><div class="element clickable method private method_getRootCredentials " data-toggle="collapse" data-target=".method_getRootCredentials .collapse" title="private">
+<h2>Try to get the root credentials from a variety of locations</h2>
+<pre>getRootCredentials() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Array of creds or false on failure</div>
+</div></div>
+</div>
+<a id="method_setComponentStatus"></a><div class="element clickable method private method_setComponentStatus " data-toggle="collapse" data-target=".method_setComponentStatus .collapse" title="private">
+<h2>Enable/disable component</h2>
+<pre>setComponentStatus(string $element, integer $enabled<code> = 1</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the component should be enabled</p></div>
+</div></div>
+</div>
+<a id="method_setModuleStatus"></a><div class="element clickable method private method_setModuleStatus " data-toggle="collapse" data-target=".method_setModuleStatus .collapse" title="private">
+<h2>Enable/disable module</h2>
+<pre>setModuleStatus(string $element, integer $enabled<code> = 1</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Element</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the module should be enabled</p></div>
+</div></div>
+</div>
+<a id="method_setPluginStatus"></a><div class="element clickable method private method_setPluginStatus " data-toggle="collapse" data-target=".method_setPluginStatus .collapse" title="private">
+<h2>Enable/disable plugin</h2>
+<pre>setPluginStatus(string $folder, string $element, integer $enabled<code> = 1</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>Plugin element</p></div>
+<div class="subelement argument">
+<h4>$enabled</h4>
+<code>integer</code><p>Whether or not the plugin should be enabled</p></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_callbacks"> </a><div class="element clickable property protected property_callbacks" data-toggle="collapse" data-target=".property_callbacks .collapse" title="protected">
+<h2>Available callbacks</h2>
+<pre>$callbacks : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_db"> </a><div class="element clickable property protected property_db" data-toggle="collapse" data-target=".property_db .collapse" title="protected">
+<h2>Db object available to migrations</h2>
+<pre>$db : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_errors"> </a><div class="element clickable property protected property_errors" data-toggle="collapse" data-target=".property_errors .collapse" title="protected">
+<h2>Errors</h2>
+<pre>$errors : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_options"> </a><div class="element clickable property protected property_options" data-toggle="collapse" data-target=".property_options .collapse" title="protected">
+<h2>Options</h2>
+<pre>$options : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_baseDb"> </a><div class="element clickable property private property_baseDb" data-toggle="collapse" data-target=".property_baseDb .collapse" title="private">
+<h2>Base database object (should have joomla extensions and migrations log tables in it)</h2>
+<pre>$baseDb : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_protectedMode"> </a><div class="element clickable property private property_protectedMode" data-toggle="collapse" data-target=".property_protectedMode .collapse" title="private">
+<h2>Whether or not we're running in protected mode</h2>
+<pre>$protectedMode : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:53-04:00.<br></footer></div>
+</div>
+</body>
 </html>

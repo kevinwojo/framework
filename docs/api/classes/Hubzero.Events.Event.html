@@ -1,1261 +1,561 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Events\Event
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Events\Event</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method___construct" title="__construct :: Constructor.">
-            <span class="description">Constructor.</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addArgument" title="addArgument :: Add an event argument, only if it is not existing.">
-            <span class="description">Add an event argument, only if it is not existing.</span><pre>addArgument</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addResponse" title="addResponse :: Add an error message.">
-            <span class="description">Add an error message.</span><pre>addResponse</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_clearArguments" title="clearArguments :: Clear all event arguments.">
-            <span class="description">Clear all event arguments.</span><pre>clearArguments</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_count" title="count :: Count the number of arguments.">
-            <span class="description">Count the number of arguments.</span><pre>count</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getArgument" title="getArgument :: Get an event argument value.">
-            <span class="description">Get an event argument value.</span><pre>getArgument</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getArguments" title="getArguments :: Get all event arguments.">
-            <span class="description">Get all event arguments.</span><pre>getArguments</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getError" title="getError :: Get the most recent error message.">
-            <span class="description">Get the most recent error message.</span><pre>getError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getErrors" title="getErrors :: Return all errors, if any.">
-            <span class="description">Return all errors, if any.</span><pre>getErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getGroup" title="getGroup :: Get the event group name.">
-            <span class="description">Get the event group name.</span><pre>getGroup</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getName" title="getName :: Get the event name.">
-            <span class="description">Get the event name.</span><pre>getName</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getResponse" title="getResponse :: Get the list of responses from triggered listeners.">
-            <span class="description">Get the list of responses from triggered listeners.</span><pre>getResponse</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_hasArgument" title="hasArgument :: Tell if the given event argument exists.">
-            <span class="description">Tell if the given event argument exists.</span><pre>hasArgument</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isStopped" title="isStopped :: Tell if the event propagation is stopped.">
-            <span class="description">Tell if the event propagation is stopped.</span><pre>isStopped</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_offsetExists" title="offsetExists :: Tell if the given event argument exists.">
-            <span class="description">Tell if the given event argument exists.</span><pre>offsetExists</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_offsetGet" title="offsetGet :: Get an event argument value.">
-            <span class="description">Get an event argument value.</span><pre>offsetGet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_offsetSet" title="offsetSet :: Set the value of an event argument.">
-            <span class="description">Set the value of an event argument.</span><pre>offsetSet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_offsetUnset" title="offsetUnset :: Remove an event argument.">
-            <span class="description">Remove an event argument.</span><pre>offsetUnset</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_removeArgument" title="removeArgument :: Remove an event argument.">
-            <span class="description">Remove an event argument.</span><pre>removeArgument</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_resume" title="resume :: Resume the event propagation.">
-            <span class="description">Resume the event propagation.</span><pre>resume</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_serialize" title="serialize :: Serialize the event.">
-            <span class="description">Serialize the event.</span><pre>serialize</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setArgument" title="setArgument :: Set the value of an event argument.">
-            <span class="description">Set the value of an event argument.</span><pre>setArgument</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setError" title="setError :: Add an error message.">
-            <span class="description">Add an error message.</span><pre>setError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setErrors" title="setErrors :: Set the list of errors">
-            <span class="description">Set the list of errors</span><pre>setErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_stop" title="stop :: Stop the event propagation.">
-            <span class="description">Stop the event propagation.</span><pre>stop</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_unserialize" title="unserialize :: Unserialize the event.">
-            <span class="description">Unserialize the event.</span><pre>unserialize</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Event</h1>
-                <small style="display: block; text-align: right">
-                                                                Implements \ArrayAccess, \Serializable, \Countable
-                                    </small>
-                <p class="short_description">Default Event class.</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Based on work by the Joomla Framework</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Constructor.</h2>
-                            <pre>__construct(string $name, array $arguments = array()) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The event name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$arguments</h4>
-                                                <code>array</code><p><p>The event arguments.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addArgument"></a>
-                        <div class="element clickable method public  method_addArgument" data-toggle="collapse" data-target=".method_addArgument .collapse">
-                            <h2>Add an event argument, only if it is not existing.</h2>
-                            <pre>addArgument(string $name, mixed $value) : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The argument value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>This method is chainable.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addResponse"></a>
-                        <div class="element clickable method public  method_addResponse" data-toggle="collapse" data-target=".method_addResponse .collapse">
-                            <h2>Add an error message.</h2>
-                            <pre>addResponse( $data) : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>This method is chainable.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_clearArguments"></a>
-                        <div class="element clickable method public  method_clearArguments" data-toggle="collapse" data-target=".method_clearArguments .collapse">
-                            <h2>Clear all event arguments.</h2>
-                            <pre>clearArguments() : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The old arguments.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_count"></a>
-                        <div class="element clickable method public  method_count" data-toggle="collapse" data-target=".method_count .collapse">
-                            <h2>Count the number of arguments.</h2>
-                            <pre>count() : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p><p>The number of arguments.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getArgument"></a>
-                        <div class="element clickable method public  method_getArgument" data-toggle="collapse" data-target=".method_getArgument .collapse">
-                            <h2>Get an event argument value.</h2>
-                            <pre>getArgument(string $name, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>The default value if not found.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The argument value or the default value.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getArguments"></a>
-                        <div class="element clickable method public  method_getArguments" data-toggle="collapse" data-target=".method_getArguments .collapse">
-                            <h2>Get all event arguments.</h2>
-                            <pre>getArguments() : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>An associative array of argument names as keys
-and their values as values.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getError"></a>
-                        <div class="element clickable method public  method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse">
-                            <h2>Get the most recent error message.</h2>
-                            <pre>getError(integer $i = null, boolean $toString = true) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$i</h4>
-                                                <code>integer</code><p><p>Option error index.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$toString</h4>
-                                                <code>boolean</code><p><p>Indicates if error objects should return their error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Error message</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getErrors"></a>
-                        <div class="element clickable method public  method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse">
-                            <h2>Return all errors, if any.</h2>
-                            <pre>getErrors() : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Array of error messages</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getGroup"></a>
-                        <div class="element clickable method public  method_getGroup" data-toggle="collapse" data-target=".method_getGroup .collapse">
-                            <h2>Get the event group name.</h2>
-                            <pre>getGroup() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The event group name.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getName"></a>
-                        <div class="element clickable method public  method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
-                            <h2>Get the event name.</h2>
-                            <pre>getName() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The event name.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getResponse"></a>
-                        <div class="element clickable method public  method_getResponse" data-toggle="collapse" data-target=".method_getResponse .collapse">
-                            <h2>Get the list of responses from triggered listeners.</h2>
-                            <pre>getResponse() : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_hasArgument"></a>
-                        <div class="element clickable method public  method_hasArgument" data-toggle="collapse" data-target=".method_hasArgument .collapse">
-                            <h2>Tell if the given event argument exists.</h2>
-                            <pre>hasArgument(string $name) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if it exists, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isStopped"></a>
-                        <div class="element clickable method public  method_isStopped" data-toggle="collapse" data-target=".method_isStopped .collapse">
-                            <h2>Tell if the event propagation is stopped.</h2>
-                            <pre>isStopped() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if stopped, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_offsetExists"></a>
-                        <div class="element clickable method public  method_offsetExists" data-toggle="collapse" data-target=".method_offsetExists .collapse">
-                            <h2>Tell if the given event argument exists.</h2>
-                            <pre>offsetExists(string $name) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if it exists, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_offsetGet"></a>
-                        <div class="element clickable method public  method_offsetGet" data-toggle="collapse" data-target=".method_offsetGet .collapse">
-                            <h2>Get an event argument value.</h2>
-                            <pre>offsetGet(string $name) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The argument value or null if not existing.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_offsetSet"></a>
-                        <div class="element clickable method public  method_offsetSet" data-toggle="collapse" data-target=".method_offsetSet .collapse">
-                            <h2>Set the value of an event argument.</h2>
-                            <pre>offsetSet(string $name, mixed $value) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                            <tr>
-                                                <th>Throws</th>
-                                                <td>
-                                                    <dl>
-                                                                                                            <dt>\InvalidArgumentException</dt>
-                                                        <dd><p>If the argument name is null.</p></dd>
-                                                                                                                                                            </dl>
-                                                </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The argument value.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_offsetUnset"></a>
-                        <div class="element clickable method public  method_offsetUnset" data-toggle="collapse" data-target=".method_offsetUnset .collapse">
-                            <h2>Remove an event argument.</h2>
-                            <pre>offsetUnset(string $name) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_removeArgument"></a>
-                        <div class="element clickable method public  method_removeArgument" data-toggle="collapse" data-target=".method_removeArgument .collapse">
-                            <h2>Remove an event argument.</h2>
-                            <pre>removeArgument(string $name) : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>This method is chainable.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_resume"></a>
-                        <div class="element clickable method public  method_resume" data-toggle="collapse" data-target=".method_resume .collapse">
-                            <h2>Resume the event propagation.</h2>
-                            <pre>resume() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_serialize"></a>
-                        <div class="element clickable method public  method_serialize" data-toggle="collapse" data-target=".method_serialize .collapse">
-                            <h2>Serialize the event.</h2>
-                            <pre>serialize() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The serialized event.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setArgument"></a>
-                        <div class="element clickable method public  method_setArgument" data-toggle="collapse" data-target=".method_setArgument .collapse">
-                            <h2>Set the value of an event argument.</h2>
-                            <pre>setArgument(string $name, mixed $value) : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If the argument already exists, it will be overridden.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The argument name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The argument value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>This method is chainable.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setError"></a>
-                        <div class="element clickable method public  method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse">
-                            <h2>Add an error message.</h2>
-                            <pre>setError(string $error, string $key = null) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$error</h4>
-                                                <code>string</code><p><p>Error message.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Specific key to set the value to</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setErrors"></a>
-                        <div class="element clickable method public  method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse">
-                            <h2>Set the list of errors</h2>
-                            <pre>setErrors(array $errors) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$errors</h4>
-                                                <code>array</code><p><p>List of Error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_stop"></a>
-                        <div class="element clickable method public  method_stop" data-toggle="collapse" data-target=".method_stop .collapse">
-                            <h2>Stop the event propagation.</h2>
-                            <pre>stop() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_unserialize"></a>
-                        <div class="element clickable method public  method_unserialize" data-toggle="collapse" data-target=".method_unserialize .collapse">
-                            <h2>Unserialize the event.</h2>
-                            <pre>unserialize(string $serialized) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$serialized</h4>
-                                                <code>string</code><p><p>The serialized event.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_name"> </a>
-                            <div class="element clickable property  protected property_name" data-toggle="collapse" data-target=".property_name .collapse">
-                                <h2>The event name.</h2>
-                                <pre>name : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_group"> </a>
-                            <div class="element clickable property  protected property_group" data-toggle="collapse" data-target=".property_group .collapse">
-                                <h2>The event group name.</h2>
-                                <pre>group : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_arguments"> </a>
-                            <div class="element clickable property  protected property_arguments" data-toggle="collapse" data-target=".property_arguments .collapse">
-                                <h2>The event arguments.</h2>
-                                <pre>arguments : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_stopped"> </a>
-                            <div class="element clickable property  protected property_stopped" data-toggle="collapse" data-target=".property_stopped .collapse">
-                                <h2>A flag to see if the event propagation is stopped.</h2>
-                                <pre>stopped : boolean</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_response"> </a>
-                            <div class="element clickable property  protected property_response" data-toggle="collapse" data-target=".property_response .collapse">
-                                <h2>An array of error messages or Exception objects.</h2>
-                                <pre>response : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property__errors"> </a>
-                            <div class="element clickable property  protected property__errors inherited" data-toggle="collapse" data-target=".property__errors .collapse">
-                                <h2>An array of error messages or Exception objects.</h2>
-                                <pre>_errors : array</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Events\Event"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Events.html">Events</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Events.Event.html">Event</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:55 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_addArgument" title="addArgument() :: Add an event argument, only if it is not existing."><span class="description">Add an event argument, only if it is not existing.</span><pre>addArgument()</pre></a></li>
+<li class="method public "><a href="#method_addResponse" title="addResponse() :: Add an error message."><span class="description">Add an error message.</span><pre>addResponse()</pre></a></li>
+<li class="method public "><a href="#method_clearArguments" title="clearArguments() :: Clear all event arguments."><span class="description">Clear all event arguments.</span><pre>clearArguments()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count() :: Count the number of arguments."><span class="description">Count the number of arguments.</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_getArgument" title="getArgument() :: Get an event argument value."><span class="description">Get an event argument value.</span><pre>getArgument()</pre></a></li>
+<li class="method public "><a href="#method_getArguments" title="getArguments() :: Get all event arguments."><span class="description">Get all event arguments.</span><pre>getArguments()</pre></a></li>
+<li class="method public inherited"><a href="#method_getError" title="getError() :: Get the most recent error message."><span class="description">Get the most recent error message.</span><pre>getError()</pre></a></li>
+<li class="method public inherited"><a href="#method_getErrors" title="getErrors() :: Return all errors, if any."><span class="description">Return all errors, if any.</span><pre>getErrors()</pre></a></li>
+<li class="method public "><a href="#method_getGroup" title="getGroup() :: Get the event group name."><span class="description">Get the event group name.</span><pre>getGroup()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName() :: Get the event name."><span class="description">Get the event name.</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_getResponse" title="getResponse() :: Get the list of responses from triggered listeners."><span class="description">Get the list of responses from triggered listeners.</span><pre>getResponse()</pre></a></li>
+<li class="method public "><a href="#method_hasArgument" title="hasArgument() :: Tell if the given event argument exists."><span class="description">Tell if the given event argument exists.</span><pre>hasArgument()</pre></a></li>
+<li class="method public "><a href="#method_isStopped" title="isStopped() :: Tell if the event propagation is stopped."><span class="description">Tell if the event propagation is stopped.</span><pre>isStopped()</pre></a></li>
+<li class="method public "><a href="#method_offsetExists" title="offsetExists() :: Tell if the given event argument exists."><span class="description">Tell if the given event argument exists.</span><pre>offsetExists()</pre></a></li>
+<li class="method public "><a href="#method_offsetGet" title="offsetGet() :: Get an event argument value."><span class="description">Get an event argument value.</span><pre>offsetGet()</pre></a></li>
+<li class="method public "><a href="#method_offsetSet" title="offsetSet() :: Set the value of an event argument."><span class="description">Set the value of an event argument.</span><pre>offsetSet()</pre></a></li>
+<li class="method public "><a href="#method_offsetUnset" title="offsetUnset() :: Remove an event argument."><span class="description">Remove an event argument.</span><pre>offsetUnset()</pre></a></li>
+<li class="method public "><a href="#method_removeArgument" title="removeArgument() :: Remove an event argument."><span class="description">Remove an event argument.</span><pre>removeArgument()</pre></a></li>
+<li class="method public "><a href="#method_resume" title="resume() :: Resume the event propagation."><span class="description">Resume the event propagation.</span><pre>resume()</pre></a></li>
+<li class="method public "><a href="#method_serialize" title="serialize() :: Serialize the event."><span class="description">Serialize the event.</span><pre>serialize()</pre></a></li>
+<li class="method public "><a href="#method_setArgument" title="setArgument() :: Set the value of an event argument."><span class="description">Set the value of an event argument.</span><pre>setArgument()</pre></a></li>
+<li class="method public inherited"><a href="#method_setError" title="setError() :: Add an error message."><span class="description">Add an error message.</span><pre>setError()</pre></a></li>
+<li class="method public inherited"><a href="#method_setErrors" title="setErrors() :: Set the list of errors"><span class="description">Set the list of errors</span><pre>setErrors()</pre></a></li>
+<li class="method public "><a href="#method_stop" title="stop() :: Stop the event propagation."><span class="description">Stop the event propagation.</span><pre>stop()</pre></a></li>
+<li class="method public "><a href="#method_unserialize" title="unserialize() :: Unserialize the event."><span class="description">Unserialize the event.</span><pre>unserialize()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property__errors" title="$_errors() :: An array of error messages or Exception objects."><span class="description"></span><pre>$_errors</pre></a></li>
+<li class="property protected "><a href="#property_arguments" title="$arguments() :: The event arguments."><span class="description"></span><pre>$arguments</pre></a></li>
+<li class="property protected "><a href="#property_group" title="$group() :: The event group name."><span class="description"></span><pre>$group</pre></a></li>
+<li class="property protected "><a href="#property_name" title="$name() :: The event name."><span class="description"></span><pre>$name</pre></a></li>
+<li class="property protected "><a href="#property_response" title="$response() :: An array of error messages or Exception objects."><span class="description"></span><pre>$response</pre></a></li>
+<li class="property protected "><a href="#property_stopped" title="$stopped() :: A flag to see if the event propagation is stopped."><span class="description"></span><pre>$stopped</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Events\Event"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Events.html">Events</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Events.Event.html">Event</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Default Event class.</p>
+<div class="details">
+<div class="long_description"><p>Based on work by the Joomla Framework</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor.</h2>
+<pre>__construct(string $name, array $arguments<code> = array()</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The event name.</p></div>
+<div class="subelement argument">
+<h4>$arguments</h4>
+<code>array</code><p>The event arguments.</p></div>
+</div></div>
+</div>
+<a id="method_addArgument"></a><div class="element clickable method public method_addArgument " data-toggle="collapse" data-target=".method_addArgument .collapse" title="public">
+<h2>Add an event argument, only if it is not existing.</h2>
+<pre>addArgument(string $name, mixed $value) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The argument value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_addResponse"></a><div class="element clickable method public method_addResponse " data-toggle="collapse" data-target=".method_addResponse .collapse" title="public">
+<h2>Add an error message.</h2>
+<pre>addResponse($data) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$data</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_clearArguments"></a><div class="element clickable method public method_clearArguments " data-toggle="collapse" data-target=".method_clearArguments .collapse" title="public">
+<h2>Clear all event arguments.</h2>
+<pre>clearArguments() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The old arguments.</div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count " data-toggle="collapse" data-target=".method_count .collapse" title="public">
+<h2>Count the number of arguments.</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of arguments.</div>
+</div></div>
+</div>
+<a id="method_getArgument"></a><div class="element clickable method public method_getArgument " data-toggle="collapse" data-target=".method_getArgument .collapse" title="public">
+<h2>Get an event argument value.</h2>
+<pre>getArgument(string $name, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value if not found.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The argument value or the default value.</div>
+</div></div>
+</div>
+<a id="method_getArguments"></a><div class="element clickable method public method_getArguments " data-toggle="collapse" data-target=".method_getArguments .collapse" title="public">
+<h2>Get all event arguments.</h2>
+<pre>getArguments() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of argument names as keys
+                and their values as values.</div>
+</div></div>
+</div>
+<a id="method_getError"></a><div class="element clickable method public method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse" title="public">
+<h2>Get the most recent error message.</h2>
+<pre>getError(integer $i<code> = null</code>, boolean $toString<code> = true</code>) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$i</h4>
+<code>integer</code><p>Option error index.</p></div>
+<div class="subelement argument">
+<h4>$toString</h4>
+<code>boolean</code><p>Indicates if error objects should return their error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Error message</div>
+</div></div>
+</div>
+<a id="method_getErrors"></a><div class="element clickable method public method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse" title="public">
+<h2>Return all errors, if any.</h2>
+<pre>getErrors() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of error messages</div>
+</div></div>
+</div>
+<a id="method_getGroup"></a><div class="element clickable method public method_getGroup " data-toggle="collapse" data-target=".method_getGroup .collapse" title="public">
+<h2>Get the event group name.</h2>
+<pre>getGroup() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The event group name.</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName " data-toggle="collapse" data-target=".method_getName .collapse" title="public">
+<h2>Get the event name.</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The event name.</div>
+</div></div>
+</div>
+<a id="method_getResponse"></a><div class="element clickable method public method_getResponse " data-toggle="collapse" data-target=".method_getResponse .collapse" title="public">
+<h2>Get the list of responses from triggered listeners.</h2>
+<pre>getResponse() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_hasArgument"></a><div class="element clickable method public method_hasArgument " data-toggle="collapse" data-target=".method_hasArgument .collapse" title="public">
+<h2>Tell if the given event argument exists.</h2>
+<pre>hasArgument(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if it exists, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_isStopped"></a><div class="element clickable method public method_isStopped " data-toggle="collapse" data-target=".method_isStopped .collapse" title="public">
+<h2>Tell if the event propagation is stopped.</h2>
+<pre>isStopped() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if stopped, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_offsetExists"></a><div class="element clickable method public method_offsetExists " data-toggle="collapse" data-target=".method_offsetExists .collapse" title="public">
+<h2>Tell if the given event argument exists.</h2>
+<pre>offsetExists(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if it exists, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_offsetGet"></a><div class="element clickable method public method_offsetGet " data-toggle="collapse" data-target=".method_offsetGet .collapse" title="public">
+<h2>Get an event argument value.</h2>
+<pre>offsetGet(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The argument value or null if not existing.</div>
+</div></div>
+</div>
+<a id="method_offsetSet"></a><div class="element clickable method public method_offsetSet " data-toggle="collapse" data-target=".method_offsetSet .collapse" title="public">
+<h2>Set the value of an event argument.</h2>
+<pre>offsetSet(string $name, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The argument value.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\InvalidArgumentException</code></th>
+<td>If the argument name is null.</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_offsetUnset"></a><div class="element clickable method public method_offsetUnset " data-toggle="collapse" data-target=".method_offsetUnset .collapse" title="public">
+<h2>Remove an event argument.</h2>
+<pre>offsetUnset(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+</div></div>
+</div>
+<a id="method_removeArgument"></a><div class="element clickable method public method_removeArgument " data-toggle="collapse" data-target=".method_removeArgument .collapse" title="public">
+<h2>Remove an event argument.</h2>
+<pre>removeArgument(string $name) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_resume"></a><div class="element clickable method public method_resume " data-toggle="collapse" data-target=".method_resume .collapse" title="public">
+<h2>Resume the event propagation.</h2>
+<pre>resume() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_serialize"></a><div class="element clickable method public method_serialize " data-toggle="collapse" data-target=".method_serialize .collapse" title="public">
+<h2>Serialize the event.</h2>
+<pre>serialize() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The serialized event.</div>
+</div></div>
+</div>
+<a id="method_setArgument"></a><div class="element clickable method public method_setArgument " data-toggle="collapse" data-target=".method_setArgument .collapse" title="public">
+<h2>Set the value of an event argument.</h2>
+<pre>setArgument(string $name, mixed $value) : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the argument already exists, it will be overridden.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The argument name.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The argument value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>This method is chainable.</div>
+</div></div>
+</div>
+<a id="method_setError"></a><div class="element clickable method public method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse" title="public">
+<h2>Add an error message.</h2>
+<pre>setError(string $error, string $key<code> = null</code>) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code>string</code><p>Error message.</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Specific key to set the value to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setErrors"></a><div class="element clickable method public method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse" title="public">
+<h2>Set the list of errors</h2>
+<pre>setErrors(array $errors) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><p>List of Error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_stop"></a><div class="element clickable method public method_stop " data-toggle="collapse" data-target=".method_stop .collapse" title="public">
+<h2>Stop the event propagation.</h2>
+<pre>stop() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_unserialize"></a><div class="element clickable method public method_unserialize " data-toggle="collapse" data-target=".method_unserialize .collapse" title="public">
+<h2>Unserialize the event.</h2>
+<pre>unserialize(string $serialized) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$serialized</h4>
+<code>string</code><p>The serialized event.</p></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__errors"> </a><div class="element clickable property protected property__errors" data-toggle="collapse" data-target=".property__errors .collapse" title="protected">
+<h2>An array of error messages or Exception objects.</h2>
+<pre>$_errors : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_arguments"> </a><div class="element clickable property protected property_arguments" data-toggle="collapse" data-target=".property_arguments .collapse" title="protected">
+<h2>The event arguments.</h2>
+<pre>$arguments : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_group"> </a><div class="element clickable property protected property_group" data-toggle="collapse" data-target=".property_group .collapse" title="protected">
+<h2>The event group name.</h2>
+<pre>$group : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property protected property_name" data-toggle="collapse" data-target=".property_name .collapse" title="protected">
+<h2>The event name.</h2>
+<pre>$name : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_response"> </a><div class="element clickable property protected property_response" data-toggle="collapse" data-target=".property_response .collapse" title="protected">
+<h2>An array of error messages or Exception objects.</h2>
+<pre>$response : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_stopped"> </a><div class="element clickable property protected property_stopped" data-toggle="collapse" data-target=".property_stopped .collapse" title="protected">
+<h2>A flag to see if the event propagation is stopped.</h2>
+<pre>$stopped : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:29-04:00.<br></footer></div>
+</div>
+</body>
 </html>

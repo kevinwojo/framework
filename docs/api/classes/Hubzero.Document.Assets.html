@@ -1,920 +1,478 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Document\Assets
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Document\Assets</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_addComponentScript" title="addComponentScript :: Adds a linked script from a component to the page">
-            <span class="description">Adds a linked script from a component to the page</span><pre>addComponentScript</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addComponentStylesheet" title="addComponentStylesheet :: Adds a linked stylesheet from a component to the page">
-            <span class="description">Adds a linked stylesheet from a component to the page</span><pre>addComponentStylesheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addModuleScript" title="addModuleScript :: Adds a linked script to the page">
-            <span class="description">Adds a linked script to the page</span><pre>addModuleScript</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addModuleStyleSheet" title="addModuleStyleSheet :: Adds a linked stylesheet from a module to the page">
-            <span class="description">Adds a linked stylesheet from a module to the page</span><pre>addModuleStyleSheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addPluginScript" title="addPluginScript :: Adds a linked script to the page">
-            <span class="description">Adds a linked script to the page</span><pre>addPluginScript</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addPluginStyleSheet" title="addPluginStyleSheet :: Adds a linked stylesheet from a plugin to the page">
-            <span class="description">Adds a linked stylesheet from a plugin to the page</span><pre>addPluginStyleSheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addScript" title="addScript :: Adds a linked script to the page">
-            <span class="description">Adds a linked script to the page</span><pre>addScript</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addStylesheet" title="addStylesheet :: Adds a linked stylesheet to the page">
-            <span class="description">Adds a linked stylesheet to the page</span><pre>addStylesheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addSystemScript" title="addSystemScript :: Adds a linked script from the system to the page">
-            <span class="description">Adds a linked script from the system to the page</span><pre>addSystemScript</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addSystemStylesheet" title="addSystemStylesheet :: Adds a linked stylesheet from the system to the page">
-            <span class="description">Adds a linked stylesheet from the system to the page</span><pre>addSystemStylesheet</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_base" title="base :: Get the base path">
-            <span class="description">Get the base path</span><pre>base</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getComponentImage" title="getComponentImage :: Gets the path to a component image
-checks template overrides first, then component">
-            <span class="description">Gets the path to a component image
-checks template overrides first, then component</span><pre>getComponentImage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getComponentStylesheet" title="getComponentStylesheet :: Gets the path to a component stylesheet
-checks template overrides first, then component">
-            <span class="description">Gets the path to a component stylesheet
-checks template overrides first, then component</span><pre>getComponentStylesheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getModuleImage" title="getModuleImage :: Gets the path to a module image
-checks template overrides first, then module">
-            <span class="description">Gets the path to a module image
-checks template overrides first, then module</span><pre>getModuleImage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPluginImage" title="getPluginImage :: Gets the path to a plugin image
-checks template overrides first, then plugin folder">
-            <span class="description">Gets the path to a plugin image
-checks template overrides first, then plugin folder</span><pre>getPluginImage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getSystemImage" title="getSystemImage :: Gets the path to a system image">
-            <span class="description">Gets the path to a system image</span><pre>getSystemImage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getSystemStylesheet" title="getSystemStylesheet :: Returns the path to a system stylesheet
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addComponentScript" title="addComponentScript() :: Adds a linked script from a component to the page"><span class="description">Adds a linked script from a component to the page</span><pre>addComponentScript()</pre></a></li>
+<li class="method public "><a href="#method_addComponentStylesheet" title="addComponentStylesheet() :: Adds a linked stylesheet from a component to the page"><span class="description">Adds a linked stylesheet from a component to the page</span><pre>addComponentStylesheet()</pre></a></li>
+<li class="method public "><a href="#method_addModuleScript" title="addModuleScript() :: Adds a linked script to the page"><span class="description">Adds a linked script to the page</span><pre>addModuleScript()</pre></a></li>
+<li class="method public "><a href="#method_addModuleStyleSheet" title="addModuleStyleSheet() :: Adds a linked stylesheet from a module to the page"><span class="description">Adds a linked stylesheet from a module to the page</span><pre>addModuleStyleSheet()</pre></a></li>
+<li class="method public "><a href="#method_addPluginScript" title="addPluginScript() :: Adds a linked script to the page"><span class="description">Adds a linked script to the page</span><pre>addPluginScript()</pre></a></li>
+<li class="method public "><a href="#method_addPluginStyleSheet" title="addPluginStyleSheet() :: Adds a linked stylesheet from a plugin to the page"><span class="description">Adds a linked stylesheet from a plugin to the page</span><pre>addPluginStyleSheet()</pre></a></li>
+<li class="method public "><a href="#method_addScript" title="addScript() :: Adds a linked script to the page"><span class="description">Adds a linked script to the page</span><pre>addScript()</pre></a></li>
+<li class="method public "><a href="#method_addStylesheet" title="addStylesheet() :: Adds a linked stylesheet to the page"><span class="description">Adds a linked stylesheet to the page</span><pre>addStylesheet()</pre></a></li>
+<li class="method public "><a href="#method_addSystemScript" title="addSystemScript() :: Adds a linked script from the system to the page"><span class="description">Adds a linked script from the system to the page</span><pre>addSystemScript()</pre></a></li>
+<li class="method public "><a href="#method_addSystemStylesheet" title="addSystemStylesheet() :: Adds a linked stylesheet from the system to the page"><span class="description">Adds a linked stylesheet from the system to the page</span><pre>addSystemStylesheet()</pre></a></li>
+<li class="method public "><a href="#method_base" title="base() :: Get the base path"><span class="description">Get the base path</span><pre>base()</pre></a></li>
+<li class="method public "><a href="#method_getComponentImage" title="getComponentImage() :: Gets the path to a component image
+checks template overrides first, then component"><span class="description">Gets the path to a component image
+checks template overrides first, then component</span><pre>getComponentImage()</pre></a></li>
+<li class="method public "><a href="#method_getComponentStylesheet" title="getComponentStylesheet() :: Gets the path to a component stylesheet
+checks template overrides first, then component"><span class="description">Gets the path to a component stylesheet
+checks template overrides first, then component</span><pre>getComponentStylesheet()</pre></a></li>
+<li class="method public "><a href="#method_getModuleImage" title="getModuleImage() :: Gets the path to a module image
+checks template overrides first, then module"><span class="description">Gets the path to a module image
+checks template overrides first, then module</span><pre>getModuleImage()</pre></a></li>
+<li class="method public "><a href="#method_getPluginImage" title="getPluginImage() :: Gets the path to a plugin image
+checks template overrides first, then plugin folder"><span class="description">Gets the path to a plugin image
+checks template overrides first, then plugin folder</span><pre>getPluginImage()</pre></a></li>
+<li class="method public "><a href="#method_getSystemImage" title="getSystemImage() :: Gets the path to a system image"><span class="description">Gets the path to a system image</span><pre>getSystemImage()</pre></a></li>
+<li class="method public "><a href="#method_getSystemStylesheet" title="getSystemStylesheet() :: Returns the path to a system stylesheet
 Accepts either an array or string of comma-separated file names
-If more than one stylesheet is called for, it will combine, compress, return path to cached file">
-            <span class="description">Returns the path to a system stylesheet
+If more than one stylesheet is called for, it will combine, compress, return path to cached file"><span class="description">Returns the path to a system stylesheet
 Accepts either an array or string of comma-separated file names
-If more than one stylesheet is called for, it will combine, compress, return path to cached file</span><pre>getSystemStylesheet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isImage" title="isImage :: Check if a filename is a supported image type">
-            <span class="description">Check if a filename is a supported image type</span><pre>isImage</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method protected">
-                            <a href="#method_app" title="app :: Get an item from the applcation">
-                                <span class="description">Get an item from the applcation</span><pre>app</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Assets</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Class for adding stylesheets from components, modules, and plugins to the document</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_addComponentScript"></a>
-                        <div class="element clickable method public  method_addComponentScript" data-toggle="collapse" data-target=".method_addComponentScript .collapse">
-                            <h2>Adds a linked script from a component to the page</h2>
-                            <pre>addComponentScript(string $component, string $script = &#039;&#039;, string $dir = &#039;js&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$component</h4>
-                                                <code>string</code><p><p>URL to the linked script</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$script</h4>
-                                                <code>string</code><p><p>Script name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addComponentStylesheet"></a>
-                        <div class="element clickable method public  method_addComponentStylesheet" data-toggle="collapse" data-target=".method_addComponentStylesheet .collapse">
-                            <h2>Adds a linked stylesheet from a component to the page</h2>
-                            <pre>addComponentStylesheet(string $component, string $stylesheet = &#039;&#039;, string $dir = &#039;css&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$component</h4>
-                                                <code>string</code><p><p>Component name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet name (optional, uses component name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addModuleScript"></a>
-                        <div class="element clickable method public  method_addModuleScript" data-toggle="collapse" data-target=".method_addModuleScript .collapse">
-                            <h2>Adds a linked script to the page</h2>
-                            <pre>addModuleScript(string $module, string $script = &#039;&#039;, string $dir = &#039;js&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$module</h4>
-                                                <code>string</code><p><p>URL to the linked script</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$script</h4>
-                                                <code>string</code><p><p>Script name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addModuleStyleSheet"></a>
-                        <div class="element clickable method public  method_addModuleStyleSheet" data-toggle="collapse" data-target=".method_addModuleStyleSheet .collapse">
-                            <h2>Adds a linked stylesheet from a module to the page</h2>
-                            <pre>addModuleStyleSheet(string $module, string $stylesheet = &#039;&#039;, string $dir = &#039;css&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$module</h4>
-                                                <code>string</code><p><p>Module name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addPluginScript"></a>
-                        <div class="element clickable method public  method_addPluginScript" data-toggle="collapse" data-target=".method_addPluginScript .collapse">
-                            <h2>Adds a linked script to the page</h2>
-                            <pre>addPluginScript(string $folder, string $plugin, string $script = &#039;&#039;, string $dir = &#039;js&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$plugin</h4>
-                                                <code>string</code><p><p>Plugin name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$script</h4>
-                                                <code>string</code><p><p>Script name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addPluginStyleSheet"></a>
-                        <div class="element clickable method public  method_addPluginStyleSheet" data-toggle="collapse" data-target=".method_addPluginStyleSheet .collapse">
-                            <h2>Adds a linked stylesheet from a plugin to the page</h2>
-                            <pre>addPluginStyleSheet(string $folder, string $plugin, string $stylesheet = &#039;&#039;, string $dir = &#039;css&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$plugin</h4>
-                                                <code>string</code><p><p>Plugin name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addScript"></a>
-                        <div class="element clickable method public  method_addScript" data-toggle="collapse" data-target=".method_addScript .collapse">
-                            <h2>Adds a linked script to the page</h2>
-                            <pre>addScript(string $script) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$script</h4>
-                                                <code>string</code><p><p>Script name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addStylesheet"></a>
-                        <div class="element clickable method public  method_addStylesheet" data-toggle="collapse" data-target=".method_addStylesheet .collapse">
-                            <h2>Adds a linked stylesheet to the page</h2>
-                            <pre>addStylesheet(string $stylesheet) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet name (optional, uses component name if left blank)</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addSystemScript"></a>
-                        <div class="element clickable method public  method_addSystemScript" data-toggle="collapse" data-target=".method_addSystemScript .collapse">
-                            <h2>Adds a linked script from the system to the page</h2>
-                            <pre>addSystemScript(string $script, string $dir = &#039;js&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$script</h4>
-                                                <code>string</code><p><p>Script name (optional, uses module name if left blank)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addSystemStylesheet"></a>
-                        <div class="element clickable method public  method_addSystemStylesheet" data-toggle="collapse" data-target=".method_addSystemStylesheet .collapse">
-                            <h2>Adds a linked stylesheet from the system to the page</h2>
-                            <pre>addSystemStylesheet(string $stylesheet, string $dir = &#039;css&#039;) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_app"></a>
-                        <div class="element clickable method protected  method_app" data-toggle="collapse" data-target=".method_app .collapse">
-                            <h2>Get an item from the applcation</h2>
-                            <pre>app(string $key) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_base"></a>
-                        <div class="element clickable method public  method_base" data-toggle="collapse" data-target=".method_base .collapse">
-                            <h2>Get the base path</h2>
-                            <pre>base() : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getComponentImage"></a>
-                        <div class="element clickable method public  method_getComponentImage" data-toggle="collapse" data-target=".method_getComponentImage .collapse">
-                            <h2>Gets the path to a component image
+If more than one stylesheet is called for, it will combine, compress, return path to cached file</span><pre>getSystemStylesheet()</pre></a></li>
+<li class="method public "><a href="#method_isImage" title="isImage() :: Check if a filename is a supported image type"><span class="description">Check if a filename is a supported image type</span><pre>isImage()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_app" title="app() :: Get an item from the applcation"><span class="description">Get an item from the applcation</span><pre>app()</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Document\Assets"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Document.html">Document</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Document.Assets.html">Assets</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class for adding stylesheets from components, modules, and plugins to the document</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addComponentScript"></a><div class="element clickable method public method_addComponentScript " data-toggle="collapse" data-target=".method_addComponentScript .collapse" title="public">
+<h2>Adds a linked script from a component to the page</h2>
+<pre>addComponentScript(string $component, string $script<code> = ''</code>, string $dir<code> = 'js'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$component</h4>
+<code>string</code><p>URL to the linked script</p></div>
+<div class="subelement argument">
+<h4>$script</h4>
+<code>string</code><p>Script name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addComponentStylesheet"></a><div class="element clickable method public method_addComponentStylesheet " data-toggle="collapse" data-target=".method_addComponentStylesheet .collapse" title="public">
+<h2>Adds a linked stylesheet from a component to the page</h2>
+<pre>addComponentStylesheet(string $component, string $stylesheet<code> = ''</code>, string $dir<code> = 'css'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$component</h4>
+<code>string</code><p>Component name</p></div>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet name (optional, uses component name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addModuleScript"></a><div class="element clickable method public method_addModuleScript " data-toggle="collapse" data-target=".method_addModuleScript .collapse" title="public">
+<h2>Adds a linked script to the page</h2>
+<pre>addModuleScript(string $module, string $script<code> = ''</code>, string $dir<code> = 'js'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$module</h4>
+<code>string</code><p>URL to the linked script</p></div>
+<div class="subelement argument">
+<h4>$script</h4>
+<code>string</code><p>Script name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addModuleStyleSheet"></a><div class="element clickable method public method_addModuleStyleSheet " data-toggle="collapse" data-target=".method_addModuleStyleSheet .collapse" title="public">
+<h2>Adds a linked stylesheet from a module to the page</h2>
+<pre>addModuleStyleSheet(string $module, string $stylesheet<code> = ''</code>, string $dir<code> = 'css'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$module</h4>
+<code>string</code><p>Module name</p></div>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addPluginScript"></a><div class="element clickable method public method_addPluginScript " data-toggle="collapse" data-target=".method_addPluginScript .collapse" title="public">
+<h2>Adds a linked script to the page</h2>
+<pre>addPluginScript(string $folder, string $plugin, string $script<code> = ''</code>, string $dir<code> = 'js'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder name</p></div>
+<div class="subelement argument">
+<h4>$plugin</h4>
+<code>string</code><p>Plugin name</p></div>
+<div class="subelement argument">
+<h4>$script</h4>
+<code>string</code><p>Script name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addPluginStyleSheet"></a><div class="element clickable method public method_addPluginStyleSheet " data-toggle="collapse" data-target=".method_addPluginStyleSheet .collapse" title="public">
+<h2>Adds a linked stylesheet from a plugin to the page</h2>
+<pre>addPluginStyleSheet(string $folder, string $plugin, string $stylesheet<code> = ''</code>, string $dir<code> = 'css'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder name</p></div>
+<div class="subelement argument">
+<h4>$plugin</h4>
+<code>string</code><p>Plugin name</p></div>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addScript"></a><div class="element clickable method public method_addScript " data-toggle="collapse" data-target=".method_addScript .collapse" title="public">
+<h2>Adds a linked script to the page</h2>
+<pre>addScript(string $script) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$script</h4>
+<code>string</code><p>Script name (optional, uses module name if left blank)</p></div>
+</div></div>
+</div>
+<a id="method_addStylesheet"></a><div class="element clickable method public method_addStylesheet " data-toggle="collapse" data-target=".method_addStylesheet .collapse" title="public">
+<h2>Adds a linked stylesheet to the page</h2>
+<pre>addStylesheet(string $stylesheet) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet name (optional, uses component name if left blank)</p></div>
+</div></div>
+</div>
+<a id="method_addSystemScript"></a><div class="element clickable method public method_addSystemScript " data-toggle="collapse" data-target=".method_addSystemScript .collapse" title="public">
+<h2>Adds a linked script from the system to the page</h2>
+<pre>addSystemScript(string $script, string $dir<code> = 'js'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$script</h4>
+<code>string</code><p>Script name (optional, uses module name if left blank)</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_addSystemStylesheet"></a><div class="element clickable method public method_addSystemStylesheet " data-toggle="collapse" data-target=".method_addSystemStylesheet .collapse" title="public">
+<h2>Adds a linked stylesheet from the system to the page</h2>
+<pre>addSystemStylesheet(string $stylesheet, string $dir<code> = 'css'</code>) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet name</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+</div></div>
+</div>
+<a id="method_base"></a><div class="element clickable method public method_base " data-toggle="collapse" data-target=".method_base .collapse" title="public">
+<h2>Get the base path</h2>
+<pre>base() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getComponentImage"></a><div class="element clickable method public method_getComponentImage " data-toggle="collapse" data-target=".method_getComponentImage .collapse" title="public">
+<h2>Gets the path to a component image
 checks template overrides first, then component</h2>
-                            <pre>getComponentImage(string $component, string $image, string $dir = &#039;img&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$component</h4>
-                                                <code>string</code><p><p>Component name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$image</h4>
-                                                <code>string</code><p><p>Image to look for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Path to an image file</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getComponentStylesheet"></a>
-                        <div class="element clickable method public  method_getComponentStylesheet" data-toggle="collapse" data-target=".method_getComponentStylesheet .collapse">
-                            <h2>Gets the path to a component stylesheet
+<pre>getComponentImage(string $component, string $image, string $dir<code> = 'img'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$component</h4>
+<code>string</code><p>Component name</p></div>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>Image to look for</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Path to an image file</div>
+</div></div>
+</div>
+<a id="method_getComponentStylesheet"></a><div class="element clickable method public method_getComponentStylesheet " data-toggle="collapse" data-target=".method_getComponentStylesheet .collapse" title="public">
+<h2>Gets the path to a component stylesheet
 checks template overrides first, then component</h2>
-                            <pre>getComponentStylesheet(string $component, string $stylesheet, string $dir = &#039;css&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$component</h4>
-                                                <code>string</code><p><p>Component name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$stylesheet</h4>
-                                                <code>string</code><p><p>Stylesheet to look for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Path to a stylesheet</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getModuleImage"></a>
-                        <div class="element clickable method public  method_getModuleImage" data-toggle="collapse" data-target=".method_getModuleImage .collapse">
-                            <h2>Gets the path to a module image
+<pre>getComponentStylesheet(string $component, string $stylesheet, string $dir<code> = 'css'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$component</h4>
+<code>string</code><p>Component name</p></div>
+<div class="subelement argument">
+<h4>$stylesheet</h4>
+<code>string</code><p>Stylesheet to look for</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Path to a stylesheet</div>
+</div></div>
+</div>
+<a id="method_getModuleImage"></a><div class="element clickable method public method_getModuleImage " data-toggle="collapse" data-target=".method_getModuleImage .collapse" title="public">
+<h2>Gets the path to a module image
 checks template overrides first, then module</h2>
-                            <pre>getModuleImage(string $module, string $image, string $dir = &#039;img&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$module</h4>
-                                                <code>string</code><p><p>Module name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$image</h4>
-                                                <code>string</code><p><p>Image to look for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Path to an image file</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPluginImage"></a>
-                        <div class="element clickable method public  method_getPluginImage" data-toggle="collapse" data-target=".method_getPluginImage .collapse">
-                            <h2>Gets the path to a plugin image
+<pre>getModuleImage(string $module, string $image, string $dir<code> = 'img'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$module</h4>
+<code>string</code><p>Module name</p></div>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>Image to look for</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Path to an image file</div>
+</div></div>
+</div>
+<a id="method_getPluginImage"></a><div class="element clickable method public method_getPluginImage " data-toggle="collapse" data-target=".method_getPluginImage .collapse" title="public">
+<h2>Gets the path to a plugin image
 checks template overrides first, then plugin folder</h2>
-                            <pre>getPluginImage(string $folder, string $plugin, string $image, string $dir = &#039;img&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$folder</h4>
-                                                <code>string</code><p><p>Plugin folder name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$plugin</h4>
-                                                <code>string</code><p><p>Plugin name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$image</h4>
-                                                <code>string</code><p><p>Image to look for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Path to an image file</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getSystemImage"></a>
-                        <div class="element clickable method public  method_getSystemImage" data-toggle="collapse" data-target=".method_getSystemImage .collapse">
-                            <h2>Gets the path to a system image</h2>
-                            <pre>getSystemImage(string $image, string $dir = &#039;images&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$image</h4>
-                                                <code>string</code><p><p>Image to look for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Asset directory to look in</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Path to an image file</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getSystemStylesheet"></a>
-                        <div class="element clickable method public  method_getSystemStylesheet" data-toggle="collapse" data-target=".method_getSystemStylesheet .collapse">
-                            <h2>Returns the path to a system stylesheet
+<pre>getPluginImage(string $folder, string $plugin, string $image, string $dir<code> = 'img'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>Plugin folder name</p></div>
+<div class="subelement argument">
+<h4>$plugin</h4>
+<code>string</code><p>Plugin name</p></div>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>Image to look for</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Path to an image file</div>
+</div></div>
+</div>
+<a id="method_getSystemImage"></a><div class="element clickable method public method_getSystemImage " data-toggle="collapse" data-target=".method_getSystemImage .collapse" title="public">
+<h2>Gets the path to a system image</h2>
+<pre>getSystemImage(string $image, string $dir<code> = 'images'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>Image to look for</p></div>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Asset directory to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Path to an image file</div>
+</div></div>
+</div>
+<a id="method_getSystemStylesheet"></a><div class="element clickable method public method_getSystemStylesheet " data-toggle="collapse" data-target=".method_getSystemStylesheet .collapse" title="public">
+<h2>Returns the path to a system stylesheet
 Accepts either an array or string of comma-separated file names
 If more than one stylesheet is called for, it will combine, compress, return path to cached file</h2>
-                            <pre>getSystemStylesheet(mixed $elements = null) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$elements</h4>
-                                                <code>mixed</code><p><p>An array or string of comma-separated file names</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isImage"></a>
-                        <div class="element clickable method public  method_isImage" data-toggle="collapse" data-target=".method_isImage .collapse">
-                            <h2>Check if a filename is a supported image type</h2>
-                            <pre>isImage(string $image) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$image</h4>
-                                                <code>string</code><p><p>Filename</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                        </div>
-            </div>
-            <a id="\Hubzero\Document\Assets"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Document.html">Document</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Document.Assets.html">Assets</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:54 +0000.<br/>
-    </footer>
-    </body>
+<pre>getSystemStylesheet(mixed $elements<code> = null</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$elements</h4>
+<code>mixed</code><p>An array or string of comma-separated file names</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_isImage"></a><div class="element clickable method public method_isImage " data-toggle="collapse" data-target=".method_isImage .collapse" title="public">
+<h2>Check if a filename is a supported image type</h2>
+<pre>isImage(string $image) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>Filename</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_app"></a><div class="element clickable method protected method_app " data-toggle="collapse" data-target=".method_app .collapse" title="protected">
+<h2>Get an item from the applcation</h2>
+<pre>app(string $key) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:13-04:00.<br></footer></div>
+</div>
+</body>
 </html>

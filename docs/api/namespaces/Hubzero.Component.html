@@ -1,357 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>     &raquo; \Hubzero\Component
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » Hubzero\Component</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            
-    <div class="row">
-
-        <div class="span4">
-            <div class="btn-group view pull-right" data-toggle="buttons-radio">
-                <button class="btn details" title="Show descriptions and method names">
-                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
-                    <i class="icon-align-justify"></i>
-                </button>
-            </div>
-            <ul class="side-nav nav nav-list">
-                <li class="nav-header">
-                    <i class="icon-map-marker"></i> Namespaces
-                </li>
-                <a href="../namespaces/Hubzero.Component.html" title="Component">
-                    <i class="icon-th"></i> Component
-                </a>
-                <ul class="nav nav-list nav-namespaces">
-                        
-        <li>
-        <a href="../namespaces/Hubzero.Component.Exception.html" title="Exception">
-            <i class="icon-th"></i> Exception
-        </a>
-        <ul class="nav nav-list nav-namespaces">
-                
-    
-        </ul>
-    </li>
-        <li>
-        <a href="../namespaces/Hubzero.Component.Router.html" title="Router">
-            <i class="icon-th"></i> Router
-        </a>
-        <ul class="nav nav-list nav-namespaces">
-                
-    
-        </ul>
-    </li>
-    
-                </ul>
-            </ul>
-        </div>
-
-        <div class="span8 namespace-contents">
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.html">Hubzero</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                                        <div id="interface_ControllerInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ControllerInterface .collapse">
-        <h1>ControllerInterface<a href="../classes/Hubzero.Component.ControllerInterface.html">¶</a></h1>
-        <p class="short_description">Controller interface for components.</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.ControllerInterface.html" class="more">« More »</a>    </div>
-
-                
-                                        <div id="class_AdminController" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AdminController .collapse">
-        <h1>AdminController<a href="../classes/Hubzero.Component.AdminController.html">¶</a></h1>
-        <p class="short_description">Base admin controller for components to extend.</p>
-        <div class="details collapse">
-                            <p>Accepts an array of configuration values to the constructor. If no config
-passed, it will automatically determine the component and controller names.
-Internally, sets the $database, $user, $view, and component $config.</p>
-<p>Executable tasks are determined by method name. All public methods that end in
-&quot;Task&quot; (e.g., displayTask, editTask) are callable by the end user.</p>
-<p>View name defaults to controller name with layout defaulting to task name. So,
-a $controller of &quot;One&quot; and a $task of &quot;two&quot; will map to:</p>
-<p>/{component name}
-/views
-/one
-/tmpl
-/two.php</p>
-                    </div>
-        <a href="../classes/Hubzero.Component.AdminController.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_ApiController" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ApiController .collapse">
-        <h1>ApiController<a href="../classes/Hubzero.Component.ApiController.html">¶</a></h1>
-        <p class="short_description">Base API controller for components to extend.</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.ApiController.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Loader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Loader .collapse">
-        <h1>Loader<a href="../classes/Hubzero.Component.Loader.html">¶</a></h1>
-        <p class="short_description">Component helper class</p>
-        <div class="details collapse">
-                            <p>Largely inspired by Joomla's JComponentHelper class.</p>
-                    </div>
-        <a href="../classes/Hubzero.Component.Loader.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_SiteController" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SiteController .collapse">
-        <h1>SiteController<a href="../classes/Hubzero.Component.SiteController.html">¶</a></h1>
-        <p class="short_description">Base controller for components to extend.</p>
-        <div class="details collapse">
-                            <p>Accepts an array of configuration values to the constructor. If no config
-passed, it will automatically determine the component and controller names.
-Internally, sets the $database, $user, $view, and component $config.</p>
-<p>Executable tasks are determined by method name. All public methods that end in
-&quot;Task&quot; (e.g., displayTask, editTask) are callable by the end user.</p>
-<p>View name defaults to controller name with layout defaulting to task name. So,
-a $controller of &quot;One&quot; and a $task of &quot;two&quot; will map to:</p>
-<p>/{component name}
-/views
-/one
-/tmpl
-/two.php</p>
-                    </div>
-        <a href="../classes/Hubzero.Component.SiteController.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_View" class="element ajax clickable class" data-toggle="collapse" data-target="#class_View .collapse">
-        <h1>View<a href="../classes/Hubzero.Component.View.html">¶</a></h1>
-        <p class="short_description">Class for a component View</p>
-        <div class="details collapse">
-                            <p>Inspired, in parts, by Joomla's JView class</p>
-                    </div>
-        <a href="../classes/Hubzero.Component.View.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.html">Hubzero</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Component.Router.html">Router</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                                        <div id="interface_RouterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_RouterInterface .collapse">
-        <h1>RouterInterface<a href="../classes/Hubzero.Component.Router.RouterInterface.html">¶</a></h1>
-        <p class="short_description">Component router interface</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.Router.RouterInterface.html" class="more">« More »</a>    </div>
-
-                
-                                        <div id="class_Base" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Base .collapse">
-        <h1>Base<a href="../classes/Hubzero.Component.Router.Base.html">¶</a></h1>
-        <p class="short_description">Base component routing class</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.Router.Base.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Legacy" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Legacy .collapse">
-        <h1>Legacy<a href="../classes/Hubzero.Component.Router.Legacy.html">¶</a></h1>
-        <p class="short_description">Default routing class for missing or legacy component routers</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.Router.Legacy.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-    
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.html">Hubzero</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Component.Exception.html">Exception</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                
-                                        <div id="class_InvalidControllerException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidControllerException .collapse">
-        <h1>InvalidControllerException<a href="../classes/Hubzero.Component.Exception.InvalidControllerException.html">¶</a></h1>
-        <p class="short_description">Invalid component controller exception</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.Exception.InvalidControllerException.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_InvalidTaskException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidTaskException .collapse">
-        <h1>InvalidTaskException<a href="../classes/Hubzero.Component.Exception.InvalidTaskException.html">¶</a></h1>
-        <p class="short_description">Invalid component task exception</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Component.Exception.InvalidTaskException.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-    
-    
-        </div>
-    </div>
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:54 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Namespaces</li>
+<li>
+<a href="../namespaces/Hubzero.Component.html" title="Component"><i class="icon-th"></i>Component</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/Hubzero.Component.Exception.html" title="Exception"><i class="icon-th"></i>Exception</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/Hubzero.Component.Router.html" title="Router"><i class="icon-th"></i>Router</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Interfaces" class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#ControllerInterface" title="Controller interface for components.">ControllerInterface</a></li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#SiteController" title="Base controller for components to extend.">SiteController</a></li>
+<li><a href="#View" title="Class for a component View">View</a></li>
+<li><a href="#Loader" title="Component helper class">Loader</a></li>
+<li><a href="#AdminController" title="Base admin controller for components to extend.">AdminController</a></li>
+<li><a href="#ApiController" title="Base API controller for components to extend.">ApiController</a></li>
+</ul>
+</div>
+<div class="span8 namespace-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="ControllerInterface" class="element ajax clickable interface">
+<h1>ControllerInterface<a href="../classes/Hubzero.Component.ControllerInterface.html">¶</a>
+</h1>
+<p class="short_description">Controller interface for components.</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.ControllerInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="AdminController" class="element ajax clickable class">
+<h1>AdminController<a href="../classes/Hubzero.Component.AdminController.html">¶</a>
+</h1>
+<p class="short_description">Base admin controller for components to extend.</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.AdminController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="ApiController" class="element ajax clickable class">
+<h1>ApiController<a href="../classes/Hubzero.Component.ApiController.html">¶</a>
+</h1>
+<p class="short_description">Base API controller for components to extend.</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.ApiController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Loader" class="element ajax clickable class">
+<h1>Loader<a href="../classes/Hubzero.Component.Loader.html">¶</a>
+</h1>
+<p class="short_description">Component helper class</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Loader.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="SiteController" class="element ajax clickable class">
+<h1>SiteController<a href="../classes/Hubzero.Component.SiteController.html">¶</a>
+</h1>
+<p class="short_description">Base controller for components to extend.</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.SiteController.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="View" class="element ajax clickable class">
+<h1>View<a href="../classes/Hubzero.Component.View.html">¶</a>
+</h1>
+<p class="short_description">Class for a component View</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.View.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Hubzero.Component.Exception.html">Exception</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="InvalidControllerException" class="element ajax clickable class">
+<h1>InvalidControllerException<a href="../classes/Hubzero.Component.Exception.InvalidControllerException.html">¶</a>
+</h1>
+<p class="short_description">Invalid component controller exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Exception.InvalidControllerException.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="InvalidTaskException" class="element ajax clickable class">
+<h1>InvalidTaskException<a href="../classes/Hubzero.Component.Exception.InvalidTaskException.html">¶</a>
+</h1>
+<p class="short_description">Invalid component task exception</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Exception.InvalidTaskException.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Component.html">Component</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Hubzero.Component.Router.html">Router</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="RouterInterface" class="element ajax clickable interface">
+<h1>RouterInterface<a href="../classes/Hubzero.Component.Router.RouterInterface.html">¶</a>
+</h1>
+<p class="short_description">Component router interface</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Router.RouterInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Base" class="element ajax clickable class">
+<h1>Base<a href="../classes/Hubzero.Component.Router.Base.html">¶</a>
+</h1>
+<p class="short_description">Base component routing class</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Router.Base.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Legacy" class="element ajax clickable class">
+<h1>Legacy<a href="../classes/Hubzero.Component.Router.Legacy.html">¶</a>
+</h1>
+<p class="short_description">Default routing class for missing or legacy component routers</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Component.Router.Legacy.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:24:56-04:00.<br></footer></div>
+</div>
+</body>
 </html>

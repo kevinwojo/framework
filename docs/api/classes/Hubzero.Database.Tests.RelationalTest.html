@@ -1,1835 +1,526 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Database\Tests\RelationalTest
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Database\Tests\RelationalTest</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public inherited">
-        <a href="#method_getConnection" title="getConnection :: Gets the default database connection (PHPUnit uses this during setup)">
-            <span class="description">Gets the default database connection (PHPUnit uses this during setup)</span><pre>getConnection</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getDataSet" title="getDataSet :: Gets the database seed info (PHPUnit does this for every test)">
-            <span class="description">Gets the database seed info (PHPUnit does this for every test)</span><pre>getDataSet</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getMockDriver" title="getMockDriver :: Gets a mock database driver">
-            <span class="description">Gets a mock database driver</span><pre>getMockDriver</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setUp" title="setUp :: Sets up the tests.">
-            <span class="description">Sets up the tests.</span><pre>setUp</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_tearDownAfterClass" title="tearDownAfterClass :: Resets the database handle to ensure it doesn&#039;t cause
-problems for subsequent tests">
-            <span class="description">Resets the database handle to ensure it doesn&#039;t cause
-problems for subsequent tests</span><pre>tearDownAfterClass</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testBelongsToOneCanBeConstrained" title="testBelongsToOneCanBeConstrained :: Tests that the belongs to one relationship can properly constrain the belongs to side">
-            <span class="description">Tests that the belongs to one relationship can properly constrain the belongs to side</span><pre>testBelongsToOneCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testBelongsToOneReturnsRelationship" title="testBelongsToOneReturnsRelationship :: Tests that a belongsToOne relationship properly grabs the related side of the relationship">
-            <span class="description">Tests that a belongsToOne relationship properly grabs the related side of the relationship</span><pre>testBelongsToOneReturnsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCallHelper" title="testCallHelper :: Tests to make sure a call to a helper function actually finds the function">
-            <span class="description">Tests to make sure a call to a helper function actually finds the function</span><pre>testCallHelper</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCallTransformer" title="testCallTransformer :: Tests to make sure a call to a transformer actually finds the transformer">
-            <span class="description">Tests to make sure a call to a transformer actually finds the transformer</span><pre>testCallTransformer</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCanAddRuntimeRelationship" title="testCanAddRuntimeRelationship :: Tests to make sure we can add a dynamic relationship at runtime">
-            <span class="description">Tests to make sure we can add a dynamic relationship at runtime</span><pre>testCanAddRuntimeRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCanDoSimpleSerialization" title="testCanDoSimpleSerialization :: Tests to make sure we can serialize and unserialize a model">
-            <span class="description">Tests to make sure we can serialize and unserialize a model</span><pre>testCanDoSimpleSerialization</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCanIntrospectRelationships" title="testCanIntrospectRelationships :: Tests to make sure we can get relationships defined on a model">
-            <span class="description">Tests to make sure we can get relationships defined on a model</span><pre>testCanIntrospectRelationships</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testCanIntrospectRelationshipsIncludingRuntimeRelationships" title="testCanIntrospectRelationshipsIncludingRuntimeRelationships :: Tests to make sure we can get relationships defined on a model, including runtime relationships">
-            <span class="description">Tests to make sure we can get relationships defined on a model, including runtime relationships</span><pre>testCanIntrospectRelationshipsIncludingRuntimeRelationships</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testConnectManyShiftsToManyCanAddAdditionalFields" title="testConnectManyShiftsToManyCanAddAdditionalFields :: Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table">
-            <span class="description">Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table</span><pre>testConnectManyShiftsToManyCanAddAdditionalFields</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testConnectManyShiftsToManyCreatesAssociation" title="testConnectManyShiftsToManyCreatesAssociation :: Tests to make sure connecting a many shifts to many properly creates the relationship">
-            <span class="description">Tests to make sure connecting a many shifts to many properly creates the relationship</span><pre>testConnectManyShiftsToManyCreatesAssociation</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testConnectManyToManyCanAddAdditionalFields" title="testConnectManyToManyCanAddAdditionalFields :: Tests to make sure connecting a many to many can also add additional fields to the intermediary table">
-            <span class="description">Tests to make sure connecting a many to many can also add additional fields to the intermediary table</span><pre>testConnectManyToManyCanAddAdditionalFields</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testConnectManyToManyCreatesAssociation" title="testConnectManyToManyCreatesAssociation :: Tests to make sure connecting a many to many properly creates the relationship">
-            <span class="description">Tests to make sure connecting a many to many properly creates the relationship</span><pre>testConnectManyToManyCreatesAssociation</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testConstruct" title="testConstruct :: Tests object construction and variable initialization">
-            <span class="description">Tests object construction and variable initialization</span><pre>testConstruct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testDisconnectManyShiftsToManyDestroysAssociation" title="testDisconnectManyShiftsToManyDestroysAssociation :: Tests to make sure disconnecting a many shifts to many properly destroys the relationship">
-            <span class="description">Tests to make sure disconnecting a many shifts to many properly destroys the relationship</span><pre>testDisconnectManyShiftsToManyDestroysAssociation</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testDisconnectManyToManyDestroysAssociation" title="testDisconnectManyToManyDestroysAssociation :: Tests to make sure disconnecting a many to many properly destroys the relationship">
-            <span class="description">Tests to make sure disconnecting a many to many properly destroys the relationship</span><pre>testDisconnectManyToManyDestroysAssociation</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingManyShiftsToManyCanBeConstrained" title="testIncludingManyShiftsToManyCanBeConstrained :: Tests that an including call can be constrained on a many shifts to many relationship">
-            <span class="description">Tests that an including call can be constrained on a many shifts to many relationship</span><pre>testIncludingManyShiftsToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingManyShiftsToManyPreloadsRelationship" title="testIncludingManyShiftsToManyPreloadsRelationship :: Tests that an including call can properly preload a many shifts to many relationship">
-            <span class="description">Tests that an including call can properly preload a many shifts to many relationship</span><pre>testIncludingManyShiftsToManyPreloadsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingManyToManyPreloadsRelationship" title="testIncludingManyToManyPreloadsRelationship :: Tests that an including call can properly preload a simple many to many relationship">
-            <span class="description">Tests that an including call can properly preload a simple many to many relationship</span><pre>testIncludingManyToManyPreloadsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingOneShiftsToManyCanBeConstrained" title="testIncludingOneShiftsToManyCanBeConstrained :: Tests that an including call can be constrained on a one shifts to many relationship">
-            <span class="description">Tests that an including call can be constrained on a one shifts to many relationship</span><pre>testIncludingOneShiftsToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingOneShiftsToManyPreloadsRelationship" title="testIncludingOneShiftsToManyPreloadsRelationship :: Tests that an including call can properly preload a one shifts to many relationship">
-            <span class="description">Tests that an including call can properly preload a one shifts to many relationship</span><pre>testIncludingOneShiftsToManyPreloadsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingOneToManyCanBeConstrained" title="testIncludingOneToManyCanBeConstrained :: Tests that an including call can be constrained on a one to many relationship">
-            <span class="description">Tests that an including call can be constrained on a one to many relationship</span><pre>testIncludingOneToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testIncludingOneToManyPreloadsRelationship" title="testIncludingOneToManyPreloadsRelationship :: Tests that an including call can properly preload a simple one to many relationship">
-            <span class="description">Tests that an including call can properly preload a simple one to many relationship</span><pre>testIncludingOneToManyPreloadsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyShiftsToManyCanBeConstrained" title="testManyShiftsToManyCanBeConstrained :: Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</span><pre>testManyShiftsToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyShiftsToManyCanBeConstrainedByCount" title="testManyShiftsToManyCanBeConstrainedByCount :: Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</span><pre>testManyShiftsToManyCanBeConstrainedByCount</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyShiftsToManyReturnsRelationship" title="testManyShiftsToManyReturnsRelationship :: Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship">
-            <span class="description">Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship</span><pre>testManyShiftsToManyReturnsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyShiftsToManySaveAutomaticallyConnects" title="testManyShiftsToManySaveAutomaticallyConnects :: Tests to make sure many shifts to many save automatically connects">
-            <span class="description">Tests to make sure many shifts to many save automatically connects</span><pre>testManyShiftsToManySaveAutomaticallyConnects</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyToManyCanBeConstrained" title="testManyToManyCanBeConstrained :: Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</span><pre>testManyToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyToManyCanBeConstrainedByCount" title="testManyToManyCanBeConstrainedByCount :: Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</span><pre>testManyToManyCanBeConstrainedByCount</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyToManyReturnsRelationship" title="testManyToManyReturnsRelationship :: Tests that a manyToMany relationship properly grabs the many side of the relationship">
-            <span class="description">Tests that a manyToMany relationship properly grabs the many side of the relationship</span><pre>testManyToManyReturnsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testManyToManySaveAutomaticallyConnects" title="testManyToManySaveAutomaticallyConnects :: Tests to make sure many to many save automatically connects">
-            <span class="description">Tests to make sure many to many save automatically connects</span><pre>testManyToManySaveAutomaticallyConnects</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneOrFailThrowsException" title="testOneOrFailThrowsException :: Tests that a call for a non-existant row via oneOrFail method throws an exception">
-            <span class="description">Tests that a call for a non-existant row via oneOrFail method throws an exception</span><pre>testOneOrFailThrowsException</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneOrNewCreatesNew" title="testOneOrNewCreatesNew :: Tests that a request for a non-existant row via oneOrNew method returns new model">
-            <span class="description">Tests that a request for a non-existant row via oneOrNew method returns new model</span><pre>testOneOrNewCreatesNew</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneReturnsResult" title="testOneReturnsResult :: Tests to make sure that a result can be retrieved">
-            <span class="description">Tests to make sure that a result can be retrieved</span><pre>testOneReturnsResult</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneShiftsToManyCanBeConstrained" title="testOneShiftsToManyCanBeConstrained :: Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</span><pre>testOneShiftsToManyCanBeConstrained</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneShiftsToManyCanBeConstrainedByCount" title="testOneShiftsToManyCanBeConstrainedByCount :: Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side">
-            <span class="description">Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</span><pre>testOneShiftsToManyCanBeConstrainedByCount</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneShiftsToManyCanGetShifter" title="testOneShiftsToManyCanGetShifter :: Tests to make sure we can retrieve the shifter of a many to many shifting relationship">
-            <span class="description">Tests to make sure we can retrieve the shifter of a many to many shifting relationship</span><pre>testOneShiftsToManyCanGetShifter</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneShiftsToManyReturnsRelationship" title="testOneShiftsToManyReturnsRelationship :: Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship">
-            <span class="description">Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship</span><pre>testOneShiftsToManyReturnsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneToManyCanBeConstrainedByCount" title="testOneToManyCanBeConstrainedByCount :: Tests that the one side of the relationship can be properly constrained by the many side">
-            <span class="description">Tests that the one side of the relationship can be properly constrained by the many side</span><pre>testOneToManyCanBeConstrainedByCount</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testOneToManyReturnsRelationship" title="testOneToManyReturnsRelationship :: Tests that a oneToMany relationship properly grabs the many side of the relationship">
-            <span class="description">Tests that a oneToMany relationship properly grabs the many side of the relationship</span><pre>testOneToManyReturnsRelationship</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testSaveOneShiftsToManyAssociatesRelated" title="testSaveOneShiftsToManyAssociatesRelated :: Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side">
-            <span class="description">Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side</span><pre>testSaveOneShiftsToManyAssociatesRelated</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_testSaveOneToManyAssociatesRelated" title="testSaveOneToManyAssociatesRelated :: Tests to make sure saving a one to many relationship properly sets the associated field on the related side">
-            <span class="description">Tests to make sure saving a one to many relationship properly sets the associated field on the related side</span><pre>testSaveOneToManyAssociatesRelated</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>RelationalTest</h1>
-                <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/Hubzero.Test.Database.html">\Hubzero\Test\Database</a>
-                                                        </small>
-                <p class="short_description">Base relational model tests</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_getConnection"></a>
-                        <div class="element clickable method public  method_getConnection inherited" data-toggle="collapse" data-target=".method_getConnection .collapse">
-                            <h2>Gets the default database connection (PHPUnit uses this during setup)</h2>
-                            <pre>getConnection() : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>PHPUnit_Extensions_Database_DB_IDatabaseConnection</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getDataSet"></a>
-                        <div class="element clickable method public  method_getDataSet inherited" data-toggle="collapse" data-target=".method_getDataSet .collapse">
-                            <h2>Gets the database seed info (PHPUnit does this for every test)</h2>
-                            <pre>getDataSet() : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>PHPUnit_Extensions_Database_DataSet_IDataSet</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getMockDriver"></a>
-                        <div class="element clickable method public  method_getMockDriver inherited" data-toggle="collapse" data-target=".method_getMockDriver .collapse">
-                            <h2>Gets a mock database driver</h2>
-                            <pre>getMockDriver() : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setUp"></a>
-                        <div class="element clickable method public  method_setUp" data-toggle="collapse" data-target=".method_setUp .collapse">
-                            <h2>Sets up the tests.</h2>
-                            <pre>setUp() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>..called prior to each test</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_tearDownAfterClass"></a>
-                        <div class="element clickable method public  method_tearDownAfterClass inherited" data-toggle="collapse" data-target=".method_tearDownAfterClass .collapse">
-                            <h2>Resets the database handle to ensure it doesn&#039;t cause
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method_getConnection" title="getConnection() :: Gets the default database connection (PHPUnit uses this during setup)"><span class="description">Gets the default database connection (PHPUnit uses this during setup)</span><pre>getConnection()</pre></a></li>
+<li class="method public inherited"><a href="#method_getDataSet" title="getDataSet() :: Gets the database seed info (PHPUnit does this for every test)"><span class="description">Gets the database seed info (PHPUnit does this for every test)</span><pre>getDataSet()</pre></a></li>
+<li class="method public inherited"><a href="#method_getMockDriver" title="getMockDriver() :: Gets a mock database driver"><span class="description">Gets a mock database driver</span><pre>getMockDriver()</pre></a></li>
+<li class="method public "><a href="#method_setUp" title="setUp() :: Sets up the tests."><span class="description">Sets up the tests.</span><pre>setUp()</pre></a></li>
+<li class="method public inherited"><a href="#method_tearDownAfterClass" title="tearDownAfterClass() :: Resets the database handle to ensure it doesn't cause
+problems for subsequent tests"><span class="description">Resets the database handle to ensure it doesn't cause
+problems for subsequent tests</span><pre>tearDownAfterClass()</pre></a></li>
+<li class="method public "><a href="#method_testBelongsToOneCanBeConstrained" title="testBelongsToOneCanBeConstrained() :: Tests that the belongs to one relationship can properly constrain the belongs to side"><span class="description">Tests that the belongs to one relationship can properly constrain the belongs to side</span><pre>testBelongsToOneCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testBelongsToOneReturnsRelationship" title="testBelongsToOneReturnsRelationship() :: Tests that a belongsToOne relationship properly grabs the related side of the relationship"><span class="description">Tests that a belongsToOne relationship properly grabs the related side of the relationship</span><pre>testBelongsToOneReturnsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testCallHelper" title="testCallHelper() :: Tests to make sure a call to a helper function actually finds the function"><span class="description">Tests to make sure a call to a helper function actually finds the function</span><pre>testCallHelper()</pre></a></li>
+<li class="method public "><a href="#method_testCallTransformer" title="testCallTransformer() :: Tests to make sure a call to a transformer actually finds the transformer"><span class="description">Tests to make sure a call to a transformer actually finds the transformer</span><pre>testCallTransformer()</pre></a></li>
+<li class="method public "><a href="#method_testCanAddRuntimeRelationship" title="testCanAddRuntimeRelationship() :: Tests to make sure we can add a dynamic relationship at runtime"><span class="description">Tests to make sure we can add a dynamic relationship at runtime</span><pre>testCanAddRuntimeRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testCanDoSimpleSerialization" title="testCanDoSimpleSerialization() :: Tests to make sure we can serialize and unserialize a model"><span class="description">Tests to make sure we can serialize and unserialize a model</span><pre>testCanDoSimpleSerialization()</pre></a></li>
+<li class="method public "><a href="#method_testCanIntrospectRelationships" title="testCanIntrospectRelationships() :: Tests to make sure we can get relationships defined on a model"><span class="description">Tests to make sure we can get relationships defined on a model</span><pre>testCanIntrospectRelationships()</pre></a></li>
+<li class="method public "><a href="#method_testCanIntrospectRelationshipsIncludingRuntimeRelationships" title="testCanIntrospectRelationshipsIncludingRuntimeRelationships() :: Tests to make sure we can get relationships defined on a model, including runtime relationships"><span class="description">Tests to make sure we can get relationships defined on a model, including runtime relationships</span><pre>testCanIntrospectRelationshipsIncludingRuntimeRelationships()</pre></a></li>
+<li class="method public "><a href="#method_testConnectManyShiftsToManyCanAddAdditionalFields" title="testConnectManyShiftsToManyCanAddAdditionalFields() :: Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table"><span class="description">Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table</span><pre>testConnectManyShiftsToManyCanAddAdditionalFields()</pre></a></li>
+<li class="method public "><a href="#method_testConnectManyShiftsToManyCreatesAssociation" title="testConnectManyShiftsToManyCreatesAssociation() :: Tests to make sure connecting a many shifts to many properly creates the relationship"><span class="description">Tests to make sure connecting a many shifts to many properly creates the relationship</span><pre>testConnectManyShiftsToManyCreatesAssociation()</pre></a></li>
+<li class="method public "><a href="#method_testConnectManyToManyCanAddAdditionalFields" title="testConnectManyToManyCanAddAdditionalFields() :: Tests to make sure connecting a many to many can also add additional fields to the intermediary table"><span class="description">Tests to make sure connecting a many to many can also add additional fields to the intermediary table</span><pre>testConnectManyToManyCanAddAdditionalFields()</pre></a></li>
+<li class="method public "><a href="#method_testConnectManyToManyCreatesAssociation" title="testConnectManyToManyCreatesAssociation() :: Tests to make sure connecting a many to many properly creates the relationship"><span class="description">Tests to make sure connecting a many to many properly creates the relationship</span><pre>testConnectManyToManyCreatesAssociation()</pre></a></li>
+<li class="method public "><a href="#method_testConstruct" title="testConstruct() :: Tests object construction and variable initialization"><span class="description">Tests object construction and variable initialization</span><pre>testConstruct()</pre></a></li>
+<li class="method public "><a href="#method_testDisconnectManyShiftsToManyDestroysAssociation" title="testDisconnectManyShiftsToManyDestroysAssociation() :: Tests to make sure disconnecting a many shifts to many properly destroys the relationship"><span class="description">Tests to make sure disconnecting a many shifts to many properly destroys the relationship</span><pre>testDisconnectManyShiftsToManyDestroysAssociation()</pre></a></li>
+<li class="method public "><a href="#method_testDisconnectManyToManyDestroysAssociation" title="testDisconnectManyToManyDestroysAssociation() :: Tests to make sure disconnecting a many to many properly destroys the relationship"><span class="description">Tests to make sure disconnecting a many to many properly destroys the relationship</span><pre>testDisconnectManyToManyDestroysAssociation()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingManyShiftsToManyCanBeConstrained" title="testIncludingManyShiftsToManyCanBeConstrained() :: Tests that an including call can be constrained on a many shifts to many relationship"><span class="description">Tests that an including call can be constrained on a many shifts to many relationship</span><pre>testIncludingManyShiftsToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingManyShiftsToManyPreloadsRelationship" title="testIncludingManyShiftsToManyPreloadsRelationship() :: Tests that an including call can properly preload a many shifts to many relationship"><span class="description">Tests that an including call can properly preload a many shifts to many relationship</span><pre>testIncludingManyShiftsToManyPreloadsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingManyToManyPreloadsRelationship" title="testIncludingManyToManyPreloadsRelationship() :: Tests that an including call can properly preload a simple many to many relationship"><span class="description">Tests that an including call can properly preload a simple many to many relationship</span><pre>testIncludingManyToManyPreloadsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingOneShiftsToManyCanBeConstrained" title="testIncludingOneShiftsToManyCanBeConstrained() :: Tests that an including call can be constrained on a one shifts to many relationship"><span class="description">Tests that an including call can be constrained on a one shifts to many relationship</span><pre>testIncludingOneShiftsToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingOneShiftsToManyPreloadsRelationship" title="testIncludingOneShiftsToManyPreloadsRelationship() :: Tests that an including call can properly preload a one shifts to many relationship"><span class="description">Tests that an including call can properly preload a one shifts to many relationship</span><pre>testIncludingOneShiftsToManyPreloadsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingOneToManyCanBeConstrained" title="testIncludingOneToManyCanBeConstrained() :: Tests that an including call can be constrained on a one to many relationship"><span class="description">Tests that an including call can be constrained on a one to many relationship</span><pre>testIncludingOneToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testIncludingOneToManyPreloadsRelationship" title="testIncludingOneToManyPreloadsRelationship() :: Tests that an including call can properly preload a simple one to many relationship"><span class="description">Tests that an including call can properly preload a simple one to many relationship</span><pre>testIncludingOneToManyPreloadsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testManyShiftsToManyCanBeConstrained" title="testManyShiftsToManyCanBeConstrained() :: Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</span><pre>testManyShiftsToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testManyShiftsToManyCanBeConstrainedByCount" title="testManyShiftsToManyCanBeConstrainedByCount() :: Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</span><pre>testManyShiftsToManyCanBeConstrainedByCount()</pre></a></li>
+<li class="method public "><a href="#method_testManyShiftsToManyReturnsRelationship" title="testManyShiftsToManyReturnsRelationship() :: Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship"><span class="description">Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship</span><pre>testManyShiftsToManyReturnsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testManyShiftsToManySaveAutomaticallyConnects" title="testManyShiftsToManySaveAutomaticallyConnects() :: Tests to make sure many shifts to many save automatically connects"><span class="description">Tests to make sure many shifts to many save automatically connects</span><pre>testManyShiftsToManySaveAutomaticallyConnects()</pre></a></li>
+<li class="method public "><a href="#method_testManyToManyCanBeConstrained" title="testManyToManyCanBeConstrained() :: Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</span><pre>testManyToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testManyToManyCanBeConstrainedByCount" title="testManyToManyCanBeConstrainedByCount() :: Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</span><pre>testManyToManyCanBeConstrainedByCount()</pre></a></li>
+<li class="method public "><a href="#method_testManyToManyReturnsRelationship" title="testManyToManyReturnsRelationship() :: Tests that a manyToMany relationship properly grabs the many side of the relationship"><span class="description">Tests that a manyToMany relationship properly grabs the many side of the relationship</span><pre>testManyToManyReturnsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testManyToManySaveAutomaticallyConnects" title="testManyToManySaveAutomaticallyConnects() :: Tests to make sure many to many save automatically connects"><span class="description">Tests to make sure many to many save automatically connects</span><pre>testManyToManySaveAutomaticallyConnects()</pre></a></li>
+<li class="method public "><a href="#method_testOneOrFailThrowsException" title="testOneOrFailThrowsException() :: Tests that a call for a non-existant row via oneOrFail method throws an exception"><span class="description">Tests that a call for a non-existant row via oneOrFail method throws an exception</span><pre>testOneOrFailThrowsException()</pre></a></li>
+<li class="method public "><a href="#method_testOneOrNewCreatesNew" title="testOneOrNewCreatesNew() :: Tests that a request for a non-existant row via oneOrNew method returns new model"><span class="description">Tests that a request for a non-existant row via oneOrNew method returns new model</span><pre>testOneOrNewCreatesNew()</pre></a></li>
+<li class="method public "><a href="#method_testOneReturnsResult" title="testOneReturnsResult() :: Tests to make sure that a result can be retrieved"><span class="description">Tests to make sure that a result can be retrieved</span><pre>testOneReturnsResult()</pre></a></li>
+<li class="method public "><a href="#method_testOneShiftsToManyCanBeConstrained" title="testOneShiftsToManyCanBeConstrained() :: Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</span><pre>testOneShiftsToManyCanBeConstrained()</pre></a></li>
+<li class="method public "><a href="#method_testOneShiftsToManyCanBeConstrainedByCount" title="testOneShiftsToManyCanBeConstrainedByCount() :: Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side"><span class="description">Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</span><pre>testOneShiftsToManyCanBeConstrainedByCount()</pre></a></li>
+<li class="method public "><a href="#method_testOneShiftsToManyCanGetShifter" title="testOneShiftsToManyCanGetShifter() :: Tests to make sure we can retrieve the shifter of a many to many shifting relationship"><span class="description">Tests to make sure we can retrieve the shifter of a many to many shifting relationship</span><pre>testOneShiftsToManyCanGetShifter()</pre></a></li>
+<li class="method public "><a href="#method_testOneShiftsToManyReturnsRelationship" title="testOneShiftsToManyReturnsRelationship() :: Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship"><span class="description">Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship</span><pre>testOneShiftsToManyReturnsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testOneToManyCanBeConstrainedByCount" title="testOneToManyCanBeConstrainedByCount() :: Tests that the one side of the relationship can be properly constrained by the many side"><span class="description">Tests that the one side of the relationship can be properly constrained by the many side</span><pre>testOneToManyCanBeConstrainedByCount()</pre></a></li>
+<li class="method public "><a href="#method_testOneToManyReturnsRelationship" title="testOneToManyReturnsRelationship() :: Tests that a oneToMany relationship properly grabs the many side of the relationship"><span class="description">Tests that a oneToMany relationship properly grabs the many side of the relationship</span><pre>testOneToManyReturnsRelationship()</pre></a></li>
+<li class="method public "><a href="#method_testSaveOneShiftsToManyAssociatesRelated" title="testSaveOneShiftsToManyAssociatesRelated() :: Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side"><span class="description">Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side</span><pre>testSaveOneShiftsToManyAssociatesRelated()</pre></a></li>
+<li class="method public "><a href="#method_testSaveOneToManyAssociatesRelated" title="testSaveOneToManyAssociatesRelated() :: Tests to make sure saving a one to many relationship properly sets the associated field on the related side"><span class="description">Tests to make sure saving a one to many relationship properly sets the associated field on the related side</span><pre>testSaveOneToManyAssociatesRelated()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_connection" title="$connection() :: The database connection"><span class="description"></span><pre>$connection</pre></a></li>
+<li class="property protected "><a href="#property_fixture" title="$fixture() :: The database fixture name"><span class="description"></span><pre>$fixture</pre></a></li>
+<li class="property protected "><a href="#property_pdo" title="$pdo() :: The database pdo object"><span class="description"></span><pre>$pdo</pre></a></li>
+<li class="property protected "><a href="#property_seed" title="$seed() :: The database seed data"><span class="description"></span><pre>$seed</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Database\Tests\RelationalTest"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Database.html">Database</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Database.Tests.html">Tests</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Database.Tests.RelationalTest.html">RelationalTest</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Base relational model tests</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Hubzero\Test\Database</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_getConnection"></a><div class="element clickable method public method_getConnection inherited" data-toggle="collapse" data-target=".method_getConnection .collapse" title="public">
+<h2>Gets the default database connection (PHPUnit uses this during setup)</h2>
+<pre>getConnection() : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>PHPUnit_Extensions_Database_DB_IDatabaseConnection</div>
+</div></div>
+</div>
+<a id="method_getDataSet"></a><div class="element clickable method public method_getDataSet inherited" data-toggle="collapse" data-target=".method_getDataSet .collapse" title="public">
+<h2>Gets the database seed info (PHPUnit does this for every test)</h2>
+<pre>getDataSet() : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>PHPUnit_Extensions_Database_DataSet_IDataSet</div>
+</div></div>
+</div>
+<a id="method_getMockDriver"></a><div class="element clickable method public method_getMockDriver inherited" data-toggle="collapse" data-target=".method_getMockDriver .collapse" title="public">
+<h2>Gets a mock database driver</h2>
+<pre>getMockDriver() : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setUp"></a><div class="element clickable method public method_setUp " data-toggle="collapse" data-target=".method_setUp .collapse" title="public">
+<h2>Sets up the tests.</h2>
+<pre>setUp() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>..called prior to each test</p></div></div></div>
+</div>
+<a id="method_tearDownAfterClass"></a><div class="element clickable method public method_tearDownAfterClass inherited" data-toggle="collapse" data-target=".method_tearDownAfterClass .collapse" title="public">
+<h2>Resets the database handle to ensure it doesn't cause
 problems for subsequent tests</h2>
-                            <pre>tearDownAfterClass() : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testBelongsToOneCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testBelongsToOneCanBeConstrained" data-toggle="collapse" data-target=".method_testBelongsToOneCanBeConstrained .collapse">
-                            <h2>Tests that the belongs to one relationship can properly constrain the belongs to side</h2>
-                            <pre>testBelongsToOneCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testBelongsToOneReturnsRelationship"></a>
-                        <div class="element clickable method public  method_testBelongsToOneReturnsRelationship" data-toggle="collapse" data-target=".method_testBelongsToOneReturnsRelationship .collapse">
-                            <h2>Tests that a belongsToOne relationship properly grabs the related side of the relationship</h2>
-                            <pre>testBelongsToOneReturnsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCallHelper"></a>
-                        <div class="element clickable method public  method_testCallHelper" data-toggle="collapse" data-target=".method_testCallHelper .collapse">
-                            <h2>Tests to make sure a call to a helper function actually finds the function</h2>
-                            <pre>testCallHelper() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCallTransformer"></a>
-                        <div class="element clickable method public  method_testCallTransformer" data-toggle="collapse" data-target=".method_testCallTransformer .collapse">
-                            <h2>Tests to make sure a call to a transformer actually finds the transformer</h2>
-                            <pre>testCallTransformer() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCanAddRuntimeRelationship"></a>
-                        <div class="element clickable method public  method_testCanAddRuntimeRelationship" data-toggle="collapse" data-target=".method_testCanAddRuntimeRelationship .collapse">
-                            <h2>Tests to make sure we can add a dynamic relationship at runtime</h2>
-                            <pre>testCanAddRuntimeRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCanDoSimpleSerialization"></a>
-                        <div class="element clickable method public  method_testCanDoSimpleSerialization" data-toggle="collapse" data-target=".method_testCanDoSimpleSerialization .collapse">
-                            <h2>Tests to make sure we can serialize and unserialize a model</h2>
-                            <pre>testCanDoSimpleSerialization() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCanIntrospectRelationships"></a>
-                        <div class="element clickable method public  method_testCanIntrospectRelationships" data-toggle="collapse" data-target=".method_testCanIntrospectRelationships .collapse">
-                            <h2>Tests to make sure we can get relationships defined on a model</h2>
-                            <pre>testCanIntrospectRelationships() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testCanIntrospectRelationshipsIncludingRuntimeRelationships"></a>
-                        <div class="element clickable method public  method_testCanIntrospectRelationshipsIncludingRuntimeRelationships" data-toggle="collapse" data-target=".method_testCanIntrospectRelationshipsIncludingRuntimeRelationships .collapse">
-                            <h2>Tests to make sure we can get relationships defined on a model, including runtime relationships</h2>
-                            <pre>testCanIntrospectRelationshipsIncludingRuntimeRelationships() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testConnectManyShiftsToManyCanAddAdditionalFields"></a>
-                        <div class="element clickable method public  method_testConnectManyShiftsToManyCanAddAdditionalFields" data-toggle="collapse" data-target=".method_testConnectManyShiftsToManyCanAddAdditionalFields .collapse">
-                            <h2>Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table</h2>
-                            <pre>testConnectManyShiftsToManyCanAddAdditionalFields() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testConnectManyShiftsToManyCreatesAssociation"></a>
-                        <div class="element clickable method public  method_testConnectManyShiftsToManyCreatesAssociation" data-toggle="collapse" data-target=".method_testConnectManyShiftsToManyCreatesAssociation .collapse">
-                            <h2>Tests to make sure connecting a many shifts to many properly creates the relationship</h2>
-                            <pre>testConnectManyShiftsToManyCreatesAssociation() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testConnectManyToManyCanAddAdditionalFields"></a>
-                        <div class="element clickable method public  method_testConnectManyToManyCanAddAdditionalFields" data-toggle="collapse" data-target=".method_testConnectManyToManyCanAddAdditionalFields .collapse">
-                            <h2>Tests to make sure connecting a many to many can also add additional fields to the intermediary table</h2>
-                            <pre>testConnectManyToManyCanAddAdditionalFields() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testConnectManyToManyCreatesAssociation"></a>
-                        <div class="element clickable method public  method_testConnectManyToManyCreatesAssociation" data-toggle="collapse" data-target=".method_testConnectManyToManyCreatesAssociation .collapse">
-                            <h2>Tests to make sure connecting a many to many properly creates the relationship</h2>
-                            <pre>testConnectManyToManyCreatesAssociation() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testConstruct"></a>
-                        <div class="element clickable method public  method_testConstruct" data-toggle="collapse" data-target=".method_testConstruct .collapse">
-                            <h2>Tests object construction and variable initialization</h2>
-                            <pre>testConstruct() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testDisconnectManyShiftsToManyDestroysAssociation"></a>
-                        <div class="element clickable method public  method_testDisconnectManyShiftsToManyDestroysAssociation" data-toggle="collapse" data-target=".method_testDisconnectManyShiftsToManyDestroysAssociation .collapse">
-                            <h2>Tests to make sure disconnecting a many shifts to many properly destroys the relationship</h2>
-                            <pre>testDisconnectManyShiftsToManyDestroysAssociation() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testDisconnectManyToManyDestroysAssociation"></a>
-                        <div class="element clickable method public  method_testDisconnectManyToManyDestroysAssociation" data-toggle="collapse" data-target=".method_testDisconnectManyToManyDestroysAssociation .collapse">
-                            <h2>Tests to make sure disconnecting a many to many properly destroys the relationship</h2>
-                            <pre>testDisconnectManyToManyDestroysAssociation() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingManyShiftsToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testIncludingManyShiftsToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testIncludingManyShiftsToManyCanBeConstrained .collapse">
-                            <h2>Tests that an including call can be constrained on a many shifts to many relationship</h2>
-                            <pre>testIncludingManyShiftsToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingManyShiftsToManyPreloadsRelationship"></a>
-                        <div class="element clickable method public  method_testIncludingManyShiftsToManyPreloadsRelationship" data-toggle="collapse" data-target=".method_testIncludingManyShiftsToManyPreloadsRelationship .collapse">
-                            <h2>Tests that an including call can properly preload a many shifts to many relationship</h2>
-                            <pre>testIncludingManyShiftsToManyPreloadsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingManyToManyPreloadsRelationship"></a>
-                        <div class="element clickable method public  method_testIncludingManyToManyPreloadsRelationship" data-toggle="collapse" data-target=".method_testIncludingManyToManyPreloadsRelationship .collapse">
-                            <h2>Tests that an including call can properly preload a simple many to many relationship</h2>
-                            <pre>testIncludingManyToManyPreloadsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingOneShiftsToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testIncludingOneShiftsToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testIncludingOneShiftsToManyCanBeConstrained .collapse">
-                            <h2>Tests that an including call can be constrained on a one shifts to many relationship</h2>
-                            <pre>testIncludingOneShiftsToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingOneShiftsToManyPreloadsRelationship"></a>
-                        <div class="element clickable method public  method_testIncludingOneShiftsToManyPreloadsRelationship" data-toggle="collapse" data-target=".method_testIncludingOneShiftsToManyPreloadsRelationship .collapse">
-                            <h2>Tests that an including call can properly preload a one shifts to many relationship</h2>
-                            <pre>testIncludingOneShiftsToManyPreloadsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingOneToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testIncludingOneToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testIncludingOneToManyCanBeConstrained .collapse">
-                            <h2>Tests that an including call can be constrained on a one to many relationship</h2>
-                            <pre>testIncludingOneToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testIncludingOneToManyPreloadsRelationship"></a>
-                        <div class="element clickable method public  method_testIncludingOneToManyPreloadsRelationship" data-toggle="collapse" data-target=".method_testIncludingOneToManyPreloadsRelationship .collapse">
-                            <h2>Tests that an including call can properly preload a simple one to many relationship</h2>
-                            <pre>testIncludingOneToManyPreloadsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyShiftsToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testManyShiftsToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testManyShiftsToManyCanBeConstrained .collapse">
-                            <h2>Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testManyShiftsToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyShiftsToManyCanBeConstrainedByCount"></a>
-                        <div class="element clickable method public  method_testManyShiftsToManyCanBeConstrainedByCount" data-toggle="collapse" data-target=".method_testManyShiftsToManyCanBeConstrainedByCount .collapse">
-                            <h2>Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testManyShiftsToManyCanBeConstrainedByCount() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyShiftsToManyReturnsRelationship"></a>
-                        <div class="element clickable method public  method_testManyShiftsToManyReturnsRelationship" data-toggle="collapse" data-target=".method_testManyShiftsToManyReturnsRelationship .collapse">
-                            <h2>Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship</h2>
-                            <pre>testManyShiftsToManyReturnsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyShiftsToManySaveAutomaticallyConnects"></a>
-                        <div class="element clickable method public  method_testManyShiftsToManySaveAutomaticallyConnects" data-toggle="collapse" data-target=".method_testManyShiftsToManySaveAutomaticallyConnects .collapse">
-                            <h2>Tests to make sure many shifts to many save automatically connects</h2>
-                            <pre>testManyShiftsToManySaveAutomaticallyConnects() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testManyToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testManyToManyCanBeConstrained .collapse">
-                            <h2>Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testManyToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyToManyCanBeConstrainedByCount"></a>
-                        <div class="element clickable method public  method_testManyToManyCanBeConstrainedByCount" data-toggle="collapse" data-target=".method_testManyToManyCanBeConstrainedByCount .collapse">
-                            <h2>Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testManyToManyCanBeConstrainedByCount() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyToManyReturnsRelationship"></a>
-                        <div class="element clickable method public  method_testManyToManyReturnsRelationship" data-toggle="collapse" data-target=".method_testManyToManyReturnsRelationship .collapse">
-                            <h2>Tests that a manyToMany relationship properly grabs the many side of the relationship</h2>
-                            <pre>testManyToManyReturnsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testManyToManySaveAutomaticallyConnects"></a>
-                        <div class="element clickable method public  method_testManyToManySaveAutomaticallyConnects" data-toggle="collapse" data-target=".method_testManyToManySaveAutomaticallyConnects .collapse">
-                            <h2>Tests to make sure many to many save automatically connects</h2>
-                            <pre>testManyToManySaveAutomaticallyConnects() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneOrFailThrowsException"></a>
-                        <div class="element clickable method public  method_testOneOrFailThrowsException" data-toggle="collapse" data-target=".method_testOneOrFailThrowsException .collapse">
-                            <h2>Tests that a call for a non-existant row via oneOrFail method throws an exception</h2>
-                            <pre>testOneOrFailThrowsException() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    expectedException
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                        <p>RuntimeException</p>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneOrNewCreatesNew"></a>
-                        <div class="element clickable method public  method_testOneOrNewCreatesNew" data-toggle="collapse" data-target=".method_testOneOrNewCreatesNew .collapse">
-                            <h2>Tests that a request for a non-existant row via oneOrNew method returns new model</h2>
-                            <pre>testOneOrNewCreatesNew() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneReturnsResult"></a>
-                        <div class="element clickable method public  method_testOneReturnsResult" data-toggle="collapse" data-target=".method_testOneReturnsResult .collapse">
-                            <h2>Tests to make sure that a result can be retrieved</h2>
-                            <pre>testOneReturnsResult() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneShiftsToManyCanBeConstrained"></a>
-                        <div class="element clickable method public  method_testOneShiftsToManyCanBeConstrained" data-toggle="collapse" data-target=".method_testOneShiftsToManyCanBeConstrained .collapse">
-                            <h2>Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testOneShiftsToManyCanBeConstrained() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneShiftsToManyCanBeConstrainedByCount"></a>
-                        <div class="element clickable method public  method_testOneShiftsToManyCanBeConstrainedByCount" data-toggle="collapse" data-target=".method_testOneShiftsToManyCanBeConstrainedByCount .collapse">
-                            <h2>Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</h2>
-                            <pre>testOneShiftsToManyCanBeConstrainedByCount() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneShiftsToManyCanGetShifter"></a>
-                        <div class="element clickable method public  method_testOneShiftsToManyCanGetShifter" data-toggle="collapse" data-target=".method_testOneShiftsToManyCanGetShifter .collapse">
-                            <h2>Tests to make sure we can retrieve the shifter of a many to many shifting relationship</h2>
-                            <pre>testOneShiftsToManyCanGetShifter() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneShiftsToManyReturnsRelationship"></a>
-                        <div class="element clickable method public  method_testOneShiftsToManyReturnsRelationship" data-toggle="collapse" data-target=".method_testOneShiftsToManyReturnsRelationship .collapse">
-                            <h2>Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship</h2>
-                            <pre>testOneShiftsToManyReturnsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneToManyCanBeConstrainedByCount"></a>
-                        <div class="element clickable method public  method_testOneToManyCanBeConstrainedByCount" data-toggle="collapse" data-target=".method_testOneToManyCanBeConstrainedByCount .collapse">
-                            <h2>Tests that the one side of the relationship can be properly constrained by the many side</h2>
-                            <pre>testOneToManyCanBeConstrainedByCount() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testOneToManyReturnsRelationship"></a>
-                        <div class="element clickable method public  method_testOneToManyReturnsRelationship" data-toggle="collapse" data-target=".method_testOneToManyReturnsRelationship .collapse">
-                            <h2>Tests that a oneToMany relationship properly grabs the many side of the relationship</h2>
-                            <pre>testOneToManyReturnsRelationship() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testSaveOneShiftsToManyAssociatesRelated"></a>
-                        <div class="element clickable method public  method_testSaveOneShiftsToManyAssociatesRelated" data-toggle="collapse" data-target=".method_testSaveOneShiftsToManyAssociatesRelated .collapse">
-                            <h2>Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side</h2>
-                            <pre>testSaveOneShiftsToManyAssociatesRelated() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_testSaveOneToManyAssociatesRelated"></a>
-                        <div class="element clickable method public  method_testSaveOneToManyAssociatesRelated" data-toggle="collapse" data-target=".method_testSaveOneToManyAssociatesRelated .collapse">
-                            <h2>Tests to make sure saving a one to many relationship properly sets the associated field on the related side</h2>
-                            <pre>testSaveOneToManyAssociatesRelated() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_pdo"> </a>
-                            <div class="element clickable property  protected property_pdo inherited" data-toggle="collapse" data-target=".property_pdo .collapse">
-                                <h2>The database pdo object</h2>
-                                <pre>pdo : object</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                    <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_connection"> </a>
-                            <div class="element clickable property  protected property_connection inherited" data-toggle="collapse" data-target=".property_connection .collapse">
-                                <h2>The database connection</h2>
-                                <pre>connection : object</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_fixture"> </a>
-                            <div class="element clickable property  protected property_fixture inherited" data-toggle="collapse" data-target=".property_fixture .collapse">
-                                <h2>The database fixture name</h2>
-                                <pre>fixture : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>We assume that you'll have a test sqlite database with your test schema defined.
-If you don't need this, then why aren't you using the basic test class?</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_seed"> </a>
-                            <div class="element clickable property  protected property_seed inherited" data-toggle="collapse" data-target=".property_seed .collapse">
-                                <h2>The database seed data</h2>
-                                <pre>seed : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>This var can be overwritten if you only have one seed file.  If you have multiple files,
+<pre>tearDownAfterClass() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testBelongsToOneCanBeConstrained"></a><div class="element clickable method public method_testBelongsToOneCanBeConstrained " data-toggle="collapse" data-target=".method_testBelongsToOneCanBeConstrained .collapse" title="public">
+<h2>Tests that the belongs to one relationship can properly constrain the belongs to side</h2>
+<pre>testBelongsToOneCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testBelongsToOneReturnsRelationship"></a><div class="element clickable method public method_testBelongsToOneReturnsRelationship " data-toggle="collapse" data-target=".method_testBelongsToOneReturnsRelationship .collapse" title="public">
+<h2>Tests that a belongsToOne relationship properly grabs the related side of the relationship</h2>
+<pre>testBelongsToOneReturnsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCallHelper"></a><div class="element clickable method public method_testCallHelper " data-toggle="collapse" data-target=".method_testCallHelper .collapse" title="public">
+<h2>Tests to make sure a call to a helper function actually finds the function</h2>
+<pre>testCallHelper() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCallTransformer"></a><div class="element clickable method public method_testCallTransformer " data-toggle="collapse" data-target=".method_testCallTransformer .collapse" title="public">
+<h2>Tests to make sure a call to a transformer actually finds the transformer</h2>
+<pre>testCallTransformer() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCanAddRuntimeRelationship"></a><div class="element clickable method public method_testCanAddRuntimeRelationship " data-toggle="collapse" data-target=".method_testCanAddRuntimeRelationship .collapse" title="public">
+<h2>Tests to make sure we can add a dynamic relationship at runtime</h2>
+<pre>testCanAddRuntimeRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCanDoSimpleSerialization"></a><div class="element clickable method public method_testCanDoSimpleSerialization " data-toggle="collapse" data-target=".method_testCanDoSimpleSerialization .collapse" title="public">
+<h2>Tests to make sure we can serialize and unserialize a model</h2>
+<pre>testCanDoSimpleSerialization() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCanIntrospectRelationships"></a><div class="element clickable method public method_testCanIntrospectRelationships " data-toggle="collapse" data-target=".method_testCanIntrospectRelationships .collapse" title="public">
+<h2>Tests to make sure we can get relationships defined on a model</h2>
+<pre>testCanIntrospectRelationships() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testCanIntrospectRelationshipsIncludingRuntimeRelationships"></a><div class="element clickable method public method_testCanIntrospectRelationshipsIncludingRuntimeRelationships " data-toggle="collapse" data-target=".method_testCanIntrospectRelationshipsIncludingRuntimeRelationships .collapse" title="public">
+<h2>Tests to make sure we can get relationships defined on a model, including runtime relationships</h2>
+<pre>testCanIntrospectRelationshipsIncludingRuntimeRelationships() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConnectManyShiftsToManyCanAddAdditionalFields"></a><div class="element clickable method public method_testConnectManyShiftsToManyCanAddAdditionalFields " data-toggle="collapse" data-target=".method_testConnectManyShiftsToManyCanAddAdditionalFields .collapse" title="public">
+<h2>Tests to make sure connecting a many shifts to many can also add additional fields to the intermediary table</h2>
+<pre>testConnectManyShiftsToManyCanAddAdditionalFields() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConnectManyShiftsToManyCreatesAssociation"></a><div class="element clickable method public method_testConnectManyShiftsToManyCreatesAssociation " data-toggle="collapse" data-target=".method_testConnectManyShiftsToManyCreatesAssociation .collapse" title="public">
+<h2>Tests to make sure connecting a many shifts to many properly creates the relationship</h2>
+<pre>testConnectManyShiftsToManyCreatesAssociation() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConnectManyToManyCanAddAdditionalFields"></a><div class="element clickable method public method_testConnectManyToManyCanAddAdditionalFields " data-toggle="collapse" data-target=".method_testConnectManyToManyCanAddAdditionalFields .collapse" title="public">
+<h2>Tests to make sure connecting a many to many can also add additional fields to the intermediary table</h2>
+<pre>testConnectManyToManyCanAddAdditionalFields() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConnectManyToManyCreatesAssociation"></a><div class="element clickable method public method_testConnectManyToManyCreatesAssociation " data-toggle="collapse" data-target=".method_testConnectManyToManyCreatesAssociation .collapse" title="public">
+<h2>Tests to make sure connecting a many to many properly creates the relationship</h2>
+<pre>testConnectManyToManyCreatesAssociation() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testConstruct"></a><div class="element clickable method public method_testConstruct " data-toggle="collapse" data-target=".method_testConstruct .collapse" title="public">
+<h2>Tests object construction and variable initialization</h2>
+<pre>testConstruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testDisconnectManyShiftsToManyDestroysAssociation"></a><div class="element clickable method public method_testDisconnectManyShiftsToManyDestroysAssociation " data-toggle="collapse" data-target=".method_testDisconnectManyShiftsToManyDestroysAssociation .collapse" title="public">
+<h2>Tests to make sure disconnecting a many shifts to many properly destroys the relationship</h2>
+<pre>testDisconnectManyShiftsToManyDestroysAssociation() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testDisconnectManyToManyDestroysAssociation"></a><div class="element clickable method public method_testDisconnectManyToManyDestroysAssociation " data-toggle="collapse" data-target=".method_testDisconnectManyToManyDestroysAssociation .collapse" title="public">
+<h2>Tests to make sure disconnecting a many to many properly destroys the relationship</h2>
+<pre>testDisconnectManyToManyDestroysAssociation() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingManyShiftsToManyCanBeConstrained"></a><div class="element clickable method public method_testIncludingManyShiftsToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testIncludingManyShiftsToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that an including call can be constrained on a many shifts to many relationship</h2>
+<pre>testIncludingManyShiftsToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingManyShiftsToManyPreloadsRelationship"></a><div class="element clickable method public method_testIncludingManyShiftsToManyPreloadsRelationship " data-toggle="collapse" data-target=".method_testIncludingManyShiftsToManyPreloadsRelationship .collapse" title="public">
+<h2>Tests that an including call can properly preload a many shifts to many relationship</h2>
+<pre>testIncludingManyShiftsToManyPreloadsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingManyToManyPreloadsRelationship"></a><div class="element clickable method public method_testIncludingManyToManyPreloadsRelationship " data-toggle="collapse" data-target=".method_testIncludingManyToManyPreloadsRelationship .collapse" title="public">
+<h2>Tests that an including call can properly preload a simple many to many relationship</h2>
+<pre>testIncludingManyToManyPreloadsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingOneShiftsToManyCanBeConstrained"></a><div class="element clickable method public method_testIncludingOneShiftsToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testIncludingOneShiftsToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that an including call can be constrained on a one shifts to many relationship</h2>
+<pre>testIncludingOneShiftsToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingOneShiftsToManyPreloadsRelationship"></a><div class="element clickable method public method_testIncludingOneShiftsToManyPreloadsRelationship " data-toggle="collapse" data-target=".method_testIncludingOneShiftsToManyPreloadsRelationship .collapse" title="public">
+<h2>Tests that an including call can properly preload a one shifts to many relationship</h2>
+<pre>testIncludingOneShiftsToManyPreloadsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingOneToManyCanBeConstrained"></a><div class="element clickable method public method_testIncludingOneToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testIncludingOneToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that an including call can be constrained on a one to many relationship</h2>
+<pre>testIncludingOneToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testIncludingOneToManyPreloadsRelationship"></a><div class="element clickable method public method_testIncludingOneToManyPreloadsRelationship " data-toggle="collapse" data-target=".method_testIncludingOneToManyPreloadsRelationship .collapse" title="public">
+<h2>Tests that an including call can properly preload a simple one to many relationship</h2>
+<pre>testIncludingOneToManyPreloadsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyShiftsToManyCanBeConstrained"></a><div class="element clickable method public method_testManyShiftsToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testManyShiftsToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</h2>
+<pre>testManyShiftsToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyShiftsToManyCanBeConstrainedByCount"></a><div class="element clickable method public method_testManyShiftsToManyCanBeConstrainedByCount " data-toggle="collapse" data-target=".method_testManyShiftsToManyCanBeConstrainedByCount .collapse" title="public">
+<h2>Tests that the local/left side of the ms2m relationship can be properly constrained by the related/right side</h2>
+<pre>testManyShiftsToManyCanBeConstrainedByCount() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyShiftsToManyReturnsRelationship"></a><div class="element clickable method public method_testManyShiftsToManyReturnsRelationship " data-toggle="collapse" data-target=".method_testManyShiftsToManyReturnsRelationship .collapse" title="public">
+<h2>Tests that a manyShiftsToMany relationship properly grabs the many (right) side of the relationship</h2>
+<pre>testManyShiftsToManyReturnsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyShiftsToManySaveAutomaticallyConnects"></a><div class="element clickable method public method_testManyShiftsToManySaveAutomaticallyConnects " data-toggle="collapse" data-target=".method_testManyShiftsToManySaveAutomaticallyConnects .collapse" title="public">
+<h2>Tests to make sure many shifts to many save automatically connects</h2>
+<pre>testManyShiftsToManySaveAutomaticallyConnects() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyToManyCanBeConstrained"></a><div class="element clickable method public method_testManyToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testManyToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</h2>
+<pre>testManyToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyToManyCanBeConstrainedByCount"></a><div class="element clickable method public method_testManyToManyCanBeConstrainedByCount " data-toggle="collapse" data-target=".method_testManyToManyCanBeConstrainedByCount .collapse" title="public">
+<h2>Tests that the local/left side of the m2m relationship can be properly constrained by the related/right side</h2>
+<pre>testManyToManyCanBeConstrainedByCount() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyToManyReturnsRelationship"></a><div class="element clickable method public method_testManyToManyReturnsRelationship " data-toggle="collapse" data-target=".method_testManyToManyReturnsRelationship .collapse" title="public">
+<h2>Tests that a manyToMany relationship properly grabs the many side of the relationship</h2>
+<pre>testManyToManyReturnsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testManyToManySaveAutomaticallyConnects"></a><div class="element clickable method public method_testManyToManySaveAutomaticallyConnects " data-toggle="collapse" data-target=".method_testManyToManySaveAutomaticallyConnects .collapse" title="public">
+<h2>Tests to make sure many to many save automatically connects</h2>
+<pre>testManyToManySaveAutomaticallyConnects() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneOrFailThrowsException"></a><div class="element clickable method public method_testOneOrFailThrowsException " data-toggle="collapse" data-target=".method_testOneOrFailThrowsException .collapse" title="public">
+<h2>Tests that a call for a non-existant row via oneOrFail method throws an exception</h2>
+<pre>testOneOrFailThrowsException() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>expectedException</th>
+<td>RuntimeException</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_testOneOrNewCreatesNew"></a><div class="element clickable method public method_testOneOrNewCreatesNew " data-toggle="collapse" data-target=".method_testOneOrNewCreatesNew .collapse" title="public">
+<h2>Tests that a request for a non-existant row via oneOrNew method returns new model</h2>
+<pre>testOneOrNewCreatesNew() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneReturnsResult"></a><div class="element clickable method public method_testOneReturnsResult " data-toggle="collapse" data-target=".method_testOneReturnsResult .collapse" title="public">
+<h2>Tests to make sure that a result can be retrieved</h2>
+<pre>testOneReturnsResult() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneShiftsToManyCanBeConstrained"></a><div class="element clickable method public method_testOneShiftsToManyCanBeConstrained " data-toggle="collapse" data-target=".method_testOneShiftsToManyCanBeConstrained .collapse" title="public">
+<h2>Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</h2>
+<pre>testOneShiftsToManyCanBeConstrained() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneShiftsToManyCanBeConstrainedByCount"></a><div class="element clickable method public method_testOneShiftsToManyCanBeConstrainedByCount " data-toggle="collapse" data-target=".method_testOneShiftsToManyCanBeConstrainedByCount .collapse" title="public">
+<h2>Tests that the local/left side of the os2m relationship can be properly constrained by the related/right side</h2>
+<pre>testOneShiftsToManyCanBeConstrainedByCount() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneShiftsToManyCanGetShifter"></a><div class="element clickable method public method_testOneShiftsToManyCanGetShifter " data-toggle="collapse" data-target=".method_testOneShiftsToManyCanGetShifter .collapse" title="public">
+<h2>Tests to make sure we can retrieve the shifter of a many to many shifting relationship</h2>
+<pre>testOneShiftsToManyCanGetShifter() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneShiftsToManyReturnsRelationship"></a><div class="element clickable method public method_testOneShiftsToManyReturnsRelationship " data-toggle="collapse" data-target=".method_testOneShiftsToManyReturnsRelationship .collapse" title="public">
+<h2>Tests that a oneShiftsToMany relationship properly grabs the many side of the relationship</h2>
+<pre>testOneShiftsToManyReturnsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneToManyCanBeConstrainedByCount"></a><div class="element clickable method public method_testOneToManyCanBeConstrainedByCount " data-toggle="collapse" data-target=".method_testOneToManyCanBeConstrainedByCount .collapse" title="public">
+<h2>Tests that the one side of the relationship can be properly constrained by the many side</h2>
+<pre>testOneToManyCanBeConstrainedByCount() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testOneToManyReturnsRelationship"></a><div class="element clickable method public method_testOneToManyReturnsRelationship " data-toggle="collapse" data-target=".method_testOneToManyReturnsRelationship .collapse" title="public">
+<h2>Tests that a oneToMany relationship properly grabs the many side of the relationship</h2>
+<pre>testOneToManyReturnsRelationship() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testSaveOneShiftsToManyAssociatesRelated"></a><div class="element clickable method public method_testSaveOneShiftsToManyAssociatesRelated " data-toggle="collapse" data-target=".method_testSaveOneShiftsToManyAssociatesRelated .collapse" title="public">
+<h2>Tests to make sure saving a one shifts to many relationship properly sets the associated fields on the related side</h2>
+<pre>testSaveOneShiftsToManyAssociatesRelated() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_testSaveOneToManyAssociatesRelated"></a><div class="element clickable method public method_testSaveOneToManyAssociatesRelated " data-toggle="collapse" data-target=".method_testSaveOneToManyAssociatesRelated .collapse" title="public">
+<h2>Tests to make sure saving a one to many relationship properly sets the associated field on the related side</h2>
+<pre>testSaveOneToManyAssociatesRelated() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_connection"> </a><div class="element clickable property protected property_connection" data-toggle="collapse" data-target=".property_connection .collapse" title="protected">
+<h2>The database connection</h2>
+<pre>$connection : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_fixture"> </a><div class="element clickable property protected property_fixture" data-toggle="collapse" data-target=".property_fixture .collapse" title="protected">
+<h2>The database fixture name</h2>
+<pre>$fixture : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'test.sqlite3'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>We assume that you'll have a test sqlite database with your test schema defined.
+If you don't need this, then why aren't you using the basic test class?</p></div></div></div>
+</div>
+<a id="property_pdo"> </a><div class="element clickable property protected property_pdo" data-toggle="collapse" data-target=".property_pdo .collapse" title="protected">
+<h2>The database pdo object</h2>
+<pre>$pdo : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_seed"> </a><div class="element clickable property protected property_seed" data-toggle="collapse" data-target=".property_seed .collapse" title="protected">
+<h2>The database seed data</h2>
+<pre>$seed : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'seed.xml'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This var can be overwritten if you only have one seed file.  If you have multiple files,
 or need to do something a little more complicated, you can also completely override the
-getDataSet() method.</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Database\Tests\RelationalTest"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Database.Tests.html">Tests</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Database.Tests.RelationalTest.html">RelationalTest</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:58 +0000.<br/>
-    </footer>
-    </body>
+getDataSet() method.</p></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:57-04:00.<br></footer></div>
+</div>
+</body>
 </html>

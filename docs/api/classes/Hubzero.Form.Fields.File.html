@@ -1,1151 +1,594 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Form\Fields\File
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Form\Fields\File</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public inherited">
-        <a href="#method___construct" title="__construct :: Method to instantiate the form field object.">
-            <span class="description">Method to instantiate the form field object.</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method___get" title="__get :: Method to get certain otherwise inaccessible properties from the form field object.">
-            <span class="description">Method to get certain otherwise inaccessible properties from the form field object.</span><pre>__get</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getAttribute" title="getAttribute :: Method to get an attribute of the field">
-            <span class="description">Method to get an attribute of the field</span><pre>getAttribute</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
-        <a href="#method_setForm" title="setForm :: Method to attach a Form object to the field.">
-            <span class="description">Method to attach a Form object to the field.</span><pre>setForm</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setup" title="setup :: Method to attach a JForm object to the field.">
-            <span class="description">Method to attach a JForm object to the field.</span><pre>setup</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setValue" title="setValue :: Simple method to set the value">
-            <span class="description">Simple method to set the value</span><pre>setValue</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                        <li class="method protected inherited">
-                            <a href="#method_getFieldName" title="getFieldName :: Method to get the field name used.">
-                                <span class="description">Method to get the field name used.</span><pre>getFieldName</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_getId" title="getId :: Method to get the id used for the field input tag.">
-                                <span class="description">Method to get the id used for the field input tag.</span><pre>getId</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_getInput" title="getInput :: Method to get the field input markup.">
-                                <span class="description">Method to get the field input markup.</span><pre>getInput</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_getLabel" title="getLabel :: Method to get the field label markup.">
-                                <span class="description">Method to get the field label markup.</span><pre>getLabel</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_getName" title="getName :: Method to get the name used for the field input tag.">
-                                <span class="description">Method to get the name used for the field input tag.</span><pre>getName</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_getTitle" title="getTitle :: Method to get the field title.">
-                                <span class="description">Method to get the field title.</span><pre>getTitle</pre>
-                            </a>
-                        </li>
-                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>File</h1>
-                <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/Hubzero.Form.Field.html">\Hubzero\Form\Field</a>
-                                                        </small>
-                <p class="short_description">Provides an input field for files</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Inspired by Joomla's JFormField class</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>hubzero-cms</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Method to instantiate the form field object.</h2>
-                            <pre>__construct(object $form = null) : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$form</h4>
-                                                <code>object</code><p><p>The form to attach to the form field object.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___get"></a>
-                        <div class="element clickable method public  method___get inherited" data-toggle="collapse" data-target=".method___get .collapse">
-                            <h2>Method to get certain otherwise inaccessible properties from the form field object.</h2>
-                            <pre>__get(string $name) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>The property name for which to the the value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The property value or null.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getAttribute"></a>
-                        <div class="element clickable method public  method_getAttribute inherited" data-toggle="collapse" data-target=".method_getAttribute .collapse">
-                            <h2>Method to get an attribute of the field</h2>
-                            <pre>getAttribute(string $name, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Name of the attribute to get</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>Optional value to return if attribute not found</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Value of the attribute / default</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getFieldName"></a>
-                        <div class="element clickable method protected  method_getFieldName inherited" data-toggle="collapse" data-target=".method_getFieldName .collapse">
-                            <h2>Method to get the field name used.</h2>
-                            <pre>getFieldName(string $fieldName) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fieldName</h4>
-                                                <code>string</code><p><p>The field element name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The field name</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getId"></a>
-                        <div class="element clickable method protected  method_getId inherited" data-toggle="collapse" data-target=".method_getId .collapse">
-                            <h2>Method to get the id used for the field input tag.</h2>
-                            <pre>getId(string $fieldId, string $fieldName) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fieldId</h4>
-                                                <code>string</code><p><p>The field element id.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fieldName</h4>
-                                                <code>string</code><p><p>The field element name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The id to be used for the field input tag.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getInput"></a>
-                        <div class="element clickable method protected  method_getInput inherited" data-toggle="collapse" data-target=".method_getInput .collapse">
-                            <h2>Method to get the field input markup.</h2>
-                            <pre>getInput() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The field input markup.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getLabel"></a>
-                        <div class="element clickable method protected  method_getLabel inherited" data-toggle="collapse" data-target=".method_getLabel .collapse">
-                            <h2>Method to get the field label markup.</h2>
-                            <pre>getLabel() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The field label markup.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getName"></a>
-                        <div class="element clickable method protected  method_getName inherited" data-toggle="collapse" data-target=".method_getName .collapse">
-                            <h2>Method to get the name used for the field input tag.</h2>
-                            <pre>getName(string $fieldName) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fieldName</h4>
-                                                <code>string</code><p><p>The field element name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The name to be used for the field input tag.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getTitle"></a>
-                        <div class="element clickable method protected  method_getTitle inherited" data-toggle="collapse" data-target=".method_getTitle .collapse">
-                            <h2>Method to get the field title.</h2>
-                            <pre>getTitle() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The field title.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setForm"></a>
-                        <div class="element clickable method public  method_setForm inherited" data-toggle="collapse" data-target=".method_setForm .collapse">
-                            <h2>Method to attach a Form object to the field.</h2>
-                            <pre>setForm(object $form) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$form</h4>
-                                                <code>object</code><p><p>The Form object to attach to the form field.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>The form field object so that the method can be used in a chain.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setup"></a>
-                        <div class="element clickable method public  method_setup inherited" data-toggle="collapse" data-target=".method_setup .collapse">
-                            <h2>Method to attach a JForm object to the field.</h2>
-                            <pre>setup( &$element, mixed $value, string $group = null) : boolean</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$element</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The form field value to validate.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p><p>The field name group control value. This acts as as an array container for the field.
-For example if the field has name=&quot;foo&quot; and the group value is set to &quot;bar&quot; then the
-full field name would end up being &quot;bar[foo]&quot;.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setValue"></a>
-                        <div class="element clickable method public  method_setValue inherited" data-toggle="collapse" data-target=".method_setValue .collapse">
-                            <h2>Simple method to set the value</h2>
-                            <pre>setValue(mixed $value) : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>Value to set</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_type"> </a>
-                            <div class="element clickable property  protected property_type inherited" data-toggle="collapse" data-target=".property_type .collapse">
-                                <h2>The form field type.</h2>
-                                <pre>type : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_description"> </a>
-                            <div class="element clickable property  protected property_description inherited" data-toggle="collapse" data-target=".property_description .collapse">
-                                <h2>The description text for the form field.  Usually used in tooltips.</h2>
-                                <pre>description : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_element"> </a>
-                            <div class="element clickable property  protected property_element inherited" data-toggle="collapse" data-target=".property_element .collapse">
-                                <h2>The SimpleXMLElement object of the &lt;field /&gt; XML element that describes the form field.</h2>
-                                <pre>element : object</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_form"> </a>
-                            <div class="element clickable property  protected property_form inherited" data-toggle="collapse" data-target=".property_form .collapse">
-                                <h2>The Form object of the form attached to the form field.</h2>
-                                <pre>form : object</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_formControl"> </a>
-                            <div class="element clickable property  protected property_formControl inherited" data-toggle="collapse" data-target=".property_formControl .collapse">
-                                <h2>The form control prefix for field names from the Form object attached to the form field.</h2>
-                                <pre>formControl : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_hidden"> </a>
-                            <div class="element clickable property  protected property_hidden inherited" data-toggle="collapse" data-target=".property_hidden .collapse">
-                                <h2>The hidden state for the form field.</h2>
-                                <pre>hidden : boolean</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_translateLabel"> </a>
-                            <div class="element clickable property  protected property_translateLabel inherited" data-toggle="collapse" data-target=".property_translateLabel .collapse">
-                                <h2>True to translate the field label string.</h2>
-                                <pre>translateLabel : boolean</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_translateDescription"> </a>
-                            <div class="element clickable property  protected property_translateDescription inherited" data-toggle="collapse" data-target=".property_translateDescription .collapse">
-                                <h2>True to translate the field description string.</h2>
-                                <pre>translateDescription : boolean</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_id"> </a>
-                            <div class="element clickable property  protected property_id inherited" data-toggle="collapse" data-target=".property_id .collapse">
-                                <h2>The document id for the form field.</h2>
-                                <pre>id : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_input"> </a>
-                            <div class="element clickable property  protected property_input inherited" data-toggle="collapse" data-target=".property_input .collapse">
-                                <h2>The input for the form field.</h2>
-                                <pre>input : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_label"> </a>
-                            <div class="element clickable property  protected property_label inherited" data-toggle="collapse" data-target=".property_label .collapse">
-                                <h2>The label for the form field.</h2>
-                                <pre>label : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_multiple"> </a>
-                            <div class="element clickable property  protected property_multiple inherited" data-toggle="collapse" data-target=".property_multiple .collapse">
-                                <h2>The multiple state for the form field.  If true then multiple values are allowed for the
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: Method to instantiate the form field object."><span class="description">Method to instantiate the form field object.</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___get" title="__get() :: Method to get certain otherwise inaccessible properties from the form field object."><span class="description">Method to get certain otherwise inaccessible properties from the form field object.</span><pre>__get()</pre></a></li>
+<li class="method public inherited"><a href="#method_getAttribute" title="getAttribute() :: Method to get an attribute of the field"><span class="description">Method to get an attribute of the field</span><pre>getAttribute()</pre></a></li>
+<li class="method public inherited"><a href="#method_setForm" title="setForm() :: Method to attach a Form object to the field."><span class="description">Method to attach a Form object to the field.</span><pre>setForm()</pre></a></li>
+<li class="method public inherited"><a href="#method_setValue" title="setValue() :: Simple method to set the value"><span class="description">Simple method to set the value</span><pre>setValue()</pre></a></li>
+<li class="method public inherited"><a href="#method_setup" title="setup() :: Method to attach a JForm object to the field."><span class="description">Method to attach a JForm object to the field.</span><pre>setup()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_getFieldName" title="getFieldName() :: Method to get the field name used."><span class="description">Method to get the field name used.</span><pre>getFieldName()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getId" title="getId() :: Method to get the id used for the field input tag."><span class="description">Method to get the id used for the field input tag.</span><pre>getId()</pre></a></li>
+<li class="method protected "><a href="#method_getInput" title="getInput() :: Method to get the field input markup for the file field."><span class="description">Method to get the field input markup for the file field.</span><pre>getInput()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getInput" title="getInput() :: Method to get the field input markup."><span class="description">Method to get the field input markup.</span><pre>getInput()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getLabel" title="getLabel() :: Method to get the field label markup."><span class="description">Method to get the field label markup.</span><pre>getLabel()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getName" title="getName() :: Method to get the name used for the field input tag."><span class="description">Method to get the name used for the field input tag.</span><pre>getName()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getTitle" title="getTitle() :: Method to get the field title."><span class="description">Method to get the field title.</span><pre>getTitle()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_type" title="$type() :: The form field type."><span class="description"></span><pre>$type</pre></a></li></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_count" title="$count() :: The count value for generated name field"><span class="description"></span><pre>$count</pre></a></li>
+<li class="property protected "><a href="#property_description" title="$description() :: The description text for the form field.  Usually used in tooltips."><span class="description"></span><pre>$description</pre></a></li>
+<li class="property protected "><a href="#property_element" title="$element() :: The SimpleXMLElement object of the &lt;field /&gt; XML element that describes the form field."><span class="description"></span><pre>$element</pre></a></li>
+<li class="property protected "><a href="#property_fieldname" title="$fieldname() :: The name of the field."><span class="description"></span><pre>$fieldname</pre></a></li>
+<li class="property protected "><a href="#property_form" title="$form() :: The Form object of the form attached to the form field."><span class="description"></span><pre>$form</pre></a></li>
+<li class="property protected "><a href="#property_formControl" title="$formControl() :: The form control prefix for field names from the Form object attached to the form field."><span class="description"></span><pre>$formControl</pre></a></li>
+<li class="property protected "><a href="#property_generated_fieldname" title="$generated_fieldname() :: The string used for generated fields names"><span class="description"></span><pre>$generated_fieldname</pre></a></li>
+<li class="property protected "><a href="#property_group" title="$group() :: The group of the field."><span class="description"></span><pre>$group</pre></a></li>
+<li class="property protected "><a href="#property_hidden" title="$hidden() :: The hidden state for the form field."><span class="description"></span><pre>$hidden</pre></a></li>
+<li class="property protected "><a href="#property_id" title="$id() :: The document id for the form field."><span class="description"></span><pre>$id</pre></a></li>
+<li class="property protected "><a href="#property_input" title="$input() :: The input for the form field."><span class="description"></span><pre>$input</pre></a></li>
+<li class="property protected "><a href="#property_label" title="$label() :: The label for the form field."><span class="description"></span><pre>$label</pre></a></li>
+<li class="property protected "><a href="#property_labelClass" title="$labelClass() :: The label's CSS class of the form field"><span class="description"></span><pre>$labelClass</pre></a></li>
+<li class="property protected "><a href="#property_multiple" title="$multiple() :: The multiple state for the form field.  If true then multiple values are allowed for the
+field.  Most often used for list field types."><span class="description"></span><pre>$multiple</pre></a></li>
+<li class="property protected "><a href="#property_name" title="$name() :: The name of the form field."><span class="description"></span><pre>$name</pre></a></li>
+<li class="property protected "><a href="#property_required" title="$required() :: The required state for the form field.  If true then there must be a value for the field to
+be considered valid."><span class="description"></span><pre>$required</pre></a></li>
+<li class="property protected "><a href="#property_translateDescription" title="$translateDescription() :: True to translate the field description string."><span class="description"></span><pre>$translateDescription</pre></a></li>
+<li class="property protected "><a href="#property_translateLabel" title="$translateLabel() :: True to translate the field label string."><span class="description"></span><pre>$translateLabel</pre></a></li>
+<li class="property protected "><a href="#property_type" title="$type() :: The form field type."><span class="description"></span><pre>$type</pre></a></li>
+<li class="property protected "><a href="#property_validate" title="$validate() :: The validation method for the form field.  This value will determine which method is used
+to validate the value for a field."><span class="description"></span><pre>$validate</pre></a></li>
+<li class="property protected "><a href="#property_value" title="$value() :: The value of the form field."><span class="description"></span><pre>$value</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Form\Fields\File"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Form.html">Form</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Form.Fields.html">Fields</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Form.Fields.File.html">File</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Provides an input field for files</p>
+<div class="details">
+<div class="long_description"><p>Inspired by Joomla's JFormField class</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/hubzero-cms.html">hubzero-cms</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Hubzero\Form\Field</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Method to instantiate the form field object.</h2>
+<pre>__construct(object $form<code> = null</code>) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$form</h4>
+<code>object</code><p>The form to attach to the form field object.</p></div>
+</div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get inherited" data-toggle="collapse" data-target=".method___get .collapse" title="public">
+<h2>Method to get certain otherwise inaccessible properties from the form field object.</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The property name for which to the the value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The property value or null.</div>
+</div></div>
+</div>
+<a id="method_getAttribute"></a><div class="element clickable method public method_getAttribute inherited" data-toggle="collapse" data-target=".method_getAttribute .collapse" title="public">
+<h2>Method to get an attribute of the field</h2>
+<pre>getAttribute(string $name, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the attribute to get</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>Optional value to return if attribute not found</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Value of the attribute / default</div>
+</div></div>
+</div>
+<a id="method_setForm"></a><div class="element clickable method public method_setForm inherited" data-toggle="collapse" data-target=".method_setForm .collapse" title="public">
+<h2>Method to attach a Form object to the field.</h2>
+<pre>setForm(object $form) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$form</h4>
+<code>object</code><p>The Form object to attach to the form field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>The form field object so that the method can be used in a chain.</div>
+</div></div>
+</div>
+<a id="method_setValue"></a><div class="element clickable method public method_setValue inherited" data-toggle="collapse" data-target=".method_setValue .collapse" title="public">
+<h2>Simple method to set the value</h2>
+<pre>setValue(mixed $value) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to set</p></div>
+</div></div>
+</div>
+<a id="method_setup"></a><div class="element clickable method public method_setup inherited" data-toggle="collapse" data-target=".method_setup .collapse" title="public">
+<h2>Method to attach a JForm object to the field.</h2>
+<pre>setup(object $element, mixed $value, string $group<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>object</code><p>&$element  The SimpleXMLElement object representing the <field /> tag for the form field object.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The form field value to validate.</p></div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The field name group control value. This acts as as an array container for the field.
+For example if the field has name="foo" and the group value is set to "bar" then the
+full field name would end up being "bar[foo]".</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_getFieldName"></a><div class="element clickable method protected method_getFieldName inherited" data-toggle="collapse" data-target=".method_getFieldName .collapse" title="protected">
+<h2>Method to get the field name used.</h2>
+<pre>getFieldName(string $fieldName) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fieldName</h4>
+<code>string</code><p>The field element name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field name</div>
+</div></div>
+</div>
+<a id="method_getId"></a><div class="element clickable method protected method_getId inherited" data-toggle="collapse" data-target=".method_getId .collapse" title="protected">
+<h2>Method to get the id used for the field input tag.</h2>
+<pre>getId(string $fieldId, string $fieldName) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fieldId</h4>
+<code>string</code><p>The field element id.</p></div>
+<div class="subelement argument">
+<h4>$fieldName</h4>
+<code>string</code><p>The field element name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The id to be used for the field input tag.</div>
+</div></div>
+</div>
+<a id="method_getInput"></a><div class="element clickable method protected method_getInput " data-toggle="collapse" data-target=".method_getInput .collapse" title="protected">
+<h2>Method to get the field input markup for the file field.</h2>
+<pre>getInput() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Field attributes allow specification of a maximum file size and a string
+of accepted file extensions.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Form\Field::getInput()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field input markup.</div>
+</div></div>
+</div>
+<a id="method_getInput"></a><div class="element clickable method protected method_getInput inherited" data-toggle="collapse" data-target=".method_getInput .collapse" title="protected">
+<h2>Method to get the field input markup.</h2>
+<pre>getInput() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field input markup.</div>
+</div></div>
+</div>
+<a id="method_getLabel"></a><div class="element clickable method protected method_getLabel inherited" data-toggle="collapse" data-target=".method_getLabel .collapse" title="protected">
+<h2>Method to get the field label markup.</h2>
+<pre>getLabel() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field label markup.</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method protected method_getName inherited" data-toggle="collapse" data-target=".method_getName .collapse" title="protected">
+<h2>Method to get the name used for the field input tag.</h2>
+<pre>getName(string $fieldName) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fieldName</h4>
+<code>string</code><p>The field element name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name to be used for the field input tag.</div>
+</div></div>
+</div>
+<a id="method_getTitle"></a><div class="element clickable method protected method_getTitle inherited" data-toggle="collapse" data-target=".method_getTitle .collapse" title="protected">
+<h2>Method to get the field title.</h2>
+<pre>getTitle() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field title.</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_type"> </a><div class="element clickable property public property_type" data-toggle="collapse" data-target=".property_type .collapse" title="public">
+<h2>The form field type.</h2>
+<pre>$type : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'File'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Form\Field::type</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_count"> </a><div class="element clickable property protected property_count" data-toggle="collapse" data-target=".property_count .collapse" title="protected">
+<h2>The count value for generated name field</h2>
+<pre>$count : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_description"> </a><div class="element clickable property protected property_description" data-toggle="collapse" data-target=".property_description .collapse" title="protected">
+<h2>The description text for the form field.  Usually used in tooltips.</h2>
+<pre>$description : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_element"> </a><div class="element clickable property protected property_element" data-toggle="collapse" data-target=".property_element .collapse" title="protected">
+<h2>The SimpleXMLElement object of the &lt;field /&gt; XML element that describes the form field.</h2>
+<pre>$element : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_fieldname"> </a><div class="element clickable property protected property_fieldname" data-toggle="collapse" data-target=".property_fieldname .collapse" title="protected">
+<h2>The name of the field.</h2>
+<pre>$fieldname : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_form"> </a><div class="element clickable property protected property_form" data-toggle="collapse" data-target=".property_form .collapse" title="protected">
+<h2>The Form object of the form attached to the form field.</h2>
+<pre>$form : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_formControl"> </a><div class="element clickable property protected property_formControl" data-toggle="collapse" data-target=".property_formControl .collapse" title="protected">
+<h2>The form control prefix for field names from the Form object attached to the form field.</h2>
+<pre>$formControl : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_generated_fieldname"> </a><div class="element clickable property protected property_generated_fieldname" data-toggle="collapse" data-target=".property_generated_fieldname .collapse" title="protected">
+<h2>The string used for generated fields names</h2>
+<pre>$generated_fieldname : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'__field'</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_group"> </a><div class="element clickable property protected property_group" data-toggle="collapse" data-target=".property_group .collapse" title="protected">
+<h2>The group of the field.</h2>
+<pre>$group : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_hidden"> </a><div class="element clickable property protected property_hidden" data-toggle="collapse" data-target=".property_hidden .collapse" title="protected">
+<h2>The hidden state for the form field.</h2>
+<pre>$hidden : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_id"> </a><div class="element clickable property protected property_id" data-toggle="collapse" data-target=".property_id .collapse" title="protected">
+<h2>The document id for the form field.</h2>
+<pre>$id : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_input"> </a><div class="element clickable property protected property_input" data-toggle="collapse" data-target=".property_input .collapse" title="protected">
+<h2>The input for the form field.</h2>
+<pre>$input : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_label"> </a><div class="element clickable property protected property_label" data-toggle="collapse" data-target=".property_label .collapse" title="protected">
+<h2>The label for the form field.</h2>
+<pre>$label : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_labelClass"> </a><div class="element clickable property protected property_labelClass" data-toggle="collapse" data-target=".property_labelClass .collapse" title="protected">
+<h2>The label's CSS class of the form field</h2>
+<pre>$labelClass : mixed</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_multiple"> </a><div class="element clickable property protected property_multiple" data-toggle="collapse" data-target=".property_multiple .collapse" title="protected">
+<h2>The multiple state for the form field.  If true then multiple values are allowed for the
 field.  Most often used for list field types.</h2>
-                                <pre>multiple : boolean</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_name"> </a>
-                            <div class="element clickable property  protected property_name inherited" data-toggle="collapse" data-target=".property_name .collapse">
-                                <h2>The name of the form field.</h2>
-                                <pre>name : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_fieldname"> </a>
-                            <div class="element clickable property  protected property_fieldname inherited" data-toggle="collapse" data-target=".property_fieldname .collapse">
-                                <h2>The name of the field.</h2>
-                                <pre>fieldname : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_group"> </a>
-                            <div class="element clickable property  protected property_group inherited" data-toggle="collapse" data-target=".property_group .collapse">
-                                <h2>The group of the field.</h2>
-                                <pre>group : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_required"> </a>
-                            <div class="element clickable property  protected property_required inherited" data-toggle="collapse" data-target=".property_required .collapse">
-                                <h2>The required state for the form field.  If true then there must be a value for the field to
+<pre>$multiple : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_name"> </a><div class="element clickable property protected property_name" data-toggle="collapse" data-target=".property_name .collapse" title="protected">
+<h2>The name of the form field.</h2>
+<pre>$name : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_required"> </a><div class="element clickable property protected property_required" data-toggle="collapse" data-target=".property_required .collapse" title="protected">
+<h2>The required state for the form field.  If true then there must be a value for the field to
 be considered valid.</h2>
-                                <pre>required : boolean</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_validate"> </a>
-                            <div class="element clickable property  protected property_validate inherited" data-toggle="collapse" data-target=".property_validate .collapse">
-                                <h2>The validation method for the form field.  This value will determine which method is used
+<pre>$required : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_translateDescription"> </a><div class="element clickable property protected property_translateDescription" data-toggle="collapse" data-target=".property_translateDescription .collapse" title="protected">
+<h2>True to translate the field description string.</h2>
+<pre>$translateDescription : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_translateLabel"> </a><div class="element clickable property protected property_translateLabel" data-toggle="collapse" data-target=".property_translateLabel .collapse" title="protected">
+<h2>True to translate the field label string.</h2>
+<pre>$translateLabel : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>true</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property protected property_type" data-toggle="collapse" data-target=".property_type .collapse" title="protected">
+<h2>The form field type.</h2>
+<pre>$type : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_validate"> </a><div class="element clickable property protected property_validate" data-toggle="collapse" data-target=".property_validate .collapse" title="protected">
+<h2>The validation method for the form field.  This value will determine which method is used
 to validate the value for a field.</h2>
-                                <pre>validate : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_value"> </a>
-                            <div class="element clickable property  protected property_value inherited" data-toggle="collapse" data-target=".property_value .collapse">
-                                <h2>The value of the form field.</h2>
-                                <pre>value : mixed</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>mixed</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_labelClass"> </a>
-                            <div class="element clickable property  protected property_labelClass inherited" data-toggle="collapse" data-target=".property_labelClass .collapse">
-                                <h2>The label&#039;s CSS class of the form field</h2>
-                                <pre>labelClass : mixed</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>mixed</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_count"> </a>
-                            <div class="element clickable property  protected property_count inherited" data-toggle="collapse" data-target=".property_count .collapse">
-                                <h2>The count value for generated name field</h2>
-                                <pre>count : integer</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                    <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_generated_fieldname"> </a>
-                            <div class="element clickable property  protected property_generated_fieldname inherited" data-toggle="collapse" data-target=".property_generated_fieldname .collapse">
-                                <h2>The string used for generated fields names</h2>
-                                <pre>generated_fieldname : integer</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                    <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Form\Fields\File"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Form.Fields.html">Fields</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Form.Fields.File.html">File</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:54 +0000.<br/>
-    </footer>
-    </body>
+<pre>$validate : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_value"> </a><div class="element clickable property protected property_value" data-toggle="collapse" data-target=".property_value .collapse" title="protected">
+<h2>The value of the form field.</h2>
+<pre>$value : mixed</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:10-04:00.<br></footer></div>
+</div>
+</body>
 </html>

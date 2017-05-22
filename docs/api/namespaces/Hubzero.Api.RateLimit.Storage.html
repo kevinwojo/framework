@@ -1,191 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>     &raquo; \Hubzero\Api\RateLimit\Storage
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » Hubzero\Api\RateLimit\Storage</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            
-    <div class="row">
-
-        <div class="span4">
-            <div class="btn-group view pull-right" data-toggle="buttons-radio">
-                <button class="btn details" title="Show descriptions and method names">
-                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
-                    <i class="icon-align-justify"></i>
-                </button>
-            </div>
-            <ul class="side-nav nav nav-list">
-                <li class="nav-header">
-                    <i class="icon-map-marker"></i> Namespaces
-                </li>
-                <a href="../namespaces/Hubzero.Api.RateLimit.Storage.html" title="Storage">
-                    <i class="icon-th"></i> Storage
-                </a>
-                <ul class="nav nav-list nav-namespaces">
-                        
-    
-                </ul>
-            </ul>
-        </div>
-
-        <div class="span8 namespace-contents">
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.html">Hubzero</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Api.html">Api</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Api.RateLimit.html">RateLimit</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/Hubzero.Api.RateLimit.Storage.html">Storage</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                                        <div id="interface_StorageInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_StorageInterface .collapse">
-        <h1>StorageInterface<a href="../classes/Hubzero.Api.RateLimit.Storage.StorageInterface.html">¶</a></h1>
-        <p class="short_description">Rate limit storage contract</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Api.RateLimit.Storage.StorageInterface.html" class="more">« More »</a>    </div>
-
-                
-                                        <div id="class_Database" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Database .collapse">
-        <h1>Database<a href="../classes/Hubzero.Api.RateLimit.Storage.Database.html">¶</a></h1>
-        <p class="short_description">Database rate limit storage class</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/Hubzero.Api.RateLimit.Storage.Database.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-    
-        </div>
-    </div>
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:54 +0000.<br/>
-    </footer>
-    </body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Namespaces</li>
+<li>
+<a href="../namespaces/Hubzero.Api.RateLimit.Storage.html" title="Storage"><i class="icon-th"></i>Storage</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li class="nav-header">
+<i title="Interfaces" class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#StorageInterface" title="Rate limit storage contract">StorageInterface</a></li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Database" title="Database rate limit storage class">Database</a></li>
+</ul>
+</div>
+<div class="span8 namespace-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Api.html">Api</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Api.RateLimit.html">RateLimit</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/Hubzero.Api.RateLimit.Storage.html">Storage</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="StorageInterface" class="element ajax clickable interface">
+<h1>StorageInterface<a href="../classes/Hubzero.Api.RateLimit.Storage.StorageInterface.html">¶</a>
+</h1>
+<p class="short_description">Rate limit storage contract</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Api.RateLimit.Storage.StorageInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Database" class="element ajax clickable class">
+<h1>Database<a href="../classes/Hubzero.Api.RateLimit.Storage.Database.html">¶</a>
+</h1>
+<p class="short_description">Database rate limit storage class</p>
+<div class="details collapse"></div>
+<a href="../classes/Hubzero.Api.RateLimit.Storage.Database.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:24:55-04:00.<br></footer></div>
+</div>
+</body>
 </html>

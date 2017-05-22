@@ -1,1728 +1,863 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Session\Manager
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Session\Manager</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public inherited">
-        <a href="#method___construct" title="__construct :: Class constructor, overridden in descendant classes.">
-            <span class="description">Class constructor, overridden in descendant classes.</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___destruct" title="__destruct :: Session object destructor">
-            <span class="description">Session object destructor</span><pre>__destruct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method___toString" title="__toString :: Magic method to convert the object to a string gracefully.">
-            <span class="description">Magic method to convert the object to a string gracefully.</span><pre>__toString</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_checkToken" title="checkToken :: Checks for a form token in the request.">
-            <span class="description">Checks for a form token in the request.</span><pre>checkToken</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_clear" title="clear :: Unset data from the session store">
-            <span class="description">Unset data from the session store</span><pre>clear</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_close" title="close :: Writes session data and ends session">
-            <span class="description">Writes session data and ends session</span><pre>close</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        <li class="method public inherited">
-        <a href="#method_def" title="def :: Sets a default value if not alreay assigned">
-            <span class="description">Sets a default value if not alreay assigned</span><pre>def</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_destroy" title="destroy :: Frees all session variables and destroys all data registered to a session">
-            <span class="description">Frees all session variables and destroys all data registered to a session</span><pre>destroy</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_fork" title="fork :: Create a new session and copy variables from the old one">
-            <span class="description">Create a new session and copy variables from the old one</span><pre>fork</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_get" title="get :: Returns a property of the object or the default value if the property is not set.">
-            <span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getError" title="getError :: Get the most recent error message.">
-            <span class="description">Get the most recent error message.</span><pre>getError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getErrors" title="getErrors :: Return all errors, if any.">
-            <span class="description">Return all errors, if any.</span><pre>getErrors</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getExpire" title="getExpire :: Get expiration time in minutes">
-            <span class="description">Get expiration time in minutes</span><pre>getExpire</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getFormToken" title="getFormToken :: Method to determine a hash for anti-spoofing variable names">
-            <span class="description">Method to determine a hash for anti-spoofing variable names</span><pre>getFormToken</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getId" title="getId :: Get session id">
-            <span class="description">Get session id</span><pre>getId</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getName" title="getName :: Get session name">
-            <span class="description">Get session name</span><pre>getName</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getProperties" title="getProperties :: Returns an associative array of object properties.">
-            <span class="description">Returns an associative array of object properties.</span><pre>getProperties</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getState" title="getState :: Get current state of session">
-            <span class="description">Get current state of session</span><pre>getState</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getStores" title="getStores :: Get the session handlers">
-            <span class="description">Get the session handlers</span><pre>getStores</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getToken" title="getToken :: Get a session token, if a token isn&#039;t set yet one will be generated.">
-            <span class="description">Get a session token, if a token isn&#039;t set yet one will be generated.</span><pre>getToken</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_has" title="has :: Check whether data exists in the session store">
-            <span class="description">Check whether data exists in the session store</span><pre>has</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_hasToken" title="hasToken :: Method to determine if a token exists in the session. If not the
-session will be set to expired">
-            <span class="description">Method to determine if a token exists in the session. If not the
-session will be set to expired</span><pre>hasToken</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_isNew" title="isNew :: Check whether this session is currently created">
-            <span class="description">Check whether this session is currently created</span><pre>isNew</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_restart" title="restart :: Restart an expired or locked session.">
-            <span class="description">Restart an expired or locked session.</span><pre>restart</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_set" title="set :: Modifies a property of the object, creating it if it does not already exist.">
-            <span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        <li class="method public inherited">
-        <a href="#method_setError" title="setError :: Add an error message.">
-            <span class="description">Add an error message.</span><pre>setError</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setErrors" title="setErrors :: Set the list of errors">
-            <span class="description">Set the list of errors</span><pre>setErrors</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public inherited">
-        <a href="#method_setProperties" title="setProperties :: Set the object properties based on a named array/hash.">
-            <span class="description">Set the object properties based on a named array/hash.</span><pre>setProperties</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                    <li class="method protected">
-                            <a href="#method_createId" title="createId :: Create a session id">
-                                <span class="description">Create a session id</span><pre>createId</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_createToken" title="createToken :: Create a token-string">
-                                <span class="description">Create a token-string</span><pre>createToken</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
-                            <a href="#method_setCookieParams" title="setCookieParams :: Set session cookie parameters">
-                                <span class="description">Set session cookie parameters</span><pre>setCookieParams</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_setCounter" title="setCounter :: Set counter of session usage">
-                                <span class="description">Set counter of session usage</span><pre>setCounter</pre>
-                            </a>
-                        </li>
-                                                                                                                                                        <li class="method protected">
-                            <a href="#method_setOptions" title="setOptions :: Set additional session options">
-                                <span class="description">Set additional session options</span><pre>setOptions</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method protected">
-                            <a href="#method_setTimers" title="setTimers :: Set the session timers">
-                                <span class="description">Set the session timers</span><pre>setTimers</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_start" title="start :: Start a session.">
-                                <span class="description">Start a session.</span><pre>start</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_validate" title="validate :: Do some checks for security reason">
-                                <span class="description">Do some checks for security reason</span><pre>validate</pre>
-                            </a>
-                        </li>
-                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Manager</h1>
-                <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/Hubzero.Base.Object.html">\Hubzero\Base\Object</a>
-                                                        </small>
-                <p class="short_description">Class for managing HTTP sessions</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Provides access to session-state values as well as session-level
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: Class constructor, overridden in descendant classes."><span class="description">Class constructor, overridden in descendant classes.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct() :: Session object destructor"><span class="description">Session object destructor</span><pre>__destruct()</pre></a></li>
+<li class="method public inherited"><a href="#method___toString" title="__toString() :: Magic method to convert the object to a string gracefully."><span class="description">Magic method to convert the object to a string gracefully.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_checkToken" title="checkToken() :: Checks for a form token in the request."><span class="description">Checks for a form token in the request.</span><pre>checkToken()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear() :: Unset data from the session store"><span class="description">Unset data from the session store</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close() :: Writes session data and ends session"><span class="description">Writes session data and ends session</span><pre>close()</pre></a></li>
+<li class="method public inherited"><a href="#method_def" title="def() :: Sets a default value if not alreay assigned"><span class="description">Sets a default value if not alreay assigned</span><pre>def()</pre></a></li>
+<li class="method public "><a href="#method_destroy" title="destroy() :: Frees all session variables and destroys all data registered to a session"><span class="description">Frees all session variables and destroys all data registered to a session</span><pre>destroy()</pre></a></li>
+<li class="method public "><a href="#method_fork" title="fork() :: Create a new session and copy variables from the old one"><span class="description">Create a new session and copy variables from the old one</span><pre>fork()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get() :: Get data from the session store"><span class="description">Get data from the session store</span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_get" title="get() :: Returns a property of the object or the default value if the property is not set."><span class="description">Returns a property of the object or the default value if the property is not set.</span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#method_getError" title="getError() :: Get the most recent error message."><span class="description">Get the most recent error message.</span><pre>getError()</pre></a></li>
+<li class="method public inherited"><a href="#method_getErrors" title="getErrors() :: Return all errors, if any."><span class="description">Return all errors, if any.</span><pre>getErrors()</pre></a></li>
+<li class="method public "><a href="#method_getExpire" title="getExpire() :: Get expiration time in minutes"><span class="description">Get expiration time in minutes</span><pre>getExpire()</pre></a></li>
+<li class="method public "><a href="#method_getFormToken" title="getFormToken() :: Method to determine a hash for anti-spoofing variable names"><span class="description">Method to determine a hash for anti-spoofing variable names</span><pre>getFormToken()</pre></a></li>
+<li class="method public "><a href="#method_getId" title="getId() :: Get session id"><span class="description">Get session id</span><pre>getId()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName() :: Get session name"><span class="description">Get session name</span><pre>getName()</pre></a></li>
+<li class="method public inherited"><a href="#method_getProperties" title="getProperties() :: Returns an associative array of object properties."><span class="description">Returns an associative array of object properties.</span><pre>getProperties()</pre></a></li>
+<li class="method public "><a href="#method_getState" title="getState() :: Get current state of session"><span class="description">Get current state of session</span><pre>getState()</pre></a></li>
+<li class="method public "><a href="#method_getStores" title="getStores() :: Get the session handlers"><span class="description">Get the session handlers</span><pre>getStores()</pre></a></li>
+<li class="method public "><a href="#method_getToken" title="getToken() :: Get a session token, if a token isn't set yet one will be generated."><span class="description">Get a session token, if a token isn't set yet one will be generated.</span><pre>getToken()</pre></a></li>
+<li class="method public "><a href="#method_has" title="has() :: Check whether data exists in the session store"><span class="description">Check whether data exists in the session store</span><pre>has()</pre></a></li>
+<li class="method public "><a href="#method_hasToken" title="hasToken() :: Method to determine if a token exists in the session. If not the
+session will be set to expired"><span class="description">Method to determine if a token exists in the session. If not the
+session will be set to expired</span><pre>hasToken()</pre></a></li>
+<li class="method public "><a href="#method_isNew" title="isNew() :: Check whether this session is currently created"><span class="description">Check whether this session is currently created</span><pre>isNew()</pre></a></li>
+<li class="method public "><a href="#method_restart" title="restart() :: Restart an expired or locked session."><span class="description">Restart an expired or locked session.</span><pre>restart()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set() :: Set data into the session store."><span class="description">Set data into the session store.</span><pre>set()</pre></a></li>
+<li class="method public inherited"><a href="#method_set" title="set() :: Modifies a property of the object, creating it if it does not already exist."><span class="description">Modifies a property of the object, creating it if it does not already exist.</span><pre>set()</pre></a></li>
+<li class="method public inherited"><a href="#method_setError" title="setError() :: Add an error message."><span class="description">Add an error message.</span><pre>setError()</pre></a></li>
+<li class="method public inherited"><a href="#method_setErrors" title="setErrors() :: Set the list of errors"><span class="description">Set the list of errors</span><pre>setErrors()</pre></a></li>
+<li class="method public inherited"><a href="#method_setProperties" title="setProperties() :: Set the object properties based on a named array/hash."><span class="description">Set the object properties based on a named array/hash.</span><pre>setProperties()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_createId" title="createId() :: Create a session id"><span class="description">Create a session id</span><pre>createId()</pre></a></li>
+<li class="method protected "><a href="#method_createToken" title="createToken() :: Create a token-string"><span class="description">Create a token-string</span><pre>createToken()</pre></a></li>
+<li class="method protected "><a href="#method_setCookieParams" title="setCookieParams() :: Set session cookie parameters"><span class="description">Set session cookie parameters</span><pre>setCookieParams()</pre></a></li>
+<li class="method protected "><a href="#method_setCounter" title="setCounter() :: Set counter of session usage"><span class="description">Set counter of session usage</span><pre>setCounter()</pre></a></li>
+<li class="method protected "><a href="#method_setOptions" title="setOptions() :: Set additional session options"><span class="description">Set additional session options</span><pre>setOptions()</pre></a></li>
+<li class="method protected "><a href="#method_setTimers" title="setTimers() :: Set the session timers"><span class="description">Set the session timers</span><pre>setTimers()</pre></a></li>
+<li class="method protected "><a href="#method_start" title="start() :: Start a session."><span class="description">Start a session.</span><pre>start()</pre></a></li>
+<li class="method protected "><a href="#method_validate" title="validate() :: Do some checks for security reason"><span class="description">Do some checks for security reason</span><pre>validate()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property__errors" title="$_errors() :: An array of error messages or Exception objects."><span class="description"></span><pre>$_errors</pre></a></li>
+<li class="property protected "><a href="#property_cookie_domain" title="$cookie_domain() :: Cookie domain"><span class="description"></span><pre>$cookie_domain</pre></a></li>
+<li class="property protected "><a href="#property_cookie_path" title="$cookie_path() :: Cookie path"><span class="description"></span><pre>$cookie_path</pre></a></li>
+<li class="property protected "><a href="#property_expire" title="$expire() :: Maximum age of unused session in minutes"><span class="description"></span><pre>$expire</pre></a></li>
+<li class="property protected "><a href="#property_force_ssl" title="$force_ssl() :: Force cookies to be SSL only
+Default  false"><span class="description"></span><pre>$force_ssl</pre></a></li>
+<li class="property protected "><a href="#property_security" title="$security() :: Security policy."><span class="description"></span><pre>$security</pre></a></li>
+<li class="property protected "><a href="#property_state" title="$state() :: Internal state."><span class="description"></span><pre>$state</pre></a></li>
+<li class="property protected "><a href="#property_store" title="$store() :: The session store object."><span class="description"></span><pre>$store</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Session\Manager"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Session.html">Session</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Session.Manager.html">Manager</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class for managing HTTP sessions</p>
+<div class="details">
+<div class="long_description"><p>Provides access to session-state values as well as session-level
 settings and lifetime management methods.
 Based on the standard PHP session handling mechanism it provides
 more advanced features such as expire timeouts.</p>
-<p>Inspired by Joomla's JSession class</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Class constructor, overridden in descendant classes.</h2>
-                            <pre>__construct(mixed $properties = null) : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$properties</h4>
-                                                <code>mixed</code><p><p>Either and associative array or another
-object to set the initial properties of the object.</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___destruct"></a>
-                        <div class="element clickable method public  method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
-                            <h2>Session object destructor</h2>
-                            <pre>__destruct() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___toString"></a>
-                        <div class="element clickable method public  method___toString inherited" data-toggle="collapse" data-target=".method___toString .collapse">
-                            <h2>Magic method to convert the object to a string gracefully.</h2>
-                            <pre>__toString() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The classname.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_checkToken"></a>
-                        <div class="element clickable method public  method_checkToken" data-toggle="collapse" data-target=".method_checkToken .collapse">
-                            <h2>Checks for a form token in the request.</h2>
-                            <pre>checkToken(string $method = &#039;post&#039;, boolean $capture = false) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$method</h4>
-                                                <code>string</code><p><p>The request method in which to look for the token key.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$capture</h4>
-                                                <code>boolean</code><p><p>Return result instead of throwing exception?</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if found and valid, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_clear"></a>
-                        <div class="element clickable method public  method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
-                            <h2>Unset data from the session store</h2>
-                            <pre>clear(string $name, string $namespace = &#039;default&#039;) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Name of variable</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$namespace</h4>
-                                                <code>string</code><p><p>Namespace to use, default to 'default'</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The value from session or NULL if not set</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_close"></a>
-                        <div class="element clickable method public  method_close" data-toggle="collapse" data-target=".method_close .collapse">
-                            <h2>Writes session data and ends session</h2>
-                            <pre>close() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Session data is usually stored after your script terminated without the need
+<p>Inspired by Joomla's JSession class</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor</h2>
+<pre>__construct(string $store<code> = 'none'</code>, array $options<code> = array()</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$store</h4>
+<code>string</code><p>The type of storage for the session.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>Optional parameters</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Class constructor, overridden in descendant classes.</h2>
+<pre>__construct(mixed $properties<code> = null</code>) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$properties</h4>
+<code>mixed</code><p>Either and associative array or another
+                             object to set the initial properties of the object.</p></div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct " data-toggle="collapse" data-target=".method___destruct .collapse" title="public">
+<h2>Session object destructor</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString inherited" data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Magic method to convert the object to a string gracefully.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The classname.</div>
+</div></div>
+</div>
+<a id="method_checkToken"></a><div class="element clickable method public method_checkToken " data-toggle="collapse" data-target=".method_checkToken .collapse" title="public">
+<h2>Checks for a form token in the request.</h2>
+<pre>checkToken(string $method<code> = 'post'</code>, boolean $capture<code> = false</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The request method in which to look for the token key.</p></div>
+<div class="subelement argument">
+<h4>$capture</h4>
+<code>boolean</code><p>Return result instead of throwing exception?</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if found and valid, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear " data-toggle="collapse" data-target=".method_clear .collapse" title="public">
+<h2>Unset data from the session store</h2>
+<pre>clear(string $name, string $namespace<code> = 'default'</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of variable</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>Namespace to use, default to 'default'</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value from session or NULL if not set</div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close " data-toggle="collapse" data-target=".method_close .collapse" title="public">
+<h2>Writes session data and ends session</h2>
+<pre>close() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Session data is usually stored after your script terminated without the need
 to call JSession::close(), but as session data is locked to prevent concurrent
 writes only one script may operate on a session at any time. When using
 framesets together with sessions you will experience the frames loading one
 by one due to this locking. You can reduce the time needed to load all the
 frames by ending the session as soon as all changes to session variables are
 done.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            \Hubzero\Session\session_write_close()
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_createId"></a>
-                        <div class="element clickable method protected  method_createId" data-toggle="collapse" data-target=".method_createId .collapse">
-                            <h2>Create a session id</h2>
-                            <pre>createId() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Session ID</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_createToken"></a>
-                        <div class="element clickable method protected  method_createToken" data-toggle="collapse" data-target=".method_createToken .collapse">
-                            <h2>Create a token-string</h2>
-                            <pre>createToken(integer $length = 32) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$length</h4>
-                                                <code>integer</code><p><p>Length of string</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Generated token</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_def"></a>
-                        <div class="element clickable method public  method_def inherited" data-toggle="collapse" data-target=".method_def .collapse">
-                            <h2>Sets a default value if not alreay assigned</h2>
-                            <pre>def(string $property, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>The default value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_destroy"></a>
-                        <div class="element clickable method public  method_destroy" data-toggle="collapse" data-target=".method_destroy .collapse">
-                            <h2>Frees all session variables and destroys all data registered to a session</h2>
-                            <pre>destroy() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>This method resets the $_SESSION variable and destroys all of the data associated
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="%5CHubzero%5CSession%5Csession_write_close()"></a></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_def"></a><div class="element clickable method public method_def inherited" data-toggle="collapse" data-target=".method_def .collapse" title="public">
+<h2>Sets a default value if not alreay assigned</h2>
+<pre>def(string $property, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_destroy"></a><div class="element clickable method public method_destroy " data-toggle="collapse" data-target=".method_destroy .collapse" title="public">
+<h2>Frees all session variables and destroys all data registered to a session</h2>
+<pre>destroy() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method resets the $_SESSION variable and destroys all of the data associated
 with the current session in its storage (file or DB). It forces new session to be
 started after this method is called. It does not unset the session cookie.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            \Hubzero\Session\session_destroy()
-                                                                                                                
-                                                                                                                                                                        
-                                                                                                                                                                            \Hubzero\Session\session_unset()
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_fork"></a>
-                        <div class="element clickable method public  method_fork" data-toggle="collapse" data-target=".method_fork .collapse">
-                            <h2>Create a new session and copy variables from the old one</h2>
-                            <pre>fork() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>$result  True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_get"></a>
-                        <div class="element clickable method public  method_get inherited" data-toggle="collapse" data-target=".method_get .collapse">
-                            <h2>Returns a property of the object or the default value if the property is not set.</h2>
-                            <pre>get(string $property, mixed $default = null) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$default</h4>
-                                                <code>mixed</code><p><p>The default value.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The value of the property.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getError"></a>
-                        <div class="element clickable method public  method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse">
-                            <h2>Get the most recent error message.</h2>
-                            <pre>getError(integer $i = null, boolean $toString = true) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$i</h4>
-                                                <code>integer</code><p><p>Option error index.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$toString</h4>
-                                                <code>boolean</code><p><p>Indicates if error objects should return their error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Error message</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getErrors"></a>
-                        <div class="element clickable method public  method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse">
-                            <h2>Return all errors, if any.</h2>
-                            <pre>getErrors() : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Array of error messages</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getExpire"></a>
-                        <div class="element clickable method public  method_getExpire" data-toggle="collapse" data-target=".method_getExpire .collapse">
-                            <h2>Get expiration time in minutes</h2>
-                            <pre>getExpire() : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p><p>The session expiration time in minutes</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getFormToken"></a>
-                        <div class="element clickable method public  method_getFormToken" data-toggle="collapse" data-target=".method_getFormToken .collapse">
-                            <h2>Method to determine a hash for anti-spoofing variable names</h2>
-                            <pre>getFormToken(boolean $forceNew = false) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$forceNew</h4>
-                                                <code>boolean</code><p><p>If true, force a new token to be created</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Hashed var name</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getId"></a>
-                        <div class="element clickable method public  method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-                            <h2>Get session id</h2>
-                            <pre>getId() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The session name</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getName"></a>
-                        <div class="element clickable method public  method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
-                            <h2>Get session name</h2>
-                            <pre>getName() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The session name</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getProperties"></a>
-                        <div class="element clickable method public  method_getProperties inherited" data-toggle="collapse" data-target=".method_getProperties .collapse">
-                            <h2>Returns an associative array of object properties.</h2>
-                            <pre>getProperties(boolean $public = true) : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$public</h4>
-                                                <code>boolean</code><p><p>If true, returns only the public properties.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getState"></a>
-                        <div class="element clickable method public  method_getState" data-toggle="collapse" data-target=".method_getState .collapse">
-                            <h2>Get current state of session</h2>
-                            <pre>getState() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The session state</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getStores"></a>
-                        <div class="element clickable method public  method_getStores" data-toggle="collapse" data-target=".method_getStores .collapse">
-                            <h2>Get the session handlers</h2>
-                            <pre>getStores() : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>An array of available session handlers</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getToken"></a>
-                        <div class="element clickable method public  method_getToken" data-toggle="collapse" data-target=".method_getToken .collapse">
-                            <h2>Get a session token, if a token isn&#039;t set yet one will be generated.</h2>
-                            <pre>getToken(boolean $forceNew = false) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Tokens are used to secure forms from spamming attacks. Once a token
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="%5CHubzero%5CSession%5Csession_destroy()"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="%5CHubzero%5CSession%5Csession_unset()"></a></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_fork"></a><div class="element clickable method public method_fork " data-toggle="collapse" data-target=".method_fork .collapse" title="public">
+<h2>Create a new session and copy variables from the old one</h2>
+<pre>fork() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>$result  True on success</div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get " data-toggle="collapse" data-target=".method_get .collapse" title="public">
+<h2>Get data from the session store</h2>
+<pre>get(string $name, mixed $default<code> = null</code>, string $namespace<code> = 'default'</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object::get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of a variable</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>Default value of a variable if not set</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>Namespace to use, default to 'default'</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Value of a variable</div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get inherited" data-toggle="collapse" data-target=".method_get .collapse" title="public">
+<h2>Returns a property of the object or the default value if the property is not set.</h2>
+<pre>get(string $property, mixed $default<code> = null</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the property.</div>
+</div></div>
+</div>
+<a id="method_getError"></a><div class="element clickable method public method_getError inherited" data-toggle="collapse" data-target=".method_getError .collapse" title="public">
+<h2>Get the most recent error message.</h2>
+<pre>getError(integer $i<code> = null</code>, boolean $toString<code> = true</code>) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$i</h4>
+<code>integer</code><p>Option error index.</p></div>
+<div class="subelement argument">
+<h4>$toString</h4>
+<code>boolean</code><p>Indicates if error objects should return their error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Error message</div>
+</div></div>
+</div>
+<a id="method_getErrors"></a><div class="element clickable method public method_getErrors inherited" data-toggle="collapse" data-target=".method_getErrors .collapse" title="public">
+<h2>Return all errors, if any.</h2>
+<pre>getErrors() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of error messages</div>
+</div></div>
+</div>
+<a id="method_getExpire"></a><div class="element clickable method public method_getExpire " data-toggle="collapse" data-target=".method_getExpire .collapse" title="public">
+<h2>Get expiration time in minutes</h2>
+<pre>getExpire() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The session expiration time in minutes</div>
+</div></div>
+</div>
+<a id="method_getFormToken"></a><div class="element clickable method public method_getFormToken " data-toggle="collapse" data-target=".method_getFormToken .collapse" title="public">
+<h2>Method to determine a hash for anti-spoofing variable names</h2>
+<pre>getFormToken(boolean $forceNew<code> = false</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$forceNew</h4>
+<code>boolean</code><p>If true, force a new token to be created</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Hashed var name</div>
+</div></div>
+</div>
+<a id="method_getId"></a><div class="element clickable method public method_getId " data-toggle="collapse" data-target=".method_getId .collapse" title="public">
+<h2>Get session id</h2>
+<pre>getId() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session name</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName " data-toggle="collapse" data-target=".method_getName .collapse" title="public">
+<h2>Get session name</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session name</div>
+</div></div>
+</div>
+<a id="method_getProperties"></a><div class="element clickable method public method_getProperties inherited" data-toggle="collapse" data-target=".method_getProperties .collapse" title="public">
+<h2>Returns an associative array of object properties.</h2>
+<pre>getProperties(boolean $public<code> = true</code>) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$public</h4>
+<code>boolean</code><p>If true, returns only the public properties.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getState"></a><div class="element clickable method public method_getState " data-toggle="collapse" data-target=".method_getState .collapse" title="public">
+<h2>Get current state of session</h2>
+<pre>getState() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session state</div>
+</div></div>
+</div>
+<a id="method_getStores"></a><div class="element clickable method public method_getStores " data-toggle="collapse" data-target=".method_getStores .collapse" title="public">
+<h2>Get the session handlers</h2>
+<pre>getStores() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of available session handlers</div>
+</div></div>
+</div>
+<a id="method_getToken"></a><div class="element clickable method public method_getToken " data-toggle="collapse" data-target=".method_getToken .collapse" title="public">
+<h2>Get a session token, if a token isn't set yet one will be generated.</h2>
+<pre>getToken(boolean $forceNew<code> = false</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Tokens are used to secure forms from spamming attacks. Once a token
 has been generated the system will check the post request to see if
 it is present, if not it will invalidate the session.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$forceNew</h4>
-                                                <code>boolean</code><p><p>If true, force a new token to be created</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The session token</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_has"></a>
-                        <div class="element clickable method public  method_has" data-toggle="collapse" data-target=".method_has .collapse">
-                            <h2>Check whether data exists in the session store</h2>
-                            <pre>has(string $name, string $namespace = &#039;default&#039;) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Name of variable</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$namespace</h4>
-                                                <code>string</code><p><p>Namespace to use, default to 'default'</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if the variable exists</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_hasToken"></a>
-                        <div class="element clickable method public  method_hasToken" data-toggle="collapse" data-target=".method_hasToken .collapse">
-                            <h2>Method to determine if a token exists in the session. If not the
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$forceNew</h4>
+<code>boolean</code><p>If true, force a new token to be created</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session token</div>
+</div></div>
+</div>
+<a id="method_has"></a><div class="element clickable method public method_has " data-toggle="collapse" data-target=".method_has .collapse" title="public">
+<h2>Check whether data exists in the session store</h2>
+<pre>has(string $name, string $namespace<code> = 'default'</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of variable</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>Namespace to use, default to 'default'</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the variable exists</div>
+</div></div>
+</div>
+<a id="method_hasToken"></a><div class="element clickable method public method_hasToken " data-toggle="collapse" data-target=".method_hasToken .collapse" title="public">
+<h2>Method to determine if a token exists in the session. If not the
 session will be set to expired</h2>
-                            <pre>hasToken(string $tCheck, boolean $forceExpire = true) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$tCheck</h4>
-                                                <code>string</code><p><p>Hashed token to be verified</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$forceExpire</h4>
-                                                <code>boolean</code><p><p>If true, expires the session</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isNew"></a>
-                        <div class="element clickable method public  method_isNew" data-toggle="collapse" data-target=".method_isNew .collapse">
-                            <h2>Check whether this session is currently created</h2>
-                            <pre>isNew() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_restart"></a>
-                        <div class="element clickable method public  method_restart" data-toggle="collapse" data-target=".method_restart .collapse">
-                            <h2>Restart an expired or locked session.</h2>
-                            <pre>restart() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            \Hubzero\Session\destroy
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_set"></a>
-                        <div class="element clickable method public  method_set inherited" data-toggle="collapse" data-target=".method_set .collapse">
-                            <h2>Modifies a property of the object, creating it if it does not already exist.</h2>
-                            <pre>set(string $property, mixed $value) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Returns $this so set() can be chained</p>
+<pre>hasToken(string $tCheck, boolean $forceExpire<code> = true</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tCheck</h4>
+<code>string</code><p>Hashed token to be verified</p></div>
+<div class="subelement argument">
+<h4>$forceExpire</h4>
+<code>boolean</code><p>If true, expires the session</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_isNew"></a><div class="element clickable method public method_isNew " data-toggle="collapse" data-target=".method_isNew .collapse" title="public">
+<h2>Check whether this session is currently created</h2>
+<pre>isNew() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success.</div>
+</div></div>
+</div>
+<a id="method_restart"></a><div class="element clickable method public method_restart " data-toggle="collapse" data-target=".method_restart .collapse" title="public">
+<h2>Restart an expired or locked session.</h2>
+<pre>restart() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="%5CHubzero%5CSession%5Cdestroy"></a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set " data-toggle="collapse" data-target=".method_set .collapse" title="public">
+<h2>Set data into the session store.</h2>
+<pre>set(string $name, mixed $value<code> = null</code>, string $namespace<code> = 'default'</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns $this so set() can be chained</p>
 <p>$object-&gt;set('foo', $bar)
 -&gt;set('bar', $foo)
 -&gt;doSomething();</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>The name of the property.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>The value of the property to set.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setCookieParams"></a>
-                        <div class="element clickable method protected  method_setCookieParams" data-toggle="collapse" data-target=".method_setCookieParams .collapse">
-                            <h2>Set session cookie parameters</h2>
-                            <pre>setCookieParams() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setCounter"></a>
-                        <div class="element clickable method protected  method_setCounter" data-toggle="collapse" data-target=".method_setCounter .collapse">
-                            <h2>Set counter of session usage</h2>
-                            <pre>setCounter() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setError"></a>
-                        <div class="element clickable method public  method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse">
-                            <h2>Add an error message.</h2>
-                            <pre>setError(string $error, string $key = null) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$error</h4>
-                                                <code>string</code><p><p>Error message.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Specific key to set the value to</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setErrors"></a>
-                        <div class="element clickable method public  method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse">
-                            <h2>Set the list of errors</h2>
-                            <pre>setErrors(array $errors) : object</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$errors</h4>
-                                                <code>array</code><p><p>List of Error message.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setOptions"></a>
-                        <div class="element clickable method protected  method_setOptions" data-toggle="collapse" data-target=".method_setOptions .collapse">
-                            <h2>Set additional session options</h2>
-                            <pre>setOptions(array $options) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p><p>List of parameter</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setProperties"></a>
-                        <div class="element clickable method public  method_setProperties inherited" data-toggle="collapse" data-target=".method_setProperties .collapse">
-                            <h2>Set the object properties based on a named array/hash.</h2>
-                            <pre>setProperties(mixed $properties) : boolean</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$properties</h4>
-                                                <code>mixed</code><p><p>Either an associative array or another object.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setTimers"></a>
-                        <div class="element clickable method protected  method_setTimers" data-toggle="collapse" data-target=".method_setTimers .collapse">
-                            <h2>Set the session timers</h2>
-                            <pre>setTimers() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        11.1
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_start"></a>
-                        <div class="element clickable method protected  method_start" data-toggle="collapse" data-target=".method_start .collapse">
-                            <h2>Start a session.</h2>
-                            <pre>start() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Creates a session (or resumes the current one based on the state of the session)</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>true on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_validate"></a>
-                        <div class="element clickable method protected  method_validate" data-toggle="collapse" data-target=".method_validate .collapse">
-                            <h2>Do some checks for security reason</h2>
-                            <pre>validate(boolean $restart = false) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><ul>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Hubzero\Base\Object::set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of a variable.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value of a variable.</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>Namespace to use, default to 'default'.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Old value of a variable.</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set inherited" data-toggle="collapse" data-target=".method_set .collapse" title="public">
+<h2>Modifies a property of the object, creating it if it does not already exist.</h2>
+<pre>set(string $property, mixed $value) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns $this so set() can be chained</p>
+<p>$object-&gt;set('foo', $bar)
+-&gt;set('bar', $foo)
+-&gt;doSomething();</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>The name of the property.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property to set.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setError"></a><div class="element clickable method public method_setError inherited" data-toggle="collapse" data-target=".method_setError .collapse" title="public">
+<h2>Add an error message.</h2>
+<pre>setError(string $error, string $key<code> = null</code>) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code>string</code><p>Error message.</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Specific key to set the value to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setErrors"></a><div class="element clickable method public method_setErrors inherited" data-toggle="collapse" data-target=".method_setErrors .collapse" title="public">
+<h2>Set the list of errors</h2>
+<pre>setErrors(array $errors) : object</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><p>List of Error message.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>object</code></div>
+</div></div>
+</div>
+<a id="method_setProperties"></a><div class="element clickable method public method_setProperties inherited" data-toggle="collapse" data-target=".method_setProperties .collapse" title="public">
+<h2>Set the object properties based on a named array/hash.</h2>
+<pre>setProperties(mixed $properties) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$properties</h4>
+<code>mixed</code><p>Either an associative array or another object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_createId"></a><div class="element clickable method protected method_createId " data-toggle="collapse" data-target=".method_createId .collapse" title="protected">
+<h2>Create a session id</h2>
+<pre>createId() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Session ID</div>
+</div></div>
+</div>
+<a id="method_createToken"></a><div class="element clickable method protected method_createToken " data-toggle="collapse" data-target=".method_createToken .collapse" title="protected">
+<h2>Create a token-string</h2>
+<pre>createToken(integer $length<code> = 32</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Generated token</div>
+</div></div>
+</div>
+<a id="method_setCookieParams"></a><div class="element clickable method protected method_setCookieParams " data-toggle="collapse" data-target=".method_setCookieParams .collapse" title="protected">
+<h2>Set session cookie parameters</h2>
+<pre>setCookieParams() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setCounter"></a><div class="element clickable method protected method_setCounter " data-toggle="collapse" data-target=".method_setCounter .collapse" title="protected">
+<h2>Set counter of session usage</h2>
+<pre>setCounter() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_setOptions"></a><div class="element clickable method protected method_setOptions " data-toggle="collapse" data-target=".method_setOptions .collapse" title="protected">
+<h2>Set additional session options</h2>
+<pre>setOptions(array $options) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>List of parameter</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_setTimers"></a><div class="element clickable method protected method_setTimers " data-toggle="collapse" data-target=".method_setTimers .collapse" title="protected">
+<h2>Set the session timers</h2>
+<pre>setTimers() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>11.1</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<a id="method_start"></a><div class="element clickable method protected method_start " data-toggle="collapse" data-target=".method_start .collapse" title="protected">
+<h2>Start a session.</h2>
+<pre>start() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Creates a session (or resumes the current one based on the state of the session)</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>true on success</div>
+</div></div>
+</div>
+<a id="method_validate"></a><div class="element clickable method protected method_validate " data-toggle="collapse" data-target=".method_validate .collapse" title="protected">
+<h2>Do some checks for security reason</h2>
+<pre>validate(boolean $restart<code> = false</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><ul>
 <li>timeout check (expire)</li>
 <li>ip-fixiation</li>
 <li>browser-fixiation</li>
 </ul>
 <p>If one check failed, session data has to be cleaned.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            <a href="http://shiflett.org/articles/the-truth-about-sessions">http://shiflett.org/articles/the-truth-about-sessions</a>
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$restart</h4>
-                                                <code>boolean</code><p><p>Reactivate session</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True on success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_state"> </a>
-                            <div class="element clickable property  protected property_state" data-toggle="collapse" data-target=".property_state .collapse">
-                                <h2>Internal state.</h2>
-                                <pre>state : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>One of 'active'|'expired'|'destroyed'|'error'</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_expire"> </a>
-                            <div class="element clickable property  protected property_expire" data-toggle="collapse" data-target=".property_expire .collapse">
-                                <h2>Maximum age of unused session in minutes</h2>
-                                <pre>expire : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_store"> </a>
-                            <div class="element clickable property  protected property_store" data-toggle="collapse" data-target=".property_store .collapse">
-                                <h2>The session store object.</h2>
-                                <pre>store : object</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>object</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_security"> </a>
-                            <div class="element clickable property  protected property_security" data-toggle="collapse" data-target=".property_security .collapse">
-                                <h2>Security policy.</h2>
-                                <pre>security : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>List of checks that will be done.</p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="http://shiflett.org/articles/the-truth-about-sessions"></a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$restart</h4>
+<code>boolean</code><p>Reactivate session</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True on success</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__errors"> </a><div class="element clickable property protected property__errors" data-toggle="collapse" data-target=".property__errors .collapse" title="protected">
+<h2>An array of error messages or Exception objects.</h2>
+<pre>$_errors : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cookie_domain"> </a><div class="element clickable property protected property_cookie_domain" data-toggle="collapse" data-target=".property_cookie_domain .collapse" title="protected">
+<h2>Cookie domain</h2>
+<pre>$cookie_domain : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>''</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cookie_path"> </a><div class="element clickable property protected property_cookie_path" data-toggle="collapse" data-target=".property_cookie_path .collapse" title="protected">
+<h2>Cookie path</h2>
+<pre>$cookie_path : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'/'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_expire"> </a><div class="element clickable property protected property_expire" data-toggle="collapse" data-target=".property_expire .collapse" title="protected">
+<h2>Maximum age of unused session in minutes</h2>
+<pre>$expire : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>15</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_force_ssl"> </a><div class="element clickable property protected property_force_ssl" data-toggle="collapse" data-target=".property_force_ssl .collapse" title="protected">
+<h2>Force cookies to be SSL only
+Default  false</h2>
+<pre>$force_ssl : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_security"> </a><div class="element clickable property protected property_security" data-toggle="collapse" data-target=".property_security .collapse" title="protected">
+<h2>Security policy.</h2>
+<pre>$security : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array('fix_browser')</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>List of checks that will be done.</p>
 <p>Default values:</p>
 <ul>
 <li>fix_browser</li>
 <li>fix_adress</li>
-</ul></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_force_ssl"> </a>
-                            <div class="element clickable property  protected property_force_ssl" data-toggle="collapse" data-target=".property_force_ssl .collapse">
-                                <h2>Force cookies to be SSL only
-Default  false</h2>
-                                <pre>force_ssl : boolean</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_cookie_domain"> </a>
-                            <div class="element clickable property  protected property_cookie_domain" data-toggle="collapse" data-target=".property_cookie_domain .collapse">
-                                <h2>Cookie domain</h2>
-                                <pre>cookie_domain : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_cookie_path"> </a>
-                            <div class="element clickable property  protected property_cookie_path" data-toggle="collapse" data-target=".property_cookie_path .collapse">
-                                <h2>Cookie path</h2>
-                                <pre>cookie_path : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property__errors"> </a>
-                            <div class="element clickable property  protected property__errors inherited" data-toggle="collapse" data-target=".property__errors .collapse">
-                                <h2>An array of error messages or Exception objects.</h2>
-                                <pre>_errors : array</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Session\Manager"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Session.html">Session</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Session.Manager.html">Manager</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:56 +0000.<br/>
-    </footer>
-    </body>
+</ul></div></div></div>
+</div>
+<a id="property_state"> </a><div class="element clickable property protected property_state" data-toggle="collapse" data-target=".property_state .collapse" title="protected">
+<h2>Internal state.</h2>
+<pre>$state : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'active'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>One of 'active'|'expired'|'destroyed'|'error'</p></div></div></div>
+</div>
+<a id="property_store"> </a><div class="element clickable property protected property_store" data-toggle="collapse" data-target=".property_store .collapse" title="protected">
+<h2>The session store object.</h2>
+<pre>$store : object</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:40-04:00.<br></footer></div>
+</div>
+</body>
 </html>

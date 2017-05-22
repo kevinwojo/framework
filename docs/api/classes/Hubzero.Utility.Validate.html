@@ -1,1064 +1,491 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Utility\Validate
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Utility\Validate</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                            <li class="method public">
-        <a href="#method_alphaNumeric" title="alphaNumeric :: Checks that a string contains only integer or letters">
-            <span class="description">Checks that a string contains only integer or letters</span><pre>alphaNumeric</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_between" title="between :: Checks that a string length is within s specified range.">
-            <span class="description">Checks that a string length is within s specified range.</span><pre>between</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_blank" title="blank :: Returns true if field is left blank -OR- only whitespace characters are present in its value
-Whitespace characters include Space, Tab, Carriage Return, Newline">
-            <span class="description">Returns true if field is left blank -OR- only whitespace characters are present in its value
-Whitespace characters include Space, Tab, Carriage Return, Newline</span><pre>blank</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_boolean" title="boolean :: Boolean validation, determines if value passed is a boolean integer or true/false.">
-            <span class="description">Boolean validation, determines if value passed is a boolean integer or true/false.</span><pre>boolean</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_email" title="email :: Validates for an email address.">
-            <span class="description">Validates for an email address.</span><pre>email</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_group" title="group :: Check if a group alias is valid">
-            <span class="description">Check if a group alias is valid</span><pre>group</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_integer" title="integer :: Is value an integer?">
-            <span class="description">Is value an integer?</span><pre>integer</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_ip" title="ip :: Validates an IP address">
-            <span class="description">Validates an IP address</span><pre>ip</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_negativeInteger" title="negativeInteger :: Is value a negative integer?">
-            <span class="description">Is value a negative integer?</span><pre>negativeInteger</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_nonNegativeInteger" title="nonNegativeInteger :: Is value a non-negative integer?">
-            <span class="description">Is value a non-negative integer?</span><pre>nonNegativeInteger</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_nonPositiveInteger" title="nonPositiveInteger :: Is value a non-positive integer?">
-            <span class="description">Is value a non-positive integer?</span><pre>nonPositiveInteger</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_notEmpty" title="notEmpty :: Checks that a string contains something other than whitespace">
-            <span class="description">Checks that a string contains something other than whitespace</span><pre>notEmpty</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_numeric" title="numeric :: Checks if a value is numeric.">
-            <span class="description">Checks if a value is numeric.</span><pre>numeric</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_orcid" title="orcid :: Validate ORCID">
-            <span class="description">Validate ORCID</span><pre>orcid</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_password" title="password :: Validate password">
-            <span class="description">Validate password</span><pre>password</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_phone" title="phone :: Check that a value is a valid phone number.">
-            <span class="description">Check that a value is a valid phone number.</span><pre>phone</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_positiveInteger" title="positiveInteger :: Is value a positive integer?">
-            <span class="description">Is value a positive integer?</span><pre>positiveInteger</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_range" title="range :: Validate that a number is in specified range.">
-            <span class="description">Validate that a number is in specified range.</span><pre>range</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_reserved" title="reserved :: Check if $val is reserved">
-            <span class="description">Check if $val is reserved</span><pre>reserved</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_url" title="url :: Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt">
-            <span class="description">Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt</span><pre>url</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_username" title="username :: Check if a username is valid.">
-            <span class="description">Check if a username is valid.</span><pre>username</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                            <li class="method protected">
-                            <a href="#method__check" title="_check :: Runs a regular expression match.">
-                                <span class="description">Runs a regular expression match.</span><pre>_check</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method__defaults" title="_defaults :: Get the values to use when value sent to validation method is
-an array.">
-                                <span class="description">Get the values to use when value sent to validation method is
-an array.</span><pre>_defaults</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method__pass" title="_pass :: Attempts to pass unhandled Validation locales to a class starting with $classPrefix
-and ending with Validation. For example $classPrefix = &#039;nl&#039;, the class would be
-`NlValidation`.">
-                                <span class="description">Attempts to pass unhandled Validation locales to a class starting with $classPrefix
-and ending with Validation. For example $classPrefix = &#039;nl&#039;, the class would be
-`NlValidation`.</span><pre>_pass</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method__populateIp" title="_populateIp :: Lazily populate the IP address patterns used for validations">
-                                <span class="description">Lazily populate the IP address patterns used for validations</span><pre>_populateIp</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method__reset" title="_reset :: Reset internal variables for another validation run.">
-                                <span class="description">Reset internal variables for another validation run.</span><pre>_reset</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Validate</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Hubzero helper class for input validation</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Several methods inspired by CakePHP (<a href="http://cakephp.org">http://cakephp.org</a>) and Zend (<a href="http://framework.zend.com">http://framework.zend.com</a>)</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method__check"></a>
-                        <div class="element clickable method protected  method__check" data-toggle="collapse" data-target=".method__check .collapse">
-                            <h2>Runs a regular expression match.</h2>
-                            <pre>_check(string $check, string $regex) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check against the $regex expression</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$regex</h4>
-                                                <code>string</code><p><p>Regular expression</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success of match</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__defaults"></a>
-                        <div class="element clickable method protected  method__defaults" data-toggle="collapse" data-target=".method__defaults .collapse">
-                            <h2>Get the values to use when value sent to validation method is
-an array.</h2>
-                            <pre>_defaults(array $params) : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p><p>Parameters sent to validation method</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__pass"></a>
-                        <div class="element clickable method protected  method__pass" data-toggle="collapse" data-target=".method__pass .collapse">
-                            <h2>Attempts to pass unhandled Validation locales to a class starting with $classPrefix
-and ending with Validation. For example $classPrefix = &#039;nl&#039;, the class would be
-`NlValidation`.</h2>
-                            <pre>_pass(string $method, mixed $check, string $classPrefix) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$method</h4>
-                                                <code>string</code><p><p>The method to call on the other class.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>mixed</code><p><p>The value to check or an array of parameters for the method to be called.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$classPrefix</h4>
-                                                <code>string</code><p><p>The prefix for the class to do the validation.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Return of Passed method, false on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__populateIp"></a>
-                        <div class="element clickable method protected  method__populateIp" data-toggle="collapse" data-target=".method__populateIp .collapse">
-                            <h2>Lazily populate the IP address patterns used for validations</h2>
-                            <pre>_populateIp() : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__reset"></a>
-                        <div class="element clickable method protected  method__reset" data-toggle="collapse" data-target=".method__reset .collapse">
-                            <h2>Reset internal variables for another validation run.</h2>
-                            <pre>_reset() : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_alphaNumeric"></a>
-                        <div class="element clickable method public  method_alphaNumeric" data-toggle="collapse" data-target=".method_alphaNumeric .collapse">
-                            <h2>Checks that a string contains only integer or letters</h2>
-                            <pre>alphaNumeric(string|array $check) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Returns true if string contains only integer or letters</p>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_alphaNumeric" title="alphaNumeric() :: Checks that a string contains only integer or letters"><span class="description">Checks that a string contains only integer or letters</span><pre>alphaNumeric()</pre></a></li>
+<li class="method public "><a href="#method_between" title="between() :: Checks that a string length is within s specified range."><span class="description">Checks that a string length is within s specified range.</span><pre>between()</pre></a></li>
+<li class="method public "><a href="#method_blank" title="blank() :: Returns true if field is left blank -OR- only whitespace characters are present in its value
+Whitespace characters include Space, Tab, Carriage Return, Newline"><span class="description">Returns true if field is left blank -OR- only whitespace characters are present in its value
+Whitespace characters include Space, Tab, Carriage Return, Newline</span><pre>blank()</pre></a></li>
+<li class="method public "><a href="#method_boolean" title="boolean() :: Boolean validation, determines if value passed is a boolean integer or true/false."><span class="description">Boolean validation, determines if value passed is a boolean integer or true/false.</span><pre>boolean()</pre></a></li>
+<li class="method public "><a href="#method_email" title="email() :: Validates for an email address."><span class="description">Validates for an email address.</span><pre>email()</pre></a></li>
+<li class="method public "><a href="#method_group" title="group() :: Check if a group alias is valid"><span class="description">Check if a group alias is valid</span><pre>group()</pre></a></li>
+<li class="method public "><a href="#method_integer" title="integer() :: Is value an integer?"><span class="description">Is value an integer?</span><pre>integer()</pre></a></li>
+<li class="method public "><a href="#method_ip" title="ip() :: Validates an IP address"><span class="description">Validates an IP address</span><pre>ip()</pre></a></li>
+<li class="method public "><a href="#method_negativeInteger" title="negativeInteger() :: Is value a negative integer?"><span class="description">Is value a negative integer?</span><pre>negativeInteger()</pre></a></li>
+<li class="method public "><a href="#method_nonNegativeInteger" title="nonNegativeInteger() :: Is value a non-negative integer?"><span class="description">Is value a non-negative integer?</span><pre>nonNegativeInteger()</pre></a></li>
+<li class="method public "><a href="#method_nonPositiveInteger" title="nonPositiveInteger() :: Is value a non-positive integer?"><span class="description">Is value a non-positive integer?</span><pre>nonPositiveInteger()</pre></a></li>
+<li class="method public "><a href="#method_notEmpty" title="notEmpty() :: Checks that a string contains something other than whitespace"><span class="description">Checks that a string contains something other than whitespace</span><pre>notEmpty()</pre></a></li>
+<li class="method public "><a href="#method_numeric" title="numeric() :: Checks if a value is numeric."><span class="description">Checks if a value is numeric.</span><pre>numeric()</pre></a></li>
+<li class="method public "><a href="#method_orcid" title="orcid() :: Validate ORCID"><span class="description">Validate ORCID</span><pre>orcid()</pre></a></li>
+<li class="method public "><a href="#method_password" title="password() :: Validate password"><span class="description">Validate password</span><pre>password()</pre></a></li>
+<li class="method public "><a href="#method_phone" title="phone() :: Check that a value is a valid phone number."><span class="description">Check that a value is a valid phone number.</span><pre>phone()</pre></a></li>
+<li class="method public "><a href="#method_positiveInteger" title="positiveInteger() :: Is value a positive integer?"><span class="description">Is value a positive integer?</span><pre>positiveInteger()</pre></a></li>
+<li class="method public "><a href="#method_range" title="range() :: Validate that a number is in specified range."><span class="description">Validate that a number is in specified range.</span><pre>range()</pre></a></li>
+<li class="method public "><a href="#method_reserved" title="reserved() :: Check if $val is reserved"><span class="description">Check if $val is reserved</span><pre>reserved()</pre></a></li>
+<li class="method public "><a href="#method_url" title="url() :: Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt"><span class="description">Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt</span><pre>url()</pre></a></li>
+<li class="method public "><a href="#method_username" title="username() :: Check if a username is valid."><span class="description">Check if a username is valid.</span><pre>username()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method__check" title="_check() :: Runs a regular expression match."><span class="description">Runs a regular expression match.</span><pre>_check()</pre></a></li>
+<li class="method protected "><a href="#method__defaults" title="_defaults() :: Get the values to use when value sent to validation method is
+an array."><span class="description">Get the values to use when value sent to validation method is
+an array.</span><pre>_defaults()</pre></a></li>
+<li class="method protected "><a href="#method__pass" title="_pass() :: Attempts to pass unhandled Validation locales to a class starting with $classPrefix
+and ending with Validation. For example $classPrefix = 'nl', the class would be
+`NlValidation`."><span class="description">Attempts to pass unhandled Validation locales to a class starting with $classPrefix
+and ending with Validation. For example $classPrefix = 'nl', the class would be
+`NlValidation`.</span><pre>_pass()</pre></a></li>
+<li class="method protected "><a href="#method__populateIp" title="_populateIp() :: Lazily populate the IP address patterns used for validations"><span class="description">Lazily populate the IP address patterns used for validations</span><pre>_populateIp()</pre></a></li>
+<li class="method protected "><a href="#method__reset" title="_reset() :: Reset internal variables for another validation run."><span class="description">Reset internal variables for another validation run.</span><pre>_reset()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property__pattern" title="$_pattern() :: Some complex patterns needed in multiple places"><span class="description"></span><pre>$_pattern</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Utility\Validate"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Utility.html">Utility</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Utility.Validate.html">Validate</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Hubzero helper class for input validation</p>
+<div class="details">
+<div class="long_description"><p>Several methods inspired by CakePHP (<a href="http://cakephp.org">http://cakephp.org</a>) and Zend (<a href="http://framework.zend.com">http://framework.zend.com</a>)</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_alphaNumeric"></a><div class="element clickable method public method_alphaNumeric " data-toggle="collapse" data-target=".method_alphaNumeric .collapse" title="public">
+<h2>Checks that a string contains only integer or letters</h2>
+<pre>alphaNumeric(string|array $check) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns true if string contains only integer or letters</p>
 <p>$check can be passed as an array:
 array('check' =&gt; 'valueToCheck');</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string|array</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_between"></a>
-                        <div class="element clickable method public  method_between" data-toggle="collapse" data-target=".method_between .collapse">
-                            <h2>Checks that a string length is within s specified range.</h2>
-                            <pre>between(string $check, integer $min, integer $max) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Spaces are included in the character count.
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><code>array</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_between"></a><div class="element clickable method public method_between " data-toggle="collapse" data-target=".method_between .collapse" title="public">
+<h2>Checks that a string length is within s specified range.</h2>
+<pre>between(string $check, integer $min, integer $max) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Spaces are included in the character count.
 Returns true is string matches value min, max, or between min and max,</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check for length</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$min</h4>
-                                                <code>integer</code><p><p>Minimum value in range (inclusive)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$max</h4>
-                                                <code>integer</code><p><p>Maximum value in range (inclusive)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_blank"></a>
-                        <div class="element clickable method public  method_blank" data-toggle="collapse" data-target=".method_blank .collapse">
-                            <h2>Returns true if field is left blank -OR- only whitespace characters are present in its value
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check for length</p></div>
+<div class="subelement argument">
+<h4>$min</h4>
+<code>integer</code><p>Minimum value in range (inclusive)</p></div>
+<div class="subelement argument">
+<h4>$max</h4>
+<code>integer</code><p>Maximum value in range (inclusive)</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_blank"></a><div class="element clickable method public method_blank " data-toggle="collapse" data-target=".method_blank .collapse" title="public">
+<h2>Returns true if field is left blank -OR- only whitespace characters are present in its value
 Whitespace characters include Space, Tab, Carriage Return, Newline</h2>
-                            <pre>blank(string|array $check) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>$check can be passed as an array:
+<pre>blank(string|array $check) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>$check can be passed as an array:
 array('check' =&gt; 'valueToCheck');</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string|array</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_boolean"></a>
-                        <div class="element clickable method public  method_boolean" data-toggle="collapse" data-target=".method_boolean .collapse">
-                            <h2>Boolean validation, determines if value passed is a boolean integer or true/false.</h2>
-                            <pre>boolean(string $check) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>a valid boolean</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_email"></a>
-                        <div class="element clickable method public  method_email" data-toggle="collapse" data-target=".method_email .collapse">
-                            <h2>Validates for an email address.</h2>
-                            <pre>email(string $check, boolean $deep = false, string $regex = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Only uses getmxrr() checking for deep validation if PHP 5.3.0+ is used, or
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><code>array</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_boolean"></a><div class="element clickable method public method_boolean " data-toggle="collapse" data-target=".method_boolean .collapse" title="public">
+<h2>Boolean validation, determines if value passed is a boolean integer or true/false.</h2>
+<pre>boolean(string $check) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>a valid boolean</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_email"></a><div class="element clickable method public method_email " data-toggle="collapse" data-target=".method_email .collapse" title="public">
+<h2>Validates for an email address.</h2>
+<pre>email(string $check, boolean $deep<code> = false</code>, string $regex<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only uses getmxrr() checking for deep validation if PHP 5.3.0+ is used, or
 any PHP version on a non-windows distribution</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$deep</h4>
-                                                <code>boolean</code><p><p>Perform a deeper validation (if true), by also checking availability of host</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$regex</h4>
-                                                <code>string</code><p><p>Regex to use (if none it will use built in regex)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_group"></a>
-                        <div class="element clickable method public  method_group" data-toggle="collapse" data-target=".method_group .collapse">
-                            <h2>Check if a group alias is valid</h2>
-                            <pre>group(string $cn, boolean $allowDashes = false) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><ul>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check</p></div>
+<div class="subelement argument">
+<h4>$deep</h4>
+<code>boolean</code><p>Perform a deeper validation (if true), by also checking availability of host</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>Regex to use (if none it will use built in regex)</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_group"></a><div class="element clickable method public method_group " data-toggle="collapse" data-target=".method_group .collapse" title="public">
+<h2>Check if a group alias is valid</h2>
+<pre>group(string $cn, boolean $allowDashes<code> = false</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><ul>
 <li>Check if $cn contains any invalid characters</li>
 <li>Check if $cn is just an integer</li>
 <li>Check if $cn is reserved</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$cn</h4>
-                                                <code>string</code><p><p>Group to check</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$allowDashes</h4>
-                                                <code>boolean</code><p><p>Allow dashes in cn</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_integer"></a>
-                        <div class="element clickable method public  method_integer" data-toggle="collapse" data-target=".method_integer .collapse">
-                            <h2>Is value an integer?</h2>
-                            <pre>integer(\Hubzero\Utility\unknown $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>\Hubzero\Utility\unknown</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_ip"></a>
-                        <div class="element clickable method public  method_ip" data-toggle="collapse" data-target=".method_ip .collapse">
-                            <h2>Validates an IP address</h2>
-                            <pre>ip(string $check, string $type = &#039;both&#039;) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>The string to test</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>The IP Protocol version to validate against</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_negativeInteger"></a>
-                        <div class="element clickable method public  method_negativeInteger" data-toggle="collapse" data-target=".method_negativeInteger .collapse">
-                            <h2>Is value a negative integer?</h2>
-                            <pre>negativeInteger(integer $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>integer</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_nonNegativeInteger"></a>
-                        <div class="element clickable method public  method_nonNegativeInteger" data-toggle="collapse" data-target=".method_nonNegativeInteger .collapse">
-                            <h2>Is value a non-negative integer?</h2>
-                            <pre>nonNegativeInteger(integer $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>integer</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_nonPositiveInteger"></a>
-                        <div class="element clickable method public  method_nonPositiveInteger" data-toggle="collapse" data-target=".method_nonPositiveInteger .collapse">
-                            <h2>Is value a non-positive integer?</h2>
-                            <pre>nonPositiveInteger(integer $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>integer</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_notEmpty"></a>
-                        <div class="element clickable method public  method_notEmpty" data-toggle="collapse" data-target=".method_notEmpty .collapse">
-                            <h2>Checks that a string contains something other than whitespace</h2>
-                            <pre>notEmpty(string|array $check) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Returns true if string contains something other than whitespace</p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cn</h4>
+<code>string</code><p>Group to check</p></div>
+<div class="subelement argument">
+<h4>$allowDashes</h4>
+<code>boolean</code><p>Allow dashes in cn</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_integer"></a><div class="element clickable method public method_integer " data-toggle="collapse" data-target=".method_integer .collapse" title="public">
+<h2>Is value an integer?</h2>
+<pre>integer(\Hubzero\Utility\unknown $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>\Hubzero\Utility\unknown</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_ip"></a><div class="element clickable method public method_ip " data-toggle="collapse" data-target=".method_ip .collapse" title="public">
+<h2>Validates an IP address</h2>
+<pre>ip(string $check, string $type<code> = 'both'</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>The string to test</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The IP Protocol version to validate against</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_negativeInteger"></a><div class="element clickable method public method_negativeInteger " data-toggle="collapse" data-target=".method_negativeInteger .collapse" title="public">
+<h2>Is value a negative integer?</h2>
+<pre>negativeInteger(integer $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>integer</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_nonNegativeInteger"></a><div class="element clickable method public method_nonNegativeInteger " data-toggle="collapse" data-target=".method_nonNegativeInteger .collapse" title="public">
+<h2>Is value a non-negative integer?</h2>
+<pre>nonNegativeInteger(integer $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>integer</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_nonPositiveInteger"></a><div class="element clickable method public method_nonPositiveInteger " data-toggle="collapse" data-target=".method_nonPositiveInteger .collapse" title="public">
+<h2>Is value a non-positive integer?</h2>
+<pre>nonPositiveInteger(integer $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>integer</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_notEmpty"></a><div class="element clickable method public method_notEmpty " data-toggle="collapse" data-target=".method_notEmpty .collapse" title="public">
+<h2>Checks that a string contains something other than whitespace</h2>
+<pre>notEmpty(string|array $check) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns true if string contains something other than whitespace</p>
 <p>$check can be passed as an array:
 array('check' =&gt; 'valueToCheck');</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string|array</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_numeric"></a>
-                        <div class="element clickable method public  method_numeric" data-toggle="collapse" data-target=".method_numeric .collapse">
-                            <h2>Checks if a value is numeric.</h2>
-                            <pre>numeric(string $check) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_orcid"></a>
-                        <div class="element clickable method public  method_orcid" data-toggle="collapse" data-target=".method_orcid .collapse">
-                            <h2>Validate ORCID</h2>
-                            <pre>orcid(string $orcid) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$orcid</h4>
-                                                <code>string</code><p><p>ORCID to validate</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_password"></a>
-                        <div class="element clickable method public  method_password" data-toggle="collapse" data-target=".method_password .collapse">
-                            <h2>Validate password</h2>
-                            <pre>password(string $password) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$password</h4>
-                                                <code>string</code><p><p>Password to validate</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_phone"></a>
-                        <div class="element clickable method public  method_phone" data-toggle="collapse" data-target=".method_phone .collapse">
-                            <h2>Check that a value is a valid phone number.</h2>
-                            <pre>phone(string|array $check, string $regex = null, string $country = &#039;all&#039;) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string|array</code><p><p>Value to check (string or array)</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$regex</h4>
-                                                <code>string</code><p><p>Regular expression to use</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$country</h4>
-                                                <code>string</code><p><p>Country code (defaults to 'all')</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_positiveInteger"></a>
-                        <div class="element clickable method public  method_positiveInteger" data-toggle="collapse" data-target=".method_positiveInteger .collapse">
-                            <h2>Is value a positive integer?</h2>
-                            <pre>positiveInteger(integer $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>integer</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_range"></a>
-                        <div class="element clickable method public  method_range" data-toggle="collapse" data-target=".method_range .collapse">
-                            <h2>Validate that a number is in specified range.</h2>
-                            <pre>range(string $check, integer $lower = null, integer $upper = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>if $lower and $upper are not set, will return true if
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><code>array</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_numeric"></a><div class="element clickable method public method_numeric " data-toggle="collapse" data-target=".method_numeric .collapse" title="public">
+<h2>Checks if a value is numeric.</h2>
+<pre>numeric(string $check) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_orcid"></a><div class="element clickable method public method_orcid " data-toggle="collapse" data-target=".method_orcid .collapse" title="public">
+<h2>Validate ORCID</h2>
+<pre>orcid(string $orcid) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$orcid</h4>
+<code>string</code><p>ORCID to validate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_password"></a><div class="element clickable method public method_password " data-toggle="collapse" data-target=".method_password .collapse" title="public">
+<h2>Validate password</h2>
+<pre>password(string $password) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>Password to validate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_phone"></a><div class="element clickable method public method_phone " data-toggle="collapse" data-target=".method_phone .collapse" title="public">
+<h2>Check that a value is a valid phone number.</h2>
+<pre>phone(string|array $check, string $regex<code> = null</code>, string $country<code> = 'all'</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><code>array</code><p>Value to check (string or array)</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>Regular expression to use</p></div>
+<div class="subelement argument">
+<h4>$country</h4>
+<code>string</code><p>Country code (defaults to 'all')</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_positiveInteger"></a><div class="element clickable method public method_positiveInteger " data-toggle="collapse" data-target=".method_positiveInteger .collapse" title="public">
+<h2>Is value a positive integer?</h2>
+<pre>positiveInteger(integer $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>integer</code><p>Value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method_range"></a><div class="element clickable method public method_range " data-toggle="collapse" data-target=".method_range .collapse" title="public">
+<h2>Validate that a number is in specified range.</h2>
+<pre>range(string $check, integer $lower<code> = null</code>, integer $upper<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>if $lower and $upper are not set, will return true if
 $check is a legal finite on this platform</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$lower</h4>
-                                                <code>integer</code><p><p>Lower limit</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$upper</h4>
-                                                <code>integer</code><p><p>Upper limit</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_reserved"></a>
-                        <div class="element clickable method public  method_reserved" data-toggle="collapse" data-target=".method_reserved .collapse">
-                            <h2>Check if $val is reserved</h2>
-                            <pre>reserved(string $type, string $val) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Type [username, group] must be specified.</p></div>
-
-                                    <table class="table">
-                                                                                                                            <tr>
-                                                <th>Throws</th>
-                                                <td>
-                                                    <dl>
-                                                                                                            <dt>\Hubzero\Utility\InvalidArgumentException</dt>
-                                                        <dd></dd>
-                                                                                                                                                            </dl>
-                                                </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>List to check against</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$val</h4>
-                                                <code>string</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if reserved, False if not</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_url"></a>
-                        <div class="element clickable method public  method_url" data-toggle="collapse" data-target=".method_url .collapse">
-                            <h2>Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt</h2>
-                            <pre>url(string $check, boolean $strict = false) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>The regex checks for the following component parts:</p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check</p></div>
+<div class="subelement argument">
+<h4>$lower</h4>
+<code>integer</code><p>Lower limit</p></div>
+<div class="subelement argument">
+<h4>$upper</h4>
+<code>integer</code><p>Upper limit</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_reserved"></a><div class="element clickable method public method_reserved " data-toggle="collapse" data-target=".method_reserved .collapse" title="public">
+<h2>Check if $val is reserved</h2>
+<pre>reserved(string $type, string $val) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Type [username, group] must be specified.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>List to check against</p></div>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>string</code><p>Value to check</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\Hubzero\Utility\InvalidArgumentException</code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if reserved, False if not</div>
+</div></div>
+</div>
+<a id="method_url"></a><div class="element clickable method public method_url " data-toggle="collapse" data-target=".method_url .collapse" title="public">
+<h2>Checks that a value is a valid URL according to http://www.w3.org/Addressing/URL/url-spec.txt</h2>
+<pre>url(string $check, boolean $strict<code> = false</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The regex checks for the following component parts:</p>
 <ul>
 <li>a valid, optional, scheme</li>
 <li>a valid ip address OR
@@ -1068,107 +495,123 @@ with an optional port number</li>
 <li>an optional query string (get parameters)</li>
 <li>an optional fragment (anchor tag)</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$check</h4>
-                                                <code>string</code><p><p>Value to check</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$strict</h4>
-                                                <code>boolean</code><p><p>Require URL to be prefixed by a valid scheme (one of http(s)/ftp(s)/file/news/gopher)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>Success</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_username"></a>
-                        <div class="element clickable method public  method_username" data-toggle="collapse" data-target=".method_username .collapse">
-                            <h2>Check if a username is valid.</h2>
-                            <pre>username(string $x) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><ul>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check</p></div>
+<div class="subelement argument">
+<h4>$strict</h4>
+<code>boolean</code><p>Require URL to be prefixed by a valid scheme (one of http(s)/ftp(s)/file/news/gopher)</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success</div>
+</div></div>
+</div>
+<a id="method_username"></a><div class="element clickable method public method_username " data-toggle="collapse" data-target=".method_username .collapse" title="public">
+<h2>Check if a username is valid.</h2>
+<pre>username(string $x) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><ul>
 <li>Check if the username contains any invalid characters</li>
 <li>Check if username is just an integer</li>
 <li>Check if the username is reserved</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>string</code><p><p>Username to check</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if invalid</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property__pattern"> </a>
-                            <div class="element clickable property  protected property__pattern" data-toggle="collapse" data-target=".property__pattern .collapse">
-                                <h2>Some complex patterns needed in multiple places</h2>
-                                <pre>_pattern : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Utility\Validate"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Utility.html">Utility</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Utility.Validate.html">Validate</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:56 +0000.<br/>
-    </footer>
-    </body>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>Username to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if invalid</div>
+</div></div>
+</div>
+<a id="method__check"></a><div class="element clickable method protected method__check " data-toggle="collapse" data-target=".method__check .collapse" title="protected">
+<h2>Runs a regular expression match.</h2>
+<pre>_check(string $check, string $regex) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>string</code><p>Value to check against the $regex expression</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>Regular expression</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>Success of match</div>
+</div></div>
+</div>
+<a id="method__defaults"></a><div class="element clickable method protected method__defaults " data-toggle="collapse" data-target=".method__defaults .collapse" title="protected">
+<h2>Get the values to use when value sent to validation method is
+an array.</h2>
+<pre>_defaults(array $params) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>Parameters sent to validation method</p></div>
+</div></div>
+</div>
+<a id="method__pass"></a><div class="element clickable method protected method__pass " data-toggle="collapse" data-target=".method__pass .collapse" title="protected">
+<h2>Attempts to pass unhandled Validation locales to a class starting with $classPrefix
+and ending with Validation. For example $classPrefix = 'nl', the class would be
+`NlValidation`.</h2>
+<pre>_pass(string $method, mixed $check, string $classPrefix) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to call on the other class.</p></div>
+<div class="subelement argument">
+<h4>$check</h4>
+<code>mixed</code><p>The value to check or an array of parameters for the method to be called.</p></div>
+<div class="subelement argument">
+<h4>$classPrefix</h4>
+<code>string</code><p>The prefix for the class to do the validation.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Return of Passed method, false on failure</div>
+</div></div>
+</div>
+<a id="method__populateIp"></a><div class="element clickable method protected method__populateIp " data-toggle="collapse" data-target=".method__populateIp .collapse" title="protected">
+<h2>Lazily populate the IP address patterns used for validations</h2>
+<pre>_populateIp() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method__reset"></a><div class="element clickable method protected method__reset " data-toggle="collapse" data-target=".method__reset .collapse" title="protected">
+<h2>Reset internal variables for another validation run.</h2>
+<pre>_reset() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__pattern"> </a><div class="element clickable property protected property__pattern" data-toggle="collapse" data-target=".property__pattern .collapse" title="protected">
+<h2>Some complex patterns needed in multiple places</h2>
+<pre>$_pattern : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array('hostname' => '(?:[_a-z0-9][-_a-z0-9]*\.)*(?:[a-z0-9][-a-z0-9]{0,62})\.(?:(?:[a-z]{2}\.)?[a-z]{2,})')</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:33-04:00.<br></footer></div>
+</div>
+</body>
 </html>

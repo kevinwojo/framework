@@ -1,756 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Access\Access
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Access\Access</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_check" title="check :: Method to check if a user is authorised to perform an action, optionally on an asset.">
-            <span class="description">Method to check if a user is authorised to perform an action, optionally on an asset.</span><pre>check</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_checkGroup" title="checkGroup :: Method to check if a group is authorised to perform an action, optionally on an asset.">
-            <span class="description">Method to check if a group is authorised to perform an action, optionally on an asset.</span><pre>checkGroup</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_clearStatics" title="clearStatics :: Method for clearing static caches.">
-            <span class="description">Method for clearing static caches.</span><pre>clearStatics</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getActionsFromData" title="getActionsFromData :: Method to return a list of actions from a string or from an xml for which permissions can be set.">
-            <span class="description">Method to return a list of actions from a string or from an xml for which permissions can be set.</span><pre>getActionsFromData</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getActionsFromFile" title="getActionsFromFile :: Method to return a list of actions from a file for which permissions can be set.">
-            <span class="description">Method to return a list of actions from a file for which permissions can be set.</span><pre>getActionsFromFile</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getAssetRules" title="getAssetRules :: Method to return the Rules object for an asset.  The returned object can optionally hold
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_check" title="check() :: Method to check if a user is authorised to perform an action, optionally on an asset."><span class="description">Method to check if a user is authorised to perform an action, optionally on an asset.</span><pre>check()</pre></a></li>
+<li class="method public "><a href="#method_checkGroup" title="checkGroup() :: Method to check if a group is authorised to perform an action, optionally on an asset."><span class="description">Method to check if a group is authorised to perform an action, optionally on an asset.</span><pre>checkGroup()</pre></a></li>
+<li class="method public "><a href="#method_clearStatics" title="clearStatics() :: Method for clearing static caches."><span class="description">Method for clearing static caches.</span><pre>clearStatics()</pre></a></li>
+<li class="method public "><a href="#method_getActionsFromData" title="getActionsFromData() :: Method to return a list of actions from a string or from an xml for which permissions can be set."><span class="description">Method to return a list of actions from a string or from an xml for which permissions can be set.</span><pre>getActionsFromData()</pre></a></li>
+<li class="method public "><a href="#method_getActionsFromFile" title="getActionsFromFile() :: Method to return a list of actions from a file for which permissions can be set."><span class="description">Method to return a list of actions from a file for which permissions can be set.</span><pre>getActionsFromFile()</pre></a></li>
+<li class="method public "><a href="#method_getAssetRules" title="getAssetRules() :: Method to return the Rules object for an asset.  The returned object can optionally hold
 only the rules explicitly set for the asset or the summation of all inherited rules from
-parent assets and explicit rules.">
-            <span class="description">Method to return the Rules object for an asset.  The returned object can optionally hold
+parent assets and explicit rules."><span class="description">Method to return the Rules object for an asset.  The returned object can optionally hold
 only the rules explicitly set for the asset or the summation of all inherited rules from
-parent assets and explicit rules.</span><pre>getAssetRules</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getAuthorisedViewLevels" title="getAuthorisedViewLevels :: Method to return a list of view levels for which the user is authorised.">
-            <span class="description">Method to return a list of view levels for which the user is authorised.</span><pre>getAuthorisedViewLevels</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_getGroupsByUser" title="getGroupsByUser :: Method to return a list of user groups mapped to a user. The returned list can optionally hold
+parent assets and explicit rules.</span><pre>getAssetRules()</pre></a></li>
+<li class="method public "><a href="#method_getAuthorisedViewLevels" title="getAuthorisedViewLevels() :: Method to return a list of view levels for which the user is authorised."><span class="description">Method to return a list of view levels for which the user is authorised.</span><pre>getAuthorisedViewLevels()</pre></a></li>
+<li class="method public "><a href="#method_getGroupsByUser" title="getGroupsByUser() :: Method to return a list of user groups mapped to a user. The returned list can optionally hold
 only the groups explicitly mapped to the user or all groups both explicitly mapped and inherited
-by the user.">
-            <span class="description">Method to return a list of user groups mapped to a user. The returned list can optionally hold
+by the user."><span class="description">Method to return a list of user groups mapped to a user. The returned list can optionally hold
 only the groups explicitly mapped to the user or all groups both explicitly mapped and inherited
-by the user.</span><pre>getGroupsByUser</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getUsersByGroup" title="getUsersByGroup :: Method to return a list of user Ids contained in a Group">
-            <span class="description">Method to return a list of user Ids contained in a Group</span><pre>getUsersByGroup</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getXml" title="getXml :: Reads an XML file or string.">
-            <span class="description">Reads an XML file or string.</span><pre>getXml</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                        <li class="method protected">
-                            <a href="#method_getGroupPath" title="getGroupPath :: Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
-(including the leaf group id).">
-                                <span class="description">Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
-(including the leaf group id).</span><pre>getGroupPath</pre>
-                            </a>
-                        </li>
-                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Access</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Class that handles all access authorization routines.</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_check"></a>
-                        <div class="element clickable method public  method_check" data-toggle="collapse" data-target=".method_check .collapse">
-                            <h2>Method to check if a user is authorised to perform an action, optionally on an asset.</h2>
-                            <pre>check(integer $userId, string $action, mixed $asset = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$userId</h4>
-                                                <code>integer</code><p><p>Id of the user for which to check authorisation.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$action</h4>
-                                                <code>string</code><p><p>The name of the action to authorise.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$asset</h4>
-                                                <code>mixed</code><p><p>Integer asset id or the name of the asset as a string.  Defaults to the global asset node.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if authorised.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_checkGroup"></a>
-                        <div class="element clickable method public  method_checkGroup" data-toggle="collapse" data-target=".method_checkGroup .collapse">
-                            <h2>Method to check if a group is authorised to perform an action, optionally on an asset.</h2>
-                            <pre>checkGroup(integer $groupId, string $action, mixed $asset = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$groupId</h4>
-                                                <code>integer</code><p><p>The path to the group for which to check authorisation.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$action</h4>
-                                                <code>string</code><p><p>The name of the action to authorise.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$asset</h4>
-                                                <code>mixed</code><p><p>Integer asset id or the name of the asset as a string.  Defaults to the global asset node.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if authorised.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_clearStatics"></a>
-                        <div class="element clickable method public  method_clearStatics" data-toggle="collapse" data-target=".method_clearStatics .collapse">
-                            <h2>Method for clearing static caches.</h2>
-                            <pre>clearStatics() : void</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getActionsFromData"></a>
-                        <div class="element clickable method public  method_getActionsFromData" data-toggle="collapse" data-target=".method_getActionsFromData .collapse">
-                            <h2>Method to return a list of actions from a string or from an xml for which permissions can be set.</h2>
-                            <pre>getActionsFromData(string|\SimpleXMLElement $data, string $xpath = &quot;/access/section[@name=&#039;component&#039;]/&quot;) : boolean|array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>string|\SimpleXMLElement</code><p><p>The XML string or an XML element.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$xpath</h4>
-                                                <code>string</code><p><p>An optional xpath to search for the fields.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean|array</code><p><p>False if case of error or the list of actions available.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getActionsFromFile"></a>
-                        <div class="element clickable method public  method_getActionsFromFile" data-toggle="collapse" data-target=".method_getActionsFromFile .collapse">
-                            <h2>Method to return a list of actions from a file for which permissions can be set.</h2>
-                            <pre>getActionsFromFile(string $file, string $xpath = &quot;/access/section[@name=&#039;component&#039;]/&quot;) : boolean|array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$file</h4>
-                                                <code>string</code><p><p>The path to the XML file.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$xpath</h4>
-                                                <code>string</code><p><p>An optional xpath to search for the fields.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean|array</code><p><p>False if case of error or the list of actions available.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getAssetRules"></a>
-                        <div class="element clickable method public  method_getAssetRules" data-toggle="collapse" data-target=".method_getAssetRules .collapse">
-                            <h2>Method to return the Rules object for an asset.  The returned object can optionally hold
+by the user.</span><pre>getGroupsByUser()</pre></a></li>
+<li class="method public "><a href="#method_getUsersByGroup" title="getUsersByGroup() :: Method to return a list of user Ids contained in a Group"><span class="description">Method to return a list of user Ids contained in a Group</span><pre>getUsersByGroup()</pre></a></li>
+<li class="method public "><a href="#method_getXml" title="getXml() :: Reads an XML file or string."><span class="description">Reads an XML file or string.</span><pre>getXml()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_getGroupPath" title="getGroupPath() :: Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
+(including the leaf group id)."><span class="description">Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
+(including the leaf group id).</span><pre>getGroupPath()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_assetRules" title="$assetRules() :: Array of rules for the asset"><span class="description"></span><pre>$assetRules</pre></a></li>
+<li class="property protected "><a href="#property_groupsByUser" title="$groupsByUser() :: Array of cached groups by user."><span class="description"></span><pre>$groupsByUser</pre></a></li>
+<li class="property protected "><a href="#property_userGroupPaths" title="$userGroupPaths() :: Array of user group paths."><span class="description"></span><pre>$userGroupPaths</pre></a></li>
+<li class="property protected "><a href="#property_userGroups" title="$userGroups() :: Array of user groups."><span class="description"></span><pre>$userGroups</pre></a></li>
+<li class="property protected "><a href="#property_viewLevels" title="$viewLevels() :: Array of view levels"><span class="description"></span><pre>$viewLevels</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Access\Access"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Access.html">Access</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Access.Access.html">Access</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class that handles all access authorization routines.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_check"></a><div class="element clickable method public method_check " data-toggle="collapse" data-target=".method_check .collapse" title="public">
+<h2>Method to check if a user is authorised to perform an action, optionally on an asset.</h2>
+<pre>check(integer $userId, string $action, mixed $asset<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
+<code>integer</code><p>Id of the user for which to check authorisation.</p></div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code><p>The name of the action to authorise.</p></div>
+<div class="subelement argument">
+<h4>$asset</h4>
+<code>mixed</code><p>Integer asset id or the name of the asset as a string.  Defaults to the global asset node.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if authorised.</div>
+</div></div>
+</div>
+<a id="method_checkGroup"></a><div class="element clickable method public method_checkGroup " data-toggle="collapse" data-target=".method_checkGroup .collapse" title="public">
+<h2>Method to check if a group is authorised to perform an action, optionally on an asset.</h2>
+<pre>checkGroup(integer $groupId, string $action, mixed $asset<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$groupId</h4>
+<code>integer</code><p>The path to the group for which to check authorisation.</p></div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code><p>The name of the action to authorise.</p></div>
+<div class="subelement argument">
+<h4>$asset</h4>
+<code>mixed</code><p>Integer asset id or the name of the asset as a string.  Defaults to the global asset node.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if authorised.</div>
+</div></div>
+</div>
+<a id="method_clearStatics"></a><div class="element clickable method public method_clearStatics " data-toggle="collapse" data-target=".method_clearStatics .collapse" title="public">
+<h2>Method for clearing static caches.</h2>
+<pre>clearStatics() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getActionsFromData"></a><div class="element clickable method public method_getActionsFromData " data-toggle="collapse" data-target=".method_getActionsFromData .collapse" title="public">
+<h2>Method to return a list of actions from a string or from an xml for which permissions can be set.</h2>
+<pre>getActionsFromData(string|\SimpleXMLElement $data, string $xpath<code> = "/access/section[@name='component']/"</code>) : boolean | array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><code>\SimpleXMLElement</code><p>The XML string or an XML element.</p></div>
+<div class="subelement argument">
+<h4>$xpath</h4>
+<code>string</code><p>An optional xpath to search for the fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>array</code>False if case of error or the list of actions available.</div>
+</div></div>
+</div>
+<a id="method_getActionsFromFile"></a><div class="element clickable method public method_getActionsFromFile " data-toggle="collapse" data-target=".method_getActionsFromFile .collapse" title="public">
+<h2>Method to return a list of actions from a file for which permissions can be set.</h2>
+<pre>getActionsFromFile(string $file, string $xpath<code> = "/access/section[@name='component']/"</code>) : boolean | array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The path to the XML file.</p></div>
+<div class="subelement argument">
+<h4>$xpath</h4>
+<code>string</code><p>An optional xpath to search for the fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>array</code>False if case of error or the list of actions available.</div>
+</div></div>
+</div>
+<a id="method_getAssetRules"></a><div class="element clickable method public method_getAssetRules " data-toggle="collapse" data-target=".method_getAssetRules .collapse" title="public">
+<h2>Method to return the Rules object for an asset.  The returned object can optionally hold
 only the rules explicitly set for the asset or the summation of all inherited rules from
 parent assets and explicit rules.</h2>
-                            <pre>getAssetRules(mixed $asset, boolean $recursive = false) : object</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$asset</h4>
-                                                <code>mixed</code><p><p>Integer asset id or the name of the asset as a string.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$recursive</h4>
-                                                <code>boolean</code><p><p>True to return the rules object with inherited rules.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>Rules object for the asset.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getAuthorisedViewLevels"></a>
-                        <div class="element clickable method public  method_getAuthorisedViewLevels" data-toggle="collapse" data-target=".method_getAuthorisedViewLevels .collapse">
-                            <h2>Method to return a list of view levels for which the user is authorised.</h2>
-                            <pre>getAuthorisedViewLevels(integer $userId) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$userId</h4>
-                                                <code>integer</code><p><p>Id of the user for which to get the list of authorised view levels.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>List of view levels for which the user is authorised.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getGroupPath"></a>
-                        <div class="element clickable method protected  method_getGroupPath" data-toggle="collapse" data-target=".method_getGroupPath .collapse">
-                            <h2>Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
-(including the leaf group id).</h2>
-                            <pre>getGroupPath(mixed $groupId) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$groupId</h4>
-                                                <code>mixed</code><p><p>An integer or array of integers representing the identities to check.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>True if allowed, false for an explicit deny, null for an implicit deny.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getGroupsByUser"></a>
-                        <div class="element clickable method public  method_getGroupsByUser" data-toggle="collapse" data-target=".method_getGroupsByUser .collapse">
-                            <h2>Method to return a list of user groups mapped to a user. The returned list can optionally hold
+<pre>getAssetRules(mixed $asset, boolean $recursive<code> = false</code>) : object</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$asset</h4>
+<code>mixed</code><p>Integer asset id or the name of the asset as a string.</p></div>
+<div class="subelement argument">
+<h4>$recursive</h4>
+<code>boolean</code><p>True to return the rules object with inherited rules.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>object</code>Rules object for the asset.</div>
+</div></div>
+</div>
+<a id="method_getAuthorisedViewLevels"></a><div class="element clickable method public method_getAuthorisedViewLevels " data-toggle="collapse" data-target=".method_getAuthorisedViewLevels .collapse" title="public">
+<h2>Method to return a list of view levels for which the user is authorised.</h2>
+<pre>getAuthorisedViewLevels(integer $userId) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
+<code>integer</code><p>Id of the user for which to get the list of authorised view levels.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>List of view levels for which the user is authorised.</div>
+</div></div>
+</div>
+<a id="method_getGroupsByUser"></a><div class="element clickable method public method_getGroupsByUser " data-toggle="collapse" data-target=".method_getGroupsByUser .collapse" title="public">
+<h2>Method to return a list of user groups mapped to a user. The returned list can optionally hold
 only the groups explicitly mapped to the user or all groups both explicitly mapped and inherited
 by the user.</h2>
-                            <pre>getGroupsByUser(integer $userId, boolean $recursive = true) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$userId</h4>
-                                                <code>integer</code><p><p>Id of the user for which to get the list of groups.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$recursive</h4>
-                                                <code>boolean</code><p><p>True to include inherited user groups.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>List of user group ids to which the user is mapped.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getUsersByGroup"></a>
-                        <div class="element clickable method public  method_getUsersByGroup" data-toggle="collapse" data-target=".method_getUsersByGroup .collapse">
-                            <h2>Method to return a list of user Ids contained in a Group</h2>
-                            <pre>getUsersByGroup(integer $groupId, boolean $recursive = false) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    todo
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                        <p>This method should move somewhere else</p>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$groupId</h4>
-                                                <code>integer</code><p><p>The group Id</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$recursive</h4>
-                                                <code>boolean</code><p><p>Recursively include all child groups (optional)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getXml"></a>
-                        <div class="element clickable method public  method_getXml" data-toggle="collapse" data-target=".method_getXml .collapse">
-                            <h2>Reads an XML file or string.</h2>
-                            <pre>getXml(string $data, boolean $isFile = true) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    todo
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                        <p>This may go in a separate class - error reporting may be improved.</p>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>string</code><p><p>Full path and file name.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$isFile</h4>
-                                                <code>boolean</code><p><p>true to load a file or false to load a string.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>SimpleXMLElement on success or false on error.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_viewLevels"> </a>
-                            <div class="element clickable property  protected property_viewLevels" data-toggle="collapse" data-target=".property_viewLevels .collapse">
-                                <h2>Array of view levels</h2>
-                                <pre>viewLevels : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_assetRules"> </a>
-                            <div class="element clickable property  protected property_assetRules" data-toggle="collapse" data-target=".property_assetRules .collapse">
-                                <h2>Array of rules for the asset</h2>
-                                <pre>assetRules : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_userGroups"> </a>
-                            <div class="element clickable property  protected property_userGroups" data-toggle="collapse" data-target=".property_userGroups .collapse">
-                                <h2>Array of user groups.</h2>
-                                <pre>userGroups : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_userGroupPaths"> </a>
-                            <div class="element clickable property  protected property_userGroupPaths" data-toggle="collapse" data-target=".property_userGroupPaths .collapse">
-                                <h2>Array of user group paths.</h2>
-                                <pre>userGroupPaths : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_groupsByUser"> </a>
-                            <div class="element clickable property  protected property_groupsByUser" data-toggle="collapse" data-target=".property_groupsByUser .collapse">
-                                <h2>Array of cached groups by user.</h2>
-                                <pre>groupsByUser : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Access\Access"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Access.html">Access</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Access.Access.html">Access</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:58 +0000.<br/>
-    </footer>
-    </body>
+<pre>getGroupsByUser(integer $userId, boolean $recursive<code> = true</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$userId</h4>
+<code>integer</code><p>Id of the user for which to get the list of groups.</p></div>
+<div class="subelement argument">
+<h4>$recursive</h4>
+<code>boolean</code><p>True to include inherited user groups.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>List of user group ids to which the user is mapped.</div>
+</div></div>
+</div>
+<a id="method_getUsersByGroup"></a><div class="element clickable method public method_getUsersByGroup " data-toggle="collapse" data-target=".method_getUsersByGroup .collapse" title="public">
+<h2>Method to return a list of user Ids contained in a Group</h2>
+<pre>getUsersByGroup(integer $groupId, boolean $recursive<code> = false</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>This method should move somewhere else</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$groupId</h4>
+<code>integer</code><p>The group Id</p></div>
+<div class="subelement argument">
+<h4>$recursive</h4>
+<code>boolean</code><p>Recursively include all child groups (optional)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getXml"></a><div class="element clickable method public method_getXml " data-toggle="collapse" data-target=".method_getXml .collapse" title="public">
+<h2>Reads an XML file or string.</h2>
+<pre>getXml(string $data, boolean $isFile<code> = true</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>todo</th>
+<td>This may go in a separate class - error reporting may be improved.</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>Full path and file name.</p></div>
+<div class="subelement argument">
+<h4>$isFile</h4>
+<code>boolean</code><p>true to load a file or false to load a string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>SimpleXMLElement on success or false on error.</div>
+</div></div>
+</div>
+<a id="method_getGroupPath"></a><div class="element clickable method protected method_getGroupPath " data-toggle="collapse" data-target=".method_getGroupPath .collapse" title="protected">
+<h2>Gets the parent groups that a leaf group belongs to in its branch back to the root of the tree
+(including the leaf group id).</h2>
+<pre>getGroupPath(mixed $groupId) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$groupId</h4>
+<code>mixed</code><p>An integer or array of integers representing the identities to check.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>True if allowed, false for an explicit deny, null for an implicit deny.</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_assetRules"> </a><div class="element clickable property protected property_assetRules" data-toggle="collapse" data-target=".property_assetRules .collapse" title="protected">
+<h2>Array of rules for the asset</h2>
+<pre>$assetRules : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_groupsByUser"> </a><div class="element clickable property protected property_groupsByUser" data-toggle="collapse" data-target=".property_groupsByUser .collapse" title="protected">
+<h2>Array of cached groups by user.</h2>
+<pre>$groupsByUser : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_userGroupPaths"> </a><div class="element clickable property protected property_userGroupPaths" data-toggle="collapse" data-target=".property_userGroupPaths .collapse" title="protected">
+<h2>Array of user group paths.</h2>
+<pre>$userGroupPaths : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_userGroups"> </a><div class="element clickable property protected property_userGroups" data-toggle="collapse" data-target=".property_userGroups .collapse" title="protected">
+<h2>Array of user groups.</h2>
+<pre>$userGroups : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_viewLevels"> </a><div class="element clickable property protected property_viewLevels" data-toggle="collapse" data-target=".property_viewLevels .collapse" title="protected">
+<h2>Array of view levels</h2>
+<pre>$viewLevels : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:26:02-04:00.<br></footer></div>
+</div>
+</body>
 </html>

@@ -1,1164 +1,561 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Auth\Link
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Auth\Link</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method___construct" title="__construct :: Constructor">
-            <span class="description">Constructor</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___get" title="__get :: Retrieve the value of a property">
-            <span class="description">Retrieve the value of a property</span><pre>__get</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___isset" title="__isset :: Check if a propety is set">
-            <span class="description">Check if a propety is set</span><pre>__isset</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___set" title="__set :: Set a property">
-            <span class="description">Set a property</span><pre>__set</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___unset" title="__unset :: Unset a property">
-            <span class="description">Unset a property</span><pre>__unset</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_clear" title="clear :: Clear any existing data">
-            <span class="description">Clear any existing data</span><pre>clear</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_create" title="create :: Create a record">
-            <span class="description">Create a record</span><pre>create</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_createInstance" title="createInstance :: Create a new instance and return it">
-            <span class="description">Create a new instance and return it</span><pre>createInstance</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_delete" title="delete :: Delete a record">
-            <span class="description">Delete a record</span><pre>delete</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_delete_by_user_id" title="delete_by_user_id :: Delete a record by User ID">
-            <span class="description">Delete a record by User ID</span><pre>delete_by_user_id</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find" title="find :: Find existing auth_link entry, return false if none exists">
-            <span class="description">Find existing auth_link entry, return false if none exists</span><pre>find</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find_by_email" title="find_by_email :: Return array of linked accounts associated with a given email address
-Also include auth domain name for easy display of domain name">
-            <span class="description">Return array of linked accounts associated with a given email address
-Also include auth domain name for easy display of domain name</span><pre>find_by_email</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find_by_id" title="find_by_id :: Find a record by ID">
-            <span class="description">Find a record by ID</span><pre>find_by_id</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find_by_user_id" title="find_by_user_id :: Return array of linked accounts associated with a given user id
-Also include auth domain name for easy display of domain name">
-            <span class="description">Return array of linked accounts associated with a given user id
-Also include auth domain name for easy display of domain name</span><pre>find_by_user_id</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find_or_create" title="find_or_create :: Find a record, creating it if not found.">
-            <span class="description">Find a record, creating it if not found.</span><pre>find_or_create</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_find_trusted_emails" title="find_trusted_emails :: Find trusted emails by User ID">
-            <span class="description">Find trusted emails by User ID</span><pre>find_trusted_emails</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getInstance" title="getInstance :: Get an instance of a record">
-            <span class="description">Get an instance of a record</span><pre>getInstance</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_read" title="read :: Read a record">
-            <span class="description">Read a record</span><pre>read</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_update" title="update :: Update a record">
-            <span class="description">Update a record</span><pre>update</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                <li class="method private">
-                            <a href="#method__error" title="_error :: Display an error">
-                                <span class="description">Display an error</span><pre>_error</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method private">
-                            <a href="#method_logDebug" title="logDebug :: Log a debug message">
-                                <span class="description">Log a debug message</span><pre>logDebug</pre>
-                            </a>
-                        </li>
-                                                                                                                        </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Link</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Authentication Link</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Constructor</h2>
-                            <pre>__construct() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___get"></a>
-                        <div class="element clickable method public  method___get" data-toggle="collapse" data-target=".method___get .collapse">
-                            <h2>Retrieve the value of a property</h2>
-                            <pre>__get(string $property = null) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>Property name</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___isset"></a>
-                        <div class="element clickable method public  method___isset" data-toggle="collapse" data-target=".method___isset .collapse">
-                            <h2>Check if a propety is set</h2>
-                            <pre>__isset(string $property = null) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>Property name</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___set"></a>
-                        <div class="element clickable method public  method___set" data-toggle="collapse" data-target=".method___set .collapse">
-                            <h2>Set a property</h2>
-                            <pre>__set(string $property = null, mixed $value = null) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>Property name</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>Value to set</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___unset"></a>
-                        <div class="element clickable method public  method___unset" data-toggle="collapse" data-target=".method___unset .collapse">
-                            <h2>Unset a property</h2>
-                            <pre>__unset(string $property = null) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$property</h4>
-                                                <code>string</code><p><p>Property name</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__error"></a>
-                        <div class="element clickable method private  method__error" data-toggle="collapse" data-target=".method__error .collapse">
-                            <h2>Display an error</h2>
-                            <pre>_error(string $message, integer $level = E_USER_NOTICE) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$message</h4>
-                                                <code>string</code><p><p>Error message</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$level</h4>
-                                                <code>integer</code><p><p>Error level</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_clear"></a>
-                        <div class="element clickable method public  method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
-                            <h2>Clear any existing data</h2>
-                            <pre>clear() : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_create"></a>
-                        <div class="element clickable method public  method_create" data-toggle="collapse" data-target=".method_create .collapse">
-                            <h2>Create a record</h2>
-                            <pre>create() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_createInstance"></a>
-                        <div class="element clickable method public  method_createInstance" data-toggle="collapse" data-target=".method_createInstance .collapse">
-                            <h2>Create a new instance and return it</h2>
-                            <pre>createInstance(integer $auth_domain_id, string $username) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$auth_domain_id</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_delete"></a>
-                        <div class="element clickable method public  method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
-                            <h2>Delete a record</h2>
-                            <pre>delete() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_delete_by_user_id"></a>
-                        <div class="element clickable method public  method_delete_by_user_id" data-toggle="collapse" data-target=".method_delete_by_user_id .collapse">
-                            <h2>Delete a record by User ID</h2>
-                            <pre>delete_by_user_id(integer $uid = null) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uid</h4>
-                                                <code>integer</code><p><p>User ID</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find"></a>
-                        <div class="element clickable method public  method_find" data-toggle="collapse" data-target=".method_find .collapse">
-                            <h2>Find existing auth_link entry, return false if none exists</h2>
-                            <pre>find(string $type, string $authenticator, string $domain, string $username) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$authenticator</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>object on success and false on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find_by_email"></a>
-                        <div class="element clickable method public  method_find_by_email" data-toggle="collapse" data-target=".method_find_by_email .collapse">
-                            <h2>Return array of linked accounts associated with a given email address
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___get" title="__get() :: Retrieve the value of a property"><span class="description">Retrieve the value of a property</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#method___isset" title="__isset() :: Check if a propety is set"><span class="description">Check if a propety is set</span><pre>__isset()</pre></a></li>
+<li class="method public "><a href="#method___set" title="__set() :: Set a property"><span class="description">Set a property</span><pre>__set()</pre></a></li>
+<li class="method public "><a href="#method___unset" title="__unset() :: Unset a property"><span class="description">Unset a property</span><pre>__unset()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear() :: Clear any existing data"><span class="description">Clear any existing data</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create() :: Create a record"><span class="description">Create a record</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_createInstance" title="createInstance() :: Create a new instance and return it"><span class="description">Create a new instance and return it</span><pre>createInstance()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete() :: Delete a record"><span class="description">Delete a record</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_delete_by_user_id" title="delete_by_user_id() :: Delete a record by User ID"><span class="description">Delete a record by User ID</span><pre>delete_by_user_id()</pre></a></li>
+<li class="method public "><a href="#method_find" title="find() :: Find existing auth_link entry, return false if none exists"><span class="description">Find existing auth_link entry, return false if none exists</span><pre>find()</pre></a></li>
+<li class="method public "><a href="#method_find_by_email" title="find_by_email() :: Return array of linked accounts associated with a given email address
+Also include auth domain name for easy display of domain name"><span class="description">Return array of linked accounts associated with a given email address
+Also include auth domain name for easy display of domain name</span><pre>find_by_email()</pre></a></li>
+<li class="method public "><a href="#method_find_by_id" title="find_by_id() :: Find a record by ID"><span class="description">Find a record by ID</span><pre>find_by_id()</pre></a></li>
+<li class="method public "><a href="#method_find_by_user_id" title="find_by_user_id() :: Return array of linked accounts associated with a given user id
+Also include auth domain name for easy display of domain name"><span class="description">Return array of linked accounts associated with a given user id
+Also include auth domain name for easy display of domain name</span><pre>find_by_user_id()</pre></a></li>
+<li class="method public "><a href="#method_find_or_create" title="find_or_create() :: Find a record, creating it if not found."><span class="description">Find a record, creating it if not found.</span><pre>find_or_create()</pre></a></li>
+<li class="method public "><a href="#method_find_trusted_emails" title="find_trusted_emails() :: Find trusted emails by User ID"><span class="description">Find trusted emails by User ID</span><pre>find_trusted_emails()</pre></a></li>
+<li class="method public "><a href="#method_getInstance" title="getInstance() :: Get an instance of a record"><span class="description">Get an instance of a record</span><pre>getInstance()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read() :: Read a record"><span class="description">Read a record</span><pre>read()</pre></a></li>
+<li class="method public "><a href="#method_update" title="update() :: Update a record"><span class="description">Update a record</span><pre>update()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method__error" title="_error() :: Display an error"><span class="description">Display an error</span><pre>_error()</pre></a></li>
+<li class="method private "><a href="#method_logDebug" title="logDebug() :: Log a debug message"><span class="description">Log a debug message</span><pre>logDebug()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property__updateAll" title="$_updateAll() :: Update all fields?"><span class="description"></span><pre>$_updateAll</pre></a></li>
+<li class="property private "><a href="#property__updatedkeys" title="$_updatedkeys() :: List of updated keys"><span class="description"></span><pre>$_updatedkeys</pre></a></li>
+<li class="property private "><a href="#property_auth_domain_id" title="$auth_domain_id() :: Domain ID"><span class="description"></span><pre>$auth_domain_id</pre></a></li>
+<li class="property private "><a href="#property_email" title="$email() :: User email"><span class="description"></span><pre>$email</pre></a></li>
+<li class="property private "><a href="#property_id" title="$id() :: Record ID"><span class="description"></span><pre>$id</pre></a></li>
+<li class="property private "><a href="#property_params" title="$params() :: Parameters"><span class="description"></span><pre>$params</pre></a></li>
+<li class="property private "><a href="#property_password" title="$password() :: User password"><span class="description"></span><pre>$password</pre></a></li>
+<li class="property private "><a href="#property_user_id" title="$user_id() :: User ID"><span class="description"></span><pre>$user_id</pre></a></li>
+<li class="property private "><a href="#property_username" title="$username() :: Username"><span class="description"></span><pre>$username</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Auth\Link"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Auth.html">Auth</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Auth.Link.html">Link</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Authentication Link</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor</h2>
+<pre>__construct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method___get"></a><div class="element clickable method public method___get " data-toggle="collapse" data-target=".method___get .collapse" title="public">
+<h2>Retrieve the value of a property</h2>
+<pre>__get(string $property<code> = null</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>Property name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method___isset"></a><div class="element clickable method public method___isset " data-toggle="collapse" data-target=".method___isset .collapse" title="public">
+<h2>Check if a propety is set</h2>
+<pre>__isset(string $property<code> = null</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>Property name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method___set"></a><div class="element clickable method public method___set " data-toggle="collapse" data-target=".method___set .collapse" title="public">
+<h2>Set a property</h2>
+<pre>__set(string $property<code> = null</code>, mixed $value<code> = null</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>Property name</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to set</p></div>
+</div></div>
+</div>
+<a id="method___unset"></a><div class="element clickable method public method___unset " data-toggle="collapse" data-target=".method___unset .collapse" title="public">
+<h2>Unset a property</h2>
+<pre>__unset(string $property<code> = null</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$property</h4>
+<code>string</code><p>Property name</p></div>
+</div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear " data-toggle="collapse" data-target=".method_clear .collapse" title="public">
+<h2>Clear any existing data</h2>
+<pre>clear() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create " data-toggle="collapse" data-target=".method_create .collapse" title="public">
+<h2>Create a record</h2>
+<pre>create() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_createInstance"></a><div class="element clickable method public method_createInstance " data-toggle="collapse" data-target=".method_createInstance .collapse" title="public">
+<h2>Create a new instance and return it</h2>
+<pre>createInstance(integer $auth_domain_id, string $username) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$auth_domain_id</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete " data-toggle="collapse" data-target=".method_delete .collapse" title="public">
+<h2>Delete a record</h2>
+<pre>delete() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_delete_by_user_id"></a><div class="element clickable method public method_delete_by_user_id " data-toggle="collapse" data-target=".method_delete_by_user_id .collapse" title="public">
+<h2>Delete a record by User ID</h2>
+<pre>delete_by_user_id(integer $uid<code> = null</code>) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><p>User ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_find"></a><div class="element clickable method public method_find " data-toggle="collapse" data-target=".method_find .collapse" title="public">
+<h2>Find existing auth_link entry, return false if none exists</h2>
+<pre>find(string $type, string $authenticator, string $domain, string $username) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$authenticator</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>object on success and false on failure</div>
+</div></div>
+</div>
+<a id="method_find_by_email"></a><div class="element clickable method public method_find_by_email " data-toggle="collapse" data-target=".method_find_by_email .collapse" title="public">
+<h2>Return array of linked accounts associated with a given email address
 Also include auth domain name for easy display of domain name</h2>
-                            <pre>find_by_email(string $email = null,  $exclude = array()) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$email</h4>
-                                                <code>string</code><p><p>Email address to match accounts against</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$exclude</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Array of auth link entries for the given user_id</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find_by_id"></a>
-                        <div class="element clickable method public  method_find_by_id" data-toggle="collapse" data-target=".method_find_by_id .collapse">
-                            <h2>Find a record by ID</h2>
-                            <pre>find_by_id(integer $id) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$id</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Object on success, False on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find_by_user_id"></a>
-                        <div class="element clickable method public  method_find_by_user_id" data-toggle="collapse" data-target=".method_find_by_user_id .collapse">
-                            <h2>Return array of linked accounts associated with a given user id
+<pre>find_by_email(string $email<code> = null</code>, $exclude<code> = array()</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>Email address to match accounts against</p></div>
+<div class="subelement argument"><h4>$exclude</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of auth link entries for the given user_id</div>
+</div></div>
+</div>
+<a id="method_find_by_id"></a><div class="element clickable method public method_find_by_id " data-toggle="collapse" data-target=".method_find_by_id .collapse" title="public">
+<h2>Find a record by ID</h2>
+<pre>find_by_id(integer $id) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Object on success, False on failure</div>
+</div></div>
+</div>
+<a id="method_find_by_user_id"></a><div class="element clickable method public method_find_by_user_id " data-toggle="collapse" data-target=".method_find_by_user_id .collapse" title="public">
+<h2>Return array of linked accounts associated with a given user id
 Also include auth domain name for easy display of domain name</h2>
-                            <pre>find_by_user_id(integer $user_id = null) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$user_id</h4>
-                                                <code>integer</code><p><p>ID of user to return accounts for</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Array of auth link entries for the given user_id</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find_or_create"></a>
-                        <div class="element clickable method public  method_find_or_create" data-toggle="collapse" data-target=".method_find_or_create .collapse">
-                            <h2>Find a record, creating it if not found.</h2>
-                            <pre>find_or_create(string $type, string $authenticator, string $domain, string $username) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$authenticator</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$domain</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Object on success, False on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_find_trusted_emails"></a>
-                        <div class="element clickable method public  method_find_trusted_emails" data-toggle="collapse" data-target=".method_find_trusted_emails .collapse">
-                            <h2>Find trusted emails by User ID</h2>
-                            <pre>find_trusted_emails(integer $user_id) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$user_id</h4>
-                                                <code>integer</code><p><p>USer ID</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getInstance"></a>
-                        <div class="element clickable method public  method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
-                            <h2>Get an instance of a record</h2>
-                            <pre>getInstance(integer $auth_domain_id, string $username) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$auth_domain_id</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$username</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Object on success, False on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_logDebug"></a>
-                        <div class="element clickable method private  method_logDebug" data-toggle="collapse" data-target=".method_logDebug .collapse">
-                            <h2>Log a debug message</h2>
-                            <pre>logDebug(string $msg) : void</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$msg</h4>
-                                                <code>string</code><p><p>Message to log</p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_read"></a>
-                        <div class="element clickable method public  method_read" data-toggle="collapse" data-target=".method_read .collapse">
-                            <h2>Read a record</h2>
-                            <pre>read() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_update"></a>
-                        <div class="element clickable method public  method_update" data-toggle="collapse" data-target=".method_update .collapse">
-                            <h2>Update a record</h2>
-                            <pre>update(boolean $all = false) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$all</h4>
-                                                <code>boolean</code><p><p>Update all properties?</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_id"> </a>
-                            <div class="element clickable property  private property_id" data-toggle="collapse" data-target=".property_id .collapse">
-                                <h2>Record ID</h2>
-                                <pre>id : integer</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_user_id"> </a>
-                            <div class="element clickable property  private property_user_id" data-toggle="collapse" data-target=".property_user_id .collapse">
-                                <h2>User ID</h2>
-                                <pre>user_id : integer</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_auth_domain_id"> </a>
-                            <div class="element clickable property  private property_auth_domain_id" data-toggle="collapse" data-target=".property_auth_domain_id .collapse">
-                                <h2>Domain ID</h2>
-                                <pre>auth_domain_id : integer</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_username"> </a>
-                            <div class="element clickable property  private property_username" data-toggle="collapse" data-target=".property_username .collapse">
-                                <h2>Username</h2>
-                                <pre>username : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_email"> </a>
-                            <div class="element clickable property  private property_email" data-toggle="collapse" data-target=".property_email .collapse">
-                                <h2>User email</h2>
-                                <pre>email : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_password"> </a>
-                            <div class="element clickable property  private property_password" data-toggle="collapse" data-target=".property_password .collapse">
-                                <h2>User password</h2>
-                                <pre>password : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_params"> </a>
-                            <div class="element clickable property  private property_params" data-toggle="collapse" data-target=".property_params .collapse">
-                                <h2>Parameters</h2>
-                                <pre>params : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property__updatedkeys"> </a>
-                            <div class="element clickable property  private property__updatedkeys" data-toggle="collapse" data-target=".property__updatedkeys .collapse">
-                                <h2>List of updated keys</h2>
-                                <pre>_updatedkeys : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property__updateAll"> </a>
-                            <div class="element clickable property  private property__updateAll" data-toggle="collapse" data-target=".property__updateAll .collapse">
-                                <h2>Update all fields?</h2>
-                                <pre>_updateAll : boolean</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Auth\Link"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Auth.html">Auth</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Auth.Link.html">Link</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:57 +0000.<br/>
-    </footer>
-    </body>
+<pre>find_by_user_id(integer $user_id<code> = null</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user_id</h4>
+<code>integer</code><p>ID of user to return accounts for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of auth link entries for the given user_id</div>
+</div></div>
+</div>
+<a id="method_find_or_create"></a><div class="element clickable method public method_find_or_create " data-toggle="collapse" data-target=".method_find_or_create .collapse" title="public">
+<h2>Find a record, creating it if not found.</h2>
+<pre>find_or_create(string $type, string $authenticator, string $domain, string $username) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$authenticator</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$domain</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Object on success, False on failure</div>
+</div></div>
+</div>
+<a id="method_find_trusted_emails"></a><div class="element clickable method public method_find_trusted_emails " data-toggle="collapse" data-target=".method_find_trusted_emails .collapse" title="public">
+<h2>Find trusted emails by User ID</h2>
+<pre>find_trusted_emails(integer $user_id) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user_id</h4>
+<code>integer</code><p>USer ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getInstance"></a><div class="element clickable method public method_getInstance " data-toggle="collapse" data-target=".method_getInstance .collapse" title="public">
+<h2>Get an instance of a record</h2>
+<pre>getInstance(integer $auth_domain_id, string $username) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$auth_domain_id</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Object on success, False on failure</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read " data-toggle="collapse" data-target=".method_read .collapse" title="public">
+<h2>Read a record</h2>
+<pre>read() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_update"></a><div class="element clickable method public method_update " data-toggle="collapse" data-target=".method_update .collapse" title="public">
+<h2>Update a record</h2>
+<pre>update(boolean $all<code> = false</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$all</h4>
+<code>boolean</code><p>Update all properties?</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method__error"></a><div class="element clickable method private method__error " data-toggle="collapse" data-target=".method__error .collapse" title="private">
+<h2>Display an error</h2>
+<pre>_error(string $message, integer $level<code> = E_USER_NOTICE</code>) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>Error message</p></div>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>integer</code><p>Error level</p></div>
+</div></div>
+</div>
+<a id="method_logDebug"></a><div class="element clickable method private method_logDebug " data-toggle="collapse" data-target=".method_logDebug .collapse" title="private">
+<h2>Log a debug message</h2>
+<pre>logDebug(string $msg) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$msg</h4>
+<code>string</code><p>Message to log</p></div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__updateAll"> </a><div class="element clickable property private property__updateAll" data-toggle="collapse" data-target=".property__updateAll .collapse" title="private">
+<h2>Update all fields?</h2>
+<pre>$_updateAll : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__updatedkeys"> </a><div class="element clickable property private property__updatedkeys" data-toggle="collapse" data-target=".property__updatedkeys .collapse" title="private">
+<h2>List of updated keys</h2>
+<pre>$_updatedkeys : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_auth_domain_id"> </a><div class="element clickable property private property_auth_domain_id" data-toggle="collapse" data-target=".property_auth_domain_id .collapse" title="private">
+<h2>Domain ID</h2>
+<pre>$auth_domain_id : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_email"> </a><div class="element clickable property private property_email" data-toggle="collapse" data-target=".property_email .collapse" title="private">
+<h2>User email</h2>
+<pre>$email : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_id"> </a><div class="element clickable property private property_id" data-toggle="collapse" data-target=".property_id .collapse" title="private">
+<h2>Record ID</h2>
+<pre>$id : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_params"> </a><div class="element clickable property private property_params" data-toggle="collapse" data-target=".property_params .collapse" title="private">
+<h2>Parameters</h2>
+<pre>$params : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property private property_password" data-toggle="collapse" data-target=".property_password .collapse" title="private">
+<h2>User password</h2>
+<pre>$password : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_user_id"> </a><div class="element clickable property private property_user_id" data-toggle="collapse" data-target=".property_user_id .collapse" title="private">
+<h2>User ID</h2>
+<pre>$user_id : integer</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_username"> </a><div class="element clickable property private property_username" data-toggle="collapse" data-target=".property_username .collapse" title="private">
+<h2>Username</h2>
+<pre>$username : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:49-04:00.<br></footer></div>
+</div>
+</body>
 </html>

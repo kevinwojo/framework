@@ -1,603 +1,318 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Utility\String
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Utility\String</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_ampReplace" title="ampReplace :: Replaces &amp;amp; with &amp; for XHTML compliance">
-            <span class="description">Replaces &amp;amp; with &amp; for XHTML compliance</span><pre>ampReplace</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_camel" title="camel :: Convert a value to camel case.">
-            <span class="description">Convert a value to camel case.</span><pre>camel</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_cleanInsert" title="cleanInsert :: Cleans up a String::insert() formatted string with given $options depending on the &#039;clean&#039; key in
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list"><li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_ampReplace" title="ampReplace() :: Replaces &amp;amp; with &amp; for XHTML compliance"><span class="description">Replaces &amp;amp; with &amp; for XHTML compliance</span><pre>ampReplace()</pre></a></li>
+<li class="method public "><a href="#method_camel" title="camel() :: Convert a value to camel case."><span class="description">Convert a value to camel case.</span><pre>camel()</pre></a></li>
+<li class="method public "><a href="#method_cleanInsert" title="cleanInsert() :: Cleans up a String::insert() formatted string with given $options depending on the 'clean' key in
 $options. The default method used is text but html is also available. The goal of this function
 is to replace all whitespace and unneeded markup around placeholders that did not get replaced
-by String::insert().">
-            <span class="description">Cleans up a String::insert() formatted string with given $options depending on the &#039;clean&#039; key in
+by String::insert()."><span class="description">Cleans up a String::insert() formatted string with given $options depending on the 'clean' key in
 $options. The default method used is text but html is also available. The goal of this function
 is to replace all whitespace and unneeded markup around placeholders that did not get replaced
-by String::insert().</span><pre>cleanInsert</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_contains" title="contains :: Determine if a given string contains a given substring.">
-            <span class="description">Determine if a given string contains a given substring.</span><pre>contains</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_endsWith" title="endsWith :: Determine if a given string ends with a given substring.">
-            <span class="description">Determine if a given string ends with a given substring.</span><pre>endsWith</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_excerpt" title="excerpt :: Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
-determined by radius.">
-            <span class="description">Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
-determined by radius.</span><pre>excerpt</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_findLiteral" title="findLiteral :: Looks for literal occurances of a string (i.e. unquoted) and returns their positions">
-            <span class="description">Looks for literal occurances of a string (i.e. unquoted) and returns their positions</span><pre>findLiteral</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_highlight" title="highlight :: Highlights a given phrase in a text. You can specify any expression in highlighter that
-may include the \1 expression to include the $phrase found.">
-            <span class="description">Highlights a given phrase in a text. You can specify any expression in highlighter that
-may include the \1 expression to include the $phrase found.</span><pre>highlight</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_insert" title="insert :: Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
-corresponds to a variable placeholder name in $str.">
-            <span class="description">Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
-corresponds to a variable placeholder name in $str.</span><pre>insert</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_obfuscate" title="obfuscate :: Obfuscate a string to prevent spam-bots from sniffing it.">
-            <span class="description">Obfuscate a string to prevent spam-bots from sniffing it.</span><pre>obfuscate</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_pad" title="pad :: Format a number by prefixing a character to a specificed length.">
-            <span class="description">Format a number by prefixing a character to a specificed length.</span><pre>pad</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_parseAttributes" title="parseAttributes :: Method to extract key/value pairs out of a string with XML style attributes">
-            <span class="description">Method to extract key/value pairs out of a string with XML style attributes</span><pre>parseAttributes</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_snake" title="snake :: Convert a string to snake case.">
-            <span class="description">Convert a string to snake case.</span><pre>snake</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_splitCamel" title="splitCamel :: Split a string in camel case format
-ThisTextIsCamelCase -&gt; &quot;This Text Is Camel Case&quot;">
-            <span class="description">Split a string in camel case format
-ThisTextIsCamelCase -&gt; &quot;This Text Is Camel Case&quot;</span><pre>splitCamel</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_startsWith" title="startsWith :: Determine if a given string starts with a given substring.">
-            <span class="description">Determine if a given string starts with a given substring.</span><pre>startsWith</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_tail" title="tail :: Truncates text starting from the end.">
-            <span class="description">Truncates text starting from the end.</span><pre>tail</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_truncate" title="truncate :: Truncates text.">
-            <span class="description">Truncates text.</span><pre>truncate</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>String</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">String handling methods.</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Largely inspired by CakePHP (<a href="http://cakephp.org">http://cakephp.org</a>) and Zend (<a href="http://framework.zend.com">http://framework.zend.com</a>)</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_ampReplace"></a>
-                        <div class="element clickable method public  method_ampReplace" data-toggle="collapse" data-target=".method_ampReplace .collapse">
-                            <h2>Replaces &amp;amp; with &amp; for XHTML compliance</h2>
-                            <pre>ampReplace(string $text) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p><p>Text to process</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Processed string.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_camel"></a>
-                        <div class="element clickable method public  method_camel" data-toggle="collapse" data-target=".method_camel .collapse">
-                            <h2>Convert a value to camel case.</h2>
-                            <pre>camel(string $value) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>&quot;this text is camel case&quot; -&gt; ThisTextIsCamelCase</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_cleanInsert"></a>
-                        <div class="element clickable method public  method_cleanInsert" data-toggle="collapse" data-target=".method_cleanInsert .collapse">
-                            <h2>Cleans up a String::insert() formatted string with given $options depending on the &#039;clean&#039; key in
+by String::insert().</span><pre>cleanInsert()</pre></a></li>
+<li class="method public "><a href="#method_contains" title="contains() :: Determine if a given string contains a given substring."><span class="description">Determine if a given string contains a given substring.</span><pre>contains()</pre></a></li>
+<li class="method public "><a href="#method_endsWith" title="endsWith() :: Determine if a given string ends with a given substring."><span class="description">Determine if a given string ends with a given substring.</span><pre>endsWith()</pre></a></li>
+<li class="method public "><a href="#method_excerpt" title="excerpt() :: Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
+determined by radius."><span class="description">Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
+determined by radius.</span><pre>excerpt()</pre></a></li>
+<li class="method public "><a href="#method_findLiteral" title="findLiteral() :: Looks for literal occurances of a string (i.e. unquoted) and returns their positions"><span class="description">Looks for literal occurances of a string (i.e. unquoted) and returns their positions</span><pre>findLiteral()</pre></a></li>
+<li class="method public "><a href="#method_highlight" title="highlight() :: Highlights a given phrase in a text. You can specify any expression in highlighter that
+may include the \1 expression to include the $phrase found."><span class="description">Highlights a given phrase in a text. You can specify any expression in highlighter that
+may include the \1 expression to include the $phrase found.</span><pre>highlight()</pre></a></li>
+<li class="method public "><a href="#method_insert" title="insert() :: Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
+corresponds to a variable placeholder name in $str."><span class="description">Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
+corresponds to a variable placeholder name in $str.</span><pre>insert()</pre></a></li>
+<li class="method public "><a href="#method_obfuscate" title="obfuscate() :: Obfuscate a string to prevent spam-bots from sniffing it."><span class="description">Obfuscate a string to prevent spam-bots from sniffing it.</span><pre>obfuscate()</pre></a></li>
+<li class="method public "><a href="#method_pad" title="pad() :: Format a number by prefixing a character to a specificed length."><span class="description">Format a number by prefixing a character to a specificed length.</span><pre>pad()</pre></a></li>
+<li class="method public "><a href="#method_parseAttributes" title="parseAttributes() :: Method to extract key/value pairs out of a string with XML style attributes"><span class="description">Method to extract key/value pairs out of a string with XML style attributes</span><pre>parseAttributes()</pre></a></li>
+<li class="method public "><a href="#method_snake" title="snake() :: Convert a string to snake case."><span class="description">Convert a string to snake case.</span><pre>snake()</pre></a></li>
+<li class="method public "><a href="#method_splitCamel" title='splitCamel() :: Split a string in camel case format
+ThisTextIsCamelCase -&gt; "This Text Is Camel Case"'><span class="description">Split a string in camel case format
+ThisTextIsCamelCase -&gt; "This Text Is Camel Case"</span><pre>splitCamel()</pre></a></li>
+<li class="method public "><a href="#method_startsWith" title="startsWith() :: Determine if a given string starts with a given substring."><span class="description">Determine if a given string starts with a given substring.</span><pre>startsWith()</pre></a></li>
+<li class="method public "><a href="#method_tail" title="tail() :: Truncates text starting from the end."><span class="description">Truncates text starting from the end.</span><pre>tail()</pre></a></li>
+<li class="method public "><a href="#method_truncate" title="truncate() :: Truncates text."><span class="description">Truncates text.</span><pre>truncate()</pre></a></li>
+</ul>
+</li></ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Utility\String"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Utility.html">Utility</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Utility.String.html">String</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">String handling methods.</p>
+<div class="details">
+<div class="long_description"><p>Largely inspired by CakePHP (<a href="http://cakephp.org">http://cakephp.org</a>) and Zend (<a href="http://framework.zend.com">http://framework.zend.com</a>)</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_ampReplace"></a><div class="element clickable method public method_ampReplace " data-toggle="collapse" data-target=".method_ampReplace .collapse" title="public">
+<h2>Replaces &amp;amp; with &amp; for XHTML compliance</h2>
+<pre>ampReplace(string $text) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>Text to process</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Processed string.</div>
+</div></div>
+</div>
+<a id="method_camel"></a><div class="element clickable method public method_camel " data-toggle="collapse" data-target=".method_camel .collapse" title="public">
+<h2>Convert a value to camel case.</h2>
+<pre>camel(string $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>&quot;this text is camel case&quot; -&gt; ThisTextIsCamelCase</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_cleanInsert"></a><div class="element clickable method public method_cleanInsert " data-toggle="collapse" data-target=".method_cleanInsert .collapse" title="public">
+<h2>Cleans up a String::insert() formatted string with given $options depending on the 'clean' key in
 $options. The default method used is text but html is also available. The goal of this function
 is to replace all whitespace and unneeded markup around placeholders that did not get replaced
 by String::insert().</h2>
-                            <pre>cleanInsert(string $str, array $options) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            String::insert()
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_contains"></a>
-                        <div class="element clickable method public  method_contains" data-toggle="collapse" data-target=".method_contains .collapse">
-                            <h2>Determine if a given string contains a given substring.</h2>
-                            <pre>contains(string $haystack, mixed $needles) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$haystack</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$needles</h4>
-                                                <code>mixed</code><p><p>string|array</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_endsWith"></a>
-                        <div class="element clickable method public  method_endsWith" data-toggle="collapse" data-target=".method_endsWith .collapse">
-                            <h2>Determine if a given string ends with a given substring.</h2>
-                            <pre>endsWith(string $haystack, mixed $needles) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$haystack</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$needles</h4>
-                                                <code>mixed</code><p><p>string|array</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_excerpt"></a>
-                        <div class="element clickable method public  method_excerpt" data-toggle="collapse" data-target=".method_excerpt .collapse">
-                            <h2>Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
+<pre>cleanInsert(string $str, array $options) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="String::insert()"></a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_contains"></a><div class="element clickable method public method_contains " data-toggle="collapse" data-target=".method_contains .collapse" title="public">
+<h2>Determine if a given string contains a given substring.</h2>
+<pre>contains(string $haystack, mixed $needles) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$needles</h4>
+<code>mixed</code><p>string|array</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_endsWith"></a><div class="element clickable method public method_endsWith " data-toggle="collapse" data-target=".method_endsWith .collapse" title="public">
+<h2>Determine if a given string ends with a given substring.</h2>
+<pre>endsWith(string $haystack, mixed $needles) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$needles</h4>
+<code>mixed</code><p>string|array</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_excerpt"></a><div class="element clickable method public method_excerpt " data-toggle="collapse" data-target=".method_excerpt .collapse" title="public">
+<h2>Extracts an excerpt from the text surrounding the phrase with a number of characters on each side
 determined by radius.</h2>
-                            <pre>excerpt(string $text, string $phrase, integer $radius = 100, string $ellipsis = &#039;...&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p><p>String to search the phrase in</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$phrase</h4>
-                                                <code>string</code><p><p>Phrase that will be searched for</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$radius</h4>
-                                                <code>integer</code><p><p>The amount of characters that will be returned on each side of the founded phrase</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$ellipsis</h4>
-                                                <code>string</code><p><p>Ending that will be appended</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Modified string</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_findLiteral"></a>
-                        <div class="element clickable method public  method_findLiteral" data-toggle="collapse" data-target=".method_findLiteral .collapse">
-                            <h2>Looks for literal occurances of a string (i.e. unquoted) and returns their positions</h2>
-                            <pre>findLiteral(string $needle, string $haystack) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$needle</h4>
-                                                <code>string</code><p><p>The item of interest</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$haystack</h4>
-                                                <code>string</code><p><p>The text in which to look for the needle</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_highlight"></a>
-                        <div class="element clickable method public  method_highlight" data-toggle="collapse" data-target=".method_highlight .collapse">
-                            <h2>Highlights a given phrase in a text. You can specify any expression in highlighter that
+<pre>excerpt(string $text, string $phrase, integer $radius<code> = 100</code>, string $ellipsis<code> = '...'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>String to search the phrase in</p></div>
+<div class="subelement argument">
+<h4>$phrase</h4>
+<code>string</code><p>Phrase that will be searched for</p></div>
+<div class="subelement argument">
+<h4>$radius</h4>
+<code>integer</code><p>The amount of characters that will be returned on each side of the founded phrase</p></div>
+<div class="subelement argument">
+<h4>$ellipsis</h4>
+<code>string</code><p>Ending that will be appended</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Modified string</div>
+</div></div>
+</div>
+<a id="method_findLiteral"></a><div class="element clickable method public method_findLiteral " data-toggle="collapse" data-target=".method_findLiteral .collapse" title="public">
+<h2>Looks for literal occurances of a string (i.e. unquoted) and returns their positions</h2>
+<pre>findLiteral(string $needle, string $haystack) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The item of interest</p></div>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The text in which to look for the needle</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_highlight"></a><div class="element clickable method public method_highlight " data-toggle="collapse" data-target=".method_highlight .collapse" title="public">
+<h2>Highlights a given phrase in a text. You can specify any expression in highlighter that
 may include the \1 expression to include the $phrase found.</h2>
-                            <pre>highlight(string $text, string $phrase, array $options = array()) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><h3>Options:</h3>
+<pre>highlight(string $text, string $phrase, array $options<code> = array()</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><h3>Options:</h3>
 <ul>
 <li><code>format</code> The piece of html with that the phrase will be highlighted</li>
 <li><code>html</code> If true, will ignore any HTML tags, ensuring that only the correct text is highlighted</li>
 <li><code>regex</code> a custom regex rule that is used to match words, default is '|$tag|iu'</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p><p>Text to search the phrase in</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$phrase</h4>
-                                                <code>string</code><p><p>The phrase that will be searched</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p><p>An array of html attributes and options.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The highlighted text</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_insert"></a>
-                        <div class="element clickable method public  method_insert" data-toggle="collapse" data-target=".method_insert .collapse">
-                            <h2>Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>Text to search the phrase in</p></div>
+<div class="subelement argument">
+<h4>$phrase</h4>
+<code>string</code><p>The phrase that will be searched</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of html attributes and options.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The highlighted text</div>
+</div></div>
+</div>
+<a id="method_insert"></a><div class="element clickable method public method_insert " data-toggle="collapse" data-target=".method_insert .collapse" title="public">
+<h2>Replaces variable placeholders inside a $str with any given $data. Each key in the $data array
 corresponds to a variable placeholder name in $str.</h2>
-                            <pre>insert(string $str, array $data, array $options = array()) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Example: <code>String::insert(':name is :age years old.', array('name' =&gt; 'Bob', '65'));</code>
+<pre>insert(string $str, array $data, array $options<code> = array()</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example: <code>String::insert(':name is :age years old.', array('name' =&gt; 'Bob', '65'));</code>
 Returns: Bob is 65 years old.</p>
 <p>Available $options are:</p>
 <ul>
@@ -608,288 +323,168 @@ Returns: Bob is 65 years old.</p>
 (Overwrites before, after, breaks escape / clean)</li>
 <li>clean: A boolean or array with instructions for String::cleanInsert</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p><p>A string containing variable placeholders</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p><p>A key =&gt; val array where each key stands for a placeholder to be replaced with val</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p><p>An array of options, see description above</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_obfuscate"></a>
-                        <div class="element clickable method public  method_obfuscate" data-toggle="collapse" data-target=".method_obfuscate .collapse">
-                            <h2>Obfuscate a string to prevent spam-bots from sniffing it.</h2>
-                            <pre>obfuscate(string $value) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_pad"></a>
-                        <div class="element clickable method public  method_pad" data-toggle="collapse" data-target=".method_pad .collapse">
-                            <h2>Format a number by prefixing a character to a specificed length.</h2>
-                            <pre>pad(integer $value, integer $length = 5, integer $prfx) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>integer</code><p><p>Number to format</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$length</h4>
-                                                <code>integer</code><p><p>Final string length</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$prfx</h4>
-                                                <code>integer</code><p><p>Character to prepend</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_parseAttributes"></a>
-                        <div class="element clickable method public  method_parseAttributes" data-toggle="collapse" data-target=".method_parseAttributes .collapse">
-                            <h2>Method to extract key/value pairs out of a string with XML style attributes</h2>
-                            <pre>parseAttributes(string $string) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$string</h4>
-                                                <code>string</code><p><p>String containing XML style attributes</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>Key/Value pairs for the attributes</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_snake"></a>
-                        <div class="element clickable method public  method_snake" data-toggle="collapse" data-target=".method_snake .collapse">
-                            <h2>Convert a string to snake case.</h2>
-                            <pre>snake(string $value, string $delimiter = &#039;_&#039;) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>&quot;this text is sname case&quot; -&gt; this_text_is_snake_case</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$delimiter</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_splitCamel"></a>
-                        <div class="element clickable method public  method_splitCamel" data-toggle="collapse" data-target=".method_splitCamel .collapse">
-                            <h2>Split a string in camel case format
-ThisTextIsCamelCase -&gt; &quot;This Text Is Camel Case&quot;</h2>
-                            <pre>splitCamel(string $string) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$string</h4>
-                                                <code>string</code><p><p>The source string.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The splitted string.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_startsWith"></a>
-                        <div class="element clickable method public  method_startsWith" data-toggle="collapse" data-target=".method_startsWith .collapse">
-                            <h2>Determine if a given string starts with a given substring.</h2>
-                            <pre>startsWith(string $haystack, mixed $needles) : boolean</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    since
-                                                </th>
-                                                <td>
-                                                                                                                                                                        2.0.0
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$haystack</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$needles</h4>
-                                                <code>mixed</code><p><p>string|array</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_tail"></a>
-                        <div class="element clickable method public  method_tail" data-toggle="collapse" data-target=".method_tail .collapse">
-                            <h2>Truncates text starting from the end.</h2>
-                            <pre>tail(string $text, integer $length = 100, array $options = array()) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Cuts a string to the length of $length and replaces the first characters
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>A string containing variable placeholders</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>A key => val array where each key stands for a placeholder to be replaced with val</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of options, see description above</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_obfuscate"></a><div class="element clickable method public method_obfuscate " data-toggle="collapse" data-target=".method_obfuscate .collapse" title="public">
+<h2>Obfuscate a string to prevent spam-bots from sniffing it.</h2>
+<pre>obfuscate(string $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_pad"></a><div class="element clickable method public method_pad " data-toggle="collapse" data-target=".method_pad .collapse" title="public">
+<h2>Format a number by prefixing a character to a specificed length.</h2>
+<pre>pad(integer $value, integer $length<code> = 5</code>, integer $prfx<code> = 0</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>integer</code><p>Number to format</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Final string length</p></div>
+<div class="subelement argument">
+<h4>$prfx</h4>
+<code>integer</code><p>Character to prepend</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_parseAttributes"></a><div class="element clickable method public method_parseAttributes " data-toggle="collapse" data-target=".method_parseAttributes .collapse" title="public">
+<h2>Method to extract key/value pairs out of a string with XML style attributes</h2>
+<pre>parseAttributes(string $string) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>String containing XML style attributes</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Key/Value pairs for the attributes</div>
+</div></div>
+</div>
+<a id="method_snake"></a><div class="element clickable method public method_snake " data-toggle="collapse" data-target=".method_snake .collapse" title="public">
+<h2>Convert a string to snake case.</h2>
+<pre>snake(string $value, string $delimiter<code> = '_'</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>&quot;this text is sname case&quot; -&gt; this_text_is_snake_case</p></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$delimiter</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_splitCamel"></a><div class="element clickable method public method_splitCamel " data-toggle="collapse" data-target=".method_splitCamel .collapse" title="public">
+<h2>Split a string in camel case format
+ThisTextIsCamelCase -&gt; "This Text Is Camel Case"</h2>
+<pre>splitCamel(string $string) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The source string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The splitted string.</div>
+</div></div>
+</div>
+<a id="method_startsWith"></a><div class="element clickable method public method_startsWith " data-toggle="collapse" data-target=".method_startsWith .collapse" title="public">
+<h2>Determine if a given string starts with a given substring.</h2>
+<pre>startsWith(string $haystack, mixed $needles) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>2.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$needles</h4>
+<code>mixed</code><p>string|array</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_tail"></a><div class="element clickable method public method_tail " data-toggle="collapse" data-target=".method_tail .collapse" title="public">
+<h2>Truncates text starting from the end.</h2>
+<pre>tail(string $text, integer $length<code> = 100</code>, array $options<code> = array()</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Cuts a string to the length of $length and replaces the first characters
 with the ellipsis if the text is longer than length.</p>
 <h3>Options:</h3>
 <ul>
 <li><code>ellipsis</code> Will be used as Beginning and prepended to the trimmed string</li>
 <li><code>exact</code> If false, $text will not be cut mid-word</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p><p>String to truncate.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$length</h4>
-                                                <code>integer</code><p><p>Length of returned string, including ellipsis.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p><p>An array of options.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Trimmed string.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_truncate"></a>
-                        <div class="element clickable method public  method_truncate" data-toggle="collapse" data-target=".method_truncate .collapse">
-                            <h2>Truncates text.</h2>
-                            <pre>truncate(string $text, integer $length = 100, array $options = array()) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Cuts a string to the length of $length and replaces the last characters
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>String to truncate.</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of returned string, including ellipsis.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of options.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Trimmed string.</div>
+</div></div>
+</div>
+<a id="method_truncate"></a><div class="element clickable method public method_truncate " data-toggle="collapse" data-target=".method_truncate .collapse" title="public">
+<h2>Truncates text.</h2>
+<pre>truncate(string $text, integer $length<code> = 100</code>, array $options<code> = array()</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Cuts a string to the length of $length and replaces the last characters
 with the ellipsis if the text is longer than length.</p>
 <h3>Options:</h3>
 <ul>
@@ -897,53 +492,29 @@ with the ellipsis if the text is longer than length.</p>
 <li><code>exact</code> If false, $text will not be cut mid-word</li>
 <li><code>html</code> If true, HTML tags would be handled correctly</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p><p>String to truncate.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$length</h4>
-                                                <code>integer</code><p><p>Length of returned string, including ellipsis.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p><p>An array of html attributes and options.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>Trimmed string.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                        </div>
-            </div>
-            <a id="\Hubzero\Utility\String"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Utility.html">Utility</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Utility.String.html">String</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:56 +0000.<br/>
-    </footer>
-    </body>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>String to truncate.</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>Length of returned string, including ellipsis.</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>An array of html attributes and options.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Trimmed string.</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:40-04:00.<br></footer></div>
+</div>
+</body>
 </html>

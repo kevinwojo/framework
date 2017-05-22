@@ -1,542 +1,333 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    Hubzero Api Documentation &raquo; \Hubzero\Form\Helper
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Hubzero Api Documentation » \Hubzero\Form\Helper</title>
+<meta name="author" content="Guocheng Wei">
+<meta name="description" content="Api Documentation for HUBzero framework">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="icon" type="image/png" href="../img/favicon-16x16.png">
+<link rel="icon" type="image/png" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" href="../img/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">Hubzero Api Documentation</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_addFieldPath" title="addFieldPath :: Method to add a path to the list of field include paths.">
-            <span class="description">Method to add a path to the list of field include paths.</span><pre>addFieldPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addFormPath" title="addFormPath :: Method to add a path to the list of form include paths.">
-            <span class="description">Method to add a path to the list of form include paths.</span><pre>addFormPath</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_addRulePath" title="addRulePath :: Method to add a path to the list of rule include paths.">
-            <span class="description">Method to add a path to the list of rule include paths.</span><pre>addRulePath</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_loadFieldClass" title="loadFieldClass :: Attempt to import the Field class file if it isn&#039;t already imported.">
-            <span class="description">Attempt to import the Field class file if it isn&#039;t already imported.</span><pre>loadFieldClass</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_loadFieldType" title="loadFieldType :: Method to load a form field object given a type.">
-            <span class="description">Method to load a form field object given a type.</span><pre>loadFieldType</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_loadRuleClass" title="loadRuleClass :: Attempt to import the Rule class file if it isn&#039;t already imported.">
-            <span class="description">Attempt to import the Rule class file if it isn&#039;t already imported.</span><pre>loadRuleClass</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_loadRuleType" title="loadRuleType :: Method to load a form rule object given a type.">
-            <span class="description">Method to load a form rule object given a type.</span><pre>loadRuleType</pre>
-        </a>
-    </li>
-
-                                                                                                        </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                    <li class="method protected">
-                            <a href="#method_addPath" title="addPath :: Method to add a path to the list of include paths for one of the form&#039;s entities.">
-                                <span class="description">Method to add a path to the list of include paths for one of the form&#039;s entities.</span><pre>addPath</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method protected">
-                            <a href="#method_loadClass" title="loadClass :: Load a class for one of the form&#039;s entities of a particular type.">
-                                <span class="description">Load a class for one of the form&#039;s entities of a particular type.</span><pre>loadClass</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                <li class="method protected">
-                            <a href="#method_loadType" title="loadType :: Method to load a form entity object given a type.">
-                                <span class="description">Method to load a form entity object given a type.</span><pre>loadType</pre>
-                            </a>
-                        </li>
-                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Helper</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Provides a storage for filesystem&#039;s paths where Form&#039;s entities reside and methods for creating those entities.</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>Also stores objects with entities' prototypes for further reusing.</p>
-<p>Inspired by Joomla's JFormHelper class</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        todo
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>Rewrite all of this.</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>framework</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_addFieldPath"></a>
-                        <div class="element clickable method public  method_addFieldPath" data-toggle="collapse" data-target=".method_addFieldPath .collapse">
-                            <h2>Method to add a path to the list of field include paths.</h2>
-                            <pre>addFieldPath(mixed $new = null) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>mixed</code><p><p>A path or array of paths to add.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The list of paths that have been added.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addFormPath"></a>
-                        <div class="element clickable method public  method_addFormPath" data-toggle="collapse" data-target=".method_addFormPath .collapse">
-                            <h2>Method to add a path to the list of form include paths.</h2>
-                            <pre>addFormPath(mixed $new = null) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>mixed</code><p><p>A path or array of paths to add.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The list of paths that have been added.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addPath"></a>
-                        <div class="element clickable method protected  method_addPath" data-toggle="collapse" data-target=".method_addPath .collapse">
-                            <h2>Method to add a path to the list of include paths for one of the form&#039;s entities.</h2>
-                            <pre>addPath(string $entity, mixed $new = null) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Currently supported entities: field, rule and form. You are free to support your own in a subclass.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$entity</h4>
-                                                <code>string</code><p><p>Form's entity name for which paths will be added.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>mixed</code><p><p>A path or array of paths to add.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The list of paths that have been added.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addRulePath"></a>
-                        <div class="element clickable method public  method_addRulePath" data-toggle="collapse" data-target=".method_addRulePath .collapse">
-                            <h2>Method to add a path to the list of rule include paths.</h2>
-                            <pre>addRulePath(mixed $new = null) : array</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>mixed</code><p><p>A path or array of paths to add.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p><p>The list of paths that have been added.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadClass"></a>
-                        <div class="element clickable method protected  method_loadClass" data-toggle="collapse" data-target=".method_loadClass .collapse">
-                            <h2>Load a class for one of the form&#039;s entities of a particular type.</h2>
-                            <pre>loadClass(string $entity, string $type) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Currently, it makes sense to use this method for the &quot;field&quot; and &quot;rule&quot; entities
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Hubzero Api Documentation</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/Hubzero.html"><i class="icon-th"></i> Hubzero</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/framework.html"><i class="icon-folder-open"></i> framework</a></li>
+<li><a href="../packages/hubzero-cms.html"><i class="icon-folder-open"></i> hubzero-cms</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">592</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">28</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addFieldPath" title="addFieldPath() :: Method to add a path to the list of field include paths."><span class="description">Method to add a path to the list of field include paths.</span><pre>addFieldPath()</pre></a></li>
+<li class="method public "><a href="#method_addFormPath" title="addFormPath() :: Method to add a path to the list of form include paths."><span class="description">Method to add a path to the list of form include paths.</span><pre>addFormPath()</pre></a></li>
+<li class="method public "><a href="#method_addRulePath" title="addRulePath() :: Method to add a path to the list of rule include paths."><span class="description">Method to add a path to the list of rule include paths.</span><pre>addRulePath()</pre></a></li>
+<li class="method public "><a href="#method_loadFieldClass" title="loadFieldClass() :: Attempt to import the Field class file if it isn't already imported."><span class="description">Attempt to import the Field class file if it isn't already imported.</span><pre>loadFieldClass()</pre></a></li>
+<li class="method public "><a href="#method_loadFieldType" title="loadFieldType() :: Method to load a form field object given a type."><span class="description">Method to load a form field object given a type.</span><pre>loadFieldType()</pre></a></li>
+<li class="method public "><a href="#method_loadRuleClass" title="loadRuleClass() :: Attempt to import the Rule class file if it isn't already imported."><span class="description">Attempt to import the Rule class file if it isn't already imported.</span><pre>loadRuleClass()</pre></a></li>
+<li class="method public "><a href="#method_loadRuleType" title="loadRuleType() :: Method to load a form rule object given a type."><span class="description">Method to load a form rule object given a type.</span><pre>loadRuleType()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_addPath" title="addPath() :: Method to add a path to the list of include paths for one of the form's entities."><span class="description">Method to add a path to the list of include paths for one of the form's entities.</span><pre>addPath()</pre></a></li>
+<li class="method protected "><a href="#method_loadClass" title="loadClass() :: Load a class for one of the form's entities of a particular type."><span class="description">Load a class for one of the form's entities of a particular type.</span><pre>loadClass()</pre></a></li>
+<li class="method protected "><a href="#method_loadType" title="loadType() :: Method to load a form entity object given a type."><span class="description">Method to load a form entity object given a type.</span><pre>loadType()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_entities" title="$entities() :: Static array of Form's entity objects for re-use."><span class="description"></span><pre>$entities</pre></a></li>
+<li class="property protected "><a href="#property_paths" title="$paths() :: Array with paths where entities(field, rule, form) can be found."><span class="description"></span><pre>$paths</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\Hubzero\Form\Helper"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Hubzero.html">Hubzero</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/Hubzero.Form.html">Form</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Hubzero.Form.Helper.html">Helper</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Provides a storage for filesystem's paths where Form's entities reside and methods for creating those entities.</p>
+<div class="details">
+<div class="long_description"><p>Also stores objects with entities' prototypes for further reusing.</p>
+<p>Inspired by Joomla's JFormHelper class</p></div>
+<table class="table table-bordered">
+<tr>
+<th>todo</th>
+<td>Rewrite all of this.</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/framework.html">framework</a></td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addFieldPath"></a><div class="element clickable method public method_addFieldPath " data-toggle="collapse" data-target=".method_addFieldPath .collapse" title="public">
+<h2>Method to add a path to the list of field include paths.</h2>
+<pre>addFieldPath(mixed $new<code> = null</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_addFormPath"></a><div class="element clickable method public method_addFormPath " data-toggle="collapse" data-target=".method_addFormPath .collapse" title="public">
+<h2>Method to add a path to the list of form include paths.</h2>
+<pre>addFormPath(mixed $new<code> = null</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_addRulePath"></a><div class="element clickable method public method_addRulePath " data-toggle="collapse" data-target=".method_addRulePath .collapse" title="public">
+<h2>Method to add a path to the list of rule include paths.</h2>
+<pre>addRulePath(mixed $new<code> = null</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_loadFieldClass"></a><div class="element clickable method public method_loadFieldClass " data-toggle="collapse" data-target=".method_loadFieldClass .collapse" title="public">
+<h2>Attempt to import the Field class file if it isn't already imported.</h2>
+<pre>loadFieldClass(string $type) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You can use this method outside of Form for loading a field for inheritance or composition.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of a field whose class should be loaded.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Class name on success or false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadFieldType"></a><div class="element clickable method public method_loadFieldType " data-toggle="collapse" data-target=".method_loadFieldType .collapse" title="public">
+<h2>Method to load a form field object given a type.</h2>
+<pre>loadFieldType(string $type, boolean $new<code> = true</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The field type.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>Flag to toggle whether we should get a new instance of the object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Field object on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadRuleClass"></a><div class="element clickable method public method_loadRuleClass " data-toggle="collapse" data-target=".method_loadRuleClass .collapse" title="public">
+<h2>Attempt to import the Rule class file if it isn't already imported.</h2>
+<pre>loadRuleClass(string $type) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>You can use this method outside of Form for loading a rule for inheritance or composition.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of a rule whose class should be loaded.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Class name on success or false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadRuleType"></a><div class="element clickable method public method_loadRuleType " data-toggle="collapse" data-target=".method_loadRuleType .collapse" title="public">
+<h2>Method to load a form rule object given a type.</h2>
+<pre>loadRuleType(string $type, boolean $new<code> = true</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The rule type.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>Flag to toggle whether we should get a new instance of the object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Rule object on success, false otherwise.</div>
+</div></div>
+</div>
+<a id="method_addPath"></a><div class="element clickable method protected method_addPath " data-toggle="collapse" data-target=".method_addPath .collapse" title="protected">
+<h2>Method to add a path to the list of include paths for one of the form's entities.</h2>
+<pre>addPath(string $entity, mixed $new<code> = null</code>) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Currently supported entities: field, rule and form. You are free to support your own in a subclass.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$entity</h4>
+<code>string</code><p>Form's entity name for which paths will be added.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>mixed</code><p>A path or array of paths to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The list of paths that have been added.</div>
+</div></div>
+</div>
+<a id="method_loadClass"></a><div class="element clickable method protected method_loadClass " data-toggle="collapse" data-target=".method_loadClass .collapse" title="protected">
+<h2>Load a class for one of the form's entities of a particular type.</h2>
+<pre>loadClass(string $entity, string $type) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Currently, it makes sense to use this method for the &quot;field&quot; and &quot;rule&quot; entities
 (but you can support more entities in your subclass).</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$entity</h4>
-                                                <code>string</code><p><p>One of the form entities (field or rule).</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>Type of an entity.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Class name on success or false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadFieldClass"></a>
-                        <div class="element clickable method public  method_loadFieldClass" data-toggle="collapse" data-target=".method_loadFieldClass .collapse">
-                            <h2>Attempt to import the Field class file if it isn&#039;t already imported.</h2>
-                            <pre>loadFieldClass(string $type) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>You can use this method outside of Form for loading a field for inheritance or composition.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>Type of a field whose class should be loaded.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Class name on success or false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadFieldType"></a>
-                        <div class="element clickable method public  method_loadFieldType" data-toggle="collapse" data-target=".method_loadFieldType .collapse">
-                            <h2>Method to load a form field object given a type.</h2>
-                            <pre>loadFieldType(string $type, boolean $new = true) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>The field type.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>boolean</code><p><p>Flag to toggle whether we should get a new instance of the object.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Field object on success, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadRuleClass"></a>
-                        <div class="element clickable method public  method_loadRuleClass" data-toggle="collapse" data-target=".method_loadRuleClass .collapse">
-                            <h2>Attempt to import the Rule class file if it isn&#039;t already imported.</h2>
-                            <pre>loadRuleClass(string $type) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>You can use this method outside of Form for loading a rule for inheritance or composition.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>Type of a rule whose class should be loaded.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Class name on success or false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadRuleType"></a>
-                        <div class="element clickable method public  method_loadRuleType" data-toggle="collapse" data-target=".method_loadRuleType .collapse">
-                            <h2>Method to load a form rule object given a type.</h2>
-                            <pre>loadRuleType(string $type, boolean $new = true) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>The rule type.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>boolean</code><p><p>Flag to toggle whether we should get a new instance of the object.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Rule object on success, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadType"></a>
-                        <div class="element clickable method protected  method_loadType" data-toggle="collapse" data-target=".method_loadType .collapse">
-                            <h2>Method to load a form entity object given a type.</h2>
-                            <pre>loadType(string $entity, string $type, boolean $new = true) : mixed</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Each type is loaded only once and then used as a prototype for other objects of same type.
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$entity</h4>
+<code>string</code><p>One of the form entities (field or rule).</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of an entity.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Class name on success or false otherwise.</div>
+</div></div>
+</div>
+<a id="method_loadType"></a><div class="element clickable method protected method_loadType " data-toggle="collapse" data-target=".method_loadType .collapse" title="protected">
+<h2>Method to load a form entity object given a type.</h2>
+<pre>loadType(string $entity, string $type, boolean $new<code> = true</code>) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Each type is loaded only once and then used as a prototype for other objects of same type.
 Please, use this method only with those entities which support types (forms don't support them).</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$entity</h4>
-                                                <code>string</code><p><p>The entity.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$type</h4>
-                                                <code>string</code><p><p>The entity type.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$new</h4>
-                                                <code>boolean</code><p><p>Flag to toggle whether we should get a new instance of the object.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Entity object on success, false otherwise.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_paths"> </a>
-                            <div class="element clickable property  protected property_paths" data-toggle="collapse" data-target=".property_paths .collapse">
-                                <h2>Array with paths where entities(field, rule, form) can be found.</h2>
-                                <pre>paths : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>Array's structure:
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$entity</h4>
+<code>string</code><p>The entity.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The entity type.</p></div>
+<div class="subelement argument">
+<h4>$new</h4>
+<code>boolean</code><p>Flag to toggle whether we should get a new instance of the object.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>Entity object on success, false otherwise.</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_entities"> </a><div class="element clickable property protected property_entities" data-toggle="collapse" data-target=".property_entities .collapse" title="protected">
+<h2>Static array of Form's entity objects for re-use.</h2>
+<pre>$entities : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Prototypes for all fields and rules are here.</p>
+<p>Array's structure:
+<code>
+entities:
+{ENTITY_NAME}:
+{KEY}: {OBJECT}
+</code></p></div></div></div>
+</div>
+<a id="property_paths"> </a><div class="element clickable property protected property_paths" data-toggle="collapse" data-target=".property_paths .collapse" title="protected">
+<h2>Array with paths where entities(field, rule, form) can be found.</h2>
+<pre>$paths : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Array's structure:
 <code>
 paths:
 {ENTITY_NAME}:</p>
@@ -544,77 +335,16 @@ paths:
 <li>/path/1</li>
 <li>/path/2
 </code></li>
-</ul></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_entities"> </a>
-                            <div class="element clickable property  protected property_entities" data-toggle="collapse" data-target=".property_entities .collapse">
-                                <h2>Static array of Form&#039;s entity objects for re-use.</h2>
-                                <pre>entities : array</pre>
-                                <div class="labels">
-                                                                        <span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>Prototypes for all fields and rules are here.</p>
-<p>Array's structure:
-<code>
-entities:
-{ENTITY_NAME}:
-{KEY}: {OBJECT}
-</code></p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\Hubzero\Form\Helper"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/Hubzero.Form.html">Form</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/Hubzero.Form.Helper.html">Helper</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 17 May 2017 15:54:56 +0000.<br/>
-    </footer>
-    </body>
+</ul></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12" style="text-align: center;">
+			Created by <a href="https://wei170.github.io">Guocheng Wei</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.8.5</a> and<br>
+            generated on 2017-05-22T13:25:40-04:00.<br></footer></div>
+</div>
+</body>
 </html>
