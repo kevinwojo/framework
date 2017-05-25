@@ -29,20 +29,16 @@
  * @copyright Copyright 2005-2015 HUBzero Foundation, LLC.
  * @license   http://opensource.org/licenses/MIT MIT
  */
+namespace Components\%=component_name+ucf=%\Models;
 
-namespace Components\%=component_name+ucf=%\Site;
+use Hubzero\Database\Relational;
 
-require_once dirname(__DIR__) . DS . 'models' . DS . '%=component_name=%.php';
-
-$controllerName = Request::getCmd('controller', Request::getCmd('view', '%=component_name=%'));
-if (!file_exists(__DIR__ . DS . 'controllers' . DS . $controllerName . '.php'))
+/**
+ * %=component_name+ucfp=% database model
+ *
+ * @uses  \Hubzero\Database\Relational
+ */
+class %=component_name+ucfp=% extends Relational
 {
-	$controllerName = '%=component_name=%';
-}
-require_once __DIR__ . DS . 'controllers' . DS . $controllerName . '.php';
-$controllerName = __NAMESPACE__ . '\\Controllers\\' . ucfirst(strtolower($controllerName));
 
-// Instantiate controller
-$controller = new $controllerName();
-$controller->execute();
-$controller->redirect();
+}

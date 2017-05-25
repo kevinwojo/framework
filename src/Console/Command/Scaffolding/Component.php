@@ -33,6 +33,9 @@
 namespace Hubzero\Console\Command\Scaffolding;
 
 use Hubzero\Console\Command\Scaffolding;
+//use Hubzero\Console\Command\Base;
+//use Hubzero\Utility\Date;
+use Hubzero\Console\Arguments;
 
 /**
  * Scaffolding class for components
@@ -95,6 +98,78 @@ class Component extends Scaffolding
 		     ->addReplacement('component_name', $name)
 		     ->addReplacement('option', 'com_' . $name)
 		     ->make();
+
+		// Define create a table or not
+		$db = App::get('db');
+		$doCreate = $this->output->getResponse('Do you want to create a table for it? (yes)/no');
+		switch ($doCreate) 
+		{
+			case '':
+			case 'yes':
+			case 'y':
+				$doCreate = true;
+				break;
+
+			case 'no':
+			case 'n':
+				$doCreate = false;
+				break;
+
+			default:
+				$this->output->addLine("Wrong input. Assume 'no'.");	
+				$doCreate = false;
+		}
+
+		// Create a table
+		if ($doCreate)
+		{
+			// Get the name of the table
+			$table = $this->output->getResponse("Name of the new table: ($name)");
+			if ($table == '') $table = $name . 's';
+
+			$db->setQuery("CREATE TABLE " . $db->quoteName('#__' . $table) . " (id int);");
+			$db->query();
+
+			// Define migrate for the table or not
+			$doMigrate = $this->output->getResponse("Do you want to migrate for table $table? (yes)/no");
+			switch ($doMigrate) 
+			{
+				case '':
+				case 'yes':
+				case 'y':
+					$doMigrate = true;
+					break;
+
+				case 'no':
+				case 'n':
+					$doMigrate = false;
+					break;
+
+				default:
+					$this->output->addLine("Wrong input. Assume 'no'.");	
+					$doMigrate = false;
+			}
+
+			if ($doMigrate)
+			{
+				$mArgs = new Arguments(array(
+					'muse', 
+					'scaffolding', 
+					'create', 
+					'migration', 
+					'for',
+					$db->getPrefix() . $table,
+					'-e=com_' . $name
+				));
+
+				// Parse the raw arguments into options
+				$mArgs->parse();
+
+				// Migrate
+				$migration = new Scaffolding($this->output, $mArgs);
+				$migration->create();
+			}
+		}
 	}
 
 	/**
