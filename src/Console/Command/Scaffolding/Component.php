@@ -102,7 +102,7 @@ class Component extends Scaffolding
 		// Define create a table or not
 		$db = App::get('db');
 		$doCreate = $this->output->getResponse('Do you want to create a table for it? (yes)/no');
-		switch ($doCreate) 
+		switch ($doCreate)
 		{
 			case '':
 			case 'yes':
@@ -116,7 +116,7 @@ class Component extends Scaffolding
 				break;
 
 			default:
-				$this->output->addLine("Wrong input. Assume 'no'.");	
+				$this->output->addLine("Wrong input. Assume 'no'.");
 				$doCreate = false;
 		}
 
@@ -125,14 +125,16 @@ class Component extends Scaffolding
 		{
 			// Get the name of the table
 			$table = $this->output->getResponse("Name of the new table: ($name)");
-			if ($table == '') $table = $name . 's';
+			if ($table == '') {
+				$table = $name . 's';
+			}
 
 			$db->setQuery("CREATE TABLE " . $db->quoteName('#__' . $table) . " (id int);");
 			$db->query();
 
 			// Define migrate for the table or not
 			$doMigrate = $this->output->getResponse("Do you want to migrate for table $table? (yes)/no");
-			switch ($doMigrate) 
+			switch ($doMigrate)
 			{
 				case '':
 				case 'yes':
@@ -146,17 +148,17 @@ class Component extends Scaffolding
 					break;
 
 				default:
-					$this->output->addLine("Wrong input. Assume 'no'.");	
+					$this->output->addLine("Wrong input. Assume 'no'.");
 					$doMigrate = false;
 			}
 
 			if ($doMigrate)
 			{
 				$mArgs = new Arguments(array(
-					'muse', 
-					'scaffolding', 
-					'create', 
-					'migration', 
+					'muse',
+					'scaffolding',
+					'create',
+					'migration',
 					'for',
 					$db->getPrefix() . $table,
 					'-e=com_' . $name
