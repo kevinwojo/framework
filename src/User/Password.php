@@ -33,6 +33,7 @@
 namespace Hubzero\User;
 
 use Hubzero\User\Password\History;
+use ZxcvbnPhp\Zxcvbn;
 
 /**
  * Password handling class for users
@@ -45,6 +46,13 @@ class Password
 	 * @var  mixed
 	 */
 	private $user_id = null;
+
+	/**
+	 * Type of measuring password strength
+	 *
+	 * @var string
+	 */
+	private $passStrengthType = null;
 
 	/**
 	 * Description for 'passhash'
@@ -624,6 +632,51 @@ class Password
 		}
 
 		return $passhash;
+	}
+
+	/**
+	 * Get the type of measuring password strength 
+	 *
+	 * @return string
+	 */
+	public static function getPassStrengthType()
+	{
+		// Get the type of measuring password strength
+		$config = \Component::params('com_members');
+		$passStrengthType = $config->get('passStrengthType', 'entropy');
+
+		return $passStrengthType;
+	}
+
+	/**
+	 * Get the level of the password strength
+	 *
+	 * @param	string	$pw	Password
+	 * @return	string	Level of the password strength
+	 */
+	public static function getEntropyLevel($pw)
+	{
+		$zxcvbn = new Zxcvbn();
+		$strength = $zxcvbn->passwordStrength($pw);
+
+		// add the score level into the response
+		$score = $strength['score'];
+		switch ($score)
+		{
+			case 0:
+				return array('score' => $score, 'type' => 'Too Weak');
+			case 1:
+				return array('score' => $score, 'type' => 'Weak');
+			case 2:
+				return array('score' => $score, 'type' => 'Normal');
+			case 3:
+				return array('score' => $score, 'type' => 'Stronge');
+			case 4:
+				return array('score' => $score, 'type' => 'Unbreakable');
+			default:
+				return array('score' => $score, 'type' => 'Enter a password');
+		}
+
 	}
 
 	/**
