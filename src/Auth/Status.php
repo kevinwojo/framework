@@ -78,4 +78,12 @@ class Status
 	 * @const  STATUS_UNKNOWN  Unknown account (won't permit or prevent login)
 	 */
 	const UNKNOWN = 32;
+
+	/**
+	 * This is the status code returned when the account is blocked because of
+	 * too much failed login attempts
+	 *
+	 * @const  STATUS_BLOCKED  Blocked account (will prevent login)
+	 */
+	const BLOCKED = 64;
 }
