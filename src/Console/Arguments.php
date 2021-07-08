@@ -116,7 +116,7 @@ class Arguments
 	 *
 	 * @param   string  $key      Option name to retieve value for
 	 * @param   mixed   $default  Default value for option
-	 * @return  void
+	 * @return  string|boolean    If no option of the key, return false
 	 **/
 	public function getOpt($key, $default = false)
 	{

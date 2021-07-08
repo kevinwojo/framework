@@ -38,6 +38,8 @@ use Hubzero\Database\Driver;
 
 /**
  * Base migration class
+ *
+ * @example https://hubzero.org/documentation/2.1.0/webdevs/database.migrations
  **/
 class Base
 {

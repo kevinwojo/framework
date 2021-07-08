@@ -40,6 +40,8 @@ use \Hubzero\Error\Exception\BadMethodCallException;
 
 /**
  * Base database driver
+ *
+ * @example	https://hubzero.org/documentation/2.1.0/webdevs/database
  */
 abstract class Driver
 {

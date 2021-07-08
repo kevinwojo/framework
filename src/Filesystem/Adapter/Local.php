@@ -411,7 +411,8 @@ class Local implements AdapterInterface
 	/**
 	 * Normalize the file info.
 	 *
-	 * @param   object  $file  SplFileInfo
+	 * @param   object  $file	SplFileInfo
+	 * @param	string	$base	Base path
 	 * @return  array
 	 */
 	protected function normalizeFileInfo(SplFileInfo $file, $base = null)

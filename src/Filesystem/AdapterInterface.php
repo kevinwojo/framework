@@ -40,7 +40,7 @@ interface AdapterInterface
 	/**
 	 * Check whether a file exists.
 	 *
-	 * @param   string  $path
+	 * @param   string  $path	Path of the file to be checked
 	 * @return  bool
 	 */
 	public function exists($path);
@@ -48,7 +48,7 @@ interface AdapterInterface
 	/**
 	 * Read a file.
 	 *
-	 * @param   string  $path
+	 * @param   string  $path	Path of the file to read
 	 * @return  string
 	 */
 	public function read($path);
@@ -56,8 +56,8 @@ interface AdapterInterface
 	/**
 	 * Write a new file.
 	 *
-	 * @param   string  $path
-	 * @param   string  $contents
+	 * @param   string  $path		Path of the file to write
+	 * @param   string  $contents	Contents are wrting to the file
 	 * @return  bool    False on failure, true on success
 	 */
 	public function write($path, $contents);
@@ -65,8 +65,8 @@ interface AdapterInterface
 	/**
 	 * Prepend to a file.
 	 *
-	 * @param   string  $path
-	 * @param   string  $contents
+	 * @param   string  $path		Path of the file to be prepended
+	 * @param   string  $contents	Contents are prepending to the file
 	 * @return  bool    False on failure, true on success
 	 */
 	public function prepend($path, $contents);
@@ -74,8 +74,8 @@ interface AdapterInterface
 	/**
 	 * Append to a file.
 	 *
-	 * @param   string  $path
-	 * @param   string  $contents
+	 * @param   string  $path		Path of the file to be appended
+	 * @param   string  $contents	Contents are appending to the file
 	 * @return  bool    False on failure, true on success
 	 */
 	public function append($path, $contents);
@@ -83,8 +83,8 @@ interface AdapterInterface
 	/**
 	 * Move a file to a new location.
 	 *
-	 * @param   string  $path
-	 * @param   string  $target
+	 * @param   string  $path	Source
+	 * @param   string  $target	Destination
 	 * @return  bool
 	 */
 	public function move($path, $target);
@@ -92,8 +92,8 @@ interface AdapterInterface
 	/**
 	 * Rename a file.
 	 *
-	 * @param   string  $path
-	 * @param   string  $target
+	 * @param   string  $path	Sounce
+	 * @param   string  $target	Destination
 	 * @return  bool
 	 */
 	public function rename($path, $target);
@@ -101,8 +101,8 @@ interface AdapterInterface
 	/**
 	 * Copy a file.
 	 *
-	 * @param   string  $path
-	 * @param   string  $target
+	 * @param   string  $path	Source
+	 * @param   string  $target	Destination
 	 * @return  bool
 	 */
 	public function copy($path, $target);
@@ -110,7 +110,7 @@ interface AdapterInterface
 	/**
 	 * Delete a file.
 	 *
-	 * @param   string  $path
+	 * @param   string  $path	Path of the file to delete
 	 * @return  bool
 	 */
 	public function delete($path);
@@ -160,7 +160,8 @@ interface AdapterInterface
 	/**
 	 * Delete a directory.
 	 *
-	 * @param   string  $path
+	 * @param   string  $path		The path of directory to be deleted
+	 * @param	bool	$preserve	True to preserve the directory
 	 * @return  bool
 	 */
 	public function deleteDirectory($path, $preserve);

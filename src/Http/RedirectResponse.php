@@ -61,9 +61,9 @@ class RedirectResponse extends BaseRedirectResponse
 	/**
 	 * Set a header on the Response.
 	 *
-	 * @param   string  $key
-	 * @param   string  $value
-	 * @param   bool    $replace
+	 * @param   string  $key		Get the key
+	 * @param   string  $value		Set the value to the found key
+	 * @param   bool    $replace	If replace the original value of the key
 	 * @return  object
 	 */
 	public function header($key, $value, $replace = true)
@@ -75,9 +75,11 @@ class RedirectResponse extends BaseRedirectResponse
 
 	/**
 	 * Flash a piece of data to the session.
+	 * If the key is an array, use each of k and v in the key to set the session
+	 * If not use the key param and the value param to do so.
 	 *
-	 * @param   string  $key
-	 * @param   mixed   $value
+	 * @param   string|array	$key	Key or a list of keys with value
+	 * @param   mixed			$value	Value of the Key
 	 * @return  object
 	 */
 	public function with($key, $value = null)
